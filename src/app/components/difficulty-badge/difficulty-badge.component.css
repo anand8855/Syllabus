@@ -1,0 +1,23 @@
+.difficulty {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.difficulty.basic {
+  background: #28a745;
+  color: white;
+}
+
+.difficulty.intermediate {
+  background: #ffc107;
+  color: #333;
+}
+
+.difficulty.advanced {
+  background: #dc3545;
+  color: white;
+}

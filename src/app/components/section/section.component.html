@@ -1,0 +1,14 @@
+<div class="section">
+  <h2 
+    class="collapsible section-title" 
+    [class.collapsed]="section.isCollapsed"
+    (click)="toggleSection()">
+    {{ section.id }}. {{ section.title }}
+    <app-difficulty-badge [difficulty]="section.difficulty"></app-difficulty-badge>
+  </h2>
+  <div class="section-content" [class.collapsed]="section.isCollapsed">
+    <ul class="topics">
+      <app-topic *ngFor="let topic of section.topics" [topic]="topic"></app-topic>
+    </ul>
+  </div>
+</div>

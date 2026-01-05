@@ -1,0 +1,64 @@
+.section {
+  margin-bottom: 35px;
+  border-left: 4px solid #667eea;
+  padding-left: 20px;
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: translateX(5px);
+}
+
+.section h2 {
+  color: #667eea;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.section h2.section-title::before {
+  content: "☕";
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.collapsible {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-right: 30px;
+}
+
+.collapsible::after {
+  content: '▼';
+  position: absolute;
+  right: 10px;
+  transition: transform 0.3s ease;
+  font-size: 0.8em;
+}
+
+.collapsible.collapsed::after {
+  transform: rotate(-90deg);
+}
+
+.collapsible:hover {
+  opacity: 0.8;
+}
+
+.section-content {
+  max-height: 5000px;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.section-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.topics {
+  list-style: none;
+  padding-left: 0;
+}

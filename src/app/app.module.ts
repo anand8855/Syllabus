@@ -1,0 +1,27 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+
+import { AppComponent } from './app.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { SectionComponent } from './components/section/section.component';
+import { TopicComponent } from './components/topic/topic.component';
+import { DifficultyBadgeComponent } from './components/difficulty-badge/difficulty-badge.component';
+import { SyllabusService } from './services/syllabus.service';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomepageComponent,
+    SectionComponent,
+    TopicComponent,
+    DifficultyBadgeComponent
+  ],
+  imports: [
+    BrowserModule,
+    CommonModule
+  ],
+  providers: [SyllabusService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

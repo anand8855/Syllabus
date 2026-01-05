@@ -1,0 +1,20 @@
+<li>
+  <strong 
+    *ngIf="topic.subTopics && topic.subTopics.length > 0"
+    class="topic-header" 
+    [class.collapsed]="isCollapsed"
+    (click)="toggleCollapse()">
+    {{ topic.name }}
+  </strong>
+  <strong *ngIf="!topic.subTopics || topic.subTopics.length === 0">
+    {{ topic.name }}
+  </strong>
+  <div 
+    *ngIf="topic.subTopics && topic.subTopics.length > 0" 
+    class="sub-topics-wrapper" 
+    [class.collapsed]="isCollapsed">
+    <ul class="sub-topics">
+      <li *ngFor="let subTopic of topic.subTopics">{{ subTopic.name }}</li>
+    </ul>
+  </div>
+</li>
