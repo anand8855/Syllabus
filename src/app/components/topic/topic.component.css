@@ -77,3 +77,53 @@ li:hover {
   max-height: 0;
   opacity: 0;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  li {
+    padding: 8px 12px;
+    margin: 6px 0;
+    border-radius: 6px;
+  }
+
+  li:hover {
+    transform: translateX(5px);
+  }
+
+  .sub-topics {
+    margin-left: 15px;
+    margin-top: 6px;
+  }
+
+  .subtopic-item {
+    padding: 6px 10px !important;
+    margin: 3px 0;
+    font-size: 0.95em;
+  }
+
+  .topic-header::before {
+    margin-right: 6px;
+    font-size: 0.75em;
+  }
+}
+
+@media (max-width: 480px) {
+  li {
+    padding: 6px 10px;
+    margin: 5px 0;
+    font-size: 0.9em;
+  }
+
+  li:hover {
+    transform: translateX(3px);
+  }
+
+  .sub-topics {
+    margin-left: 10px;
+  }
+
+  .subtopic-item {
+    padding: 5px 8px !important;
+    font-size: 0.85em;
+  }
+}

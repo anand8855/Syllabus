@@ -434,3 +434,300 @@
   font-size: 24px;
   font-weight: 500;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .subtopic-detail-container {
+    padding: 15px 10px;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .back-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .separator {
+    margin: 0 4px;
+  }
+
+  .content {
+    padding: 25px 20px;
+    border-radius: 6px;
+  }
+
+  .content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  .content h2 {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-left: 12px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  .overview-section {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .overview-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .content-section {
+    margin-bottom: 30px;
+  }
+
+  .section-content {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .subsections {
+    margin-left: 10px;
+    margin-top: 15px;
+  }
+
+  .subsection {
+    padding: 15px;
+    margin-bottom: 12px;
+  }
+
+  .code-example {
+    margin-bottom: 20px;
+  }
+
+  .code-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .code-block {
+    border-radius: 6px;
+  }
+
+  .code-header {
+    padding: 8px 15px;
+  }
+
+  .language-badge {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  .code-block pre {
+    padding: 15px;
+    font-size: 12px;
+  }
+
+  .code-block code {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .key-points-section,
+  .references-section {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .key-points-list li {
+    padding: 8px 0 8px 25px;
+    font-size: 14px;
+  }
+
+  .key-points-list li::before {
+    font-size: 16px;
+  }
+
+  .references-list li {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .interview-section {
+    padding: 25px 20px;
+    margin-top: 30px;
+  }
+
+  .interview-section h2 {
+    font-size: 24px;
+  }
+
+  .interview-intro {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+  }
+
+  .interview-intro p {
+    font-size: 14px;
+  }
+
+  .interview-qa {
+    padding: 20px 15px;
+    margin-bottom: 15px;
+  }
+
+  .question-header {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .question-number {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .difficulty-badge {
+    padding: 3px 10px;
+    font-size: 11px;
+  }
+
+  .tag {
+    padding: 2px 8px;
+    font-size: 10px;
+  }
+
+  .question {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .question strong {
+    font-size: 18px;
+  }
+
+  .answer {
+    padding: 15px;
+  }
+
+  .answer strong {
+    font-size: 16px;
+  }
+
+  .answer-content {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .no-content {
+    padding: 40px 20px;
+  }
+
+  .no-content-message {
+    padding: 30px 20px;
+  }
+
+  .no-content-message p {
+    font-size: 16px;
+  }
+
+  .no-content-message p:first-child {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subtopic-detail-container {
+    padding: 10px 5px;
+  }
+
+  .back-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .breadcrumb {
+    font-size: 11px;
+  }
+
+  .content {
+    padding: 20px 15px;
+  }
+
+  .content h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+  }
+
+  .content h2 {
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    padding-left: 10px;
+  }
+
+  .content h3 {
+    font-size: 16px;
+  }
+
+  .overview-section {
+    padding: 12px;
+  }
+
+  .overview-text {
+    font-size: 15px;
+  }
+
+  .section-content {
+    font-size: 14px;
+  }
+
+  .subsection {
+    padding: 12px;
+  }
+
+  .code-block pre {
+    padding: 12px;
+    overflow-x: scroll;
+  }
+
+  .code-block code {
+    font-size: 11px;
+  }
+
+  .interview-section {
+    padding: 20px 15px;
+  }
+
+  .interview-section h2 {
+    font-size: 20px;
+  }
+
+  .interview-qa {
+    padding: 15px 12px;
+  }
+
+  .question {
+    font-size: 15px;
+  }
+
+  .question strong {
+    font-size: 16px;
+  }
+
+  .answer-content {
+    font-size: 13px;
+  }
+}
