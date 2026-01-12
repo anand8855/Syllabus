@@ -147,27 +147,71 @@ export class SyllabusService {
         difficulty: 'intermediate',
         topics: [
           {
-            name: 'Exception Hierarchy',
+            name: 'Core Java Exception Handling',
             subTopics: [
-              { name: 'Throwable, Error, Exception' },
-              { name: 'Checked vs Unchecked exceptions' },
-              { name: 'Common exceptions' }
+              { name: 'Fundamentals' },
+              { name: 'Exception Hierarchy' },
+              { name: 'Checked vs Unchecked Exceptions' },
+              { name: 'try–catch–finally' },
+              { name: 'Multi-Catch (Java 7+)' },
+              { name: 'try-with-resources' },
+              { name: 'Suppressed Exceptions (Advanced)' },
+              { name: 'throw vs throws' },
+              { name: 'Custom Exceptions' },
+              { name: 'Exception Propagation' },
+              { name: 'Exception Chaining' },
+              { name: 'Overriding & Exceptions' },
+              { name: 'Stack Trace Internals (Advanced)' },
+              { name: 'Errors You Should Never Catch' },
+              { name: 'Assertions vs Exceptions' },
+              { name: 'Core Java Best Practices' }
             ]
           },
           {
-            name: 'Exception Handling Mechanisms',
+            name: 'Spring Framework Exception Handling',
             subTopics: [
-              { name: 'try, catch, finally blocks' },
-              { name: 'throw and throws keywords' },
-              { name: 'Try-with-resources' },
-              { name: 'Multi-catch blocks' }
+              { name: 'Spring Exception Philosophy' },
+              { name: 'DataAccessException Hierarchy' },
+              { name: '@ExceptionHandler' },
+              { name: '@ControllerAdvice / @RestControllerAdvice' },
+              { name: 'ResponseEntityExceptionHandler' },
+              { name: 'Validation Exception Handling' },
+              { name: 'Transaction & Exception Handling' },
+              { name: 'Exception Translation' },
+              { name: 'AOP & Exception Handling' },
+              { name: 'Exception Resolution Order' },
+              { name: 'Async Exception Handling' },
+              { name: 'Event Listener Exceptions' },
+              { name: 'Proxy & Transaction Boundaries' }
             ]
           },
           {
-            name: 'Custom Exceptions',
+            name: 'Spring Boot Exception Handling',
             subTopics: [
-              { name: 'Creating user-defined exceptions' },
-              { name: 'Exception chaining' }
+              { name: 'Default Spring Boot Error Handling' },
+              { name: 'Custom REST Error Responses' },
+              { name: 'ErrorAttributes Customization' },
+              { name: 'server.error Configuration' },
+              { name: '@ResponseStatus' },
+              { name: 'Common REST Exceptions' },
+              { name: 'Filter & Interceptor Exceptions' },
+              { name: 'Spring Security Exception Handling' },
+              { name: 'OAuth2 / JWT Errors' },
+              { name: 'API Gateway Exception Handling' },
+              { name: 'REST Client Exceptions' },
+              { name: 'Reactive (WebFlux) Exception Handling' },
+              { name: 'RFC 7807 – Problem Details' }
+            ]
+          },
+          {
+            name: 'Architecture, Design & Production',
+            subTopics: [
+              { name: 'Error Code Strategy' },
+              { name: 'Exception Anti-Patterns' },
+              { name: 'Internationalization (i18n)' },
+              { name: 'Logging & Monitoring' },
+              { name: 'Testing Exception Handling' },
+              { name: 'Microservices Best Practices' }
             ]
           }
         ]

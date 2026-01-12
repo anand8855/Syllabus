@@ -1,0 +1,115 @@
+<div class="subtopic-detail-container">
+  <div class="header">
+    <button class="back-button" (click)="goBack()">
+      ← Back
+    </button>
+    <div class="breadcrumb">
+      <span class="section-name">{{ sectionTitle }}</span>
+      <span class="separator">›</span>
+      <span class="topic-name">{{ topicName }}</span>
+      <span class="separator">›</span>
+      <span class="subtopic-name">{{ subtopicName }}</span>
+    </div>
+  </div>
+
+  <div class="content" *ngIf="content">
+    <h1>{{ content.name }}</h1>
+
+    <!-- Overview Section -->
+    <div class="overview-section" *ngIf="content.overview">
+      <h2>Overview</h2>
+      <p class="overview-text">{{ content.overview }}</p>
+    </div>
+
+    <!-- Main Content Sections -->
+    <div class="content-sections" *ngIf="content.sections && content.sections.length > 0">
+      <div *ngFor="let section of content.sections; let i = index" class="content-section">
+        <h2>{{ i + 1 }}. {{ section.title }}</h2>
+        <p class="section-content">{{ section.content }}</p>
+
+        <!-- Subsections -->
+        <div *ngIf="section.subsections && section.subsections.length > 0" class="subsections">
+          <div *ngFor="let subsection of section.subsections" class="subsection">
+            <h3>{{ subsection.title }}</h3>
+            <p>{{ subsection.content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code Examples Section -->
+    <div class="code-examples-section" *ngIf="content.codeExamples && content.codeExamples.length > 0">
+      <h2>Code Examples</h2>
+      <div *ngFor="let example of content.codeExamples" class="code-example">
+        <h3>{{ example.title }}</h3>
+        <p *ngIf="example.description" class="code-description">{{ example.description }}</p>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="language-badge">{{ example.language }}</span>
+          </div>
+          <pre><code>{{ example.code }}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Images Section -->
+    <div class="images-section" *ngIf="content.images && content.images.length > 0">
+      <h2>Diagrams & Illustrations</h2>
+      <div *ngFor="let image of content.images" class="image-container">
+        <img [src]="image.url" [alt]="image.alt" class="content-image">
+        <p *ngIf="image.caption" class="image-caption">{{ image.caption }}</p>
+      </div>
+    </div>
+
+    <!-- Key Points Section -->
+    <div class="key-points-section" *ngIf="content.keyPoints && content.keyPoints.length > 0">
+      <h2>Key Points</h2>
+      <ul class="key-points-list">
+        <li *ngFor="let point of content.keyPoints">{{ point }}</li>
+      </ul>
+    </div>
+
+    <!-- References Section -->
+    <div class="references-section" *ngIf="content.references && content.references.length > 0">
+      <h2>References</h2>
+      <ul class="references-list">
+        <li *ngFor="let reference of content.references">{{ reference }}</li>
+      </ul>
+    </div>
+
+    <!-- Interview Questions Section -->
+    <div class="interview-section" *ngIf="content.interviewQA && content.interviewQA.length > 0">
+      <h2>💼 Interview Questions & Answers</h2>
+      <div class="interview-intro">
+        <p>Common interview questions related to this topic with detailed answers.</p>
+      </div>
+      <div *ngFor="let qa of content.interviewQA; let i = index" class="interview-qa">
+        <div class="question-header">
+          <span class="question-number">Q{{ i + 1 }}</span>
+          <span *ngIf="qa.difficulty" class="difficulty-badge" [class]="'difficulty-' + qa.difficulty">
+            {{ qa.difficulty }}
+          </span>
+          <div *ngIf="qa.tags && qa.tags.length > 0" class="tags">
+            <span *ngFor="let tag of qa.tags" class="tag">{{ tag }}</span>
+          </div>
+        </div>
+        <div class="question">
+          <strong>Q:</strong> {{ qa.question }}
+        </div>
+        <div class="answer">
+          <strong>A:</strong> 
+          <pre class="answer-content">{{ qa.answer }}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No Content Available Message -->
+  <div class="content no-content" *ngIf="!content">
+    <h1>{{ subtopicName }}</h1>
+    <div class="no-content-message">
+      <p>📝 Content for this subtopic is not yet available.</p>
+      <p>Please check back later or contact the administrator.</p>
+    </div>
+  </div>
+</div>

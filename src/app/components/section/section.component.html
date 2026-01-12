@@ -8,7 +8,9 @@
   </h2>
   <div class="section-content" [class.collapsed]="section.isCollapsed">
     <ul class="topics">
-      <app-topic *ngFor="let topic of section.topics" [topic]="topic"></app-topic>
+      <app-topic *ngFor="let topic of section.topics" 
+                 [topic]="topic"
+                 [sectionTitle]="section.title"></app-topic>
     </ul>
   </div>
 </div>

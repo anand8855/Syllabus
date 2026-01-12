@@ -14,7 +14,11 @@
     class="sub-topics-wrapper" 
     [class.collapsed]="isCollapsed">
     <ul class="sub-topics">
-      <li *ngFor="let subTopic of topic.subTopics">{{ subTopic.name }}</li>
+      <li *ngFor="let subTopic of topic.subTopics" 
+          class="subtopic-item"
+          (click)="navigateToSubtopic(subTopic.name)">
+        {{ subTopic.name }}
+      </li>
     </ul>
   </div>
 </li>

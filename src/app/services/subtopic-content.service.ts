@@ -1,0 +1,29 @@
+import { Injectable } from '@angular/core';
+import { SubtopicContent } from '../models/syllabus.model';
+import { 
+  fundamentalsContent,
+  exceptionHierarchyContent
+} from '../data/subtopics';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SubtopicContentService {
+
+  private subtopicContents: { [key: string]: SubtopicContent } = {
+    'Fundamentals': fundamentalsContent,
+    'Exception Hierarchy': exceptionHierarchyContent
+    // Add more mappings as you create new subtopic files:
+    // 'Checked vs Unchecked Exceptions': checkedVsUncheckedContent,
+    // 'try–catch–finally': tryCatchFinallyContent,
+    // etc.
+  };
+
+  getSubtopicContent(subtopicName: string): SubtopicContent | null {
+    return this.subtopicContents[subtopicName] || null;
+  }
+
+  getAllSubtopicNames(): string[] {
+    return Object.keys(this.subtopicContents);
+  }
+}

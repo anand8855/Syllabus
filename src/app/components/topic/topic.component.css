@@ -33,6 +33,21 @@ li:hover {
   box-shadow: none;
 }
 
+.subtopic-item {
+  cursor: pointer;
+  color: #007bff;
+  transition: color 0.2s ease;
+  padding: 8px 12px !important;
+  border-radius: 4px;
+  margin: 4px 0;
+}
+
+.subtopic-item:hover {
+  color: #0056b3;
+  background: #e7f3ff !important;
+  text-decoration: underline;
+}
+
 .topic-header {
   cursor: pointer;
   user-select: none;
