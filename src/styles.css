@@ -12,9 +12,16 @@ body {
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Mobile Responsive Global Styles */
+@media (max-width: 1024px) {
+    body {
+        padding: 15px;
+    }
+}
+
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -29,10 +36,36 @@ body {
     }
 }
 
+@media (max-width: 360px) {
+    body {
+        padding: 3px;
+        font-size: 12px;
+    }
+}
+
 /* Improve touch targets for mobile */
 @media (hover: none) and (pointer: coarse) {
-    a, button, .clickable {
+    a, button, .clickable, [role="button"] {
         min-height: 44px;
         min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve tap highlight */
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
 }

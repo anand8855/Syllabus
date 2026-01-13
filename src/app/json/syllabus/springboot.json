@@ -1,0 +1,351 @@
+[
+  {
+    "id": 1,
+    "title": "Spring Boot Fundamentals",
+    "difficulty": "intermediate",
+    "topics": [
+      {
+        "name": "Introduction",
+        "subTopics": [
+          { "name": "Opinionated Defaults & \"Convention over Configuration\"" },
+          { "name": "Starters (spring-boot-starter-web, etc.)" },
+          { "name": "Auto-configuration magic (@EnableAutoConfiguration)" }
+        ]
+      },
+      {
+        "name": "Configuration Management",
+        "subTopics": [
+          { "name": "application.properties vs application.yml" },
+          { "name": "@Value, @ConfigurationProperties" },
+          { "name": "Profiles (Dev, QA, Prod)" }
+        ]
+      },
+      {
+        "name": "Developer Tools",
+        "subTopics": [
+          { "name": "Spring Boot DevTools (Live Reload)" },
+          { "name": "Lombok integration" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Data Access & Persistence",
+    "difficulty": "intermediate",
+    "topics": [
+      {
+        "name": "Spring JDBC",
+        "subTopics": [
+          { "name": "JdbcTemplate & NamedParameterJdbcTemplate" }
+        ]
+      },
+      {
+        "name": "Spring Data JPA (Hibernate)",
+        "subTopics": [
+          { "name": "Entity Mapping (@Entity, @Table, @Id, @GeneratedValue)" },
+          { "name": "Repositories (CrudRepository, JpaRepository)" },
+          { "name": "Query Methods (Derived queries, @Query, Native Queries)" },
+          { "name": "Relationships (OneToOne, OneToMany, ManyToMany)" },
+          { "name": "Pagination & Sorting" }
+        ]
+      },
+      {
+        "name": "Transaction Management",
+        "subTopics": [
+          { "name": "@Transactional (Propagation, Isolation levels, Rollback rules)" }
+        ]
+      },
+      {
+        "name": "NoSQL Integration",
+        "subTopics": [
+          { "name": "Spring Data MongoDB" },
+          { "name": "Spring Data Redis (Caching & Pub/Sub)" }
+        ]
+      },
+      {
+        "name": "Database Migration",
+        "subTopics": [
+          { "name": "Flyway or Liquibase integration" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Web & REST API Development",
+    "difficulty": "intermediate",
+    "topics": [
+      {
+        "name": "Spring MVC",
+        "subTopics": [
+          { "name": "DispatcherServlet architecture" },
+          { "name": "Controllers (@RestController, @RequestMapping)" },
+          { "name": "Request/Response Handling (@RequestBody, @ResponseBody, @RequestParam, @PathVariable)" },
+          { "name": "Status Codes & ResponseEntity" }
+        ]
+      },
+      {
+        "name": "Advanced REST",
+        "subTopics": [
+          { "name": "Global Exception Handling (@ControllerAdvice, @ExceptionHandler)" },
+          { "name": "Bean Validation (Hibernate Validator, @Valid, @NotNull, @Size)" },
+          { "name": "HATEOAS (Hypermedia as the Engine of Application State)" },
+          { "name": "Content Negotiation (JSON vs XML)" },
+          { "name": "File Upload/Download" }
+        ]
+      },
+      {
+        "name": "API Documentation",
+        "subTopics": [
+          { "name": "OpenAPI 3.0 / Swagger (SpringDoc)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Microservices & Spring Cloud",
+    "difficulty": "advanced",
+    "topics": [
+      {
+        "name": "Service Discovery",
+        "subTopics": [
+          { "name": "Netflix Eureka / HashiCorp Consul" }
+        ]
+      },
+      {
+        "name": "API Gateway",
+        "subTopics": [
+          { "name": "Spring Cloud Gateway (Routing, Filtering, Rate Limiting)" }
+        ]
+      },
+      {
+        "name": "Config Management",
+        "subTopics": [
+          { "name": "Spring Cloud Config Server (Centralized configuration)" }
+        ]
+      },
+      {
+        "name": "Resilience & Fault Tolerance",
+        "subTopics": [
+          { "name": "Resilience4j (Circuit Breaker, Retry, Rate Limiter, Bulkhead)" }
+        ]
+      },
+      {
+        "name": "Distributed Tracing",
+        "subTopics": [
+          { "name": "Micrometer Tracing (formerly Sleuth) + Zipkin/Brave" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Spring AI (Generative AI)",
+    "difficulty": "advanced",
+    "topics": [
+      {
+        "name": "Introduction to Generative AI",
+        "subTopics": [
+          { "name": "Large Language Models (LLMs) concepts" }
+        ]
+      },
+      {
+        "name": "Spring AI Core",
+        "subTopics": [
+          { "name": "Chat Client API: Interacting with OpenAI, Azure OpenAI, Ollama, HuggingFace" },
+          { "name": "Prompts: Prompt Templates, Prompt Engineering within Java" },
+          { "name": "Output Parsers: Converting AI text responses into Java Objects (POJOs)" }
+        ]
+      },
+      {
+        "name": "Embeddings & Vector Databases",
+        "subTopics": [
+          { "name": "Text Embeddings models" },
+          { "name": "Vector Store integration (PGVector, Pinecone, Milvus, Redis)" }
+        ]
+      },
+      {
+        "name": "RAG (Retrieval Augmented Generation)",
+        "subTopics": [
+          { "name": "Document Readers (PDF, Text, JSON)" },
+          { "name": "Token Splitters" },
+          { "name": "Contextual search implementation" }
+        ]
+      },
+      {
+        "name": "Advanced AI",
+        "subTopics": [
+          { "name": "Function Calling (Letting AI call your Java methods)" },
+          { "name": "Image Generation (DALL-E, Stability AI)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Messaging & Event-Driven Architecture",
+    "difficulty": "advanced",
+    "topics": [
+      {
+        "name": "JMS (Java Message Service)",
+        "subTopics": [
+          { "name": "ActiveMQ integration" }
+        ]
+      },
+      {
+        "name": "Apache Kafka",
+        "subTopics": [
+          { "name": "Spring for Apache Kafka" },
+          { "name": "Producers, Consumers, Consumer Groups" }
+        ]
+      },
+      {
+        "name": "RabbitMQ",
+        "subTopics": [
+          { "name": "Exchanges, Queues, Routing Keys" }
+        ]
+      },
+      {
+        "name": "Spring Cloud Stream",
+        "subTopics": [
+          { "name": "Binder abstraction (Switch between Kafka/RabbitMQ easily)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Spring Batch & Scheduling",
+    "difficulty": "advanced",
+    "topics": [
+      {
+        "name": "Scheduling",
+        "subTopics": [
+          { "name": "@Scheduled (FixedRate, FixedDelay, Cron expressions)" },
+          { "name": "Quartz Scheduler integration" }
+        ]
+      },
+      {
+        "name": "Spring Batch",
+        "subTopics": [
+          { "name": "Job, Step, JobRepository" },
+          { "name": "ItemReader, ItemProcessor, ItemWriter" },
+          { "name": "Chunk-oriented processing" },
+          { "name": "Error handling (Skip, Retry policies)" },
+          { "name": "Parallel processing & Partitioning" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Reactive Programming (WebFlux)",
+    "difficulty": "advanced",
+    "topics": [
+      {
+        "name": "Project Reactor",
+        "subTopics": [
+          { "name": "Mono vs Flux" },
+          { "name": "Backpressure" }
+        ]
+      },
+      {
+        "name": "Spring WebFlux",
+        "subTopics": [
+          { "name": "Non-blocking REST APIs" },
+          { "name": "Netty Server" },
+          { "name": "Reactive Database Access (R2DBC)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Spring Boot Testing",
+    "difficulty": "intermediate",
+    "topics": [
+      {
+        "name": "Unit Testing",
+        "subTopics": [
+          { "name": "JUnit 5 & Mockito (Mocking dependencies)" }
+        ]
+      },
+      {
+        "name": "Integration Testing",
+        "subTopics": [
+          { "name": "@SpringBootTest" },
+          { "name": "Test Slices (@WebMvcTest, @DataJpaTest)" }
+        ]
+      },
+      {
+        "name": "Advanced Testing",
+        "subTopics": [
+          { "name": "Testcontainers (Spinning up real DBs/Kafka in Docker for tests)" },
+          { "name": "WireMock (Mocking external APIs)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Observability & Production Ready",
+    "difficulty": "advanced",
+    "topics": [
+      {
+        "name": "Spring Boot Actuator",
+        "subTopics": [
+          { "name": "Health checks, Metrics, Info, Beans endpoints" }
+        ]
+      },
+      {
+        "name": "Monitoring",
+        "subTopics": [
+          { "name": "Micrometer (Metrics facade)" },
+          { "name": "Prometheus & Grafana integration" }
+        ]
+      },
+      {
+        "name": "Logging",
+        "subTopics": [
+          { "name": "SLF4J, Logback" },
+          { "name": "Log aggregation (ELK Stack: Elasticsearch, Logstash, Kibana)" }
+        ]
+      },
+      {
+        "name": "Deployment",
+        "subTopics": [
+          { "name": "Dockerizing Spring Boot" },
+          { "name": "GraalVM Native Images (AOT Compilation for instant startup)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Miscellaneous / Advanced Spring",
+    "difficulty": "advanced",
+    "topics": [
+      {
+        "name": "GraphQL",
+        "subTopics": [
+          { "name": "Spring for GraphQL (Controller, Schema, DataFetchers)" }
+        ]
+      },
+      {
+        "name": "WebSockets",
+        "subTopics": [
+          { "name": "STOMP protocol, SockJS, Real-time chat" }
+        ]
+      },
+      {
+        "name": "Caching",
+        "subTopics": [
+          { "name": "@Cacheable, @CacheEvict" },
+          { "name": "Providers: Caffeine, Redis" }
+        ]
+      }
+    ]
+  }
+]

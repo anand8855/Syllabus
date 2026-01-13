@@ -28,6 +28,9 @@
   user-select: none;
   position: relative;
   padding-right: 30px;
+  min-height: 44px; /* Touch-friendly */
+  display: flex;
+  align-items: center;
 }
 
 .collapsible::after {

@@ -3,7 +3,7 @@ import { SubtopicContent } from '../models/syllabus.model';
 import { 
   fundamentalsContent,
   exceptionHierarchyContent
-} from '../data/subtopics';
+} from '../json/subtopics';
 
 @Injectable({
   providedIn: 'root'

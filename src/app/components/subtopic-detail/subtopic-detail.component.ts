@@ -37,4 +37,28 @@ export class SubtopicDetailComponent implements OnInit {
   goBack() {
     this.location.back();
   }
+
+  // Convert bullet point text to HTML list
+  formatContent(content: string): string {
+    if (!content) return '';
+    
+    // Check if content contains bullet points
+    if (content.includes('•')) {
+      const lines = content.split('\n').map(line => line.trim()).filter(line => line);
+      const listItems = lines.map(line => {
+        if (line.startsWith('•')) {
+          return `<li>${line.substring(1).trim()}</li>`;
+        }
+        return line;
+      });
+      
+      // Check if all lines are list items
+      if (listItems.every(item => item.startsWith('<li>'))) {
+        return `<ul>${listItems.join('')}</ul>`;
+      }
+    }
+    
+    // Return content with line breaks preserved
+    return content.replace(/\n/g, '<br>');
+  }
 }

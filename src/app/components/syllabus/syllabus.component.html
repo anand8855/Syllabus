@@ -1,0 +1,98 @@
+<div class="syllabus-container" [ngClass]="themeClass">
+  <div class="header">
+    <a routerLink="/" class="back-button">← Back to Home</a>
+    <h1 class="page-title">{{ techIcon }} {{ technology }} Complete Syllabus</h1>
+    <p class="page-subtitle">{{ techSubtitle }}</p>
+    
+    <!-- Stats Dashboard -->
+    <div class="stats-dashboard">
+      <div class="stat-card">
+        <div class="stat-icon">📚</div>
+        <div class="stat-value">{{ totalSections }}</div>
+        <div class="stat-label">Sections</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📖</div>
+        <div class="stat-value">{{ totalTopics }}</div>
+        <div class="stat-label">Topics</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📝</div>
+        <div class="stat-value">{{ totalSubtopics }}</div>
+        <div class="stat-label">Subtopics</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search and Filter Section -->
+  <div class="controls-section">
+    <div class="search-box">
+      <input 
+        type="text" 
+        [(ngModel)]="searchTerm" 
+        (input)="onSearch()"
+        placeholder="🔍 Search topics, subtopics..."
+        class="search-input">
+    </div>
+    
+    <div class="filter-controls">
+      <div class="difficulty-filters">
+        <button 
+          class="filter-btn" 
+          [class.active]="selectedDifficulty === 'all'"
+          (click)="filterByDifficulty('all')">
+          All
+        </button>
+        <button 
+          class="filter-btn basic" 
+          [class.active]="selectedDifficulty === 'basic'"
+          (click)="filterByDifficulty('basic')">
+          Basic
+        </button>
+        <button 
+          class="filter-btn intermediate" 
+          [class.active]="selectedDifficulty === 'intermediate'"
+          (click)="filterByDifficulty('intermediate')">
+          Intermediate
+        </button>
+        <button 
+          class="filter-btn advanced" 
+          [class.active]="selectedDifficulty === 'advanced'"
+          (click)="filterByDifficulty('advanced')">
+          Advanced
+        </button>
+      </div>
+      
+      <div class="action-buttons">
+        <button class="action-btn" (click)="expandAll()">📂 Expand All</button>
+        <button class="action-btn" (click)="collapseAll()">📁 Collapse All</button>
+        <button class="action-btn clear" (click)="clearFilters()" *ngIf="searchTerm || selectedDifficulty !== 'all'">🔄 Clear Filters</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Info -->
+  <div class="results-info" *ngIf="filteredSections.length !== sections.length">
+    <p>Showing {{ filteredSections.length }} of {{ sections.length }} sections</p>
+  </div>
+
+  <!-- Sections Container -->
+  <div class="sections-container">
+    <div class="no-results" *ngIf="filteredSections.length === 0">
+      <div class="no-results-icon">🔍</div>
+      <h3>No results found</h3>
+      <p>Try adjusting your search or filters</p>
+      <button class="action-btn" (click)="clearFilters()">Clear Filters</button>
+    </div>
+    
+    <app-section
+      *ngFor="let section of filteredSections; let i = index"
+      [section]="section"
+      [style.animation-delay]="i * 0.05 + 's'"
+      (toggleCollapse)="toggleSection(section)">
+    </app-section>
+  </div>
+
+  <!-- Quick Navigation -->
+  <button class="scroll-top" (click)="scrollToTop()" title="Back to top">↑</button>
+</div>

@@ -1,0 +1,89 @@
+<div class="home-container">
+  <div class="hero-section">
+    <h1 class="main-title">📚 Tech Learning Hub</h1>
+    <p class="subtitle">Master Modern Technologies with Comprehensive Study Materials</p>
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number">8+</span>
+        <span class="stat-label">Technologies</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100+</span>
+        <span class="stat-label">Topics Covered</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Code Examples</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="technologies-section">
+    <h2 class="section-title">Choose Your Learning Path</h2>
+    <div class="tech-grid">
+      <div 
+        *ngFor="let tech of technologies" 
+        class="tech-card"
+        [class.available]="tech.available"
+        [class.coming-soon]="!tech.available"
+        (click)="navigateToTechnology(tech)"
+      >
+        <div class="card-ribbon" *ngIf="!tech.available">Coming Soon</div>
+        <div class="card-content">
+          <div class="icon-wrapper" [style.background]="tech.color + '20'">
+            <span class="tech-icon">{{ tech.icon }}</span>
+          </div>
+          <h3 class="tech-name">{{ tech.name }}</h3>
+          <p class="tech-description">{{ tech.description }}</p>
+          
+          <!-- Topic counts for available technologies -->
+          <div class="stats-info" *ngIf="tech.available && tech.topicCount">
+            <div class="stat-badge">
+              <span class="stat-value">{{ tech.topicCount }}</span>
+              <span class="stat-text">Topics</span>
+            </div>
+            <div class="stat-badge">
+              <span class="stat-value">{{ tech.subtopicCount }}</span>
+              <span class="stat-text">Subtopics</span>
+            </div>
+          </div>
+          
+          <div class="card-footer">
+            <button class="explore-btn" *ngIf="tech.available">
+              Explore Syllabus →
+            </button>
+            <span class="locked-badge" *ngIf="!tech.available">
+              🔒 Coming Soon
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <h2 class="section-title">Why Learn Here?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📖</div>
+        <h3>Structured Content</h3>
+        <p>Well-organized topics from basics to advanced concepts</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💻</div>
+        <h3>Code Examples</h3>
+        <p>Practical code snippets for every concept</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Interview Ready</h3>
+        <p>Common interview questions with detailed answers</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Visual Diagrams</h3>
+        <p>Complex concepts explained with illustrations</p>
+      </div>
+    </div>
+  </div>
+</div>

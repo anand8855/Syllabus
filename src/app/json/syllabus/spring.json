@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "title": "Core Spring Framework (Deep Dive)",
+    "difficulty": "basic",
+    "topics": [
+      {
+        "name": "Inversion of Control (IoC) & Dependency Injection (DI)",
+        "subTopics": [
+          { "name": "ApplicationContext vs BeanFactory" },
+          { "name": "Bean Scopes (Singleton, Prototype, Request, Session)" },
+          { "name": "Bean Lifecycle (@PostConstruct, @PreDestroy)" },
+          { "name": "Configuration Styles: Java-based (@Configuration), Annotation-based (@Component), XML" },
+          { "name": "Dependency Injection types: Constructor (Best Practice) vs Setter vs Field" }
+        ]
+      },
+      { "name": "Spring Expression Language (SpEL)" },
+      {
+        "name": "Aspect-Oriented Programming (AOP)",
+        "subTopics": [
+          { "name": "Cross-cutting concerns (Logging, Transaction management)" },
+          { "name": "Aspect, Advice, Pointcut, JoinPoint" },
+          { "name": "Annotations: @Before, @After, @Around, @AfterThrowing" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Spring Security (Security 6.x)",
+    "difficulty": "advanced",
+    "topics": [
+      {
+        "name": "Core Concepts",
+        "subTopics": [
+          { "name": "Authentication vs Authorization" },
+          { "name": "SecurityFilterChain & Filters" },
+          { "name": "UserDetailsService & PasswordEncoding (BCrypt)" }
+        ]
+      },
+      {
+        "name": "Authentication Mechanisms",
+        "subTopics": [
+          { "name": "Basic Auth & Form Login" },
+          { "name": "JWT (JSON Web Tokens): Implementation & Best Practices" }
+        ]
+      },
+      {
+        "name": "OAuth2 & OpenID Connect (OIDC)",
+        "subTopics": [
+          { "name": "Resource Server, Authorization Server, Client" },
+          { "name": "Social Login (Google, GitHub)" }
+        ]
+      },
+      {
+        "name": "Authorization",
+        "subTopics": [
+          { "name": "Role-based vs Authority-based access" },
+          { "name": "Method Level Security (@PreAuthorize, @PostAuthorize)" }
+        ]
+      },
+      {
+        "name": "Protection",
+        "subTopics": [
+          { "name": "CORS (Cross-Origin Resource Sharing)" },
+          { "name": "CSRF (Cross-Site Request Forgery)" }
+        ]
+      }
+    ]
+  }
+]

@@ -25,13 +25,43 @@
     <div class="content-sections" *ngIf="content.sections && content.sections.length > 0">
       <div *ngFor="let section of content.sections; let i = index" class="content-section">
         <h2>{{ i + 1 }}. {{ section.title }}</h2>
-        <p class="section-content">{{ section.content }}</p>
+        <div class="section-content" [innerHTML]="formatContent(section.content)"></div>
 
         <!-- Subsections -->
         <div *ngIf="section.subsections && section.subsections.length > 0" class="subsections">
           <div *ngFor="let subsection of section.subsections" class="subsection">
             <h3>{{ subsection.title }}</h3>
-            <p>{{ subsection.content }}</p>
+            <div [innerHTML]="formatContent(subsection.content)"></div>
+            
+            <!-- Table rendering -->
+            <div *ngIf="subsection.table" class="comparison-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th *ngFor="let header of subsection.table.headers">{{ header }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let row of subsection.table.rows">
+                    <td *ngFor="let cell of row">{{ cell }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code Examples within Section -->
+        <div *ngIf="section.codeExamples && section.codeExamples.length > 0" class="section-code-examples">
+          <div *ngFor="let example of section.codeExamples" class="code-example">
+            <h3>{{ example.title }}</h3>
+            <p *ngIf="example.description" class="code-description">{{ example.description }}</p>
+            <div class="code-block">
+              <div class="code-header">
+                <span class="language-badge">{{ example.language }}</span>
+              </div>
+              <pre><code>{{ example.code }}</code></pre>
+            </div>
           </div>
         </div>
       </div>

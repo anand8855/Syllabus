@@ -29,7 +29,19 @@ export interface SubtopicContent {
 export interface ContentSection {
   title: string;
   content: string;
-  subsections?: { title: string; content: string }[];
+  subsections?: Subsection[];
+  codeExamples?: CodeExample[];
+}
+
+export interface Subsection {
+  title: string;
+  content: string;
+  table?: TableData;
+}
+
+export interface TableData {
+  headers: string[];
+  rows: string[][];
 }
 
 export interface CodeExample {
