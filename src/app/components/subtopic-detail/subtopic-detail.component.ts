@@ -25,14 +25,46 @@ export class SubtopicDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.subtopicName = params['subtopic'] || '';
-      this.topicName = params['topic'] || '';
-      this.sectionTitle = params['section'] || '';
-      
-      // Load content for this subtopic
-      this.content = this.contentService.getSubtopicContent(this.subtopicName);
+    // Check for route params first (new URL structure)
+    this.route.params.subscribe(params => {
+      if (params['subtopic']) {
+        // Get actual names from navigation state
+        const navigation = this.router.getCurrentNavigation();
+        const state = navigation?.extras?.state || this.location.getState() as any;
+        
+        if (state && state.subtopic) {
+          this.subtopicName = state.subtopic;
+          this.topicName = state.topic;
+          this.sectionTitle = state.section;
+        } else {
+          // Fallback: Convert slugs back to readable names (for direct URL access)
+          this.subtopicName = this.fromSlug(params['subtopic']);
+          this.topicName = this.fromSlug(params['topic']);
+          this.sectionTitle = this.fromSlug(params['section']);
+        }
+        
+        this.content = this.contentService.getSubtopicContent(this.subtopicName);
+      }
     });
+
+    // Fallback to query params for backward compatibility
+    this.route.queryParams.subscribe(params => {
+      if (params['subtopic'] && !this.subtopicName) {
+        this.subtopicName = params['subtopic'] || '';
+        this.topicName = params['topic'] || '';
+        this.sectionTitle = params['section'] || '';
+        
+        this.content = this.contentService.getSubtopicContent(this.subtopicName);
+      }
+    });
+  }
+
+  private fromSlug(slug: string): string {
+    // Convert slug back to title case
+    return slug
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
   }
 
   goBack() {

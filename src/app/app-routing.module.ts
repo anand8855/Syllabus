@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'java', redirectTo: 'syllabus/java', pathMatch: 'full' },
   { path: 'spring', redirectTo: 'syllabus/spring', pathMatch: 'full' },
   { path: 'springboot', redirectTo: 'syllabus/springboot', pathMatch: 'full' },
-  { path: 'subtopic-detail', component: SubtopicDetailComponent },
+  { path: 'subtopic/:section/:topic/:subtopic', component: SubtopicDetailComponent },
+  { path: 'subtopic-detail', component: SubtopicDetailComponent }, // Backward compatibility
   { path: '**', redirectTo: '' }
 ];
 
