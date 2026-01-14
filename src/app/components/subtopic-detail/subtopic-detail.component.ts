@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { SubtopicContentService } from '../../services/subtopic-content.service';
@@ -15,6 +15,7 @@ export class SubtopicDetailComponent implements OnInit {
   topicName: string = '';
   sectionTitle: string = '';
   content: SubtopicContent | null = null;
+  showBackToTop: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,6 +37,19 @@ export class SubtopicDetailComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    // Show button when page is scrolled down 300px
+    this.showBackToTop = window.pageYOffset > 300;
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
   // Convert bullet point text to HTML list

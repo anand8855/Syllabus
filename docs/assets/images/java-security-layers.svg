@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <text x="400" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">Java Security Layers - Multiple Lines of Defense</text>
+  
+  <!-- Layer 5 - Top -->
+  <rect x="100" y="80" width="600" height="70" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="8"/>
+  <text x="120" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Layer 5: Security Manager</text>
+  <text x="120" y="125" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Controls what operations code can perform</text>
+  <text x="120" y="140" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• File access, network access, system properties</text>
+  
+  <!-- Layer 4 -->
+  <rect x="120" y="165" width="560" height="70" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="8"/>
+  <text x="140" y="190" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Layer 4: ClassLoader Security</text>
+  <text x="140" y="210" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Separates system classes from user classes</text>
+  <text x="140" y="225" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Namespace isolation prevents malicious overriding</text>
+  
+  <!-- Layer 3 -->
+  <rect x="140" y="250" width="520" height="70" fill="#fff3cd" stroke="#ffc107" stroke-width="2" rx="8"/>
+  <text x="160" y="275" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Layer 3: Bytecode Verifier</text>
+  <text x="160" y="295" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Validates bytecode before execution</text>
+  <text x="160" y="310" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Checks for stack overflow, illegal type casts, pointer forgery</text>
+  
+  <!-- Layer 2 -->
+  <rect x="160" y="335" width="480" height="70" fill="#fdecea" stroke="#e74c3c" stroke-width="2" rx="8"/>
+  <text x="180" y="360" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Layer 2: Language-Level Security</text>
+  <text x="180" y="380" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• No pointers (prevents memory manipulation)</text>
+  <text x="180" y="395" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Type safety, automatic bounds checking</text>
+  
+  <!-- Layer 1 - Bottom -->
+  <rect x="180" y="420" width="440" height="70" fill="#f3e5f5" stroke="#9b59b6" stroke-width="2" rx="8"/>
+  <text x="200" y="445" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Layer 1: Automatic Memory Management</text>
+  <text x="200" y="465" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Garbage Collection (no manual free/delete)</text>
+  <text x="200" y="480" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Prevents buffer overflows and memory leaks</text>
+  
+  <!-- Security Examples -->
+  <rect x="50" y="510" width="340" height="75" fill="#d4edda" stroke="#28a745" stroke-width="2" rx="6"/>
+  <text x="220" y="535" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">✅ What Java Prevents</text>
+  <text x="60" y="555" font-family="Arial, sans-serif" font-size="11" fill="#34495e">❌ Memory corruption attacks</text>
+  <text x="60" y="570" font-family="Arial, sans-serif" font-size="11" fill="#34495e">❌ Buffer overflow exploits</text>
+  
+  <rect x="410" y="510" width="340" height="75" fill="#d4edda" stroke="#28a745" stroke-width="2" rx="6"/>
+  <text x="580" y="535" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">🔒 Used In</text>
+  <text x="420" y="555" font-family="Arial, sans-serif" font-size="11" fill="#34495e">🏦 Banking applications</text>
+  <text x="420" y="570" font-family="Arial, sans-serif" font-size="11" fill="#34495e">💳 Payment systems</text>
+  <text x="620" y="555" font-family="Arial, sans-serif" font-size="11" fill="#34495e">🏢 Enterprise apps</text>
+  <text x="620" y="570" font-family="Arial, sans-serif" font-size="11" fill="#34495e">☁️ Cloud services</text>
+</svg>

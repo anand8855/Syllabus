@@ -150,4 +150,13 @@
       <p>Please check back later or contact the administrator.</p>
     </div>
   </div>
+
+  <!-- Back to Top Button -->
+  <button 
+    class="back-to-top" 
+    [class.visible]="showBackToTop"
+    (click)="scrollToTop()"
+    title="Back to Top">
+    ↑
+  </button>
 </div>
