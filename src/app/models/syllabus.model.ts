@@ -31,6 +31,7 @@ export interface ContentSection {
   content: string;
   subsections?: Subsection[];
   codeExamples?: CodeExample[];
+  images?: ImageReference[];
 }
 
 export interface Subsection {

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#2c3e50">The Green Team at Sun Microsystems</text>
+  <text x="400" y="65" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#7f8c8d">The visionaries who created Java</text>
+  
+  <circle cx="400" cy="150" r="50" fill="#667eea"/>
+  <text x="400" y="155" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="white">JG</text>
+  <text x="400" y="220" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">James Gosling</text>
+  <text x="400" y="240" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#e74c3c">Father of Java</text>
+  <text x="400" y="260" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7f8c8d">Lead Architect and Designer</text>
+  
+  <circle cx="200" cy="320" r="40" fill="#3498db"/>
+  <text x="200" y="325" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" fill="white">MS</text>
+  <text x="200" y="380" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Mike Sheridan</text>
+  <text x="200" y="398" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7f8c8d">Project Manager</text>
+  
+  <circle cx="600" cy="320" r="40" fill="#e74c3c"/>
+  <text x="600" y="325" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" fill="white">PN</text>
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Patrick Naughton</text>
+  <text x="600" y="398" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7f8c8d">Core Engineer</text>
+  
+  <circle cx="120" cy="460" r="35" fill="#27ae60"/>
+  <text x="120" y="465" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">CW</text>
+  <text x="120" y="510" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2c3e50">Chris Warth</text>
+  
+  <circle cx="280" cy="460" r="35" fill="#f39c12"/>
+  <text x="280" y="465" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">EF</text>
+  <text x="280" y="510" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2c3e50">Ed Frank</text>
+  
+  <circle cx="520" cy="460" r="35" fill="#9b59b6"/>
+  <text x="520" y="465" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">JK</text>
+  <text x="520" y="510" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2c3e50">Jonni Kanerva</text>
+  
+  <circle cx="680" cy="460" r="35" fill="#e67e22"/>
+  <text x="680" y="465" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white">+</text>
+  <text x="680" y="510" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2c3e50">Team</text>
+  
+  <rect x="100" y="540" width="600" height="50" fill="#ecf0f1" rx="6"/>
+  <text x="400" y="560" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#2c3e50">Fueled by pizza and determination - Started in 1991</text>
+  <text x="400" y="578" font-family="Arial, sans-serif" font-size="12" font-style="italic" text-anchor="middle" fill="#7f8c8d">We were building the future - Green Team Motto</text>
+</svg>

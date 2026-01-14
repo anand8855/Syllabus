@@ -51,6 +51,14 @@
           </div>
         </div>
 
+        <!-- Images within Section -->
+        <div *ngIf="section.images && section.images.length > 0" class="section-images">
+          <div *ngFor="let image of section.images" class="image-container">
+            <img [src]="image.url" [alt]="image.alt" class="content-image">
+            <p *ngIf="image.caption" class="image-caption">{{ image.caption }}</p>
+          </div>
+        </div>
+
         <!-- Code Examples within Section -->
         <div *ngIf="section.codeExamples && section.codeExamples.length > 0" class="section-code-examples">
           <div *ngFor="let example of section.codeExamples" class="code-example">

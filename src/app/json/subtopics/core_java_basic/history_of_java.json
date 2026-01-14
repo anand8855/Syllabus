@@ -1,0 +1,407 @@
+{
+  "name": "☕ The History of Java — From a Coffee Break Idea to a Global Powerhouse",
+  "overview": "Java is one of those programming languages that feels like it has always been there. Banking apps 🏦, Android phones 📱, enterprise servers 🖥️, ATMs 💳, smart TVs 📺—Java is quietly running the world while sipping coffee ☕. But Java didn't start as a global superstar. Its journey is full of pivots, smart decisions, accidental discoveries, and a little bit of luck. Let's rewind the clock and explore this fascinating story! 🎬",
+  "sections": [
+    {
+      "title": "🚀 The Birth of Java (1991): The 'Green Project'",
+      "content": "Java was born in 1991 at Sun Microsystems. A small team called the Green Team, led by James Gosling (often called the 'Father of Java'), was working on a secret project. Their goal was NOT to create a programming language for developers—instead, they wanted a language for consumer electronics. Plot twist: They ended up creating something way bigger! 🎯",
+      "subsections": [
+        {
+          "title": "The Original Goal 🎯",
+          "content": "👉 They wanted a language that could run on anything:\n• Set-top boxes (remember those?)\n• TVs and remote controls\n• Home appliances (smart fridges before they were cool)\n• Consumer electronic devices\n• Interactive television systems\n\n🤔 Challenge: Too many different processors and platforms. Writing code for each one was a nightmare!"
+        },
+        {
+          "title": "❌ The Problem with Existing Languages",
+          "content": "C and C++ were powerful but:\n• Too complex (pointer arithmetic, anyone? 😅)\n• Hardware-dependent (write once, compile everywhere)\n• Prone to memory leaks and crashes\n• Not suitable for portable devices\n• Manual memory management = developer headaches\n\n💭 Imagine: You write code for a TV, then have to rewrite it completely for a different TV brand. Not fun!"
+        },
+        {
+          "title": "✅ The Solution: A Revolutionary Idea",
+          "content": "Create a simple, safe, portable language that works everywhere!\n\nThey initially named it Oak 🌳, after an oak tree outside James Gosling's office window.\n\n😂 Fun fact: Oak had to be renamed because another company already owned the trademark. Even tech giants struggle with naming! (If you think naming variables is hard, try naming an entire programming language!)"
+        },
+        {
+          "title": "🎨 The Green Team - The Dream Team",
+          "content": "Original members who changed programming forever:\n• James Gosling - Lead architect & visionary\n• Mike Sheridan - Project manager (the organizer)\n• Patrick Naughton - Core engineer\n• Plus a handful of brilliant engineers\n\nThey worked crazy hours, fueled by pizza and determination 🍕. Their motto: 'We were building the future!'"
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/green-team.svg",
+          "alt": "The Green Team Members at Sun Microsystems",
+          "caption": "The visionary team led by James Gosling who created Java - including Mike Sheridan, Patrick Naughton, and other core engineers"
+        }
+      ]
+    },
+    {
+      "title": "☕ From Oak to Java (1995): The Coffee Shop Brainstorming Session",
+      "content": "When Oak needed a new name, the team went to a local coffee shop to brainstorm. After throwing around ideas (DNA? Silk? Ruby?), someone suggested 'Java' - inspired by Java coffee from Indonesia. The rest is history! ☕",
+      "subsections": [
+        {
+          "title": "Why 'Java'? The Name Game 🎮",
+          "content": "The naming story is actually pretty fun:\n\n• 'Oak' was already trademarked by Oak Technologies ❌\n• Team went to a coffee shop for brainstorming ☕\n• Suggested names: DNA, Silk, Ruby, Java\n• Why Java won:\n  - Short and punchy ✅\n  - Easy to remember ✅\n  - Developers LOVE coffee (essential fuel!) ✅\n  - Java coffee from Indonesia sounded exotic ✅\n\n😄 The truth: Developers run on coffee, so naming a language after it was genius marketing!\n\n☕ The coffee cup became Java's iconic logo - one of the most recognizable logos in tech!"
+        },
+        {
+          "title": "What Made Oak/Java Special? 🌟",
+          "content": "The language had revolutionary features for 1991:\n\n• Object-oriented (like C++ but cleaner)\n• Platform-independent bytecode (the magic sauce!)\n• Automatic memory management - Garbage Collection (no more malloc/free nightmares!)\n• Secure and robust (built-in safety)\n• Simple syntax - Cleaner than C++ (no multiple inheritance mess)\n• Multithreading support (ahead of its time)\n\n🎯 Think of it as: The best parts of C++ without the painful parts!"
+        },
+        {
+          "title": "1995: The Big Launch 🚀",
+          "content": "• May 23, 1995: Java officially announced at SunWorld conference\n• The tech world went: 'Wait, what? This is amazing!' 🤯\n• Timing was PERFECT - the internet was just exploding\n• Netscape (the browser king back then) immediately adopted Java\n\nIn 1995, Java was officially launched to the public, and the world of programming would never be the same!"
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/oak-to-java.svg",
+          "alt": "Oak to Java Naming History",
+          "caption": "The story of how Java got its name - from Oak (1991) to Java (1995) during a coffee shop brainstorming session"
+        }
+      ]
+    },
+    {
+      "title": "Java 1.0: The Public Release (1995)",
+      "content": "Java was officially announced at SunWorld conference on May 23, 1995.",
+      "subsections": [
+        {
+          "title": "Key Milestones",
+          "content": "• January 1996: JDK 1.0 officially released\n• Slogan: 'Write Once, Run Anywhere' (WORA)\n• Revolutionary for web applications\n• Netscape Navigator integrated Java support\n• Applets became popular for interactive web content"
+        },
+        {
+          "title": "Initial Features",
+          "content": "• Basic language constructs\n• AWT (Abstract Window Toolkit) for GUI\n• Applet support\n• Networking capabilities\n• Security features for untrusted code"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "First Java Program (1995 Style)",
+          "description": "The classic Hello World program that started it all",
+          "code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "The Evolution Timeline",
+      "content": "Java has evolved significantly over the years with major releases bringing revolutionary features.",
+      "images": [
+        {
+          "url": "assets/images/java-timeline.svg",
+          "alt": "Java Evolution Timeline from 1991 to 2026",
+          "caption": "Complete timeline showing Java's journey from Oak (1991) to modern LTS versions, highlighting major milestones and revolutionary releases"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "Java 1.1 (1997)",
+          "content": "• Inner classes\n• JavaBeans\n• JDBC (Database connectivity)\n• RMI (Remote Method Invocation)\n• Reflection API"
+        },
+        {
+          "title": "Java 1.2 (J2SE) - 'Playground' (1998)",
+          "content": "• Swing GUI components\n• Collections Framework\n• JIT (Just-In-Time) compiler\n• Strictfp keyword\n• Java Plug-in for browsers"
+        },
+        {
+          "title": "Java 1.3 - 'Kestrel' (2000)",
+          "content": "• HotSpot JVM\n• JNDI (Java Naming and Directory Interface)\n• Java Sound API\n• Performance improvements"
+        },
+        {
+          "title": "Java 1.4 - 'Merlin' (2002)",
+          "content": "• assert keyword\n• Regular expressions (regex)\n• Exception chaining\n• NIO (New I/O)\n• Logging API\n• Image I/O API"
+        },
+        {
+          "title": "Java 5 (J2SE 5.0) - 'Tiger' (2004) 🔥",
+          "content": "MAJOR RELEASE - Revolutionary features:\n• Generics\n• Enhanced for-loop (for-each)\n• Autoboxing/Unboxing\n• Enumerations (enum)\n• Varargs\n• Static imports\n• Annotations\n• Concurrency utilities (java.util.concurrent)"
+        },
+        {
+          "title": "Java 6 - 'Mustang' (2006)",
+          "content": "• Scripting language support (Rhino for JavaScript)\n• JDBC 4.0\n• Java Compiler API\n• Performance improvements\n• Pluggable annotations"
+        },
+        {
+          "title": "Java 7 - 'Dolphin' (2011)",
+          "content": "• Diamond operator (<>)\n• Try-with-resources\n• String in switch\n• Binary literals (0b prefix)\n• Underscore in numeric literals\n• Multi-catch exceptions\n• NIO.2 (File System API)"
+        },
+        {
+          "title": "Java 8 (2014) 🚀",
+          "content": "GAME CHANGER - Functional programming:\n• Lambda expressions\n• Stream API\n• Functional interfaces\n• Optional class\n• Default methods in interfaces\n• Method references\n• New Date/Time API (java.time)\n• Nashorn JavaScript engine"
+        },
+        {
+          "title": "Java 9 (2017)",
+          "content": "• Module System (JPMS - Project Jigsaw)\n• JShell (REPL)\n• Private methods in interfaces\n• Improved Stream API\n• Reactive Streams\n• HTTP/2 Client"
+        },
+        {
+          "title": "Java 10 (2018)",
+          "content": "• Local variable type inference (var keyword)\n• Application Class-Data Sharing\n• Parallel Full GC for G1\n• Time-based release versioning"
+        },
+        {
+          "title": "Java 11 (LTS - 2018) ⭐",
+          "content": "Long-Term Support release:\n• HTTP Client API (standardized)\n• String new methods (isBlank(), lines(), strip())\n• Local-variable syntax for lambda\n• Running Java files without compilation\n• Removed Java EE and CORBA modules"
+        },
+        {
+          "title": "Java 12-16 (2019-2021)",
+          "content": "• Switch expressions (Java 12-14)\n• Text blocks (Java 13-15)\n• Pattern matching for instanceof (Java 14-16)\n• Records (Java 14-16)\n• Sealed classes (Java 15-17)\n• Hidden classes (Java 15)\n• Foreign Memory Access API (Java 14-16)"
+        },
+        {
+          "title": "Java 17 (LTS - 2021) ⭐",
+          "content": "Long-Term Support release:\n• Sealed classes (finalized)\n• Pattern matching for switch (preview)\n• Strong encapsulation of JDK internals\n• New macOS rendering pipeline\n• Deprecate Security Manager\n• Enhanced pseudo-random number generators"
+        },
+        {
+          "title": "Java 18-20 (2022-2023)",
+          "content": "• UTF-8 by default\n• Simple web server\n• Code snippets in JavaDoc\n• Pattern matching for switch (continued)\n• Record patterns (preview)\n• Virtual threads (preview - Project Loom)"
+        },
+        {
+          "title": "Java 21 (LTS - 2023) ⭐🔥",
+          "content": "Latest Long-Term Support:\n• Virtual Threads (finalized - Project Loom)\n• Sequenced Collections\n• Record Patterns (finalized)\n• Pattern Matching for switch (finalized)\n• String Templates (preview)\n• Unnamed Patterns and Variables (preview)\n• Unnamed Classes and Instance Main Methods (preview)"
+        }
+      ]
+    },
+    {
+      "title": "⚡ Modern Java Evolution: From 'Old' to 'Cool' (Java 8 → Today)",
+      "content": "Java stopped being 'old and boring' and started getting cool upgrades. Java went from 'verbose uncle' to 'fit gym-going uncle' 💪😄. Despite new languages popping up every year, Java remains strong.",
+      "images": [
+        {
+          "url": "assets/images/java-features-evolution.svg",
+          "alt": "Evolution of Java Features from Java 5 to Java 21",
+          "caption": "Key features introduced in major Java releases - from Generics in Java 5 to Virtual Threads in Java 21, showing how Java evolved to meet modern development needs"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "🔥 Java 8 (2014) - GAME CHANGER",
+          "content": "Functional programming arrives:\n• Lambda expressions\n• Stream API\n• Functional interfaces\n• Optional class\n• Default methods in interfaces\n• Method references\n• New Date/Time API (java.time)\n• Nashorn JavaScript engine"
+        },
+        {
+          "title": "Java 11 & 17 (LTS) ⭐",
+          "content": "• Performance improvements\n• Cleaner APIs\n• Widely used in production\n• Long-Term Support\n• Production-ready features"
+        },
+        {
+          "title": "Recent Java Versions",
+          "content": "• Faster releases (every 6 months)\n• Better garbage collectors\n• Cleaner syntax\n• Modern language features\n• Cloud-optimized improvements"
+        }
+      ]
+    },
+    {
+      "title": "🌍 Why Java Is Still Relevant Today",
+      "content": "Despite new languages popping up every year, Java remains strong. New languages come and go. Java stays… like that permanent teammate in every office project 😆.",
+      "subsections": [
+        {
+          "title": "Java Is Used In",
+          "content": "• Enterprise applications\n• Cloud & microservices ☁️\n• Android apps 📱\n• Big data (Hadoop, Spark, Kafka)\n• Banking & finance 🏦\n• E-commerce platforms\n• IoT and embedded systems"
+        },
+        {
+          "title": "Why Companies Still Trust Java",
+          "content": "• Backward compatibility\n• Massive ecosystem\n• Huge developer community\n• Rock-solid stability\n• Mature frameworks and libraries\n• Proven at scale\n• 30+ years of evolution"
+        }
+      ]
+    },
+    {
+      "title": "🧠 Java in Interviews: Why History Matters",
+      "content": "Interviewers love Java's history because it shows understanding of design philosophy, why Java emphasizes portability & security, and how Java adapted over time.",
+      "subsections": [
+        {
+          "title": "Interview Importance",
+          "content": "• Shows deep understanding beyond coding\n• Demonstrates interest in technology evolution\n• Helps explain design decisions\n• Common question: 'Why was Java created?'\n• Differentiates you from other candidates"
+        },
+        {
+          "title": "💡 Simple Interview-Friendly Line",
+          "content": "'Java was designed to be platform-independent, secure, and scalable, which is why it became popular in enterprise and continues to evolve even today.'"
+        },
+        {
+          "title": "Practical Benefits",
+          "content": "• Understand why features exist\n• Appreciate backward compatibility decisions\n• Know which features are legacy vs modern\n• Choose appropriate JDK version for projects\n• Understand WORA philosophy in cloud era"
+        }
+      ]
+    },
+    {
+      "title": "Sun Microsystems and Oracle Era",
+      "content": "Understanding the corporate history behind Java is crucial for its evolution.",
+      "images": [
+        {
+          "url": "assets/images/sun-oracle-acquisition.svg",
+          "alt": "Timeline of Java from Sun Microsystems to Oracle",
+          "caption": "The transition of Java from Sun Microsystems (1982-2010) to Oracle Corporation in 2010 for $7.4 billion, showing how Java evolved under different ownership"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "Sun Microsystems (1991-2010)",
+          "content": "• Founded Java and developed it for 15+ years\n• Made Java open-source in 2006 (OpenJDK)\n• Created the 'Write Once, Run Anywhere' philosophy\n• Developed J2EE (Enterprise Edition) and J2ME (Mobile Edition)\n• Financial struggles led to acquisition talks"
+        },
+        {
+          "title": "Oracle Acquisition (2010)",
+          "content": "• Oracle acquired Sun Microsystems for $7.4 billion (January 2010)\n• Java became Oracle's property\n• Concerns about Java's future as open-source\n• Oracle continued Java development but with commercial licensing changes"
+        },
+        {
+          "title": "Oracle's Changes",
+          "content": "• Introduced new release cadence (6-month cycle from Java 10)\n• LTS (Long-Term Support) versions every 3 years\n• Commercial license for Oracle JDK (use in production)\n• OpenJDK as the free, open-source reference implementation\n• Java 17 made free again for production use"
+        }
+      ]
+    },
+    {
+      "title": "The 'Write Once, Run Anywhere' Philosophy",
+      "content": "Java's core principle that made it revolutionary and remains its biggest strength.",
+      "images": [
+        {
+          "url": "assets/images/wora-concept.svg",
+          "alt": "Write Once Run Anywhere Concept Diagram",
+          "caption": "Visual explanation of Java's WORA philosophy - how bytecode enables platform independence across Windows, Linux, and macOS through JVM"
+        },
+        {
+          "url": "assets/images/java-jvm-architecture.svg",
+          "alt": "JVM Architecture and Platform Independence",
+          "caption": "Detailed JVM architecture showing how Java source code is compiled to bytecode and executed on different platforms through platform-specific JVMs, achieving true Write Once Run Anywhere capability"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "What It Means",
+          "content": "• Write code once in Java\n• Compile to bytecode (.class files)\n• Run on any platform with JVM\n• No need to recompile for different OS\n• Platform independence through JVM abstraction"
+        },
+        {
+          "title": "How It Works",
+          "content": "1. Java source code (.java)\n2. ↓ Compiler (javac)\n3. Bytecode (.class) - platform independent\n4. ↓ JVM (platform specific)\n5. Native machine code\n6. Execution on specific OS/hardware"
+        },
+        {
+          "title": "Why It Matters",
+          "content": "• Developers write code once\n• Same application runs on:\n  - Windows, Linux, macOS\n  - Different CPU architectures\n  - Embedded systems, mobile devices\n• Reduces development and maintenance costs\n• Enables true cross-platform applications"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Platform Independence Demo",
+          "description": "The same bytecode runs everywhere",
+          "code": "// Write once\npublic class Platform {\n    public static void main(String[] args) {\n        System.out.println(\"OS: \" + System.getProperty(\"os.name\"));\n        System.out.println(\"Java Version: \" + System.getProperty(\"java.version\"));\n        System.out.println(\"This same .class file runs on all platforms!\");\n    }\n}\n\n// Runs on Windows, Linux, macOS, Solaris, etc.\n// Same bytecode, different JVMs",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "Key Contributors and The Team",
+      "content": "Java was created by a talented team of engineers at Sun Microsystems.",
+      "subsections": [
+        {
+          "title": "James Gosling - Father of Java",
+          "content": "• Lead architect and primary designer\n• Wrote original compiler and JVM\n• Canadian computer scientist\n• Worked at Sun Microsystems (1984-2010)\n• Left Oracle in 2010, worked at Google, Amazon, now independent"
+        },
+        {
+          "title": "The Green Team",
+          "content": "Original team members:\n• James Gosling - Technical lead\n• Mike Sheridan - Project manager\n• Patrick Naughton - Engineer\n• Chris Warth - Engineer\n• Ed Frank - Engineer\n• Jonni Kanerva - Engineer\n\n'We were building the future' - Green Team motto"
+        },
+        {
+          "title": "Other Key Contributors",
+          "content": "• Bill Joy - Co-founder of Sun, influenced Java design\n• Guy Steele - Co-author of Java Language Specification\n• Joshua Bloch - Effective Java author, Collections Framework\n• Doug Lea - Concurrency utilities architect"
+        }
+      ]
+    },
+    {
+      "title": "Java's Impact on Software Industry",
+      "content": "Java transformed software development and continues to be influential today.",
+      "subsections": [
+        {
+          "title": "Revolutionary Contributions",
+          "content": "• Made cross-platform development mainstream\n• Popularized automatic memory management (GC)\n• Brought object-oriented programming to masses\n• Enabled web applications (Servlets, JSP)\n• Android development (until Kotlin)\n• Enterprise applications (Spring, Java EE)\n• Big Data (Hadoop, Spark, Kafka)"
+        },
+        {
+          "title": "Current Usage (2024-2026)",
+          "content": "• Over 3 billion devices run Java\n• #3-5 most popular programming language\n• Dominant in:\n  - Enterprise applications\n  - Financial services\n  - E-commerce platforms\n  - Cloud services\n  - Big Data processing\n  - Android apps (billions of devices)\n• Fortune 500 companies rely on Java"
+        },
+        {
+          "title": "Fun Facts ☕",
+          "content": "• Java logo is a coffee cup ☕\n• 'Java' refers to Java coffee from Indonesia\n• Original team worked 18-hour days\n• First demo: controlling a TV with PDA\n• Duke is Java's mascot (friendly character)\n• 'Green' project named after office color\n• Java Specification Requests (JSRs) govern evolution\n• Over 9 million Java developers worldwide"
+        }
+      ]
+    },
+    {
+      "title": "🏁 Final Thoughts",
+      "content": "Java's journey is a classic tech success story that proves good design + adaptability = long-term success.",
+      "subsections": [
+        {
+          "title": "The Journey",
+          "content": "• Started for TVs ❌\n• Conquered the Internet 🌐\n• Dominated enterprises 🏢\n• Powered mobile phones 📱\n• Thriving in cloud & microservices ☁️\n\nFrom Oak tree beginnings to global dominance, Java proves one thing: Good design + adaptability = long-term success.\n\nAnd yes… Java still loves coffee ☕😉."
+        }
+      ]
+    },
+    {
+      "title": "Why Study Java History?",
+      "content": "Understanding Java's history provides context for modern development decisions.",
+      "subsections": [
+        {
+          "title": "Interview Importance",
+          "content": "• Shows deep understanding beyond coding\n• Demonstrates interest in technology evolution\n• Helps explain design decisions\n• Common question: 'Why was Java created?'\n• Differentiates you from other candidates"
+        },
+        {
+          "title": "Practical Benefits",
+          "content": "• Understand why features exist\n• Appreciate backward compatibility decisions\n• Know which features are legacy vs modern\n• Choose appropriate JDK version for projects\n• Understand WORA philosophy in cloud era"
+        }
+      ]
+    }
+  ],
+  "keyPoints": [
+    "Java started as 'Oak' in 1991 for consumer electronics, renamed to Java in 1995",
+    "James Gosling and the Green Team at Sun Microsystems created Java",
+    "Write Once, Run Anywhere (WORA) is Java's core philosophy",
+    "Java 1.0 released in 1996; Java 5 (2004) and Java 8 (2014) were revolutionary",
+    "Oracle acquired Sun Microsystems in 2010, continuing Java development",
+    "LTS versions: Java 8, 11, 17, 21 (every 3 years from Java 17)",
+    "Java powers 3+ billion devices and remains dominant in enterprise applications",
+    "Platform independence through JVM abstraction layer made Java revolutionary",
+    "The Green Team worked on 'Project Green' for consumer electronics in 1991",
+    "Java was named after Java coffee from Indonesia during a coffee shop brainstorming session",
+    "All exceptions are objects that inherit from Throwable class"
+  ],
+  "references": [
+    "Oracle Java Documentation - The History of Java Technology",
+    "James Gosling's personal blog and interviews about Java's creation",
+    "Sun Microsystems archives and Java evolution timeline",
+    "Java Language Specification (JLS) - Historical context",
+    "The Java Tutorial by Oracle - Introduction to Java",
+    "Wikipedia - Java (programming language) history section",
+    "InfoWorld - Java turns 25: A look back at the language's evolution"
+  ],
+  "interviewQA": [
+    {
+      "question": "Who created Java and when?",
+      "answer": "James Gosling and the Green Team at Sun Microsystems created Java. Started as 'Oak' in 1991, renamed to Java and publicly released in 1995, with JDK 1.0 in January 1996.",
+      "difficulty": "easy",
+      "tags": ["history", "creator", "timeline"]
+    },
+    {
+      "question": "Why was Java originally created?",
+      "answer": "Java was created for programming consumer electronic devices like interactive television and set-top boxes. They needed a platform-independent language simpler than C++ with automatic memory management.",
+      "difficulty": "easy",
+      "tags": ["history", "purpose", "design"]
+    },
+    {
+      "question": "What does WORA mean?",
+      "answer": "Write Once, Run Anywhere - Java's philosophy where you compile code once to bytecode, which runs on any platform with a JVM, achieving platform independence.",
+      "difficulty": "easy",
+      "tags": ["WORA", "philosophy", "platform-independence"]
+    },
+    {
+      "question": "Why was Oak renamed to Java?",
+      "answer": "'Oak' was already trademarked by Oak Technologies. The team chose 'Java' after Java coffee from Indonesia during a brainstorming session at a coffee shop.",
+      "difficulty": "easy",
+      "tags": ["history", "naming", "trivia"]
+    },
+    {
+      "question": "What are the LTS (Long-Term Support) versions of Java?",
+      "answer": "Java 8 (2014), Java 11 (2018), Java 17 (2021), and Java 21 (2023). LTS versions receive extended support and updates.",
+      "difficulty": "medium",
+      "tags": ["versions", "LTS", "timeline"]
+    },
+    {
+      "question": "Who owns Java now?",
+      "answer": "Oracle Corporation owns Java after acquiring Sun Microsystems in January 2010 for $7.4 billion.",
+      "difficulty": "easy",
+      "tags": ["history", "Oracle", "ownership"]
+    },
+    {
+      "question": "What were the most revolutionary Java versions?",
+      "answer": "Java 5 (2004) introduced Generics, enhanced for-loop, autoboxing, enums. Java 8 (2014) brought Lambda expressions, Stream API, and functional programming features. Java 21 (2023) introduced Virtual Threads.",
+      "difficulty": "medium",
+      "tags": ["versions", "features", "evolution"]
+    },
+    {
+      "question": "What is the significance of Java bytecode?",
+      "answer": "Bytecode (.class files) is platform-independent intermediate code generated by the Java compiler. It enables WORA by running on any JVM regardless of the underlying operating system or hardware.",
+      "difficulty": "medium",
+      "tags": ["bytecode", "JVM", "platform-independence"]
+    }
+  ]
+}

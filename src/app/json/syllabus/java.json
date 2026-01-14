@@ -7,10 +7,18 @@
       {
         "name": "Introduction to Java",
         "subTopics": [
+          { "name": "History of Java" },
           { "name": "Features of Java (Platform Independent, OOP, etc.)" },
           { "name": "JDK, JRE, JVM Architecture" },
           { "name": "Java compilation process" },
-          { "name": "Bytecode and Platform Independence" }
+          { "name": "Bytecode and Platform Independence" },
+          { "name": "Java Editions (SE, EE, ME)" },
+          { "name": "Path and Classpath (Environment Variables)" },
+          { "name": "First Java Program structure and main method" },
+          { "name": "Java Keywords and Identifiers" },
+          { "name": "Comments in Java (Single-line, Multi-line, Documentation)" },
+          { "name": "Java vs C++ comparison" },
+          { "name": "Java is Pass-by-Value" }
         ]
       },
       {
@@ -32,11 +40,12 @@
         ]
       },
       {
-        "name": "Arrays",
+        "name": "Arrays & Basic I/O",
         "subTopics": [
           { "name": "Single and multidimensional arrays" },
           { "name": "Array manipulation" },
-          { "name": "Jagged arrays" }
+          { "name": "Jagged arrays" },
+          { "name": "Scanner class and Console I/O" }
         ]
       }
     ]
@@ -52,7 +61,8 @@
           { "name": "Class definition and object creation" },
           { "name": "Constructors (default, parameterized, copy)" },
           { "name": "Constructor overloading" },
-          { "name": "this keyword" }
+          { "name": "this keyword" },
+          { "name": "Object Initialization Order" }
         ]
       },
       {
@@ -64,12 +74,13 @@
         ]
       },
       {
-        "name": "Inheritance",
+        "name": "Inheritance & Composition",
         "subTopics": [
           { "name": "Types of inheritance" },
           { "name": "super keyword" },
           { "name": "Method overriding" },
-          { "name": "final keyword" }
+          { "name": "final keyword" },
+          { "name": "IS-A vs HAS-A relationship" }
         ]
       },
       {
@@ -93,7 +104,7 @@
   },
   {
     "id": 3,
-    "title": "Advanced OOP & Java Features",
+    "title": "Advanced OOP & Java Language Features",
     "difficulty": "intermediate",
     "topics": [
       {
@@ -124,7 +135,7 @@
       {
         "name": "Object Class Methods",
         "subTopics": [
-          { "name": "equals() and hashCode()" },
+          { "name": "equals() and hashCode() contract" },
           { "name": "toString()" },
           { "name": "clone()" },
           { "name": "finalize()" }
@@ -138,71 +149,18 @@
     "difficulty": "intermediate",
     "topics": [
       {
-        "name": "Core Java Exception Handling",
+        "name": "Core Exception Handling",
         "subTopics": [
           { "name": "Fundamentals" },
           { "name": "Exception Hierarchy" },
           { "name": "Checked vs Unchecked Exceptions" },
-          { "name": "try–catch–finally" },
-          { "name": "Multi-Catch (Java 7+)" },
-          { "name": "try-with-resources" },
-          { "name": "Suppressed Exceptions (Advanced)" },
-          { "name": "throw vs throws" },
+          { "name": "try–catch–finally blocks" },
+          { "name": "Multi-Catch and try-with-resources" },
+          { "name": "throw vs throws keyword" },
           { "name": "Custom Exceptions" },
           { "name": "Exception Propagation" },
           { "name": "Exception Chaining" },
-          { "name": "Overriding & Exceptions" },
-          { "name": "Stack Trace Internals (Advanced)" },
-          { "name": "Errors You Should Never Catch" },
-          { "name": "Assertions vs Exceptions" },
-          { "name": "Core Java Best Practices" }
-        ]
-      },
-      {
-        "name": "Spring Framework Exception Handling",
-        "subTopics": [
-          { "name": "Spring Exception Philosophy" },
-          { "name": "DataAccessException Hierarchy" },
-          { "name": "@ExceptionHandler" },
-          { "name": "@ControllerAdvice / @RestControllerAdvice" },
-          { "name": "ResponseEntityExceptionHandler" },
-          { "name": "Validation Exception Handling" },
-          { "name": "Transaction & Exception Handling" },
-          { "name": "Exception Translation" },
-          { "name": "AOP & Exception Handling" },
-          { "name": "Exception Resolution Order" },
-          { "name": "Async Exception Handling" },
-          { "name": "Event Listener Exceptions" },
-          { "name": "Proxy & Transaction Boundaries" }
-        ]
-      },
-      {
-        "name": "Spring Boot Exception Handling",
-        "subTopics": [
-          { "name": "Default Spring Boot Error Handling" },
-          { "name": "Custom REST Error Responses" },
-          { "name": "ErrorAttributes Customization" },
-          { "name": "server.error Configuration" },
-          { "name": "@ResponseStatus" },
-          { "name": "Common REST Exceptions" },
-          { "name": "Filter & Interceptor Exceptions" },
-          { "name": "Spring Security Exception Handling" },
-          { "name": "OAuth2 / JWT Errors" },
-          { "name": "API Gateway Exception Handling" },
-          { "name": "REST Client Exceptions" },
-          { "name": "Reactive (WebFlux) Exception Handling" },
-          { "name": "RFC 7807 – Problem Details" }
-        ]
-      },
-      {
-        "name": "Architecture, Design & Production",
-        "subTopics": [
-          { "name": "Error Code Strategy" },
-          { "name": "Exception Anti-Patterns" },
-          { "name": "Internationalization (i18n)" },
-          { "name": "Logging & Monitoring" },
-          { "name": "Testing Exception Handling" },
-          { "name": "Microservices Best Practices" }
+          { "name": "Best Practices for Core Java Exception Handling" }
         ]
       }
     ]
@@ -216,47 +174,24 @@
         "name": "Collection Interfaces",
         "subTopics": [
           { "name": "Collection, List, Set, Queue, Map" },
-          { "name": "Iterator and ListIterator" }
+          { "name": "Iterator, ListIterator, and Spliterator" }
         ]
       },
       {
-        "name": "List Implementations",
+        "name": "Implementations",
         "subTopics": [
-          { "name": "ArrayList vs LinkedList" },
-          { "name": "Vector and Stack" },
-          { "name": "CopyOnWriteArrayList" }
-        ]
-      },
-      {
-        "name": "Set Implementations",
-        "subTopics": [
+          { "name": "ArrayList, LinkedList, Vector, Stack" },
           { "name": "HashSet, LinkedHashSet, TreeSet" },
-          { "name": "EnumSet, CopyOnWriteArraySet" }
-        ]
-      },
-      {
-        "name": "Queue & Deque",
-        "subTopics": [
-          { "name": "PriorityQueue" },
-          { "name": "ArrayDeque" },
-          { "name": "LinkedList as Queue" }
-        ]
-      },
-      {
-        "name": "Map Implementations",
-        "subTopics": [
           { "name": "HashMap, LinkedHashMap, TreeMap" },
-          { "name": "Hashtable vs HashMap" },
-          { "name": "ConcurrentHashMap" },
-          { "name": "WeakHashMap, IdentityHashMap" }
+          { "name": "Hashtable and ConcurrentHashMap" },
+          { "name": "PriorityQueue and ArrayDeque" }
         ]
       },
       {
-        "name": "Utility Classes",
+        "name": "Sorting and Utility",
         "subTopics": [
-          { "name": "Collections class methods" },
-          { "name": "Arrays class methods" },
-          { "name": "Comparable vs Comparator" }
+          { "name": "Comparable vs Comparator" },
+          { "name": "Collections and Arrays utility classes" }
         ]
       }
     ]
@@ -269,8 +204,8 @@
       { "name": "Generic Classes and Methods" },
       { "name": "Bounded Type Parameters" },
       { "name": "Wildcards (?, extends, super)" },
-      { "name": "Type Erasure" },
-      { "name": "Generic Restrictions" }
+      { "name": "PECS Principle" },
+      { "name": "Type Erasure" }
     ]
   },
   {
@@ -281,107 +216,83 @@
       {
         "name": "Thread Basics",
         "subTopics": [
-          { "name": "Creating threads (Thread class, Runnable interface)" },
+          { "name": "Thread class vs Runnable interface" },
           { "name": "Thread lifecycle" },
-          { "name": "Thread methods (start, run, sleep, join, yield)" },
-          { "name": "Thread priority" }
+          { "name": "sleep, join, yield, interrupt" }
         ]
       },
       {
         "name": "Synchronization",
         "subTopics": [
-          { "name": "synchronized keyword" },
-          { "name": "Synchronized blocks and methods" },
-          { "name": "Object-level vs Class-level locks" },
-          { "name": "Deadlock, Livelock, Starvation" }
+          { "name": "synchronized keyword (blocks/methods)" },
+          { "name": "Locking: Object level vs Class level" },
+          { "name": "volatile keyword" },
+          { "name": "Deadlock, Livelock, and Starvation" }
         ]
       },
       {
         "name": "Inter-thread Communication",
         "subTopics": [
-          { "name": "wait(), notify(), notifyAll()" },
+          { "name": "wait, notify, and notifyAll" },
           { "name": "Producer-Consumer problem" }
         ]
       },
       {
-        "name": "Concurrency Utilities (java.util.concurrent)",
+        "name": "Concurrency Utilities",
         "subTopics": [
-          { "name": "Executor framework" },
-          { "name": "Thread pools (FixedThreadPool, CachedThreadPool, etc.)" },
+          { "name": "Executor Framework and Thread Pools" },
           { "name": "Callable and Future" },
-          { "name": "CompletableFuture and asynchronous programming" },
-          { "name": "CountDownLatch, CyclicBarrier, Semaphore, Phaser" },
-          { "name": "Locks (ReentrantLock, ReadWriteLock, StampedLock)" },
-          { "name": "Atomic variables (AtomicInteger, AtomicReference)" },
-          { "name": "BlockingQueue and its implementations" },
-          { "name": "ForkJoinPool and parallel tasks" }
-        ]
-      },
-      {
-        "name": "Virtual Threads (Java 21+)",
-        "subTopics": [
-          { "name": "Project Loom concepts" },
-          { "name": "Creating and using virtual threads" },
-          { "name": "Benefits over platform threads" }
+          { "name": "CompletableFuture" },
+          { "name": "Locks (ReentrantLock, ReadWriteLock)" },
+          { "name": "Atomic variables" },
+          { "name": "CountDownLatch and CyclicBarrier" }
         ]
       }
     ]
   },
   {
     "id": 8,
-    "title": "Java 8+ Modern Features",
+    "title": "Java Version-wise Features",
     "difficulty": "intermediate",
     "topics": [
       {
-        "name": "Lambda Expressions",
+        "name": "Java 8 Features",
         "subTopics": [
-          { "name": "Syntax and usage" },
-          { "name": "Functional interfaces" },
-          { "name": "Built-in functional interfaces (Predicate, Function, Consumer, Supplier)" }
+          { "name": "Lambda Expressions" },
+          { "name": "Functional Interfaces" },
+          { "name": "Stream API" },
+          { "name": "Optional Class" },
+          { "name": "Default and Static methods in Interfaces" },
+          { "name": "Date and Time API (java.time)" }
         ]
       },
       {
-        "name": "Stream API",
+        "name": "Java 9 to 11 Features",
         "subTopics": [
-          { "name": "Creating streams" },
-          { "name": "Intermediate operations (filter, map, flatMap, sorted)" },
-          { "name": "Terminal operations (collect, forEach, reduce, count)" },
-          { "name": "Parallel streams" }
+          { "name": "Module System (JPMS)" },
+          { "name": "Private methods in Interfaces" },
+          { "name": "JShell" },
+          { "name": "var keyword (Local Variable Type Inference)" },
+          { "name": "HTTP Client API" }
         ]
       },
       {
-        "name": "Optional Class",
+        "name": "Java 12 to 17 Features (LTS)",
         "subTopics": [
-          { "name": "Avoiding NullPointerException" },
-          { "name": "Optional methods" }
+          { "name": "Switch Expressions" },
+          { "name": "Text Blocks" },
+          { "name": "Records" },
+          { "name": "Sealed Classes" },
+          { "name": "Pattern Matching for instanceof" }
         ]
       },
       {
-        "name": "Date and Time API (java.time)",
+        "name": "Java 21 Features (LTS)",
         "subTopics": [
-          { "name": "LocalDate, LocalTime, LocalDateTime" },
-          { "name": "ZonedDateTime" },
-          { "name": "Period and Duration" }
-        ]
-      },
-      { "name": "Default and Static Methods in Interfaces" },
-      { "name": "Method References" },
-      { "name": "Collectors" },
-      {
-        "name": "Java 9+ Features",
-        "subTopics": [
-          { "name": "Modules (JPMS - Java Platform Module System)" },
-          { "name": "JShell (REPL tool)" },
-          { "name": "Factory methods for Collections (Java 9)" },
-          { "name": "var keyword (Java 10)" },
-          { "name": "HTTP Client API (Java 11)" },
-          { "name": "Text Blocks (Java 13)" },
-          { "name": "Switch Expressions (Java 12/14)" },
-          { "name": "Records (Java 14/16)" },
-          { "name": "Pattern Matching for instanceof (Java 14+)" },
-          { "name": "Sealed Classes (Java 17)" },
-          { "name": "Virtual Threads (Java 21)" },
-          { "name": "Sequenced Collections (Java 21)" }
+          { "name": "Virtual Threads (Project Loom)" },
+          { "name": "Sequenced Collections" },
+          { "name": "Record Patterns" },
+          { "name": "Pattern Matching for Switch" }
         ]
       }
     ]
@@ -391,366 +302,118 @@
     "title": "String Handling",
     "difficulty": "basic",
     "topics": [
-      {
-        "name": "String Class",
-        "subTopics": [
-          { "name": "String immutability" },
-          { "name": "String pool concept" },
-          { "name": "Common String methods" }
-        ]
-      },
-      {
-        "name": "StringBuffer and StringBuilder",
-        "subTopics": [
-          { "name": "Differences between String, StringBuffer, StringBuilder" },
-          { "name": "When to use each" }
-        ]
-      },
-      { "name": "String manipulation and pattern matching" },
-      { "name": "Regular Expressions" }
+      { "name": "String immutability and String Pool" },
+      { "name": "String vs StringBuilder vs StringBuffer" },
+      { "name": "Common String methods" },
+      { "name": "String formatting and manipulation" }
     ]
   },
   {
     "id": 10,
-    "title": "File I/O & Serialization",
+    "title": "Regular Expressions (Regex)",
     "difficulty": "intermediate",
     "topics": [
-      {
-        "name": "File Handling",
-        "subTopics": [
-          { "name": "File class operations" },
-          { "name": "Path and Paths (NIO.2)" }
-        ]
-      },
-      {
-        "name": "I/O Streams",
-        "subTopics": [
-          { "name": "Byte streams (InputStream, OutputStream)" },
-          { "name": "Character streams (Reader, Writer)" },
-          { "name": "BufferedReader, BufferedWriter" },
-          { "name": "FileInputStream, FileOutputStream" }
-        ]
-      },
-      {
-        "name": "Serialization",
-        "subTopics": [
-          { "name": "Serializable interface" },
-          { "name": "transient keyword" },
-          { "name": "Externalization" },
-          { "name": "serialVersionUID" }
-        ]
-      },
-      {
-        "name": "NIO (New I/O)",
-        "subTopics": [
-          { "name": "Buffers, Channels, Selectors" },
-          { "name": "Files class methods" }
-        ]
-      }
+      { "name": "Pattern and Matcher classes" },
+      { "name": "Regex metacharacters and quantifiers" },
+      { "name": "Groups and capturing" },
+      { "name": "Common regex patterns for validation" }
     ]
   },
   {
     "id": 11,
-    "title": "JDBC (Java Database Connectivity)",
+    "title": "File I/O & Serialization",
     "difficulty": "intermediate",
     "topics": [
-      { "name": "JDBC Architecture" },
-      { "name": "Driver types" },
-      { "name": "Connection, Statement, PreparedStatement, CallableStatement" },
-      { "name": "ResultSet and ResultSetMetaData" },
-      { "name": "Transaction management" },
-      { "name": "Batch processing" },
-      { "name": "Connection pooling" }
+      { "name": "Byte Streams vs Character Streams" },
+      { "name": "BufferedReader and BufferedWriter" },
+      { "name": "Java NIO (Path, Files, Channels)" },
+      { "name": "Serialization and Deserialization (transient, serialVersionUID)" },
+      { "name": "Externalizable interface" }
     ]
   },
   {
     "id": 12,
-    "title": "Design Patterns",
-    "difficulty": "advanced",
+    "title": "Networking in Java",
+    "difficulty": "intermediate",
     "topics": [
-      {
-        "name": "Creational Patterns",
-        "subTopics": [
-          { "name": "Singleton" },
-          { "name": "Factory Method" },
-          { "name": "Abstract Factory" },
-          { "name": "Builder" },
-          { "name": "Prototype" }
-        ]
-      },
-      {
-        "name": "Structural Patterns",
-        "subTopics": [
-          { "name": "Adapter" },
-          { "name": "Decorator" },
-          { "name": "Proxy" },
-          { "name": "Facade" },
-          { "name": "Composite" }
-        ]
-      },
-      {
-        "name": "Behavioral Patterns",
-        "subTopics": [
-          { "name": "Observer" },
-          { "name": "Strategy" },
-          { "name": "Command" },
-          { "name": "Iterator" },
-          { "name": "Template Method" }
-        ]
-      }
+      { "name": "Socket Programming (TCP/UDP)" },
+      { "name": "URL and URLConnection" },
+      { "name": "HttpURLConnection" },
+      { "name": "InetAddress class" }
     ]
   },
   {
     "id": 13,
-    "title": "JVM Internals & Memory Management",
-    "difficulty": "advanced",
+    "title": "JDBC (Database Connectivity)",
+    "difficulty": "intermediate",
     "topics": [
-      {
-        "name": "JVM Architecture",
-        "subTopics": [
-          { "name": "Class loader subsystem" },
-          { "name": "Runtime data areas" },
-          { "name": "Execution engine" }
-        ]
-      },
-      {
-        "name": "Memory Areas",
-        "subTopics": [
-          { "name": "Heap, Stack, Method Area" },
-          { "name": "PC Register, Native Method Stack" }
-        ]
-      },
-      {
-        "name": "Garbage Collection",
-        "subTopics": [
-          { "name": "GC algorithms" },
-          { "name": "Types of GC (Serial, Parallel, CMS, G1, ZGC)" },
-          { "name": "GC tuning" },
-          { "name": "Memory leaks" }
-        ]
-      },
-      {
-        "name": "Class Loading",
-        "subTopics": [
-          { "name": "Loading, Linking, Initialization" },
-          { "name": "ClassLoader hierarchy" }
-        ]
-      }
+      { "name": "JDBC Architecture and Drivers" },
+      { "name": "Statement vs PreparedStatement vs CallableStatement" },
+      { "name": "ResultSet and Transaction Management" },
+      { "name": "Connection Pooling concepts" }
     ]
   },
   {
     "id": 14,
-    "title": "Testing",
-    "difficulty": "intermediate",
+    "title": "JVM Internals & Memory Management",
+    "difficulty": "advanced",
     "topics": [
-      {
-        "name": "JUnit",
-        "subTopics": [
-          { "name": "Annotations (@Test, @Before, @After, etc.)" },
-          { "name": "Assertions" },
-          { "name": "Test suites" },
-          { "name": "Parameterized tests" }
-        ]
-      },
-      {
-        "name": "Mockito",
-        "subTopics": [
-          { "name": "Mocking objects" },
-          { "name": "Stubbing methods" },
-          { "name": "Verification" }
-        ]
-      },
-      { "name": "Test-Driven Development (TDD)" }
+      { "name": "JVM Architecture: ClassLoader, Runtime Data Areas, Execution Engine" },
+      { "name": "Heap vs Stack Memory" },
+      { "name": "Garbage Collection Algorithms (G1, ZGC, etc.)" },
+      { "name": "JIT Compiler and Memory Leaks" },
+      { "name": "Memory Model and happens-before relationship" },
+      { "name": "Reference Types (Strong, Weak, Soft, Phantom)" }
     ]
   },
   {
     "id": 15,
-    "title": "Miscellaneous Topics",
-    "difficulty": "intermediate",
+    "title": "Advanced Java Concepts",
+    "difficulty": "advanced",
     "topics": [
-      {
-        "name": "Annotations",
-        "subTopics": [
-          { "name": "Built-in annotations" },
-          { "name": "Custom annotations" },
-          { "name": "Retention policies" }
-        ]
-      },
-      {
-        "name": "Reflection API",
-        "subTopics": [
-          { "name": "Inspecting classes at runtime" },
-          { "name": "Invoking methods dynamically" }
-        ]
-      },
-      {
-        "name": "Networking",
-        "subTopics": [
-          { "name": "Socket programming" },
-          { "name": "URL and URLConnection" }
-        ]
-      },
-      {
-        "name": "Cloning",
-        "subTopics": [
-          { "name": "Shallow vs Deep copy" },
-          { "name": "Cloneable interface" }
-        ]
-      },
-      { "name": "Enum" },
-      {
-        "name": "Wrapper Classes and Autoboxing",
-        "subTopics": [
-          { "name": "Autoboxing and Unboxing" },
-          { "name": "Integer cache" }
-        ]
-      },
-      {
-        "name": "Internationalization (i18n)",
-        "subTopics": [
-          { "name": "Locale and ResourceBundle" },
-          { "name": "NumberFormat, DateFormat" }
-        ]
-      },
-      {
-        "name": "Java Memory Model",
-        "subTopics": [
-          { "name": "Happens-before relationship" },
-          { "name": "volatile keyword" },
-          { "name": "Thread visibility" }
-        ]
-      }
+      { "name": "Cloning (Shallow vs Deep)" },
+      { "name": "Immutable Objects creation" },
+      { "name": "Java Native Interface (JNI)" },
+      { "name": "Java Beans" },
+      { "name": "RMI (Remote Method Invocation)" },
+      { "name": "Java Security Manager" }
     ]
   },
   {
     "id": 16,
-    "title": "RESTful APIs & Web Services",
+    "title": "Miscellaneous Core Topics",
     "difficulty": "intermediate",
     "topics": [
-      {
-        "name": "RESTful Web Services",
-        "subTopics": [
-          { "name": "REST principles and constraints" },
-          { "name": "HTTP methods (GET, POST, PUT, DELETE, PATCH)" },
-          { "name": "Status codes" },
-          { "name": "JAX-RS annotations" },
-          { "name": "JSON and XML processing" }
-        ]
-      },
-      {
-        "name": "API Design",
-        "subTopics": [
-          { "name": "REST API best practices" },
-          { "name": "Versioning strategies" },
-          { "name": "Authentication (JWT, OAuth2)" },
-          { "name": "CORS" }
-        ]
-      },
-      {
-        "name": "SOAP Web Services",
-        "subTopics": [
-          { "name": "WSDL and XML Schema" },
-          { "name": "JAX-WS" }
-        ]
-      }
+      { "name": "Reflection API" },
+      { "name": "Annotations (Built-in and Custom)" },
+      { "name": "Enums" },
+      { "name": "Wrapper Classes and Autoboxing/Unboxing" },
+      { "name": "Internationalization (i18n) and Localization" },
+      { "name": "JavaDoc and Code Documentation" }
     ]
   },
   {
     "id": 17,
-    "title": "Spring Framework (Overview)",
+    "title": "Core Java Design Principles",
     "difficulty": "advanced",
     "topics": [
-      {
-        "name": "Spring Core Framework",
-        "subTopics": [
-          { "name": "Microservices vs Monolithic vs SOA" },
-          { "name": "Domain-Driven Design (DDD) and bounded contexts" },
-          { "name": "12-Factor App methodology" }
-        ]
-      },
-      {
-        "name": "API Gateway Pattern (Intro)",
-        "subTopics": [
-          { "name": "API Gateway vs Backend for Frontend (BFF)" },
-          { "name": "Request routing and composition" }
-        ]
-      },
-      {
-        "name": "Service Discovery & Registry (Intro)",
-        "subTopics": [
-          { "name": "Eureka Server and Client" },
-          { "name": "Consul for service discovery" }
-        ]
-      }
+      { "name": "SOLID Principles" },
+      { "name": "Creational Design Patterns (Singleton, Factory, Builder)" },
+      { "name": "Structural Design Patterns (Adapter, Proxy, Decorator)" },
+      { "name": "Behavioral Design Patterns (Observer, Strategy)" }
     ]
   },
   {
     "id": 18,
-    "title": "Spring Boot (Overview)",
-    "difficulty": "advanced",
-    "topics": [
-      {
-        "name": "Spring Boot Fundamentals",
-        "subTopics": [
-          { "name": "Dependency Injection (DI)" },
-          { "name": "Inversion of Control (IoC) Container" },
-          { "name": "ApplicationContext vs BeanFactory" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "title": "Microservices Architecture (Overview)",
-    "difficulty": "advanced",
-    "topics": [
-      { "name": "Microservices Fundamentals" },
-      { "name": "Configuration Management" }
-    ]
-  },
-  {
-    "id": 20,
-    "title": "Frameworks & Tools",
-    "difficulty": "advanced",
-    "topics": [
-      { "name": "Hibernate (ORM)" },
-      { "name": "Build Tools (Maven/Gradle)" }
-    ]
-  },
-  {
-    "id": 21,
-    "title": "Best Practices & Coding Standards",
+    "title": "Best Practices & Code Quality",
     "difficulty": "intermediate",
     "topics": [
-      { "name": "SOLID Principles" },
-      { "name": "Clean Code Principles" }
-    ]
-  },
-  {
-    "id": 22,
-    "title": "Data Structures & Algorithms",
-    "difficulty": "intermediate",
-    "topics": [
-      { "name": "Data Structures" },
-      { "name": "Algorithm Concepts" }
-    ]
-  },
-  {
-    "id": 23,
-    "title": "Advanced Java Topics",
-    "difficulty": "advanced",
-    "topics": [
-      { "name": "Reactive Programming" },
-      { "name": "Performance Tuning" }
-    ]
-  },
-  {
-    "id": 24,
-    "title": "Common Interview Scenarios",
-    "difficulty": "",
-    "topics": [
-      { "name": "Why String is immutable?" },
-      { "name": "HashMap internal working" }
+      { "name": "Clean Code principles" },
+      { "name": "Code smells and refactoring" },
+      { "name": "Exception handling best practices" },
+      { "name": "Naming conventions and coding standards" },
+      { "name": "Performance optimization techniques" },
+      { "name": "Unit Testing with JUnit and Mockito" }
     ]
   }
 ]
