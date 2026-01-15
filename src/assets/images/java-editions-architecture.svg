@@ -1,0 +1,73 @@
+<svg viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg">
+  <text x="400" y="40" font-size="26" font-weight="bold" text-anchor="middle" fill="#2c3e50">Java Editions Architecture Stack</text>
+  <text x="400" y="70" font-size="14" text-anchor="middle" fill="#7f8c8d">How the Editions Build Upon Each Other</text>
+
+  <rect x="100" y="750" width="600" height="80" rx="10" fill="#34495e"/>
+  <text x="400" y="795" font-size="20" font-weight="bold" text-anchor="middle" fill="white">Operating System (Windows, Linux, macOS, etc.)</text>
+  
+  <rect x="100" y="840" width="600" height="50" rx="10" fill="#2c3e50"/>
+  <text x="400" y="870" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Hardware (CPU, Memory, Disk)</text>
+
+  <rect x="100" y="450" width="600" height="280" rx="10" fill="#e3f2fd" stroke="#3498db" stroke-width="3"/>
+  
+  <rect x="120" y="660" width="560" height="60" rx="8" fill="#3498db"/>
+  <text x="400" y="695" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Java Virtual Machine (JVM)</text>
+  
+  <rect x="120" y="590" width="560" height="60" rx="8" fill="#5dade2"/>
+  <text x="400" y="615" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Core Java Libraries</text>
+  <text x="400" y="635" font-size="12" text-anchor="middle" fill="white">Collections, I/O, Networking, Concurrency, Security</text>
+  
+  <rect x="120" y="520" width="560" height="60" rx="8" fill="#85c1e9"/>
+  <text x="400" y="545" font-size="16" font-weight="bold" text-anchor="middle" fill="white">UI Frameworks and Utilities</text>
+  <text x="400" y="565" font-size="12" text-anchor="middle" fill="white">Swing, JavaFX, JDBC, RMI, XML Processing</text>
+  
+  <rect x="120" y="470" width="560" height="40" rx="8" fill="#2980b9"/>
+  <text x="140" y="495" font-size="18" font-weight="bold" fill="white">JAVA SE (Standard Edition)</text>
+  <text x="650" y="495" font-size="14" text-anchor="end" fill="white">Foundation</text>
+
+  <rect x="100" y="150" width="350" height="280" rx="10" fill="#ffebee" stroke="#e74c3c" stroke-width="3"/>
+  
+  <rect x="120" y="360" width="310" height="60" rx="8" fill="#e74c3c"/>
+  <text x="275" y="385" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Web Services</text>
+  <text x="275" y="405" font-size="12" text-anchor="middle" fill="white">JAX-RS, JAX-WS, JSON-B</text>
+  
+  <rect x="120" y="290" width="310" height="60" rx="8" fill="#ec7063"/>
+  <text x="275" y="315" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Enterprise Components</text>
+  <text x="275" y="335" font-size="12" text-anchor="middle" fill="white">EJB, JPA, JMS, CDI, JTA</text>
+  
+  <rect x="120" y="220" width="310" height="60" rx="8" fill="#f1948a"/>
+  <text x="275" y="245" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Web Technologies</text>
+  <text x="275" y="265" font-size="12" text-anchor="middle" fill="white">Servlets, JSP, JSF, WebSocket</text>
+  
+  <rect x="120" y="170" width="310" height="40" rx="8" fill="#c0392b"/>
+  <text x="140" y="195" font-size="18" font-weight="bold" fill="white">JAVA EE</text>
+  <text x="410" y="195" font-size="14" text-anchor="end" fill="white">Enterprise</text>
+  
+  <text x="275" y="445" font-size="12" font-style="italic" text-anchor="middle" fill="#7f8c8d">Built on Java SE</text>
+
+  <rect x="480" y="150" width="220" height="280" rx="10" fill="#e8f5e9" stroke="#27ae60" stroke-width="3"/>
+  
+  <rect x="495" y="360" width="190" height="60" rx="8" fill="#27ae60"/>
+  <text x="590" y="385" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Mobile UI</text>
+  <text x="590" y="405" font-size="12" text-anchor="middle" fill="white">LWUIT, Mobile GUI</text>
+  
+  <rect x="495" y="290" width="190" height="60" rx="8" fill="#52be80"/>
+  <text x="590" y="315" font-size="16" font-weight="bold" text-anchor="middle" fill="white">ME APIs</text>
+  <text x="590" y="335" font-size="12" text-anchor="middle" fill="white">MIDP, CLDC, CDC</text>
+  
+  <rect x="495" y="220" width="190" height="60" rx="8" fill="#7dcea0"/>
+  <text x="590" y="245" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Compact Libraries</text>
+  <text x="590" y="265" font-size="12" text-anchor="middle" fill="white">Subset of SE APIs</text>
+  
+  <rect x="495" y="170" width="190" height="40" rx="8" fill="#1e8449"/>
+  <text x="510" y="195" font-size="18" font-weight="bold" fill="white">JAVA ME</text>
+  <text x="665" y="195" font-size="14" text-anchor="end" fill="white">Micro</text>
+  
+  <text x="590" y="445" font-size="12" font-style="italic" text-anchor="middle" fill="#7f8c8d">Subset of SE</text>
+
+  <rect x="105" y="100" width="180" height="35" rx="5" fill="#ffcdd2" stroke="#e74c3c" stroke-width="2"/>
+  <text x="195" y="122" font-size="13" font-weight="bold" text-anchor="middle" fill="#c0392b">Adds Enterprise Features</text>
+  
+  <rect x="515" y="100" width="160" height="35" rx="5" fill="#c8e6c9" stroke="#27ae60" stroke-width="2"/>
+  <text x="595" y="122" font-size="13" font-weight="bold" text-anchor="middle" fill="#1e8449">Optimized for Small</text>
+</svg>

@@ -10,7 +10,7 @@
           { "name": "History of Java" },
           { "name": "Features of Java (Platform Independent, OOP, etc.)" },
           { "name": "JDK, JRE, JVM Architecture" },
-          { "name": "Java compilation process" },
+          { "name": "Compilation and Execution Process" },
           { "name": "Bytecode and Platform Independence" },
           { "name": "Java Editions (SE, EE, ME)" },
           { "name": "Path and Classpath (Environment Variables)" },

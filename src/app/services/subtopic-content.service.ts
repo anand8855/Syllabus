@@ -4,7 +4,12 @@ import {
   fundamentalsContent,
   exceptionHierarchyContent,
   historyOfJavaContent,
-  featuresOfJavaContent
+  featuresOfJavaContent,
+  jdkJreJvmContent,
+  compilationAndExecutionContent,
+  bytecodeAndPlatformIndependenceContent,
+  javaEditionsContent,
+  pathAndClasspathContent
 } from '../json/subtopics/subtopic-mapper';
 
 @Injectable({
@@ -16,7 +21,12 @@ export class SubtopicContentService {
     'Fundamentals': fundamentalsContent,
     'Exception Hierarchy': exceptionHierarchyContent,
     'History of Java': historyOfJavaContent,
-    'Features of Java (Platform Independent, OOP, etc.)': featuresOfJavaContent
+    'Features of Java (Platform Independent, OOP, etc.)': featuresOfJavaContent,
+    'JDK, JRE, JVM Architecture': jdkJreJvmContent,
+    'Compilation and Execution Process': compilationAndExecutionContent,
+    'Bytecode and Platform Independence': bytecodeAndPlatformIndependenceContent,
+    'Java Editions (SE, EE, ME)': javaEditionsContent,
+    'Path and Classpath (Environment Variables)': pathAndClasspathContent
     // Add more mappings as you create new subtopic files:
     // 'Checked vs Unchecked Exceptions': checkedVsUncheckedContent,
     // 'try–catch–finally': tryCatchFinallyContent,

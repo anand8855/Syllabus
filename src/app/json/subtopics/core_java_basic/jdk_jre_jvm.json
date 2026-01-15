@@ -1,0 +1,553 @@
+{
+  "name": "☕ JDK, JRE, and JVM Architecture — Java Explained Like a Story (with Fun!)",
+  "overview": "If Java were a movie production, then: JDK = Movie studio + shooting equipment 🎬, JRE = Cinema hall where the movie runs 🍿, and JVM = Projector that actually plays the movie 🎥. Many beginners (and even experienced devs 😄) get confused between JDK, JRE, and JVM. Let's break them down clearly, visually, and memorably, and then dive deep into JVM Architecture—perfect for learning + interviews!",
+  "sections": [
+    {
+      "title": "🎥 The Movie Production Analogy",
+      "content": "Understanding JDK, JRE, and JVM is like understanding how movies are made and watched.",
+      "subsections": [
+        {
+          "title": "The Complete Picture",
+          "content": "• JDK (Java Development Kit) 🎬\n  → The movie studio with all equipment\n  → Cameras, editing tools, directors, writers\n  → Everything needed to CREATE a movie\n\n• JRE (Java Runtime Environment) 🍿\n  → The cinema hall where movies are shown\n  → Projector, screen, sound system\n  → Everything needed to WATCH a movie\n\n• JVM (Java Virtual Machine) 🎥\n  → The projector that actually plays the film\n  → Takes the reel and displays it\n  → The HEART of the operation"
+        },
+        {
+          "title": "💡 Real-World Comparison",
+          "content": "Just like:\n• You need a studio to make a movie\n• You need a cinema to show it\n• You need a projector to display it\n\nIn Java:\n• You need JDK to write code\n• You need JRE to run programs\n• JVM actually executes the bytecode"
+        },
+        {
+          "title": "😄 Funny Reality Check",
+          "content": "Developer mistake #1:\nInstalling JRE and wondering why you can't compile code 😅\n\n'Why isn't javac working?'\n\nBecause JRE is for watching movies, not making them!\n\nYou need the full JDK studio! 🎬"
+        }
+      ]
+    },
+    {
+      "title": "🎥 What is JVM (Java Virtual Machine)?",
+      "content": "JVM is the heart of Java. It is a virtual machine that reads Java bytecode, converts it into machine-specific instructions, and executes the program. JVM makes Java platform-independent.",
+      "subsections": [
+        {
+          "title": "🧠 Simple Definition",
+          "content": "JVM is a virtual computer inside your real computer.\n\nWhat it does:\n• Reads Java bytecode (.class files)\n• Converts it into machine-specific instructions\n• Executes the program\n• Manages memory automatically\n• Provides security and safety"
+        },
+        {
+          "title": "🧩 Key Role - Platform Independence",
+          "content": "You don't write code for Windows or Linux.\nYou write code for JVM.\nJVM handles the rest 😎\n\n• Same bytecode runs everywhere\n• Different JVMs for different platforms\n• Write Once, Run Anywhere (WORA)\n\nThis is Java's superpower! 🦸"
+        },
+        {
+          "title": "🌍 Analogy: The Universal Translator",
+          "content": "JVM is like a translator at the UN 🌍\n\nOne language in (Java bytecode) →\nMany languages out (Windows code, Linux code, Mac code)\n\nYou speak Java.\nJVM translates to whatever the OS understands.\n\nBeauty: You never worry about the translation!"
+        },
+        {
+          "title": "⚙️ Technical Details",
+          "content": "• Platform-specific (different JVM for each OS)\n• Converts bytecode to native machine code\n• Provides runtime environment\n• Handles memory management via Garbage Collection\n• Implements security features\n• Optimizes code execution via JIT compiler\n\nJVM Implementations:\n• HotSpot JVM (Oracle/OpenJDK - most popular)\n• GraalVM (high-performance)\n• Eclipse OpenJ9\n• Azul Zing"
+        }
+      ]
+    },
+    {
+      "title": "🍿 What is JRE (Java Runtime Environment)?",
+      "content": "JRE is everything needed to RUN a Java program. It's the cinema hall with all facilities for watching movies, but no equipment to make them.",
+      "subsections": [
+        {
+          "title": "🧠 Simple Definition",
+          "content": "JRE = JVM + Core Libraries + Runtime Files\n\nIt's the complete environment for executing Java applications.\n\n📦 JRE contains:\n• JVM (execution engine)\n• Core Java libraries (java.lang, java.util, java.io, etc.)\n• Supporting runtime files\n• Configuration files"
+        },
+        {
+          "title": "What JRE Can and Cannot Do",
+          "content": "✅ JRE CAN:\n• Run compiled Java programs (.class, .jar files)\n• Execute Java applications\n• Provide all runtime libraries\n• Handle program execution\n\n❌ JRE CANNOT:\n• Compile Java source code\n• Create new programs\n• Debug applications\n• Package applications"
+        },
+        {
+          "title": "🍳 Analogy: The Furnished Kitchen",
+          "content": "JRE is like a fully furnished kitchen 🍳\n\nYou can:\n✅ Cook meals (run programs)\n✅ Use all utensils (libraries)\n✅ Serve food (execute applications)\n\nYou cannot:\n❌ Build new kitchen tools\n❌ Manufacture utensils\n❌ Design new equipment\n\nYou consume, not create!"
+        },
+        {
+          "title": "🎯 When Do You Need JRE?",
+          "content": "You need JRE when:\n• Running Java applications as an end user\n• Your system just needs to execute Java programs\n• You're not developing, just using\n\nExamples:\n• Running Minecraft 🎮\n• Using Java-based desktop apps\n• Executing downloaded .jar files\n\nMost end users only need JRE, not JDK!"
+        }
+      ]
+    },
+    {
+      "title": "🛠️ What is JDK (Java Development Kit)?",
+      "content": "JDK is everything needed to DEVELOP Java applications. It's the complete movie studio with all tools, equipment, and facilities.",
+      "subsections": [
+        {
+          "title": "🧠 Simple Definition",
+          "content": "JDK = JRE + Development Tools\n\nThe complete toolkit for Java developers.\n\n📦 JDK contains:\n• JRE (for running)\n• Compiler (javac)\n• Debugger (jdb)\n• Documentation tool (javadoc)\n• Archive tool (jar)\n• Disassembler (javap)\n• Monitoring tools (jconsole, jvisualvm)\n• And many more developer tools"
+        },
+        {
+          "title": "What JDK Provides",
+          "content": "✅ Write code\n✅ Compile code (javac)\n✅ Run code (java)\n✅ Debug code (jdb)\n✅ Package code (.jar files)\n✅ Document code (javadoc)\n✅ Monitor performance\n✅ Profile applications"
+        },
+        {
+          "title": "🛠️ Analogy: The Full Workshop",
+          "content": "JDK is a complete workshop 🛠️\n\nYou can:\n✅ Design (write code)\n✅ Build (compile)\n✅ Test (debug)\n✅ Package (create .jar)\n✅ Document (javadoc)\n✅ Run (execute)\n\nEverything from idea to finished product!"
+        },
+        {
+          "title": "📋 Important JDK Tools",
+          "content": "Essential tools you get:\n\n• javac → Compiler (converts .java to .class)\n• java → Launcher (runs Java programs)\n• jar → Archive tool (create .jar files)\n• javadoc → Documentation generator\n• jdb → Debugger\n• javap → Class file disassembler\n• jconsole → Monitoring console\n• jvisualvm → Visual monitoring tool\n• keytool → Security key management\n• jlink → Custom runtime creator (Java 9+)"
+        },
+        {
+          "title": "🎯 When Do You Need JDK?",
+          "content": "You need JDK when:\n• You're a Java developer\n• Writing Java applications\n• Learning Java programming\n• Building Java projects\n• Working on enterprise applications\n\nRule of thumb:\n👨‍💻 Developer? → Need JDK\n👤 End user? → Need JRE only"
+        }
+      ]
+    },
+    {
+      "title": "🔄 Relationship Between JDK, JRE, and JVM",
+      "content": "Understanding the hierarchy is crucial for Java development.",
+      "images": [
+        {
+          "url": "assets/images/jdk-jre-jvm-relationship.svg",
+          "alt": "JDK, JRE, JVM Relationship Diagram",
+          "caption": "Visual hierarchy showing JDK contains JRE, which contains JVM, along with the specific components in each layer"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "📊 The Hierarchy",
+          "content": "JDK (Biggest)\n └── JRE (Medium)\n      └── JVM (Core)\n\nThink of Russian nesting dolls 🪆\n• JDK contains JRE\n• JRE contains JVM\n• Each layer adds functionality"
+        },
+        {
+          "title": "✅ Easy Interview Line",
+          "content": "\"JDK is for development, JRE is for execution, JVM is for running bytecode.\"\n\nMemory trick:\n• JDK → Development Kit → For Developers\n• JRE → Runtime Environment → For Execution\n• JVM → Virtual Machine → The Engine"
+        },
+        {
+          "title": "😄 Funny Note",
+          "content": "Installing JDK automatically installs JRE,\nbut installing JRE won't make you a Java developer 😉\n\n(Just like owning a cinema doesn't make you a filmmaker!)\n\nCommon beginner mistake:\n'I installed JRE, why can't I compile code?'\n\nBecause compilation needs javac, which is in JDK! 🎬"
+        },
+        {
+          "title": "📦 What Each Contains",
+          "content": "JDK:\n• All of JRE\n• javac, jar, javadoc\n• Development tools\n• Debugging tools\n\nJRE:\n• JVM\n• Core libraries (java.*, javax.*)\n• Runtime support files\n\nJVM:\n• Class loader\n• Bytecode verifier\n• Execution engine\n• Memory management\n• Garbage collector"
+        }
+      ]
+    },
+    {
+      "title": "🧠 JVM Architecture (The Real Engine Room)",
+      "content": "Now let's open the JVM and see what happens when you run a Java program. This is where the magic happens!",
+      "images": [
+        {
+          "url": "assets/images/jvm-architecture-detailed.svg",
+          "alt": "Detailed JVM Architecture Diagram",
+          "caption": "Complete JVM architecture showing Class Loader Subsystem, Runtime Data Areas (Method Area, Heap, Stack, PC Register, Native Stack), Execution Engine (Interpreter, JIT, GC), and Native Method Interface"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "🏗️ JVM Components Overview",
+          "content": "JVM has 3 main subsystems:\n\n1️⃣ Class Loader Subsystem\n   → Loads classes into memory\n\n2️⃣ Runtime Data Areas\n   → Memory where data is stored\n\n3️⃣ Execution Engine\n   → Actually runs the code\n\n+ Native Method Interface (JNI)\n+ Native Method Libraries"
+        }
+      ]
+    },
+    {
+      "title": "1️⃣ Class Loader Subsystem",
+      "content": "The Class Loader is the security checkpoint of JVM. No class enters without proper verification!",
+      "subsections": [
+        {
+          "title": "🧠 What It Does",
+          "content": "Loads .class files (bytecode) into JVM memory.\n\nThree-step process:\n1. Loading\n2. Linking\n3. Initialization"
+        },
+        {
+          "title": "📥 Step 1: Loading",
+          "content": "Reads .class files and loads them into memory.\n\nThree types of ClassLoaders:\n\n• Bootstrap ClassLoader\n  → Loads core Java classes (rt.jar)\n  → Written in native code (C/C++)\n  → Parent of all class loaders\n\n• Extension ClassLoader\n  → Loads classes from ext directory\n  → Standard extensions\n\n• Application ClassLoader\n  → Loads classes from classpath\n  → Your application classes\n  → Most commonly used"
+        },
+        {
+          "title": "🔗 Step 2: Linking",
+          "content": "Three sub-phases:\n\na) Verification ✅\n   → Verifies bytecode is valid\n   → Checks for illegal operations\n   → Ensures security\n   → Like TSA screening at airport ✈️\n\nb) Preparation 📋\n   → Allocates memory for static variables\n   → Assigns default values\n   → int → 0, boolean → false, Object → null\n\nc) Resolution 🔍\n   → Converts symbolic references to direct references\n   → Links method calls to actual methods"
+        },
+        {
+          "title": "🚀 Step 3: Initialization",
+          "content": "• Executes static blocks\n• Initializes static variables with actual values\n• Calls static initializers\n\nNow the class is ready to use!"
+        },
+        {
+          "title": "✈️ Analogy: Airport Security",
+          "content": "Class Loader is like airport security:\n\n1. Check-in (Loading)\n   → You arrive at airport\n\n2. Security screening (Linking)\n   → Verify passport ✅\n   → Prepare boarding pass 📋\n   → Resolve gate number 🔍\n\n3. Board plane (Initialization)\n   → Ready to fly! 🛫\n\nNo suspicious class enters JVM without checking!"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Class Loading in Action",
+          "description": "Understanding when classes are loaded",
+          "code": "public class ClassLoadingDemo {\n    // Static block executes during Initialization phase\n    static {\n        System.out.println(\"Class is being initialized!\");\n    }\n    \n    // Static variable initialized\n    static int count = 100;\n    \n    public static void main(String[] args) {\n        System.out.println(\"Main method executing\");\n        System.out.println(\"Count: \" + count);\n        \n        // This will trigger loading of MyClass\n        MyClass obj = new MyClass();\n    }\n}\n\nclass MyClass {\n    static {\n        System.out.println(\"MyClass initialized!\");\n    }\n}\n\n// Output:\n// Class is being initialized!\n// Main method executing\n// Count: 100\n// MyClass initialized!",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "2️⃣ Runtime Data Areas (Memory Areas)",
+      "content": "JVM divides memory smartly for efficiency. Each area has a specific purpose.",
+      "subsections": [
+        {
+          "title": "📊 Memory Layout Overview",
+          "content": "JVM memory is divided into 5 areas:\n\n1. Method Area (MetaSpace) 📚\n2. Heap Area 🏀\n3. Stack Area 🍽️\n4. Program Counter (PC) Register 🔖\n5. Native Method Stack 🤝\n\nFirst two are shared, last three are thread-specific!"
+        }
+      ]
+    },
+    {
+      "title": "📚 a) Method Area (MetaSpace)",
+      "content": "Stores class-level data shared by all threads.",
+      "subsections": [
+        {
+          "title": "What It Stores",
+          "content": "• Class metadata (structure, methods)\n• Static variables\n• Method bytecode\n• Runtime constant pool\n• Field information\n\n🔄 Shared across all threads"
+        },
+        {
+          "title": "📚 Analogy: The Library",
+          "content": "Method Area is like a library 📚\n\n• Everyone can read from it\n• Contains reference materials (class definitions)\n• Shared resource\n• Permanent storage (until class is unloaded)\n\nWhen you define a class, its blueprint goes here!"
+        },
+        {
+          "title": "📝 Important Note",
+          "content": "In Java 8+:\n• Method Area is called MetaSpace\n• Moved from Heap to native memory\n• Auto-sized (no more PermGen errors!)\n• Better memory management"
+        }
+      ]
+    },
+    {
+      "title": "🏀 b) Heap Area",
+      "content": "The playground where all objects live and play!",
+      "subsections": [
+        {
+          "title": "What It Stores",
+          "content": "• All objects (instances)\n• Instance variables\n• Arrays\n\n🔄 Shared across all threads\n\nThis is where 'new' keyword creates objects!"
+        },
+        {
+          "title": "🏀 Analogy: The Common Playground",
+          "content": "Heap is a common playground 🏀\n\n• All objects hang out here\n• Shared space\n• Garbage Collector cleans up\n• Largest memory area"
+        },
+        {
+          "title": "😄 Funny Note - Memory Leaks",
+          "content": "Heap memory leaks are like trash piling up when garbage collection doesn't happen.\n\nForget to remove object references?\nGarbage piles up! 🗑️\n\nGood news: Java's GC is automatic!\nBad news: It's not magic—help it by removing references! 😄"
+        },
+        {
+          "title": "🎯 Key Facts",
+          "content": "• Created at JVM startup\n• Destroyed when JVM shuts down\n• Size can be configured (-Xmx, -Xms)\n• Divided into Young Gen, Old Gen (for GC)\n• OutOfMemoryError happens here"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Heap vs Stack Demo",
+          "description": "Where different data types are stored",
+          "code": "public class MemoryDemo {\n    static int staticVar = 100;  // Method Area (static)\n    \n    public static void main(String[] args) {\n        int localVar = 10;           // Stack (local variable)\n        \n        MemoryDemo obj = new MemoryDemo();  // obj reference in Stack\n                                             // actual object in Heap\n        obj.instanceMethod();\n    }\n    \n    void instanceMethod() {\n        int x = 20;  // Stack (local to this method)\n        String str = new String(\"Hello\");  // Reference in Stack\n                                            // Object in Heap\n    }\n}\n\n// Memory Allocation:\n// Stack: localVar, obj reference, x, str reference\n// Heap: MemoryDemo object, String object\n// Method Area: staticVar, class metadata",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "🍽️ c) Stack Area",
+      "content": "Each thread gets its own stack—like plates stacked one on top of another.",
+      "subsections": [
+        {
+          "title": "What It Stores",
+          "content": "• Method calls (stack frames)\n• Local variables\n• Partial results\n• Method parameters\n\n⚡ Thread-specific (each thread has its own stack)\n🥞 LIFO - Last In, First Out"
+        },
+        {
+          "title": "🍽️ Analogy: Stack of Plates",
+          "content": "Stack is like a stack of plates 🍽️\n\n• Add plate on top (method call)\n• Remove from top (method returns)\n• Last In → First Out (LIFO)\n• Can't remove middle plate without removing top ones\n\nMethod calls:\nmain() → method1() → method2()\n\nStack:\n[method2]\n[method1]\n[main]\n\nWhen method2 returns, pop it off!\n\n[method1]\n[main]"
+        },
+        {
+          "title": "😄 StackOverflowError",
+          "content": "Too many plates stacked = they fall! 🍽️💥\n\nHappens when:\n• Infinite recursion\n• Very deep method calls\n• No base case in recursion\n\nClassic mistake:\npublic void recurse() {\n    recurse(); // Oops! No base case!\n}\n\nStack keeps growing until... BOOM! 💥\nStackOverflowError!"
+        },
+        {
+          "title": "🔍 Stack Frame Structure",
+          "content": "Each method call creates a stack frame containing:\n\n• Local variables\n• Operand stack (for calculations)\n• Frame data (method metadata)\n\nWhen method completes:\n✅ Frame is popped\n✅ Control returns to caller\n✅ Memory is freed"
+        }
+      ]
+    },
+    {
+      "title": "🔖 d) Program Counter (PC) Register",
+      "content": "The bookmark that remembers where JVM stopped reading.",
+      "subsections": [
+        {
+          "title": "What It Does",
+          "content": "• Stores address of current instruction being executed\n• Thread-specific (each thread has its own PC)\n• Smallest memory area\n• Helps resume execution after context switch"
+        },
+        {
+          "title": "🔖 Analogy: The Bookmark",
+          "content": "PC Register is a bookmark 🔖\n\n• Reading a book (executing code)\n• Phone rings (thread interrupted)\n• Put bookmark (save PC value)\n• Answer call (switch to another thread)\n• Come back (restore PC value)\n• Continue reading from bookmark!\n\nJVM always knows where it stopped!"
+        },
+        {
+          "title": "⚙️ Technical Detail",
+          "content": "• Contains address of JVM instruction\n• For native methods, PC is undefined\n• Updated after each instruction\n• Critical for multithreading"
+        }
+      ]
+    },
+    {
+      "title": "🤝 e) Native Method Stack",
+      "content": "The special stack for calling non-Java code.",
+      "subsections": [
+        {
+          "title": "What It Does",
+          "content": "• Supports native methods (C/C++ code)\n• Thread-specific\n• Similar to regular stack but for native code\n• Used by JNI (Java Native Interface)"
+        },
+        {
+          "title": "🤝 Analogy: Calling a Non-Java Friend",
+          "content": "Native stack is Java saying:\n'I'll call my non-Java friend for help' 😄\n\nSometimes Java needs to:\n• Access OS-specific features\n• Call C/C++ libraries\n• Perform low-level operations\n\nExample:\nSystem.currentTimeMillis() → calls native C code\n\nNative Method Stack handles this!"
+        },
+        {
+          "title": "📋 When It's Used",
+          "content": "Native methods are declared with 'native' keyword:\n\npublic class NativeExample {\n    // Native method declaration\n    public native void nativeMethod();\n    \n    static {\n        System.loadLibrary(\"nativeLib\");\n    }\n}\n\nExamples in Java API:\n• Thread.currentThread()\n• Object.hashCode()\n• System.currentTimeMillis()\n• File I/O operations"
+        }
+      ]
+    },
+    {
+      "title": "3️⃣ Execution Engine",
+      "content": "The actual executor that runs your code. This is where bytecode comes to life!",
+      "subsections": [
+        {
+          "title": "⚙️ Three Main Components",
+          "content": "1. Interpreter 📖\n2. JIT Compiler ⚡\n3. Garbage Collector 🗑️\n\nTogether they make Java fast, efficient, and memory-safe!"
+        }
+      ]
+    },
+    {
+      "title": "📖 Interpreter",
+      "content": "Reads and executes bytecode line by line.",
+      "subsections": [
+        {
+          "title": "How It Works",
+          "content": "• Reads bytecode one instruction at a time\n• Converts to native machine code\n• Executes immediately\n• Simple but slow approach"
+        },
+        {
+          "title": "📖 Analogy: Reading Instructions Every Time",
+          "content": "Interpreter is like reading a recipe every single time you cook 📖\n\nDay 1: Read recipe → Cook\nDay 2: Read same recipe again → Cook\nDay 3: Read same recipe again → Cook\n\nAccurate, but inefficient!\n\nThis is why pure interpretation is slow."
+        },
+        {
+          "title": "⚠️ The Problem",
+          "content": "If a method is called 1000 times:\n→ Interpreter converts it 1000 times!\n\nThis is wasteful.\n\nSolution: JIT Compiler! ⚡"
+        }
+      ]
+    },
+    {
+      "title": "⚡ JIT (Just-In-Time) Compiler",
+      "content": "The performance booster that makes Java fast!",
+      "subsections": [
+        {
+          "title": "🧠 What It Does",
+          "content": "• Identifies 'hot spots' (frequently executed code)\n• Compiles bytecode to native machine code\n• Stores compiled code for reuse\n• Dramatically improves performance"
+        },
+        {
+          "title": "⚡ Analogy: Memorizing After Practice",
+          "content": "JIT is like memorizing steps after doing them once 🧠⚡\n\nFirst time: Read recipe (interpret)\nSecond time: Remember and cook faster (compiled)\nThird time onwards: Super fast! (optimized)\n\nNo need to read again—you've memorized it!"
+        },
+        {
+          "title": "🎯 How JIT Optimizes",
+          "content": "1. Profiling\n   → Monitors which code runs frequently\n   \n2. Compilation\n   → Compiles hot methods to native code\n   \n3. Optimization\n   → Method inlining\n   → Dead code elimination\n   → Loop optimization\n   → Constant folding\n   \n4. Caching\n   → Stores compiled code for reuse"
+        },
+        {
+          "title": "🚀 Performance Impact",
+          "content": "Without JIT:\n• Code runs slow\n• Interpreted every time\n\nWith JIT:\n• 10-100x faster for hot code!\n• Near-native performance\n• Long-running apps benefit most\n\nWhy Java servers are so fast! 🏃‍♂️\n\nThe longer they run, the faster they get!"
+        },
+        {
+          "title": "😄 Funny Reality",
+          "content": "Java startup: 'I'm a bit slow...' 😴\n\nJava after running 10 minutes: 'Watch me fly!' 🚀\n\nJIT is like coffee for JVM ☕\nNeeds time to kick in, then ZOOM!"
+        }
+      ]
+    },
+    {
+      "title": "🗑️ Garbage Collector (GC)",
+      "content": "The automatic cleaning service that prevents memory leaks!",
+      "subsections": [
+        {
+          "title": "🧠 What It Does",
+          "content": "• Automatically removes unused objects\n• Frees heap memory\n• Prevents memory leaks\n• Runs in background\n• Developer doesn't call it manually"
+        },
+        {
+          "title": "🗑️ Analogy: The Cleaning Staff",
+          "content": "GC is the cleaning staff 🧹\n\nYou:\n• Create objects (make a mess)\n• Use objects (enjoy)\n• Forget about them (leave)\n\nGC:\n• Finds unused objects\n• Cleans them up\n• Frees memory\n\nYou don't call them—they come automatically!"
+        },
+        {
+          "title": "🎯 How GC Works",
+          "content": "1. Mark Phase\n   → Identifies live objects (still referenced)\n   → Marks them as 'in use'\n\n2. Sweep Phase\n   → Finds unmarked objects (unreachable)\n   → Removes them\n   → Frees memory\n\n3. Compact Phase (optional)\n   → Defragments memory\n   → Moves objects together"
+        },
+        {
+          "title": "📊 Heap Generations",
+          "content": "GC divides heap into generations:\n\nYoung Generation:\n• New objects created here\n• Frequent, fast GC\n• Most objects die young\n\nOld Generation (Tenured):\n• Long-lived objects\n• Infrequent, slower GC\n• Promoted from Young Gen\n\nMetaSpace:\n• Class metadata\n• Rarely collected"
+        },
+        {
+          "title": "😄 GC vs C/C++",
+          "content": "C/C++ developers:\n'I must carefully track every malloc and free' 😰\n'Memory leak? My responsibility!' 😓\n'Segmentation fault? My nightmare!' 💀\n\nJava developers:\n'GC handles it' 😎\n'What's a memory leak?' 😄\n\nJava: Living dangerously? Not our style! ☕\n\n(Though GC isn't perfect—can still leak via references!)"
+        },
+        {
+          "title": "⚙️ GC Algorithms",
+          "content": "Popular GC implementations:\n\n• Serial GC\n  → Single thread, simple\n  \n• Parallel GC\n  → Multiple threads, faster\n  \n• G1 GC (Garbage First)\n  → Default in Java 9+\n  → Low pause times\n  \n• ZGC (Java 11+)\n  → Ultra-low latency\n  → Handles huge heaps\n  \n• Shenandoah GC\n  → Concurrent compaction"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Garbage Collection Demo",
+          "description": "Understanding when objects become eligible for GC",
+          "code": "public class GCDemo {\n    public static void main(String[] args) {\n        // Object created - stored in heap\n        MyObject obj1 = new MyObject(\"Object 1\");\n        MyObject obj2 = new MyObject(\"Object 2\");\n        \n        // obj1 is eligible for GC (no reference)\n        obj1 = null;\n        \n        // Suggest GC to run (doesn't guarantee it will run!)\n        System.gc();\n        \n        // obj2 still alive\n        System.out.println(obj2.name);\n        \n        // Now obj2 also eligible for GC\n        obj2 = null;\n    }\n}\n\nclass MyObject {\n    String name;\n    \n    MyObject(String name) {\n        this.name = name;\n        System.out.println(name + \" created\");\n    }\n    \n    // Called by GC before object is destroyed\n    @Override\n    protected void finalize() {\n        System.out.println(name + \" is being garbage collected\");\n    }\n}",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "🌉 Native Method Interface (JNI)",
+      "content": "The bridge between Java and native code (C/C++).",
+      "subsections": [
+        {
+          "title": "What It Is",
+          "content": "• Framework for calling C/C++ code from Java\n• Allows Java to interact with OS\n• Enables use of existing native libraries\n• Two-way communication"
+        },
+        {
+          "title": "🌉 Analogy",
+          "content": "JNI is like a translator at an international conference 🌐\n\nJava speaks: 'I need system time'\nJNI translates to C: 'gettimeofday()'\nC responds with data\nJNI translates back to Java\n\nBridge between two worlds!"
+        },
+        {
+          "title": "When It's Used",
+          "content": "• Platform-specific features (Windows API, Linux syscalls)\n• Performance-critical code (C is faster)\n• Legacy code integration\n• Hardware access\n• Existing C/C++ libraries"
+        }
+      ]
+    },
+    {
+      "title": "🔄 How Everything Works Together (Complete Flow)",
+      "content": "Let's trace a Java program from code to execution!",
+      "images": [
+        {
+          "url": "assets/images/java-execution-flow.svg",
+          "alt": "Java Program Execution Flow",
+          "caption": "Complete flow from writing Java code to execution - showing compilation, class loading, memory allocation, and execution engine phases"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "📝 Step-by-Step Execution",
+          "content": "1. Write .java file\n   → Source code created\n\n2. Compile with javac\n   → Generates .class file (bytecode)\n   → Platform-independent\n\n3. Class Loader loads .class\n   → Loading → Linking → Initialization\n\n4. Bytecode stored in Method Area\n   → Class metadata saved\n\n5. Objects created in Heap\n   → 'new' keyword allocates memory\n\n6. Stack handles method calls\n   → Local variables, method frames\n\n7. Execution Engine runs code\n   → Interpreter + JIT work together\n\n8. Garbage Collector cleans up\n   → Removes unused objects\n   → Frees memory\n\n9. Program completes! 🎉"
+        },
+        {
+          "title": "🎬 Movie Analogy - Complete Picture",
+          "content": "Making and showing a movie:\n\n1. Write script (.java)\n2. Film it (compile → .class)\n3. Movie ready (bytecode)\n4. Load into cinema (Class Loader)\n5. Set up hall (Method Area)\n6. Audience arrives (Objects in Heap)\n7. Track showing time (Stack)\n8. Projector plays (Execution Engine)\n9. Clean after show (Garbage Collector)\n\nEvery step matters! 🎥"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Complete Execution Example",
+          "description": "Tracing memory allocation across different areas",
+          "code": "public class ExecutionDemo {\n    // Static variable - Method Area\n    static int staticCount = 0;\n    \n    // Instance variable - Heap (when object created)\n    int instanceVar = 10;\n    \n    public static void main(String[] args) {\n        // args reference - Stack\n        // Actual array - Heap\n        \n        // Local variable - Stack\n        int localVar = 20;\n        \n        // obj reference - Stack\n        // Actual object - Heap\n        ExecutionDemo obj = new ExecutionDemo();\n        \n        // Method call - Stack frame created\n        int result = obj.calculate(5, 10);\n        \n        System.out.println(result);\n        // After method returns, stack frame removed\n    }\n    \n    int calculate(int a, int b) {\n        // a, b, sum - Stack (local to this method)\n        int sum = a + b;\n        return sum;\n        // Stack frame popped when returning\n    }\n}\n\n// Memory breakdown:\n// Method Area: staticCount, class metadata, bytecode\n// Heap: ExecutionDemo object, args array\n// Stack: localVar, obj reference, result, a, b, sum\n// PC Register: tracks current instruction\n// Execution Engine: runs the code",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "🧠 Interview-Ready Quick Summary",
+      "content": "Master table for quick revision and interviews!",
+      "subsections": [
+        {
+          "title": "📊 Component Comparison Table",
+          "content": "Component | Purpose\n----------|--------\nJVM | Runs Java bytecode\nJRE | JVM + libraries\nJDK | JRE + dev tools\nHeap | Stores objects\nStack | Stores method calls\nMethod Area | Class metadata\nJIT | Improves performance\nGC | Cleans memory\nClass Loader | Loads classes\nInterpreter | Executes bytecode\nPC Register | Current instruction\nNative Stack | Native method calls"
+        },
+        {
+          "title": "💡 Interview One-Liners",
+          "content": "Q: What is JVM?\nA: Virtual machine that executes Java bytecode and provides platform independence.\n\nQ: Difference between JDK and JRE?\nA: JDK = JRE + development tools (for developers). JRE = JVM + libraries (for execution).\n\nQ: What is JIT?\nA: Just-In-Time compiler that compiles frequently-used bytecode to native code for performance.\n\nQ: How does GC work?\nA: Automatically identifies and removes unused objects to free memory.\n\nQ: Heap vs Stack?\nA: Heap stores objects (shared), Stack stores method calls (thread-specific).\n\nQ: What is Class Loader?\nA: Loads .class files into JVM through Loading, Linking, Initialization phases."
+        },
+        {
+          "title": "🎯 Key Takeaways",
+          "content": "✅ JDK ⊃ JRE ⊃ JVM (nested hierarchy)\n✅ Write code → JDK, Run code → JRE, Execute bytecode → JVM\n✅ Heap = objects (shared), Stack = methods (thread-local)\n✅ JIT makes Java fast by compiling hot code\n✅ GC automatically cleans memory (no manual free!)\n✅ Class Loader = security checkpoint\n✅ Method Area = class metadata storage\n✅ PC Register = instruction pointer\n✅ Native Stack = for C/C++ calls"
+        }
+      ]
+    },
+    {
+      "title": "🏁 Final Thoughts",
+      "content": "Understanding JDK, JRE, and JVM architecture is crucial for Java mastery.",
+      "subsections": [
+        {
+          "title": "Why This Matters",
+          "content": "Understanding Java's architecture helps you:\n\n✅ Write better code\n✅ Debug performance issues\n✅ Optimize memory usage\n✅ Ace technical interviews\n✅ Understand error messages\n✅ Make informed decisions\n\nJava's architecture is the secret behind its success:\n• Platform-independent\n• Secure\n• Robust\n• High-performing\n• Memory-safe"
+        },
+        {
+          "title": "The Big Picture",
+          "content": "Once you understand:\n• JDK → JRE → JVM hierarchy\n• JVM internals (Class Loader, Memory, Execution Engine)\n• How bytecode flows through the system\n• How GC and JIT work together\n\nJava suddenly feels less magical and more logical 😄\n\nIt's not magic—it's brilliant engineering! 🎓"
+        },
+        {
+          "title": "😄 Final Fun Fact",
+          "content": "Java: 'I run everywhere!'\nC++: 'But I'm faster!'\nJava: 'Sure, but I don't crash and leak memory' 😎\nC++: '...fair point' 😅\n\nAnd yes… Java still loves coffee ☕😉"
+        }
+      ]
+    }
+  ],
+  "keyPoints": [
+    "JDK = JRE + Development Tools (javac, jar, javadoc, debugger)",
+    "JRE = JVM + Core Libraries + Runtime Files",
+    "JVM = Execution Engine that runs Java bytecode",
+    "JDK is for developers, JRE is for end users, JVM is the core",
+    "Class Loader loads classes through Loading → Linking → Initialization",
+    "Runtime Data Areas: Method Area, Heap, Stack, PC Register, Native Stack",
+    "Heap stores objects (shared), Stack stores method calls (thread-specific)",
+    "Method Area stores class metadata, static variables, and bytecode",
+    "Execution Engine has Interpreter, JIT Compiler, and Garbage Collector",
+    "JIT compiles hot code to native for performance boost",
+    "Garbage Collector automatically removes unused objects",
+    "PC Register tracks current instruction being executed",
+    "Native Method Stack handles C/C++ code calls via JNI",
+    "JVM provides platform independence through bytecode abstraction",
+    "Installing JDK automatically includes JRE and JVM"
+  ],
+  "references": [
+    "Oracle JVM Specification - Official JVM architecture documentation",
+    "Java Platform, Standard Edition Documentation",
+    "Understanding the JVM by Gil Tene",
+    "Inside the Java Virtual Machine by Bill Venners",
+    "Java Performance: The Definitive Guide by Scott Oaks",
+    "Oracle Java Tutorials - JVM and Memory Management",
+    "Baeldung - JVM Architecture Tutorial"
+  ],
+  "interviewQA": [
+    {
+      "question": "What is the difference between JDK, JRE, and JVM?",
+      "answer": "JDK (Java Development Kit) = JRE + Development Tools (javac, jar, javadoc, debugger). Used by developers to write and compile Java programs.\n\nJRE (Java Runtime Environment) = JVM + Core Libraries + Runtime Files. Used to execute Java applications.\n\nJVM (Java Virtual Machine) = The virtual machine that executes Java bytecode. Platform-specific and provides platform independence.\n\nRelationship: JDK ⊃ JRE ⊃ JVM",
+      "difficulty": "easy",
+      "tags": ["JDK", "JRE", "JVM", "fundamentals"]
+    },
+    {
+      "question": "When do you need JDK vs JRE?",
+      "answer": "You need JDK when:\n• You're a Java developer\n• Writing/compiling Java code\n• Need javac, jar, javadoc tools\n\nYou need only JRE when:\n• You're an end user\n• Just running Java applications\n• Don't need to compile code\n\nRule: Developers need JDK, end users need only JRE.",
+      "difficulty": "easy",
+      "tags": ["JDK", "JRE", "usage"]
+    },
+    {
+      "question": "Explain JVM architecture components.",
+      "answer": "JVM has 3 main subsystems:\n\n1. Class Loader Subsystem:\n   - Loading (Bootstrap, Extension, Application loaders)\n   - Linking (Verification, Preparation, Resolution)\n   - Initialization\n\n2. Runtime Data Areas:\n   - Method Area (class metadata, static vars)\n   - Heap (objects, instance vars)\n   - Stack (method calls, local vars)\n   - PC Register (current instruction)\n   - Native Method Stack (native calls)\n\n3. Execution Engine:\n   - Interpreter (bytecode execution)\n   - JIT Compiler (performance optimization)\n   - Garbage Collector (memory management)",
+      "difficulty": "medium",
+      "tags": ["JVM", "architecture", "components"]
+    },
+    {
+      "question": "What is the difference between Heap and Stack memory?",
+      "answer": "Heap:\n• Stores objects and instance variables\n• Shared across all threads\n• Larger memory area\n• Slower access\n• Managed by Garbage Collector\n• OutOfMemoryError\n\nStack:\n• Stores method calls and local variables\n• Thread-specific (each thread has own stack)\n• Smaller, faster access\n• LIFO structure\n• Automatically cleared when method returns\n• StackOverflowError\n\nExample:\nMyObject obj = new MyObject();\n// 'obj' reference → Stack\n// Actual MyObject → Heap",
+      "difficulty": "medium",
+      "tags": ["heap", "stack", "memory"]
+    },
+    {
+      "question": "What is JIT compiler and how does it improve performance?",
+      "answer": "JIT (Just-In-Time) Compiler improves performance by:\n\n1. Profiling: Monitors frequently executed code ('hot spots')\n2. Compilation: Converts hot bytecode to native machine code\n3. Optimization: Applies optimizations (inlining, dead code elimination, loop optimization)\n4. Caching: Stores compiled code for reuse\n\nBenefit:\n• First execution: Interpreted (slower)\n• Subsequent executions: Native code (10-100x faster)\n• Long-running apps benefit most\n\nThis is why Java servers get faster over time!",
+      "difficulty": "medium",
+      "tags": ["JIT", "performance", "optimization"]
+    },
+    {
+      "question": "How does Garbage Collection work in Java?",
+      "answer": "Garbage Collection automatically manages memory:\n\n1. Mark Phase:\n   - Identifies live objects (still referenced)\n   - Marks them as 'in use'\n\n2. Sweep Phase:\n   - Finds unmarked objects (unreachable)\n   - Removes them and frees memory\n\n3. Compact Phase (optional):\n   - Defragments memory\n   - Moves objects together\n\nHeap Generations:\n• Young Gen: New objects, frequent GC\n• Old Gen: Long-lived objects, infrequent GC\n• MetaSpace: Class metadata\n\nAdvantage: No manual memory management (unlike C/C++)",
+      "difficulty": "medium",
+      "tags": ["GC", "memory", "garbage-collection"]
+    },
+    {
+      "question": "Explain the Class Loading process.",
+      "answer": "Class Loading has 3 phases:\n\n1. Loading:\n   - Bootstrap ClassLoader (core Java classes)\n   - Extension ClassLoader (extensions)\n   - Application ClassLoader (application classes)\n   - Reads .class file into memory\n\n2. Linking:\n   a) Verification: Validates bytecode\n   b) Preparation: Allocates memory for static vars\n   c) Resolution: Converts symbolic references to direct\n\n3. Initialization:\n   - Executes static blocks\n   - Initializes static variables\n\nAnalogy: Like airport security - verify, prepare, clear for entry!",
+      "difficulty": "hard",
+      "tags": ["class-loader", "loading", "jvm"]
+    },
+    {
+      "question": "What is stored in Method Area?",
+      "answer": "Method Area (MetaSpace in Java 8+) stores:\n\n• Class metadata (structure, methods, fields)\n• Static variables\n• Method bytecode\n• Runtime constant pool\n• Field information\n\nCharacteristics:\n• Shared across all threads\n• Created at JVM startup\n• In Java 8+, moved from Heap to native memory\n• No more PermGen errors (auto-sized)\n\nAnalogy: Like a library - everyone reads from same class definitions.",
+      "difficulty": "medium",
+      "tags": ["method-area", "metaspace", "memory"]
+    },
+    {
+      "question": "What causes StackOverflowError and OutOfMemoryError?",
+      "answer": "StackOverflowError:\n• Caused by: Too many method calls\n• Common reason: Infinite recursion, very deep recursion\n• Location: Stack memory\n• Example: Method calling itself without base case\n\nOutOfMemoryError:\n• Caused by: Heap memory exhausted\n• Common reason: Too many objects, memory leak, large data\n• Location: Heap memory\n• Solutions: Increase heap size (-Xmx), fix memory leaks, optimize code\n\nStack = method calls (limited depth)\nHeap = objects (can be very large)",
+      "difficulty": "medium",
+      "tags": ["errors", "stack", "heap", "memory"]
+    },
+    {
+      "question": "Why is Java called platform-independent? How does JVM enable this?",
+      "answer": "Platform Independence (WORA - Write Once, Run Anywhere):\n\n1. Write Java code once\n2. Compile to bytecode (.class) - platform-independent\n3. Bytecode runs on any JVM\n4. JVM is platform-specific (different for Windows/Linux/Mac)\n5. JVM translates bytecode to native machine code\n\nKey:\n• Same bytecode works everywhere\n• Different JVMs for different platforms\n• JVM acts as abstraction layer\n\nAnalogy: JVM is a universal translator - one language in (bytecode), platform-specific output.\n\nThis is Java's superpower!",
+      "difficulty": "easy",
+      "tags": ["platform-independence", "WORA", "JVM", "bytecode"]
+    }
+  ]
+}
