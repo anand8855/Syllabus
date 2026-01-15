@@ -1,0 +1,133 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" font-size="28" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    CLASSPATH: Library Catalog for Classes 📖
+  </text>
+  
+  <!-- JVM Request Section -->
+  <g id="jvm-request">
+    <rect x="50" y="80" width="350" height="120" fill="#e3f2fd" stroke="#1976d2" stroke-width="3" rx="10"/>
+    <text x="225" y="110" font-size="18" font-weight="bold" text-anchor="middle" fill="#1976d2">
+      JVM (Student) Needs a Class
+    </text>
+    <text x="225" y="145" font-size="20" font-family="monospace" text-anchor="middle" fill="#0d47a1">
+      "I need com.mysql.Driver"
+    </text>
+    <text x="225" y="175" font-size="16" text-anchor="middle" fill="#1565c0">
+      🤔 Where is this class?
+    </text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 400 140 L 570 140" stroke="#e74c3c" stroke-width="4" fill="none" marker-end="url(#arrowred)"/>
+  <text x="450" y="130" font-size="16" fill="#e74c3c" font-weight="bold">Search CLASSPATH</text>
+  
+  <!-- CLASSPATH Catalog Section -->
+  <g id="classpath-catalog">
+    <rect x="570" y="80" width="380" height="460" fill="#fff3e0" stroke="#f57c00" stroke-width="3" rx="10"/>
+    <text x="760" y="110" font-size="20" font-weight="bold" text-anchor="middle" fill="#f57c00">
+      CLASSPATH (Library Catalog)
+    </text>
+    
+    <!-- Entry 1: Current Directory -->
+    <rect x="590" y="130" width="340" height="60" fill="#fff" stroke="#ff6f00" stroke-width="2" rx="5"/>
+    <text x="610" y="155" font-size="14" font-weight="bold" fill="#e65100">Entry 1: Current Directory</text>
+    <text x="610" y="175" font-size="13" font-family="monospace" fill="#bf360c">. (current folder)</text>
+    
+    <!-- Entry 2: Classes Directory -->
+    <rect x="590" y="200" width="340" height="60" fill="#fff" stroke="#ff6f00" stroke-width="2" rx="5"/>
+    <text x="610" y="225" font-size="14" font-weight="bold" fill="#e65100">Entry 2: Classes Directory</text>
+    <text x="610" y="245" font-size="13" font-family="monospace" fill="#bf360c">C:\myapp\classes</text>
+    
+    <!-- Entry 3: MySQL JAR (MATCH!) -->
+    <rect x="590" y="270" width="340" height="80" fill="#e8f5e9" stroke="#388e3c" stroke-width="4" rx="5"/>
+    <text x="610" y="295" font-size="14" font-weight="bold" fill="#2e7d32">Entry 3: MySQL JAR ✅ FOUND!</text>
+    <text x="610" y="315" font-size="13" font-family="monospace" fill="#1b5e20">C:\libs\mysql-connector.jar</text>
+    <text x="610" y="335" font-size="12" fill="#388e3c">Contains: com.mysql.Driver</text>
+    
+    <!-- Entry 4: Other JARs -->
+    <rect x="590" y="360" width="340" height="60" fill="#fff" stroke="#ff6f00" stroke-width="2" rx="5"/>
+    <text x="610" y="385" font-size="14" font-weight="bold" fill="#e65100">Entry 4: Other Libraries</text>
+    <text x="610" y="405" font-size="13" font-family="monospace" fill="#bf360c">C:\libs\*</text>
+    
+    <!-- Entry 5: More JARs -->
+    <rect x="590" y="430" width="340" height="60" fill="#fff" stroke="#ff6f00" stroke-width="2" rx="5"/>
+    <text x="610" y="455" font-size="14" font-weight="bold" fill="#e65100">Entry 5: More JARs</text>
+    <text x="610" y="475" font-size="13" font-family="monospace" fill="#bf360c">C:\libs\commons-lang.jar</text>
+    
+    <!-- Search Note -->
+    <text x="760" y="520" font-size="14" font-style="italic" text-anchor="middle" fill="#f57c00">
+      JVM searches left to right, uses FIRST match
+    </text>
+  </g>
+  
+  <!-- Arrow 2: Success -->
+  <path d="M 760 540 L 760 570" stroke="#27ae60" stroke-width="4" fill="none" marker-end="url(#arrowgreen)"/>
+  
+  <!-- Success Section -->
+  <g id="success">
+    <rect x="470" y="570" width="580" height="100" fill="#e8f5e9" stroke="#388e3c" stroke-width="3" rx="10"/>
+    <text x="760" y="600" font-size="20" font-weight="bold" text-anchor="middle" fill="#388e3c">
+      Class Loaded Successfully! ✅
+    </text>
+    <text x="760" y="630" font-size="16" text-anchor="middle" fill="#2e7d32">
+      JVM: "Found com.mysql.Driver in mysql-connector.jar"
+    </text>
+    <text x="760" y="655" font-size="16" text-anchor="middle" fill="#1b5e20">
+      Application continues running...
+    </text>
+  </g>
+  
+  <!-- Without CLASSPATH Section -->
+  <g id="without-classpath">
+    <rect x="50" y="230" width="480" height="200" fill="#ffebee" stroke="#c62828" stroke-width="3" rx="10"/>
+    <text x="290" y="260" font-size="20" font-weight="bold" text-anchor="middle" fill="#c62828">
+      Without CLASSPATH: Class Not Found ❌
+    </text>
+    
+    <text x="290" y="295" font-size="16" text-anchor="middle" fill="#d32f2f">
+      JVM: "I searched everywhere!"
+    </text>
+    
+    <rect x="80" y="310" width="420" height="60" fill="#fff" stroke="#c62828" stroke-width="2" rx="5"/>
+    <text x="290" y="335" font-size="14" font-family="monospace" text-anchor="middle" fill="#b71c1c">
+      Exception in thread "main"
+    </text>
+    <text x="290" y="355" font-size="14" font-family="monospace" text-anchor="middle" fill="#b71c1c">
+      java.lang.ClassNotFoundException:
+    </text>
+    
+    <text x="290" y="390" font-size="16" font-weight="bold" text-anchor="middle" fill="#d32f2f">
+      com.mysql.Driver 😤
+    </text>
+    
+    <text x="290" y="415" font-size="14" font-style="italic" text-anchor="middle" fill="#c62828">
+      The book exists... but it's not in the catalog!
+    </text>
+  </g>
+  
+  <!-- Key Insight -->
+  <rect x="50" y="450" width="480" height="90" fill="#fff9c4" stroke="#f9a825" stroke-width="3" rx="10"/>
+  <text x="290" y="480" font-size="18" font-weight="bold" text-anchor="middle" fill="#f57f17">
+    💡 Key Insight
+  </text>
+  <text x="290" y="510" font-size="15" text-anchor="middle" fill="#f57f17">
+    CLASSPATH = Library Catalog
+  </text>
+  <text x="290" y="530" font-size="15" text-anchor="middle" fill="#f57f17">
+    JAR files = Bundles of books (classes)
+  </text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#27ae60"/>
+    </marker>
+  </defs>
+</svg>

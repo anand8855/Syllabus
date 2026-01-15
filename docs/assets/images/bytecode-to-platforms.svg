@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <rect width="1000" height="700" fill="#f8f9fa"/>
+  
+  <text x="500" y="35" font-family="Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#2c3e50">The Journey of Java Code: Source to Execution</text>
+  
+  <!-- Developer -->
+  <circle cx="100" cy="120" r="40" fill="#ffd54f"/>
+  <circle cx="90" cy="110" r="8" fill="#2c3e50"/>
+  <circle cx="110" cy="110" r="8" fill="#2c3e50"/>
+  <path d="M 85 125 Q 100 135 115 125" stroke="#2c3e50" stroke-width="2" fill="none"/>
+  <text x="100" y="180" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Developer</text>
+  
+  <!-- Step 1: Java Source Code -->
+  <rect x="200" y="80" width="180" height="120" fill="#e3f2fd" stroke="#2196f3" stroke-width="3" rx="10"/>
+  <text x="290" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Java Source Code</text>
+  <text x="290" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#34495e">MyApp.java</text>
+  <rect x="220" y="150" width="140" height="35" fill="#bbdefb" rx="5"/>
+  <text x="290" y="168" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#2c3e50">public class MyApp {</text>
+  <text x="290" y="180" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#2c3e50">  // Your code here</text>
+  
+  <!-- Arrow to Compiler -->
+  <line x1="380" y1="140" x2="430" y2="140" stroke="#e74c3c" stroke-width="3"/>
+  <polygon points="430,140 422,135 422,145" fill="#e74c3c"/>
+  <text x="405" y="125" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e74c3c">javac</text>
+  <text x="405" y="160" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">compiler</text>
+  
+  <!-- Step 2: Bytecode -->
+  <rect x="450" y="80" width="180" height="120" fill="#fff9c4" stroke="#ffc107" stroke-width="3" rx="10"/>
+  <text x="540" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Bytecode</text>
+  <text x="540" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#34495e">MyApp.class</text>
+  <rect x="470" y="150" width="140" height="35" fill="#fff59d" rx="5"/>
+  <text x="540" y="168" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#2c3e50">CA FE BA BE 00 00</text>
+  <text x="540" y="180" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#2c3e50">00 34 00 1D 0A...</text>
+  
+  <!-- Platform Independent Label -->
+  <rect x="650" y="120" width="150" height="40" fill="#4caf50" rx="8"/>
+  <text x="725" y="138" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">PLATFORM</text>
+  <text x="725" y="153" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">INDEPENDENT</text>
+  
+  <!-- Central Distribution -->
+  <line x1="540" y1="200" x2="540" y2="240" stroke="#9c27b0" stroke-width="3"/>
+  <polygon points="540,240 535,232 545,232" fill="#9c27b0"/>
+  <text x="580" y="225" font-family="Arial, sans-serif" font-size="11" fill="#9c27b0">Distributed to</text>
+  <text x="580" y="238" font-family="Arial, sans-serif" font-size="11" fill="#9c27b0">all platforms</text>
+  
+  <!-- Distribution arrows to platforms -->
+  <line x1="540" y1="240" x2="200" y2="340" stroke="#2196f3" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="200,340 208,337 204,345" fill="#2196f3"/>
+  
+  <line x1="540" y1="240" x2="540" y2="340" stroke="#ff9800" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="540,340 535,332 545,332" fill="#ff9800"/>
+  
+  <line x1="540" y1="240" x2="880" y2="340" stroke="#9c27b0" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="880,340 872,345 876,337" fill="#9c27b0"/>
+  
+  <!-- Windows Platform -->
+  <rect x="50" y="350" width="280" height="300" fill="#e1f5fe" stroke="#2196f3" stroke-width="3" rx="10"/>
+  <text x="190" y="380" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Windows</text>
+  
+  <rect x="80" y="395" width="220" height="60" fill="#bbdefb" stroke="#2196f3" stroke-width="2" rx="8"/>
+  <text x="190" y="418" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">JVM for Windows</text>
+  <text x="190" y="436" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#34495e">Reads bytecode</text>
+  <text x="190" y="449" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#34495e">Translates to Windows code</text>
+  
+  <line x1="190" y1="455" x2="190" y2="475" stroke="#2196f3" stroke-width="2"/>
+  <polygon points="190,475 185,467 195,467" fill="#2196f3"/>
+  
+  <rect x="80" y="485" width="220" height="50" fill="#90caf9" rx="5"/>
+  <text x="190" y="508" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Windows Machine Code</text>
+  <text x="190" y="525" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">Native Windows instructions</text>
+  
+  <rect x="100" y="550" width="180" height="30" fill="#4caf50" rx="5"/>
+  <text x="190" y="571" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#fff">Program Executes!</text>
+  
+  <text x="190" y="610" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">CPU: Intel/AMD x86</text>
+  <text x="190" y="630" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">OS: Windows 10/11</text>
+  
+  <!-- Linux Platform -->
+  <rect x="360" y="350" width="280" height="300" fill="#fff3e0" stroke="#ff9800" stroke-width="3" rx="10"/>
+  <text x="500" y="380" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Linux</text>
+  
+  <rect x="390" y="395" width="220" height="60" fill="#ffe0b2" stroke="#ff9800" stroke-width="2" rx="8"/>
+  <text x="500" y="418" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">JVM for Linux</text>
+  <text x="500" y="436" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#34495e">Reads bytecode</text>
+  <text x="500" y="449" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#34495e">Translates to Linux code</text>
+  
+  <line x1="500" y1="455" x2="500" y2="475" stroke="#ff9800" stroke-width="2"/>
+  <polygon points="500,475 495,467 505,467" fill="#ff9800"/>
+  
+  <rect x="390" y="485" width="220" height="50" fill="#ffcc80" rx="5"/>
+  <text x="500" y="508" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Linux Machine Code</text>
+  <text x="500" y="525" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">Native Linux instructions</text>
+  
+  <rect x="410" y="550" width="180" height="30" fill="#4caf50" rx="5"/>
+  <text x="500" y="571" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#fff">Program Executes!</text>
+  
+  <text x="500" y="610" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">CPU: Various architectures</text>
+  <text x="500" y="630" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">OS: Ubuntu, Fedora, etc.</text>
+  
+  <!-- Mac Platform -->
+  <rect x="670" y="350" width="280" height="300" fill="#f3e5f5" stroke="#9c27b0" stroke-width="3" rx="10"/>
+  <text x="810" y="380" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Mac OS</text>
+  
+  <rect x="700" y="395" width="220" height="60" fill="#e1bee7" stroke="#9c27b0" stroke-width="2" rx="8"/>
+  <text x="810" y="418" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">JVM for Mac</text>
+  <text x="810" y="436" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#34495e">Reads bytecode</text>
+  <text x="810" y="449" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#34495e">Translates to Mac code</text>
+  
+  <line x1="810" y1="455" x2="810" y2="475" stroke="#9c27b0" stroke-width="2"/>
+  <polygon points="810,475 805,467 815,467" fill="#9c27b0"/>
+  
+  <rect x="700" y="485" width="220" height="50" fill="#ce93d8" rx="5"/>
+  <text x="810" y="508" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Mac Machine Code</text>
+  <text x="810" y="525" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">Native Mac instructions</text>
+  
+  <rect x="720" y="550" width="180" height="30" fill="#4caf50" rx="5"/>
+  <text x="810" y="571" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#fff">Program Executes!</text>
+  
+  <text x="810" y="610" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">CPU: Apple Silicon/Intel</text>
+  <text x="810" y="630" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">OS: macOS</text>
+  
+  <!-- Key Point at bottom -->
+  <rect x="200" y="660" width="600" height="30" fill="#c8e6c9" stroke="#4caf50" stroke-width="2" rx="5"/>
+  <text x="500" y="681" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Same Bytecode + Platform-Specific JVMs = Platform Independence!</text>
+</svg>

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <rect width="900" height="650" fill="#f8f9fa"/>
+  
+  <text x="450" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">Java Program Execution Flow</text>
+  <text x="450" y="60" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#7f8c8d">From source code to execution - The complete journey</text>
+  
+  <!-- Step 1: Java Source Code -->
+  <rect x="50" y="90" width="200" height="80" fill="#e3f2fd" stroke="#2196f3" stroke-width="3" rx="10"/>
+  <text x="150" y="120" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">1. Write Code</text>
+  <rect x="70" y="135" width="160" height="35" fill="#bbdefb" stroke="#2196f3" stroke-width="1" rx="5"/>
+  <text x="150" y="153" font-family="Courier New, monospace" font-size="11" text-anchor="middle" fill="#2c3e50">MyProgram.java</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M 250 130 L 300 130" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="275" y="120" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">javac</text>
+  
+  <!-- Step 2: Compilation -->
+  <rect x="300" y="90" width="200" height="80" fill="#fff3cd" stroke="#ffc107" stroke-width="3" rx="10"/>
+  <text x="400" y="120" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">2. Compile</text>
+  <rect x="320" y="135" width="160" height="35" fill="#fff9e6" stroke="#f39c12" stroke-width="1" rx="5"/>
+  <text x="400" y="153" font-family="Courier New, monospace" font-size="11" text-anchor="middle" fill="#2c3e50">MyProgram.class</text>
+  <text x="400" y="165" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7f8c8d">(Bytecode)</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M 500 130 L 550 130" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="525" y="120" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">Load</text>
+  
+  <!-- Step 3: Class Loader -->
+  <rect x="550" y="90" width="300" height="80" fill="#e8f5e9" stroke="#4caf50" stroke-width="3" rx="10"/>
+  <text x="700" y="120" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">3. Class Loader</text>
+  <text x="700" y="145" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#34495e">Load → Link → Initialize</text>
+  <text x="700" y="162" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#7f8c8d">✈️ Airport security check</text>
+  
+  <!-- Arrow 3 -->
+  <path d="M 700 170 L 700 210" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 4: Runtime Data Areas -->
+  <rect x="50" y="210" width="800" height="180" fill="#fdecea" stroke="#e74c3c" stroke-width="3" rx="10"/>
+  <text x="450" y="240" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">4. Runtime Data Areas (Memory Allocation)</text>
+  
+  <!-- Method Area -->
+  <rect x="70" y="255" width="150" height="110" fill="#ffebee" stroke="#e74c3c" stroke-width="2" rx="8"/>
+  <text x="145" y="275" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Method Area</text>
+  <text x="80" y="295" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Class data</text>
+  <text x="80" y="312" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Static vars</text>
+  <text x="80" y="329" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Bytecode</text>
+  <text x="145" y="352" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7f8c8d">📚 Library</text>
+  
+  <!-- Heap -->
+  <rect x="240" y="255" width="150" height="110" fill="#c8e6c9" stroke="#4caf50" stroke-width="2" rx="8"/>
+  <text x="315" y="275" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Heap</text>
+  <circle cx="280" cy="305" r="18" fill="#81c784"/>
+  <text x="280" y="311" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#fff">obj1</text>
+  <circle cx="315" cy="305" r="18" fill="#66bb6a"/>
+  <text x="315" y="311" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#fff">obj2</text>
+  <circle cx="350" cy="305" r="18" fill="#4caf50"/>
+  <text x="350" y="311" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#fff">obj3</text>
+  <text x="315" y="340" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">All objects</text>
+  <text x="315" y="352" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7f8c8d">🏀 Playground</text>
+  
+  <!-- Stack -->
+  <rect x="410" y="255" width="150" height="110" fill="#f8bbd0" stroke="#e91e63" stroke-width="2" rx="8"/>
+  <text x="485" y="275" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Stack</text>
+  <rect x="425" y="285" width="120" height="18" fill="#f06292"/>
+  <text x="485" y="298" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#fff">method2()</text>
+  <rect x="425" y="308" width="120" height="18" fill="#ec407a"/>
+  <text x="485" y="321" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#fff">method1()</text>
+  <rect x="425" y="331" width="120" height="18" fill="#e91e63"/>
+  <text x="485" y="344" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#fff">main()</text>
+  <text x="485" y="363" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7f8c8d">🍽️ Plates (LIFO)</text>
+  
+  <!-- PC Register & Native Stack -->
+  <rect x="580" y="255" width="120" height="52" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="8"/>
+  <text x="640" y="275" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">PC Register</text>
+  <text x="640" y="295" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7f8c8d">🔖 Bookmark</text>
+  
+  <rect x="580" y="313" width="120" height="52" fill="#e0f2f1" stroke="#009688" stroke-width="2" rx="8"/>
+  <text x="640" y="333" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Native Stack</text>
+  <text x="640" y="353" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7f8c8d">🤝 C/C++ calls</text>
+  
+  <!-- GC Note -->
+  <rect x="720" y="255" width="110" height="110" fill="#fff9e6" stroke="#f39c12" stroke-width="2" rx="8"/>
+  <text x="775" y="275" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">🗑️ GC</text>
+  <text x="775" y="295" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">Automatic</text>
+  <text x="775" y="310" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">memory</text>
+  <text x="775" y="325" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">cleanup</text>
+  <text x="775" y="350" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7f8c8d">Removes</text>
+  <text x="775" y="362" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7f8c8d">unused objects</text>
+  
+  <!-- Arrow 4 -->
+  <path d="M 450 390 L 450 425" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 5: Execution Engine -->
+  <rect x="200" y="425" width="500" height="150" fill="#d4edda" stroke="#28a745" stroke-width="3" rx="10"/>
+  <text x="450" y="455" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">5. Execution Engine</text>
+  
+  <!-- Interpreter -->
+  <rect x="220" y="475" width="140" height="80" fill="#c3e6cb" stroke="#28a745" stroke-width="2" rx="8"/>
+  <text x="290" y="495" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">📖 Interpreter</text>
+  <text x="290" y="515" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">Line-by-line</text>
+  <text x="290" y="530" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">execution</text>
+  <text x="290" y="548" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7f8c8d">(Slow but simple)</text>
+  
+  <!-- JIT -->
+  <rect x="380" y="475" width="140" height="80" fill="#a3d9a5" stroke="#28a745" stroke-width="2" rx="8"/>
+  <text x="450" y="495" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">⚡ JIT Compiler</text>
+  <text x="450" y="515" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">Bytecode →</text>
+  <text x="450" y="530" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">Native code</text>
+  <text x="450" y="548" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7f8c8d">(Fast execution!)</text>
+  
+  <!-- GC in Engine -->
+  <rect x="540" y="475" width="140" height="80" fill="#7bc77e" stroke="#28a745" stroke-width="2" rx="8"/>
+  <text x="610" y="495" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">🗑️ GC</text>
+  <text x="610" y="515" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">Clean unused</text>
+  <text x="610" y="530" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">objects</text>
+  <text x="610" y="548" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7f8c8d">(Auto cleanup!)</text>
+  
+  <!-- Arrow 5 -->
+  <path d="M 450 575 L 450 600" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 6: Output -->
+  <rect x="300" y="600" width="300" height="40" fill="#ecf0f1" stroke="#95a5a6" stroke-width="3" rx="10"/>
+  <text x="450" y="626" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">6. Program Executes! 🎉</text>
+  
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#2c3e50"/>
+    </marker>
+  </defs>
+</svg>

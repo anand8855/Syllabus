@@ -1,0 +1,96 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <text x="450" y="40" font-size="28" font-weight="bold" text-anchor="middle" fill="#2c3e50">Java Platform Editions</text>
+  <text x="450" y="70" font-size="16" text-anchor="middle" fill="#7f8c8d">Different Editions for Different Needs</text>
+
+  <rect x="50" y="120" width="260" height="500" rx="15" fill="#e3f2fd" stroke="#3498db" stroke-width="3"/>
+  <rect x="50" y="120" width="260" height="60" rx="15" fill="#3498db"/>
+  <text x="180" y="155" font-size="22" font-weight="bold" text-anchor="middle" fill="white">Java SE</text>
+  <text x="180" y="175" font-size="14" text-anchor="middle" fill="white">Standard Edition</text>
+  
+  <circle cx="180" cy="230" r="35" fill="#bbdefb"/>
+  <text x="180" y="245" font-size="35" text-anchor="middle">🏗️</text>
+  
+  <text x="180" y="290" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">The Foundation</text>
+  
+  <text x="70" y="320" font-size="13" fill="#34495e">• Core Libraries</text>
+  <text x="70" y="345" font-size="13" fill="#34495e">• Language Basics</text>
+  <text x="70" y="370" font-size="13" fill="#34495e">• Collections Framework</text>
+  <text x="70" y="395" font-size="13" fill="#34495e">• I/O Operations</text>
+  <text x="70" y="420" font-size="13" fill="#34495e">• Networking</text>
+  <text x="70" y="445" font-size="13" fill="#34495e">• Multithreading</text>
+  <text x="70" y="470" font-size="13" fill="#34495e">• GUI (Swing/JavaFX)</text>
+  
+  <rect x="60" y="490" width="240" height="120" rx="10" fill="#ecf0f1" stroke="#3498db" stroke-width="2"/>
+  <text x="180" y="515" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Use Cases</text>
+  <text x="70" y="540" font-size="12" fill="#34495e">• Desktop Applications</text>
+  <text x="70" y="560" font-size="12" fill="#34495e">• Command-line Tools</text>
+  <text x="70" y="580" font-size="12" fill="#34495e">• Development Tools</text>
+  <text x="70" y="600" font-size="12" fill="#34495e">• Learning Java</text>
+
+  <rect x="320" y="120" width="260" height="500" rx="15" fill="#ffebee" stroke="#e74c3c" stroke-width="3"/>
+  <rect x="320" y="120" width="260" height="60" rx="15" fill="#e74c3c"/>
+  <text x="450" y="155" font-size="22" font-weight="bold" text-anchor="middle" fill="white">Java EE</text>
+  <text x="450" y="175" font-size="14" text-anchor="middle" fill="white">Enterprise Edition</text>
+  
+  <circle cx="450" cy="230" r="35" fill="#ffcdd2"/>
+  <text x="450" y="245" font-size="35" text-anchor="middle">🏢</text>
+  
+  <text x="450" y="290" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">The Enterprise Toolkit</text>
+  
+  <text x="340" y="320" font-size="13" fill="#34495e">• Built on Java SE</text>
+  <text x="340" y="345" font-size="13" fill="#34495e">• Servlets and JSP</text>
+  <text x="340" y="370" font-size="13" fill="#34495e">• Enterprise JavaBeans</text>
+  <text x="340" y="395" font-size="13" fill="#34495e">• JPA (Persistence)</text>
+  <text x="340" y="420" font-size="13" fill="#34495e">• RESTful Web Services</text>
+  <text x="340" y="445" font-size="13" fill="#34495e">• Messaging (JMS)</text>
+  <text x="340" y="470" font-size="13" fill="#34495e">• Transactions</text>
+  
+  <rect x="330" y="490" width="240" height="120" rx="10" fill="#ecf0f1" stroke="#e74c3c" stroke-width="2"/>
+  <text x="450" y="515" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Use Cases</text>
+  <text x="340" y="540" font-size="12" fill="#34495e">• Web Applications</text>
+  <text x="340" y="560" font-size="12" fill="#34495e">• Enterprise Systems</text>
+  <text x="340" y="580" font-size="12" fill="#34495e">• Banking/E-commerce</text>
+  <text x="340" y="600" font-size="12" fill="#34495e">• Microservices</text>
+
+  <rect x="590" y="120" width="260" height="500" rx="15" fill="#e8f5e9" stroke="#27ae60" stroke-width="3"/>
+  <rect x="590" y="120" width="260" height="60" rx="15" fill="#27ae60"/>
+  <text x="720" y="155" font-size="22" font-weight="bold" text-anchor="middle" fill="white">Java ME</text>
+  <text x="720" y="175" font-size="14" text-anchor="middle" fill="white">Micro Edition</text>
+  
+  <circle cx="720" cy="230" r="35" fill="#c8e6c9"/>
+  <text x="720" y="245" font-size="35" text-anchor="middle">📱</text>
+  
+  <text x="720" y="290" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">The Lightweight Traveler</text>
+  
+  <text x="610" y="320" font-size="13" fill="#34495e">• Subset of Java SE</text>
+  <text x="610" y="345" font-size="13" fill="#34495e">• Optimized for Small Devices</text>
+  <text x="610" y="370" font-size="13" fill="#34495e">• Low Memory Footprint</text>
+  <text x="610" y="395" font-size="13" fill="#34495e">• Mobile UI Components</text>
+  <text x="610" y="420" font-size="13" fill="#34495e">• Wireless Networking</text>
+  <text x="610" y="445" font-size="13" fill="#34495e">• Embedded Systems</text>
+  <text x="610" y="470" font-size="13" fill="#34495e">• IoT Support</text>
+  
+  <rect x="600" y="490" width="240" height="120" rx="10" fill="#ecf0f1" stroke="#27ae60" stroke-width="2"/>
+  <text x="720" y="515" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Use Cases</text>
+  <text x="610" y="540" font-size="12" fill="#34495e">• Feature Phones</text>
+  <text x="610" y="560" font-size="12" fill="#34495e">• Embedded Devices</text>
+  <text x="610" y="580" font-size="12" fill="#34495e">• IoT Sensors</text>
+  <text x="610" y="600" font-size="12" fill="#34495e">• Smart Cards</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#95a5a6"/>
+    </marker>
+  </defs>
+  
+  <line x1="310" y1="360" x2="320" y2="360" stroke="#95a5a6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="315" y="350" font-size="11" text-anchor="middle" fill="#7f8c8d">extends</text>
+  
+  <line x1="310" y1="400" x2="380" y2="400" stroke="#95a5a6" stroke-width="2"/>
+  <line x1="380" y1="400" x2="380" y2="500" stroke="#95a5a6" stroke-width="2"/>
+  <line x1="380" y1="500" x2="590" y2="500" stroke="#95a5a6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="470" y="490" font-size="11" text-anchor="middle" fill="#7f8c8d">subset</text>
+
+  <rect x="150" y="640" width="600" height="45" rx="10" fill="#fff3cd" stroke="#f39c12" stroke-width="2"/>
+  <text x="450" y="665" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">All editions share the same Java language but differ in libraries and capabilities</text>
+</svg>

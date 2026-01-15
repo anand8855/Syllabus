@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    From Oak 🌳 to Java ☕ - The Naming Journey
+  </text>
+  
+  <!-- Oak (Original Name) -->
+  <rect x="50" y="100" width="250" height="180" fill="#27ae60" rx="12"/>
+  <text x="175" y="140" font-family="Arial, sans-serif" font-size="48" text-anchor="middle" fill="white">🌳</text>
+  <text x="175" y="180" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="white">
+    OAK
+  </text>
+  <text x="175" y="205" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#ecf0f1">
+    Original Name (1991)
+  </text>
+  <text x="175" y="230" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    Named after oak tree
+  </text>
+  <text x="175" y="248" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    outside Gosling's office
+  </text>
+  
+  <!-- Problem marker -->
+  <text x="175" y="270" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#e74c3c" font-weight="bold">
+    ❌ Already Trademarked!
+  </text>
+  
+  <!-- Arrow -->
+  <path d="M 310 190 L 480 190" stroke="#e74c3c" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <text x="395" y="180" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#e74c3c" font-weight="bold">
+    Renamed
+  </text>
+  <text x="395" y="210" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">
+    Coffee shop brainstorm
+  </text>
+  
+  <!-- Java (New Name) -->
+  <rect x="500" y="100" width="250" height="180" fill="#6f4e37" rx="12"/>
+  <text x="625" y="140" font-family="Arial, sans-serif" font-size="48" text-anchor="middle" fill="white">☕</text>
+  <text x="625" y="180" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="white">
+    JAVA
+  </text>
+  <text x="625" y="205" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#ecf0f1">
+    Final Name (1995)
+  </text>
+  <text x="625" y="230" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    Named after Java coffee
+  </text>
+  <text x="625" y="248" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+    from Indonesia
+  </text>
+  
+  <!-- Success marker -->
+  <text x="625" y="270" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#2ecc71" font-weight="bold">
+    ✅ Perfect Match!
+  </text>
+  
+  <!-- Bottom info -->
+  <rect x="100" y="310" width="600" height="70" fill="#ecf0f1" rx="8"/>
+  <text x="400" y="335" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Why "Java" Won the Name Game?
+  </text>
+  <text x="400" y="355" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7f8c8d">
+    ✓ Short &amp; memorable  ✓ Developers love coffee  ✓ Exotic &amp; catchy
+  </text>
+  <text x="400" y="372" font-family="Arial, sans-serif" font-size="11" font-style="italic" text-anchor="middle" fill="#95a5a6">
+    "Developers run on coffee, so naming a language after it was genius!" 😄
+  </text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <polygon points="0 0, 12 6, 0 12" fill="#e74c3c"/>
+    </marker>
+  </defs>
+</svg>

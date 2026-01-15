@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <rect width="1000" height="600" fill="#f8f9fa"/>
+  
+  <text x="500" y="35" font-family="Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#2c3e50">Java Compilation and Execution Process</text>
+  
+  <!-- Step 1: Source Code -->
+  <rect x="50" y="80" width="180" height="120" fill="#e3f2fd" stroke="#2196f3" stroke-width="3" rx="10"/>
+  <text x="140" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Step 1: Write Code</text>
+  <text x="140" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#34495e">HelloWorld.java</text>
+  <rect x="70" y="145" width="140" height="40" fill="#bbdefb" rx="5"/>
+  <text x="140" y="163" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#2c3e50">public class</text>
+  <text x="140" y="178" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#2c3e50">HelloWorld { ... }</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="230" y1="140" x2="270" y2="140" stroke="#e74c3c" stroke-width="3"/>
+  <polygon points="270,140 262,135 262,145" fill="#e74c3c"/>
+  <text x="250" y="130" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#e74c3c">javac</text>
+  
+  <!-- Step 2: Compilation -->
+  <rect x="290" y="80" width="180" height="120" fill="#fff3cd" stroke="#ffc107" stroke-width="3" rx="10"/>
+  <text x="380" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Step 2: Compile</text>
+  <text x="380" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#34495e">Java Compiler (javac)</text>
+  <text x="380" y="160" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">Converts source to bytecode</text>
+  <text x="380" y="180" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#7f8c8d">Checks syntax and errors</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="470" y1="140" x2="510" y2="140" stroke="#27ae60" stroke-width="3"/>
+  <polygon points="510,140 502,135 502,145" fill="#27ae60"/>
+  <text x="490" y="130" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#27ae60">generates</text>
+  
+  <!-- Step 3: Bytecode -->
+  <rect x="530" y="80" width="180" height="120" fill="#e8f5e9" stroke="#4caf50" stroke-width="3" rx="10"/>
+  <text x="620" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Step 3: Bytecode</text>
+  <text x="620" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#34495e">HelloWorld.class</text>
+  <rect x="550" y="145" width="140" height="40" fill="#c8e6c9" rx="5"/>
+  <text x="620" y="163" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#2c3e50">CA FE BA BE 00 00</text>
+  <text x="620" y="178" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#2c3e50">00 34 00 1D 0A...</text>
+  
+  <!-- Arrow 3 -->
+  <line x1="620" y1="200" x2="620" y2="240" stroke="#9c27b0" stroke-width="3"/>
+  <polygon points="620,240 615,232 625,232" fill="#9c27b0"/>
+  <text x="660" y="220" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#9c27b0">loads into</text>
+  
+  <!-- Step 4: JVM -->
+  <rect x="50" y="260" width="860" height="300" fill="#f3e5f5" stroke="#9c27b0" stroke-width="3" rx="10"/>
+  <text x="480" y="290" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Step 4: JVM (Java Virtual Machine)</text>
+  
+  <!-- Class Loader -->
+  <rect x="80" y="310" width="200" height="80" fill="#ce93d8" stroke="#9c27b0" stroke-width="2" rx="8"/>
+  <text x="180" y="335" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#fff">Class Loader</text>
+  <text x="180" y="355" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#fff">Loads .class file</text>
+  <text x="180" y="375" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#fff">Verifies bytecode</text>
+  
+  <!-- Arrow to Memory -->
+  <line x1="280" y1="350" x2="320" y2="350" stroke="#ff9800" stroke-width="2"/>
+  <polygon points="320,350 312,345 312,355" fill="#ff9800"/>
+  
+  <!-- Memory Area -->
+  <rect x="340" y="310" width="200" height="80" fill="#ffe0b2" stroke="#ff9800" stroke-width="2" rx="8"/>
+  <text x="440" y="335" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Runtime Memory</text>
+  <text x="440" y="355" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#34495e">Heap + Stack</text>
+  <text x="440" y="375" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#34495e">Method Area</text>
+  
+  <!-- Arrow to Execution Engine -->
+  <line x1="440" y1="390" x2="440" y2="420" stroke="#4caf50" stroke-width="2"/>
+  <polygon points="440,420 435,412 445,412" fill="#4caf50"/>
+  
+  <!-- Execution Engine -->
+  <rect x="80" y="410" width="720" height="120" fill="#c8e6c9" stroke="#4caf50" stroke-width="2" rx="8"/>
+  <text x="440" y="440" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Execution Engine</text>
+  
+  <!-- Interpreter -->
+  <rect x="100" y="455" width="200" height="60" fill="#a5d6a7" stroke="#4caf50" stroke-width="2" rx="5"/>
+  <text x="200" y="478" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Interpreter</text>
+  <text x="200" y="496" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">Executes bytecode</text>
+  <text x="200" y="509" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">line by line</text>
+  
+  <!-- JIT Compiler -->
+  <rect x="340" y="455" width="200" height="60" fill="#81c784" stroke="#4caf50" stroke-width="2" rx="5"/>
+  <text x="440" y="478" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">JIT Compiler</text>
+  <text x="440" y="496" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">Compiles hot code</text>
+  <text x="440" y="509" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">to native (FAST!)</text>
+  
+  <!-- Garbage Collector -->
+  <rect x="580" y="455" width="200" height="60" fill="#66bb6a" stroke="#4caf50" stroke-width="2" rx="5"/>
+  <text x="680" y="478" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Garbage Collector</text>
+  <text x="680" y="496" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">Cleans unused</text>
+  <text x="680" y="509" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">objects (auto)</text>
+  
+  <!-- Output -->
+  <rect x="770" y="80" width="180" height="120" fill="#ffebee" stroke="#f44336" stroke-width="3" rx="10"/>
+  <text x="860" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Step 5: Output</text>
+  <text x="860" y="140" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#27ae60">Hello, World!</text>
+  <text x="860" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7f8c8d">Program executes!</text>
+  
+  <!-- Arrow to Output -->
+  <line x1="800" y1="485" x2="860" y2="485" stroke="#f44336" stroke-width="3"/>
+  <line x1="860" y1="485" x2="860" y2="210" stroke="#f44336" stroke-width="3"/>
+  <polygon points="860,210 855,218 865,218" fill="#f44336"/>
+</svg>

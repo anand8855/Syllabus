@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <rect width="900" height="600" fill="#f8f9fa"/>
+  
+  <text x="450" y="35" font-family="Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#2c3e50">JDK, JRE, and JVM Relationship</text>
+  <text x="450" y="60" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#7f8c8d">Understanding the hierarchy and components</text>
+  
+  <!-- JDK (Outermost) -->
+  <rect x="50" y="100" width="800" height="440" fill="#e3f2fd" stroke="#2196f3" stroke-width="4" rx="15"/>
+  <text x="70" y="135" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50">🛠️ JDK (Java Development Kit)</text>
+  <text x="70" y="160" font-family="Arial, sans-serif" font-size="13" fill="#34495e">Everything needed to DEVELOP Java applications</text>
+  
+  <!-- Development Tools in JDK -->
+  <rect x="70" y="180" width="740" height="80" fill="#bbdefb" stroke="#1976d2" stroke-width="2" rx="8"/>
+  <text x="90" y="205" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Development Tools</text>
+  <text x="100" y="230" font-family="Courier New, monospace" font-size="11" fill="#34495e">javac (Compiler) • javadoc (Documentation) • jar (Archive Tool)</text>
+  <text x="100" y="248" font-family="Courier New, monospace" font-size="11" fill="#34495e">jdb (Debugger) • javap (Disassembler) • jconsole (Monitoring)</text>
+  
+  <!-- JRE (Middle layer) -->
+  <rect x="90" y="280" width="700" height="240" fill="#fff3cd" stroke="#ffc107" stroke-width="3" rx="12"/>
+  <text x="110" y="315" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2c3e50">🍿 JRE (Java Runtime Environment)</text>
+  <text x="110" y="340" font-family="Arial, sans-serif" font-size="12" fill="#34495e">Everything needed to RUN Java applications</text>
+  
+  <!-- Libraries in JRE -->
+  <rect x="110" y="355" width="660" height="60" fill="#fff9e6" stroke="#f39c12" stroke-width="2" rx="8"/>
+  <text x="130" y="378" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">Core Libraries</text>
+  <text x="140" y="398" font-family="Courier New, monospace" font-size="10" fill="#34495e">java.lang • java.util • java.io • java.net • java.math • Collections Framework</text>
+  
+  <!-- JVM (Innermost) -->
+  <rect x="130" y="430" width="620" height="70" fill="#fdecea" stroke="#e74c3c" stroke-width="3" rx="10"/>
+  <text x="150" y="460" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">🎥 JVM (Java Virtual Machine)</text>
+  <text x="150" y="482" font-family="Arial, sans-serif" font-size="12" fill="#34495e">Executes Java bytecode • Platform-specific • Heart of Java</text>
+  
+  <!-- Arrows showing relationship -->
+  <path d="M 800 330 L 870 330 L 870 470 L 760 470" stroke="#e74c3c" stroke-width="2" fill="none" marker-end="url(#arrow1)"/>
+  <text x="810" y="400" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d" transform="rotate(-90 810 400)">Contains</text>
+  
+  <path d="M 750 230 L 870 230 L 870 360 L 800 360" stroke="#ffc107" stroke-width="2" fill="none" marker-end="url(#arrow2)"/>
+  <text x="820" y="290" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d" transform="rotate(-90 820 290)">Contains</text>
+  
+  <defs>
+    <marker id="arrow1" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#ffc107"/>
+    </marker>
+  </defs>
+  
+  <!-- Summary boxes at bottom -->
+  <rect x="50" y="555" width="260" height="35" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="5"/>
+  <text x="180" y="578" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">JDK = JRE + Dev Tools</text>
+  
+  <rect x="320" y="555" width="260" height="35" fill="#fff3cd" stroke="#ffc107" stroke-width="2" rx="5"/>
+  <text x="450" y="578" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">JRE = JVM + Libraries</text>
+  
+  <rect x="590" y="555" width="260" height="35" fill="#fdecea" stroke="#e74c3c" stroke-width="2" rx="5"/>
+  <text x="720" y="578" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">JVM = Execution Engine</text>
+</svg>
