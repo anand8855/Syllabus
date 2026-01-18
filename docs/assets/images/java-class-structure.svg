@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700">
+  <!-- Background -->
+  <rect width="800" height="700" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Anatomy of a Java Class
+  </text>
+  
+  <!-- Main Class Container -->
+  <rect x="100" y="70" width="600" height="580" fill="#ffffff" stroke="#34495e" stroke-width="3" rx="8"/>
+  
+  <!-- Class Header -->
+  <rect x="100" y="70" width="600" height="50" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="8"/>
+  <text x="400" y="102" font-family="Courier New, monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">
+    public class Student
+  </text>
+  
+  <!-- Fields Section -->
+  <g>
+    <rect x="120" y="140" width="560" height="100" fill="#e8f5e9" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="140" y="165" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#27ae60">
+      📦 Fields (Variables)
+    </text>
+    <text x="140" y="190" font-family="Courier New, monospace" font-size="14" fill="#1e8449">
+      private String name;
+    </text>
+    <text x="140" y="215" font-family="Courier New, monospace" font-size="14" fill="#1e8449">
+      private int age;
+    </text>
+  </g>
+  
+  <!-- Constructor Section -->
+  <g>
+    <rect x="120" y="260" width="560" height="120" fill="#fff3e0" stroke="#f39c12" stroke-width="2" rx="5"/>
+    <text x="140" y="285" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e67e22">
+      🔨 Constructor
+    </text>
+    <text x="140" y="310" font-family="Courier New, monospace" font-size="14" fill="#d68910">
+      public Student(String name, int age) {
+    </text>
+    <text x="160" y="335" font-family="Courier New, monospace" font-size="14" fill="#d68910">
+      this.name = name;
+    </text>
+    <text x="160" y="360" font-family="Courier New, monospace" font-size="14" fill="#d68910">
+      this.age = age;
+    </text>
+    <text x="140" y="375" font-family="Courier New, monospace" font-size="14" fill="#d68910">
+      }
+    </text>
+  </g>
+  
+  <!-- Methods Section -->
+  <g>
+    <rect x="120" y="400" width="560" height="100" fill="#fce4ec" stroke="#e91e63" stroke-width="2" rx="5"/>
+    <text x="140" y="425" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#c2185b">
+      ⚙️ Methods (Behaviors)
+    </text>
+    <text x="140" y="450" font-family="Courier New, monospace" font-size="14" fill="#ad1457">
+      public void study() {
+    </text>
+    <text x="160" y="475" font-family="Courier New, monospace" font-size="14" fill="#ad1457">
+      System.out.println("Studying...");
+    </text>
+    <text x="140" y="490" font-family="Courier New, monospace" font-size="14" fill="#ad1457">
+      }
+    </text>
+  </g>
+  
+  <!-- Main Method Section -->
+  <g>
+    <rect x="120" y="520" width="560" height="100" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="5"/>
+    <text x="140" y="545" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1976d2">
+      🚀 main Method (Entry Point)
+    </text>
+    <text x="140" y="570" font-family="Courier New, monospace" font-size="14" fill="#0d47a1">
+      public static void main(String[] args) {
+    </text>
+    <text x="160" y="595" font-family="Courier New, monospace" font-size="14" fill="#0d47a1">
+      // Program starts here
+    </text>
+    <text x="140" y="610" font-family="Courier New, monospace" font-size="14" fill="#0d47a1">
+      }
+    </text>
+  </g>
+  
+  <!-- Closing Brace -->
+  <text x="110" y="645" font-family="Courier New, monospace" font-size="18" font-weight="bold" fill="#34495e">
+    }
+  </text>
+  
+  <!-- Legend -->
+  <text x="400" y="680" font-family="Arial, sans-serif" font-size="14" font-style="italic" text-anchor="middle" fill="#666">
+    Class = Blueprint | Objects = Instances created from the blueprint
+  </text>
+</svg>

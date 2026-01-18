@@ -1,0 +1,348 @@
+{
+  "name": "🔑 Java Keywords & Identifiers — The VIP Words and Your Creative Names",
+  "overview": "Think of Java as a language with two types of words: VIP words (keywords) that are reserved by Java itself, and your custom names (identifiers) that you create for variables, methods, and classes. Understanding these is like learning the difference between protected brand names and the names you give to your own products. Let's dive into this fundamental concept with fun analogies and practical examples! 🎯",
+  "sections": [
+    {
+      "title": "🎭 Keywords vs Identifiers: The Grand Introduction",
+      "content": "Before we dive deep, let's understand the big picture. Java has special words that it owns (keywords) and words that you create (identifiers). It's like the difference between celebrity names that nobody else can use and the name you choose for your pet!",
+      "subsections": [
+        {
+          "title": "The Celebrity Analogy 🌟",
+          "content": "Imagine Java as a celebrity club:\n\n🎫 Keywords = VIP Celebrity Names\n• Reserved by Java\n• You can't use them for your own purposes\n• They have special powers\n• Examples: if, else, class, public\n• Like trademarked names - off limits!\n\n✏️ Identifiers = Names You Create\n• Your custom variable names\n• Your class names\n• Your method names\n• Examples: studentName, calculateGrade, BankAccount\n• Like naming your pet - your choice!\n\n💡 Golden Rule: Never try to name your variable 'class' or 'if' - those seats are taken by Java VIPs!"
+        },
+        {
+          "title": "Quick Comparison",
+          "content": "Keyword vs Identifier at a Glance:\n\nKeyword:\n• Predefined by Java ✅\n• Cannot be used as names ❌\n• Always lowercase (mostly) ✅\n• Has special meaning ✅\n• Example: public, static, void\n\nIdentifier:\n• Defined by programmer ✅\n• Can be any valid name ✅\n• Case-sensitive ✅\n• No special meaning (unless you give it) ✅\n• Example: myAge, StudentInfo, calculateTotal"
+        }
+      ]
+    },
+    {
+      "title": "🔐 Java Keywords — The Reserved VIP Words",
+      "content": "Keywords are special reserved words in Java that have predefined meanings and purposes. They're like the royal family of the Java language - you can't use their names for anything else!",
+      "images": [
+        {
+          "url": "assets/images/java-keywords-overview.svg",
+          "alt": "Java Keywords Overview and Categories",
+          "caption": "Complete visual guide to Java keywords organized by categories - from access modifiers to control flow, with color-coded groupings for easy understanding"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "🧠 What Are Keywords?",
+          "content": "Keywords are reserved words that:\n• Have special meaning to the Java compiler\n• Cannot be used as identifiers (variable names, class names, etc.)\n• Are predefined by the Java language\n• Control program flow, data types, access, and more\n\n📊 Java has 51 reserved keywords (and 2 reserved literals: true, false)\n\n🚫 What happens if you try to use a keyword as a variable name?\nCompiler says: 'Not allowed! This is a reserved word!'\n\nExample:\nint class = 5; // ❌ Error! 'class' is a keyword\nint myClass = 5; // ✅ Works! 'myClass' is an identifier"
+        },
+        {
+          "title": "🎯 Why Are Keywords Reserved?",
+          "content": "Think of it like this:\n\nImagine if everyone could name their child 'President' or 'King'\nHow would you know who's the real president? Chaos! 😵\n\nSimilarly, if you could name a variable 'if' or 'class':\n• Compiler gets confused: 'Is this the if statement or a variable?'\n• Code becomes unreadable\n• Programs break\n\n💡 Keywords are reserved to:\n1️⃣ Avoid confusion\n   Compiler knows exactly what 'if' means\n\n2️⃣ Maintain clarity\n   Everyone reading code knows what 'class' does\n\n3️⃣ Prevent errors\n   No accidental naming conflicts\n\n4️⃣ Ensure consistency\n   Same keyword = same meaning everywhere"
+        },
+        {
+          "title": "📋 Complete List of Java Keywords",
+          "content": "Java has 51 keywords organized by purpose:\n\n🔵 Access Modifiers (4):\npublic, private, protected, default\n\n🟢 Class, Method & Variable Modifiers (11):\nabstract, static, final, synchronized, volatile, transient, native, strictfp, class, interface, enum\n\n🟡 Data Types (8):\nboolean, byte, char, short, int, long, float, double\n\n🟠 Control Flow (11):\nif, else, switch, case, default, for, while, do, break, continue, return\n\n🔴 Exception Handling (6):\ntry, catch, finally, throw, throws, assert\n\n🟣 Package & Import (2):\npackage, import\n\n🟤 Object-Oriented (7):\nclass, interface, extends, implements, new, this, super\n\n⚫ Other Keywords (2):\nvoid, instanceof\n\n⚠️ Reserved but not used (2):\ngoto, const\n\n💡 Total: 51 keywords + 3 special literals (true, false, null)"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Keywords in Action",
+          "description": "Common Java keywords in a real program",
+          "code": "// Keywords highlighted with comments\npublic class StudentGrades {        // public, class\n    private int marks;               // private, int\n    private static final int MAX = 100;  // private, static, final, int\n    \n    public StudentGrades(int marks) {    // public, int\n        if (marks >= 0 && marks <= MAX) {  // if\n            this.marks = marks;            // this\n        } else {                           // else\n            throw new IllegalArgumentException(\"Invalid marks\");  // throw, new\n        }\n    }\n    \n    public void displayGrade() {         // public, void\n        if (marks >= 90) {               // if\n            System.out.println(\"A Grade\");\n        } else if (marks >= 75) {        // else, if\n            System.out.println(\"B Grade\");\n        } else {                          // else\n            System.out.println(\"C Grade\");\n        }\n    }\n    \n    public static void main(String[] args) {  // public, static, void\n        StudentGrades student = new StudentGrades(85);  // new\n        student.displayGrade();\n    }\n}",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "📊 Keywords by Category — Organized and Explained",
+      "content": "Let's explore Java keywords grouped by their purpose. Understanding categories makes them easier to remember!",
+      "images": [
+        {
+          "url": "assets/images/keywords-categories.svg",
+          "alt": "Java Keywords Organized by Categories",
+          "caption": "Visual categorization of all Java keywords - Access Modifiers, Data Types, Control Flow, Exception Handling, OOP, and more"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "🔑 1. Access Modifiers — The Gatekeepers",
+          "content": "Control who can access your code:\n\nKeyword   | Access Level          | Analogy\n--------- | --------------------- | --------------------\npublic    | Everyone              | 🌍 Public park - all welcome\nprivate   | Same class only       | 🔒 Private room - owner only\nprotected | Package + subclasses  | 👨‍👩‍👧 Family only\ndefault   | Package only          | 🏘️ Neighborhood access\n\n💡 Example:\npublic class BankAccount {      // Everyone can see this class\n    private double balance;     // Only this class can access\n    protected void updateLog()  // This class + child classes\n    void processRequest()       // Package-level access (default)\n}"
+        },
+        {
+          "title": "🔢 2. Data Type Keywords — The Containers",
+          "content": "Define what type of data you're storing:\n\n📦 Primitive Types:\n\nKeyword | Type          | Size    | Example\n------- | ------------- | ------- | --------\nboolean | true/false    | 1 bit   | true\nbyte    | Small integer | 8 bit   | 127\nshort   | Integer       | 16 bit  | 32000\nint     | Integer       | 32 bit  | 100000\nlong    | Large integer | 64 bit  | 9999999L\nfloat   | Decimal       | 32 bit  | 3.14f\ndouble  | Large decimal | 64 bit  | 3.14159\nchar    | Single char   | 16 bit  | 'A'\n\n🎯 Remember:\nint age = 25;        // int is a keyword\nboolean isValid = true;  // boolean is a keyword, true is a literal"
+        },
+        {
+          "title": "🎮 3. Control Flow Keywords — The Directors",
+          "content": "Control how your program flows:\n\n🔄 Decision Making:\n• if - Check a condition\n• else - Alternative path\n• switch - Multiple choices\n• case - Each choice in switch\n\n🔁 Loops:\n• for - Count-based loop\n• while - Condition-based loop\n• do - Execute at least once\n\n🚪 Loop Control:\n• break - Exit loop immediately\n• continue - Skip to next iteration\n• return - Exit method and return value\n\n💡 Analogy:\nControl flow = GPS navigation\n• if/else = Choose route based on traffic\n• for/while = Keep driving until destination\n• break = Stop immediately\n• continue = Skip this turn, go to next"
+        },
+        {
+          "title": "⚠️ 4. Exception Handling Keywords — The Safety Net",
+          "content": "Handle errors gracefully:\n\nKeyword  | Purpose                    | Analogy\n-------- | -------------------------- | ----------------------\ntry      | Attempt risky code         | 🎯 Try to catch the ball\ncatch    | Handle the error           | 🤲 Caught it!\nfinally  | Always execute             | 🧹 Clean up, no matter what\nthrow    | Manually create error      | ⚾ Throw the ball\nthrows   | Declare possible errors    | ⚠️ Warning: might throw\nassert   | Verify assumption          | ✅ Make sure it's true\n\n💡 Example:\ntry {\n    int result = 10 / 0;  // Risky operation\n} catch (ArithmeticException e) {\n    System.out.println(\"Can't divide by zero!\");\n} finally {\n    System.out.println(\"Cleanup code here\");\n}"
+        },
+        {
+          "title": "🏗️ 5. Object-Oriented Keywords — The Builders",
+          "content": "Build classes and objects:\n\nKeyword    | Purpose                  | Example Use\n---------- | ------------------------ | ------------------\nclass      | Define a class           | class Student { }\ninterface  | Define contract          | interface Payable\nextends    | Inherit from class       | class Dog extends Animal\nimplements | Implement interface      | class Circle implements Shape\nnew        | Create object            | new Student()\nthis       | Current object           | this.name\nsuper      | Parent class reference   | super.display()\n\n🎯 OOP in action:\nclass Animal {              // class keyword\n    void sound() { }\n}\n\nclass Dog extends Animal {  // extends keyword\n    void sound() {\n        super.sound();      // super keyword\n        System.out.println(\"Bark!\");\n    }\n}\n\nDog myDog = new Dog();      // new keyword"
+        },
+        {
+          "title": "🎭 6. Modifier Keywords — The Attributes",
+          "content": "Add special properties to classes, methods, variables:\n\nKeyword      | Meaning                       | Use Case\n------------ | ----------------------------- | ------------------\nstatic       | Belongs to class, not object  | static int count\nfinal        | Cannot be changed             | final double PI = 3.14\nabstract     | Incomplete, must be inherited | abstract class Shape\nsynchronized | Thread-safe                   | synchronized method\nvolatile     | Shared across threads         | volatile boolean flag\ntransient    | Don't serialize               | transient String temp\nnative       | Implemented in native code    | native void display()\nstrictfp     | Strict floating-point         | strictfp class Math\n\n💡 Common uses:\nstatic final double PI = 3.14159;  // Class constant\nabstract class Animal { }           // Cannot create object\nsynchronized void update() { }      // Thread-safe method"
+        },
+        {
+          "title": "📦 7. Package & Import Keywords",
+          "content": "Organize code into namespaces:\n\npackage com.myapp.util;    // Declare package\n\nimport java.util.Scanner;  // Import specific class\nimport java.util.*;        // Import all from package\n\n🏘️ Analogy:\n• package = Your neighborhood address\n• import = Borrowing tools from neighbor\n\nWithout import:\njava.util.Scanner sc = new java.util.Scanner(System.in);  // Too long!\n\nWith import:\nimport java.util.Scanner;\nScanner sc = new Scanner(System.in);  // Clean! ✅"
+        },
+        {
+          "title": "🚫 8. Reserved But Not Used",
+          "content": "Two keywords are reserved but not currently used:\n\n• goto - Reserved (but don't use it!)\n  Why? Makes code hard to follow\n  Java doesn't allow it intentionally\n\n• const - Reserved (use 'final' instead)\n  Why? 'final' is the Java way\n  'const' kept for future use\n\n😄 Fun fact:\nJava reserved 'goto' just to prevent you from using it!\nIt's like booking a seat and leaving it empty.\nMessage: 'We don't do that here!' 😆"
+        }
+      ]
+    },
+    {
+      "title": "✏️ Identifiers — The Names You Create",
+      "content": "Identifiers are names you give to variables, classes, methods, packages, etc. Think of them as name tags for everything in your program!",
+      "images": [
+        {
+          "url": "assets/images/identifiers-overview.svg",
+          "alt": "Java Identifiers and Naming Rules",
+          "caption": "Complete guide to Java identifiers - what they are, naming rules, valid examples, invalid examples, and best practices"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "🧠 What Are Identifiers?",
+          "content": "Identifiers are programmer-defined names for:\n\n✏️ Variables:\nint studentAge;      // 'studentAge' is an identifier\nString userName;     // 'userName' is an identifier\n\n🏷️ Classes:\nclass BankAccount    // 'BankAccount' is an identifier\nclass Student        // 'Student' is an identifier\n\n⚙️ Methods:\nvoid calculateTotal() // 'calculateTotal' is an identifier\nint getAge()         // 'getAge' is an identifier\n\n📦 Packages:\ncom.example.myapp    // All parts are identifiers\n\n🎯 Key Point:\nIdentifier = Any name you create in Java\nKeyword = Reserved name created by Java\n\nYou control identifiers, Java controls keywords!"
+        },
+        {
+          "title": "📝 Naming Rules — The Must-Follow Laws",
+          "content": "Java has strict rules for identifiers. Break them = Compilation error!\n\n✅ MUST Rules:\n\n1️⃣ Start with:\n   • Letter (A-Z, a-z)\n   • Underscore (_)\n   • Dollar sign ($)\n   ❌ NOT with a digit!\n\n2️⃣ After first character, can contain:\n   • Letters (A-Z, a-z)\n   • Digits (0-9)\n   • Underscore (_)\n   • Dollar sign ($)\n\n3️⃣ Case-sensitive:\n   • age ≠ Age ≠ AGE\n   • All three are different!\n\n4️⃣ Cannot be a keyword:\n   • ❌ int class = 5;\n   • ✅ int myClass = 5;\n\n5️⃣ No length limit:\n   • But keep it reasonable!\n   • thisIsAReallyReallyLongVariableName ✅ (valid but annoying)\n\n6️⃣ No spaces allowed:\n   • ❌ student age\n   • ✅ studentAge or student_age"
+        },
+        {
+          "title": "✅ Valid Identifiers — The Good Examples",
+          "content": "Let's see what works:\n\nValid Identifier      | Why It Works\n--------------------- | ---------------------------\nstudentName           | Starts with letter ✅\n_tempValue            | Starts with underscore ✅\n$price                | Starts with dollar sign ✅\nage2                  | Letter + digit ✅\nmy_variable           | Letters + underscore ✅\nTOTAL_COUNT           | All caps, underscore ✅\ncalculateGrade        | camelCase ✅\nBankAccount           | PascalCase ✅\n___test               | Multiple underscores ✅\n$$$money              | Multiple dollar signs ✅\na                     | Single letter ✅\n\n💡 All follow the rules:\n• Start with letter/underscore/dollar\n• No keywords used\n• No spaces"
+        },
+        {
+          "title": "❌ Invalid Identifiers — The Bad Examples",
+          "content": "Learn from mistakes:\n\nInvalid Identifier | Why It Fails                    | Fix\n------------------ | ------------------------------- | ----------------\n2students          | Starts with digit ❌            | students2\nstudent-name       | Hyphen not allowed ❌           | studentName\nmy variable        | Space not allowed ❌            | myVariable\nclass              | Keyword ❌                      | myClass\nstudent@home       | @ not allowed ❌                | studentAtHome\n#count             | # not allowed ❌                | count\nfirst name         | Space ❌                        | firstName\nint                | Keyword ❌                      | myInt\nswitch             | Keyword ❌                      | switchValue\n123test            | Starts with digit ❌            | test123\n\n😄 Common beginner mistakes:\n'Why can't I name my variable \"class\"?' - Because Java already owns it!\n'Why no spaces?' - Java gets confused: 'Is it one name or two?'"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Valid vs Invalid Identifiers Demo",
+          "description": "Examples showing what works and what doesn't",
+          "code": "public class IdentifierDemo {\n    // ✅ VALID identifiers\n    int studentAge = 20;\n    String firstName = \"John\";\n    double _accountBalance = 1000.50;\n    int $price = 99;\n    boolean isValid = true;\n    final int MAX_SIZE = 100;\n    String userName123 = \"johndoe\";\n    \n    // ❌ INVALID identifiers (will cause compilation errors)\n    // int 2students = 10;        // Starts with digit\n    // String first-name = \"John\"; // Hyphen not allowed\n    // int class = 5;              // Keyword\n    // double my balance = 100;    // Space not allowed\n    // String @username = \"test\";  // @ not allowed\n    \n    // ✅ Case sensitivity demonstration\n    int age = 25;\n    int Age = 30;      // Different from 'age'\n    int AGE = 35;      // Different from both above\n    \n    public static void main(String[] args) {\n        IdentifierDemo demo = new IdentifierDemo();\n        System.out.println(\"Age (lowercase): \" + demo.age);\n        System.out.println(\"Age (capitalized): \" + demo.Age);\n        System.out.println(\"AGE (uppercase): \" + demo.AGE);\n        // All three are different variables!\n    }\n}",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "🎨 Naming Conventions — The Best Practices",
+      "content": "Rules tell you what you CAN do. Conventions tell you what you SHOULD do. Following conventions makes your code professional and readable!",
+      "images": [
+        {
+          "url": "assets/images/naming-conventions.svg",
+          "alt": "Java Naming Conventions Guide",
+          "caption": "Visual guide to Java naming conventions - camelCase for variables and methods, PascalCase for classes, UPPER_SNAKE_CASE for constants"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "📋 Convention Categories",
+          "content": "Type              | Convention          | Example\n----------------- | ------------------- | --------------------\nVariables         | camelCase           | studentAge, userName\nMethods           | camelCase           | calculateTotal(), getName()\nClasses           | PascalCase          | BankAccount, StudentInfo\nInterfaces        | PascalCase          | Runnable, Comparable\nConstants         | UPPER_SNAKE_CASE    | MAX_SIZE, PI_VALUE\nPackages          | lowercase           | com.example.myapp\nEnum constants    | UPPER_SNAKE_CASE    | MONDAY, JANUARY\n\n💡 These aren't rules enforced by compiler, but:\n• Other programmers expect them\n• Makes code readable\n• Industry standard"
+        },
+        {
+          "title": "🐫 camelCase — For Variables & Methods",
+          "content": "First word lowercase, subsequent words capitalized:\n\n✅ Good Examples:\nstudentAge\nuserName\nisValid\ntotalAmount\ncalculateGrade()\ngetStudentDetails()\n\n❌ Bad (but valid):\nStudentAge        // Should start lowercase\nstudent_age       // Use camelCase, not snake_case\nstudentage        // Hard to read\n\n🐫 Why called 'camelCase'?\nBecause it has humps like a camel!\nstudentAge → 'A' is a hump\n            👆\n\n💡 Makes code readable:\nstudentAge ✅ vs studentage ❌\nWhich is easier to read? Obviously the first one!"
+        },
+        {
+          "title": "🎩 PascalCase — For Classes & Interfaces",
+          "content": "First letter of EVERY word capitalized:\n\n✅ Good Examples:\nBankAccount\nStudentInfo\nFileReader\nDatabaseConnection\nPaymentProcessor\n\n❌ Bad (but valid):\nbankAccount       // Should start with capital\nBANKACCOUNT       // Too much caps\nbank_account      // Use PascalCase\n\n🎩 Why PascalCase for classes?\nClasses are important - they deserve capital letters!\nIt's like writing someone's full name with capitals.\n\n💡 Instant recognition:\nBankAccount → 'Oh, this is a class!'\nbankAccount → 'Oh, this is a variable!'"
+        },
+        {
+          "title": "📢 UPPER_SNAKE_CASE — For Constants",
+          "content": "All capitals with underscores:\n\n✅ Good Examples:\nMAX_SIZE\nPI_VALUE\nDEFAULT_TIMEOUT\nMIN_AGE\nDATABASE_URL\n\n❌ Bad (but valid):\nMaxSize           // Should be all caps\nmax_size          // Should be caps\nMAXSIZE           // Hard to read without underscore\n\n📢 Why shout for constants?\nConstants are IMPORTANT and NEVER CHANGE!\nIt's like shouting: 'HEY! DON'T CHANGE ME!' 😄\n\n💡 Example:\nfinal int MAX_STUDENTS = 100;  // Clearly a constant\nint maxStudents = 100;          // Looks like a variable"
+        },
+        {
+          "title": "📦 lowercase — For Packages",
+          "content": "All lowercase, dots separate levels:\n\n✅ Good Examples:\ncom.example.myapp\norg.company.project.utils\njava.util\njavax.swing\n\n❌ Bad (but valid):\ncom.Example.MyApp    // Don't capitalize\nCom.Example.MyApp    // All lowercase\n\n📦 Why all lowercase?\nPackages are like folders - simple and unassuming\nAvoid conflicts across different OS (Windows vs Linux)\n\n💡 Standard pattern:\ncom.companyname.projectname.module\norg.apache.commons.lang"
+        },
+        {
+          "title": "🎯 Meaningful Names — The Golden Rule",
+          "content": "Beyond syntax, make names meaningful!\n\n❌ Bad (but valid):\nint a = 25;\nString s = \"John\";\nvoid m() { }\nclass C { }\n\n✅ Good:\nint studentAge = 25;\nString studentName = \"John\";\nvoid calculateGrade() { }\nclass StudentRecord { }\n\n💡 Why meaningful names matter:\n\nBad code:\nint x = a + b;\nif (x > 100) {\n    m();\n}\n\nGood code:\nint totalMarks = mathMarks + scienceMarks;\nif (totalMarks > 100) {\n    displayErrorMessage();\n}\n\nWhich one is easier to understand? 🤔\n\n🎯 Rule of thumb:\nYour code should read like English!\nNot like secret spy code! 😄"
+        },
+        {
+          "title": "🚫 What to Avoid",
+          "content": "❌ Single letter names (except loop counters):\nint a; // What is 'a'?\nfor (int i = 0; i < 10; i++) { } // OK for loop\n\n❌ Abbreviations that aren't obvious:\nint stdAge; // std = student or standard?\nString usrNm; // Just write userName!\n\n❌ Misleading names:\nint count = 0;\ncount = studentAge; // Now 'count' isn't counting anything!\n\n❌ Too long names:\nint thisIsAVeryLongVariableNameThatDescribesStudentAgeInYears;\n// Just use: int studentAge;\n\n❌ Funny names (in professional code):\nint potatoCounter; // Fun for learning, not for production\nboolean isProgrammerTired; // Keep it professional 😄\n\n✅ Keep it:\n• Clear\n• Concise\n• Meaningful\n• Professional"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Naming Conventions in Action",
+          "description": "Professional code following all conventions",
+          "code": "package com.studentmanagement.system;  // lowercase package\n\nimport java.util.ArrayList;\nimport java.util.List;\n\n// PascalCase for class\npublic class StudentGradeManager {\n    \n    // UPPER_SNAKE_CASE for constants\n    private static final int MAX_STUDENTS = 100;\n    private static final double PASSING_GRADE = 60.0;\n    private static final String DEFAULT_GRADE = \"F\";\n    \n    // camelCase for variables\n    private String studentName;\n    private int studentAge;\n    private double totalMarks;\n    private List<Double> subjectMarks;\n    \n    // PascalCase for constructor (matches class name)\n    public StudentGradeManager(String studentName, int studentAge) {\n        this.studentName = studentName;\n        this.studentAge = studentAge;\n        this.subjectMarks = new ArrayList<>();\n    }\n    \n    // camelCase for methods\n    public void addSubjectMarks(double marks) {\n        if (marks >= 0 && marks <= 100) {\n            subjectMarks.add(marks);\n        }\n    }\n    \n    public double calculateAverageMarks() {\n        if (subjectMarks.isEmpty()) {\n            return 0.0;\n        }\n        \n        double sum = 0;\n        // 'i' is OK for loop counter\n        for (int i = 0; i < subjectMarks.size(); i++) {\n            sum += subjectMarks.get(i);\n        }\n        \n        return sum / subjectMarks.size();\n    }\n    \n    public String determineGrade() {\n        double average = calculateAverageMarks();\n        \n        if (average >= 90) return \"A\";\n        else if (average >= 80) return \"B\";\n        else if (average >= 70) return \"C\";\n        else if (average >= PASSING_GRADE) return \"D\";\n        else return DEFAULT_GRADE;\n    }\n    \n    public void displayStudentInfo() {\n        System.out.println(\"Student Name: \" + studentName);\n        System.out.println(\"Age: \" + studentAge);\n        System.out.println(\"Average Marks: \" + calculateAverageMarks());\n        System.out.println(\"Grade: \" + determineGrade());\n    }\n}",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "🎓 Common Mistakes & How to Avoid Them",
+      "content": "Learn from these common pitfalls that trip up beginners!",
+      "subsections": [
+        {
+          "title": "❌ Mistake #1: Using Keywords as Identifiers",
+          "content": "Wrong:\nint class = 10;           // Error: 'class' is keyword\nString public = \"test\";   // Error: 'public' is keyword\nboolean static = true;    // Error: 'static' is keyword\n\nCorrect:\nint classNumber = 10;     // ✅\nString publicMessage = \"test\";  // ✅\nboolean isStatic = true;  // ✅\n\n💡 Tip: IDE will highlight keywords in different color. If your variable name is highlighted, change it!"
+        },
+        {
+          "title": "❌ Mistake #2: Starting with a Digit",
+          "content": "Wrong:\nint 1stPlace = 1;         // Error: Starts with digit\nString 2ndName = \"John\";  // Error: Starts with digit\n\nCorrect:\nint firstPlace = 1;       // ✅\nString secondName = \"John\"; // ✅\nint place1st = 1;         // ✅ (digit after start is OK)\n\n💡 Remember: Identifiers can CONTAIN digits, but can't START with them!"
+        },
+        {
+          "title": "❌ Mistake #3: Using Special Characters",
+          "content": "Wrong:\nint student-age = 20;     // Error: Hyphen not allowed\nString user@name = \"test\"; // Error: @ not allowed\nboolean is#valid = true;  // Error: # not allowed\n\nCorrect:\nint student_age = 20;     // ✅ Underscore OK\nint studentAge = 20;      // ✅ Better: camelCase\nString userName = \"test\"; // ✅\nboolean isValid = true;   // ✅\n\n💡 Only _ and $ are allowed (besides letters and digits)!"
+        },
+        {
+          "title": "❌ Mistake #4: Forgetting Case Sensitivity",
+          "content": "Common confusion:\nint age = 25;\nSystem.out.println(Age);  // Error: 'Age' not defined\n// Java: 'age' and 'Age' are DIFFERENT!'\n\nString name = \"John\";\nSystem.out.println(NAME); // Error: 'NAME' not defined\n// Java: 'name' and 'NAME' are DIFFERENT!'\n\nCorrect:\nint age = 25;\nSystem.out.println(age);  // ✅ Exact match\n\n💡 Java is case-sensitive. ALWAYS match case exactly!"
+        },
+        {
+          "title": "❌ Mistake #5: Spaces in Names",
+          "content": "Wrong:\nint student age = 20;         // Error: Space\nString first name = \"John\";   // Error: Space\nvoid calculate total() { }    // Error: Space\n\nCorrect:\nint studentAge = 20;          // ✅ camelCase\nint student_age = 20;         // ✅ snake_case (valid but not conventional)\nString firstName = \"John\";    // ✅\nvoid calculateTotal() { }     // ✅\n\n💡 No spaces allowed! Use camelCase or underscores instead."
+        },
+        {
+          "title": "💡 Pro Tips to Remember",
+          "content": "1️⃣ When in doubt, follow conventions:\n   • Variables/Methods → camelCase\n   • Classes → PascalCase\n   • Constants → UPPER_SNAKE_CASE\n\n2️⃣ Make names meaningful:\n   int x; ❌ vs int studentAge; ✅\n\n3️⃣ Keep it readable:\n   int sdage; ❌ vs int studentAge; ✅\n\n4️⃣ Don't overthink:\n   Too long: int thisVariableHoldsTheAgeOfStudent;\n   Just right: int studentAge;\n\n5️⃣ Be consistent:\n   Don't mix styles in same project\n   If you use camelCase, stick with it!\n\n6️⃣ Use IDE autocomplete:\n   Type few letters, let IDE suggest\n   Reduces typos and maintains consistency"
+        }
+      ]
+    },
+    {
+      "title": "🔍 Keywords vs Identifiers: Side-by-Side Comparison",
+      "content": "Let's put everything together in a clear comparison table.",
+      "subsections": [
+        {
+          "title": "📊 The Complete Comparison",
+          "content": "Aspect          | Keywords                    | Identifiers\n--------------- | --------------------------- | ---------------------------\nDefinition      | Reserved words by Java      | Names created by programmer\nPurpose         | Control program structure   | Name variables, classes, etc.\nExample         | if, class, int, public      | studentAge, BankAccount\nCase            | All lowercase (mostly)      | Case-sensitive\nCan change?     | No (fixed by Java)          | Yes (you decide)\nCount           | 51 keywords                 | Unlimited\nRules           | Can't use as identifiers    | Must follow naming rules\nConventions     | N/A (predefined)            | camelCase, PascalCase, etc.\n\n💡 Think of it:\nKeywords = Traffic signs (universal, can't change)\nIdentifiers = Your car's license plate (you choose, within rules)"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Keywords vs Identifiers in Code",
+          "description": "See the difference in actual code",
+          "code": "// Let's mark: [K] = Keyword, [I] = Identifier\n\npublic class StudentManager {     // [K]public [K]class [I]StudentManager\n    private int studentCount;      // [K]private [K]int [I]studentCount\n    private static final int MAX = 100;  // [K]private [K]static [K]final [K]int [I]MAX\n    \n    public StudentManager() {      // [K]public [I]StudentManager\n        this.studentCount = 0;     // [K]this [I]studentCount\n    }\n    \n    public void addStudent(String name) {  // [K]public [K]void [I]addStudent [I]name\n        if (studentCount < MAX) {  // [K]if [I]studentCount [I]MAX\n            studentCount++;        // [I]studentCount\n            System.out.println(\"Added: \" + name);\n        } else {                   // [K]else\n            System.out.println(\"Cannot add more students\");\n        }\n    }\n    \n    public static void main(String[] args) {  // [K]public [K]static [K]void [I]main [I]args\n        StudentManager manager = new StudentManager();  // [I]manager [K]new\n        manager.addStudent(\"Alice\");  // [I]manager [I]addStudent\n    }\n}\n\n// Count:\n// Keywords: public, class, private, int, static, final, this, void, if, else, new\n// Identifiers: StudentManager, studentCount, MAX, addStudent, name, manager, main, args",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "🏁 Final Thoughts & Summary",
+      "content": "Let's wrap up everything you've learned about keywords and identifiers!",
+      "subsections": [
+        {
+          "title": "🎯 Key Takeaways",
+          "content": "1️⃣ Keywords are Java's VIP words\n   • Reserved by Java\n   • 51 total keywords\n   • Cannot use as identifiers\n   • All lowercase (mostly)\n\n2️⃣ Identifiers are names you create\n   • For variables, classes, methods, etc.\n   • Must follow strict rules\n   • Should follow conventions\n   • Make them meaningful!\n\n3️⃣ Remember the rules:\n   ✅ Start with: letter, _, or $\n   ✅ Can contain: letters, digits, _, $\n   ❌ Can't start with: digit\n   ❌ Can't be: keyword\n   ❌ Can't have: spaces or special chars\n\n4️⃣ Follow conventions:\n   • Variables/Methods → camelCase\n   • Classes → PascalCase\n   • Constants → UPPER_SNAKE_CASE\n   • Packages → lowercase\n\n5️⃣ Be professional:\n   • Clear names\n   • Meaningful names\n   • Consistent style\n   • Readable code"
+        },
+        {
+          "title": "💡 Remember",
+          "content": "Keywords and identifiers are like:\n\n🎫 Keywords = Reserved seats in a theater\n   You can't sit there, they're taken by Java!\n\n✏️ Identifiers = Name tags you create\n   You design them, but follow the dress code!\n\nMaster these basics, and you'll:\n• Write cleaner code\n• Avoid compilation errors\n• Look like a professional\n• Make your code readable\n• Ace your interviews! 🎓\n\nNow go forth and name things wisely! 🚀"
+        }
+      ]
+    }
+  ],
+  "keyPoints": [
+    "Keywords are 51 reserved words in Java with predefined meanings and cannot be used as identifiers",
+    "Identifiers are programmer-defined names for variables, classes, methods, and other elements",
+    "Keywords are always lowercase (except true, false, null which are literals, not keywords)",
+    "Identifiers must start with a letter, underscore (_), or dollar sign ($) - never a digit",
+    "After the first character, identifiers can contain letters, digits, underscores, and dollar signs",
+    "Java is case-sensitive: age, Age, and AGE are three different identifiers",
+    "Keywords cannot be used as identifiers (e.g., int class = 5; is invalid)",
+    "Naming conventions: camelCase for variables/methods, PascalCase for classes, UPPER_SNAKE_CASE for constants",
+    "Identifiers cannot contain spaces or special characters (except _ and $)",
+    "Make identifier names meaningful and descriptive for better code readability",
+    "Follow Java naming conventions even though they're not enforced by the compiler",
+    "Keywords are organized into categories: access modifiers, data types, control flow, exception handling, OOP, and more",
+    "Reserved keywords goto and const are not used in Java but cannot be used as identifiers",
+    "Constants should be declared as 'static final' and named in UPPER_SNAKE_CASE",
+    "Package names should be all lowercase to avoid conflicts across operating systems",
+    "Choose professional, clear names over funny or cryptic abbreviations in production code"
+  ],
+  "references": [
+    "Oracle Java Documentation - Java Language Keywords",
+    "Java Language Specification (JLS) - Chapter 3: Lexical Structure",
+    "Oracle Java Tutorials - Variables and Naming Conventions",
+    "Effective Java by Joshua Bloch - Item 68: Adhere to generally accepted naming conventions",
+    "Java Code Conventions by Oracle - Naming Conventions",
+    "Clean Code by Robert C. Martin - Chapter 2: Meaningful Names",
+    "Java: The Complete Reference by Herbert Schildt - Chapter 2: Keywords and Identifiers",
+    "Head First Java - Naming Variables and Methods"
+  ],
+  "interviewQA": [
+    {
+      "question": "What are keywords in Java? Give examples.",
+      "answer": "Keywords are reserved words in Java that have predefined meanings and purposes. They cannot be used as identifiers. Examples: public, private, class, if, else, int, void, static, final. Java has 51 keywords in total.",
+      "difficulty": "easy",
+      "tags": ["keywords", "basics", "syntax"]
+    },
+    {
+      "question": "What are identifiers in Java?",
+      "answer": "Identifiers are programmer-defined names given to variables, classes, methods, packages, and other program elements. Examples: studentAge, BankAccount, calculateTotal(). They must follow specific naming rules and conventions.",
+      "difficulty": "easy",
+      "tags": ["identifiers", "naming", "basics"]
+    },
+    {
+      "question": "What are the rules for naming identifiers in Java?",
+      "answer": "Rules: 1) Must start with letter, underscore (_), or dollar ($). 2) After first character, can contain letters, digits, _, $. 3) Cannot be a keyword. 4) Case-sensitive. 5) No spaces allowed. 6) Cannot start with digit. Examples: studentAge ✅, 2students ❌, class ❌",
+      "difficulty": "medium",
+      "tags": ["identifiers", "naming-rules", "syntax"]
+    },
+    {
+      "question": "Can we use keywords as identifiers? Why or why not?",
+      "answer": "No, we cannot use keywords as identifiers because they are reserved by Java with predefined meanings. If we use 'class' or 'if' as variable names, the compiler gets confused and throws an error. Example: int class = 5; // Error",
+      "difficulty": "easy",
+      "tags": ["keywords", "identifiers", "rules"]
+    },
+    {
+      "question": "What is the difference between keywords and identifiers?",
+      "answer": "Keywords are reserved words predefined by Java (e.g., if, class, public) with special meanings. Identifiers are names created by programmers (e.g., studentAge, BankAccount). Keywords cannot be used as identifiers, are all lowercase, and have fixed meanings.",
+      "difficulty": "medium",
+      "tags": ["keywords", "identifiers", "comparison"]
+    },
+    {
+      "question": "Explain Java naming conventions for different elements.",
+      "answer": "1) Variables/Methods: camelCase (studentAge, calculateTotal). 2) Classes/Interfaces: PascalCase (BankAccount, Runnable). 3) Constants: UPPER_SNAKE_CASE (MAX_SIZE, PI_VALUE). 4) Packages: lowercase (com.example.myapp). These are conventions, not compiler rules.",
+      "difficulty": "medium",
+      "tags": ["naming-conventions", "best-practices", "code-style"]
+    },
+    {
+      "question": "Which of these are valid identifiers: studentAge, 2students, student_age, student-age, class?",
+      "answer": "Valid: studentAge ✅ (starts with letter), student_age ✅ (underscore allowed). Invalid: 2students ❌ (starts with digit), student-age ❌ (hyphen not allowed), class ❌ (keyword). Explanation: Must start with letter/underscore/dollar, no hyphens, no keywords.",
+      "difficulty": "medium",
+      "tags": ["identifiers", "validation", "examples"]
+    },
+    {
+      "question": "Is Java case-sensitive? Give examples with identifiers.",
+      "answer": "Yes, Java is case-sensitive. Variables 'age', 'Age', and 'AGE' are three completely different identifiers. Same applies to keywords: 'public' is a keyword but 'Public' or 'PUBLIC' are valid identifiers. This is why following naming conventions is important.",
+      "difficulty": "easy",
+      "tags": ["case-sensitivity", "identifiers", "syntax"]
+    },
+    {
+      "question": "How many keywords are there in Java? Name some categories.",
+      "answer": "Java has 51 keywords. Categories: 1) Access modifiers (public, private, protected). 2) Data types (int, boolean, char). 3) Control flow (if, else, while, for). 4) Exception handling (try, catch, finally). 5) OOP (class, interface, extends). 6) Modifiers (static, final, abstract).",
+      "difficulty": "medium",
+      "tags": ["keywords", "categories", "count"]
+    },
+    {
+      "question": "Can identifiers start with a digit? Why or why not?",
+      "answer": "No, identifiers cannot start with a digit. They must start with a letter, underscore (_), or dollar sign ($). Example: 2students ❌ (invalid), students2 ✅ (valid). This rule helps the compiler distinguish between identifiers and numeric literals.",
+      "difficulty": "easy",
+      "tags": ["identifiers", "rules", "syntax"]
+    },
+    {
+      "question": "What are reserved keywords 'goto' and 'const' in Java?",
+      "answer": "goto and const are reserved keywords in Java but not currently used. They're reserved to prevent programmers from using them and to keep them available for potential future use. Use 'final' instead of 'const'. Java intentionally doesn't support goto to promote structured programming.",
+      "difficulty": "hard",
+      "tags": ["keywords", "reserved", "advanced"]
+    },
+    {
+      "question": "Why should we follow naming conventions even though they're not enforced?",
+      "answer": "Naming conventions improve: 1) Code readability - others understand your code. 2) Maintainability - easier to modify later. 3) Professionalism - shows you follow standards. 4) Team collaboration - consistent style across team. 5) Industry standard - recognized by all Java developers worldwide.",
+      "difficulty": "medium",
+      "tags": ["naming-conventions", "best-practices", "professional"]
+    }
+  ]
+}

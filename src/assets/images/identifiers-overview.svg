@@ -1,0 +1,123 @@
+<svg viewBox="0 0 850 650" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="425" y="35" font-size="26" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Java Identifiers - Naming Rules and Examples
+  </text>
+  
+  <!-- What are Identifiers -->
+  <rect x="30" y="60" width="790" height="80" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="8"/>
+  <text x="425" y="85" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    What are Identifiers?
+  </text>
+  <text x="425" y="110" font-size="13" text-anchor="middle" fill="white">
+    Identifiers are programmer-defined names for variables, classes, methods, and packages
+  </text>
+  <text x="425" y="130" font-size="13" text-anchor="middle" fill="white">
+    Examples: studentAge, BankAccount, calculateTotal()
+  </text>
+  
+  <!-- Naming Rules -->
+  <rect x="30" y="160" width="380" height="260" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" rx="8"/>
+  <text x="220" y="190" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Naming Rules (MUST Follow)
+  </text>
+  
+  <text x="50" y="220" font-size="13" fill="#27ae60" font-weight="bold">1. Must start with:</text>
+  <text x="70" y="240" font-size="12" fill="#2c3e50">- Letter (A-Z or a-z)</text>
+  <text x="70" y="258" font-size="12" fill="#2c3e50">- Underscore (_)</text>
+  <text x="70" y="276" font-size="12" fill="#2c3e50">- Dollar sign ($)</text>
+  
+  <text x="50" y="303" font-size="13" fill="#27ae60" font-weight="bold">2. After first char, can contain:</text>
+  <text x="70" y="323" font-size="12" fill="#2c3e50">- Letters, digits, _ or $</text>
+  
+  <text x="50" y="350" font-size="13" fill="#27ae60" font-weight="bold">3. Cannot:</text>
+  <text x="70" y="370" font-size="12" fill="#e74c3c">X Start with a digit</text>
+  <text x="70" y="388" font-size="12" fill="#e74c3c">X Be a Java keyword</text>
+  <text x="70" y="406" font-size="12" fill="#e74c3c">X Contain spaces or special chars</text>
+  
+  <!-- Valid Examples -->
+  <rect x="440" y="160" width="380" height="260" fill="#d5f4e6" stroke="#27ae60" stroke-width="2" rx="8"/>
+  <text x="630" y="190" font-size="18" font-weight="bold" text-anchor="middle" fill="#27ae60">
+    Valid Identifiers
+  </text>
+  
+  <rect x="460" y="205" width="170" height="200" fill="white" stroke="#95a5a6" stroke-width="1" rx="4"/>
+  <text x="545" y="225" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Examples</text>
+  <text x="475" y="248" font-size="12" fill="#27ae60" font-family="monospace">studentAge</text>
+  <text x="475" y="268" font-size="12" fill="#27ae60" font-family="monospace">_tempValue</text>
+  <text x="475" y="288" font-size="12" fill="#27ae60" font-family="monospace">$price</text>
+  <text x="475" y="308" font-size="12" fill="#27ae60" font-family="monospace">age2</text>
+  <text x="475" y="328" font-size="12" fill="#27ae60" font-family="monospace">my_variable</text>
+  <text x="475" y="348" font-size="12" fill="#27ae60" font-family="monospace">TOTAL_COUNT</text>
+  <text x="475" y="368" font-size="12" fill="#27ae60" font-family="monospace">calculateGrade</text>
+  <text x="475" y="388" font-size="12" fill="#27ae60" font-family="monospace">BankAccount</text>
+  
+  <rect x="645" y="205" width="160" height="200" fill="white" stroke="#95a5a6" stroke-width="1" rx="4"/>
+  <text x="725" y="225" font-size="13" font-weight="bold" text-anchor="middle" fill="#2c3e50">Why Valid?</text>
+  <text x="655" y="248" font-size="11" fill="#7f8c8d">Starts with letter</text>
+  <text x="655" y="268" font-size="11" fill="#7f8c8d">Starts with _</text>
+  <text x="655" y="288" font-size="11" fill="#7f8c8d">Starts with $</text>
+  <text x="655" y="308" font-size="11" fill="#7f8c8d">Digit after letter</text>
+  <text x="655" y="328" font-size="11" fill="#7f8c8d">Underscore allowed</text>
+  <text x="655" y="348" font-size="11" fill="#7f8c8d">All caps OK</text>
+  <text x="655" y="368" font-size="11" fill="#7f8c8d">camelCase</text>
+  <text x="655" y="388" font-size="11" fill="#7f8c8d">PascalCase</text>
+  
+  <!-- Invalid Examples -->
+  <rect x="30" y="440" width="790" height="190" fill="#f8d7da" stroke="#e74c3c" stroke-width="2" rx="8"/>
+  <text x="425" y="470" font-size="18" font-weight="bold" text-anchor="middle" fill="#c0392b">
+    Invalid Identifiers (Compilation Errors)
+  </text>
+  
+  <g id="invalid-table">
+    <!-- Header -->
+    <rect x="50" y="485" width="200" height="30" fill="#e74c3c"/>
+    <rect x="250" y="485" width="280" height="30" fill="#e74c3c"/>
+    <rect x="530" y="485" width="270" height="30" fill="#e74c3c"/>
+    
+    <text x="150" y="505" font-size="13" font-weight="bold" text-anchor="middle" fill="white">Invalid Example</text>
+    <text x="390" y="505" font-size="13" font-weight="bold" text-anchor="middle" fill="white">Why It Fails</text>
+    <text x="665" y="505" font-size="13" font-weight="bold" text-anchor="middle" fill="white">Correct Version</text>
+    
+    <!-- Row 1 -->
+    <rect x="50" y="515" width="200" height="25" fill="white"/>
+    <rect x="250" y="515" width="280" height="25" fill="white"/>
+    <rect x="530" y="515" width="270" height="25" fill="white"/>
+    <text x="150" y="532" font-size="12" text-anchor="middle" fill="#c0392b" font-family="monospace">2students</text>
+    <text x="390" y="532" font-size="11" text-anchor="middle" fill="#2c3e50">Starts with digit</text>
+    <text x="665" y="532" font-size="12" text-anchor="middle" fill="#27ae60" font-family="monospace">students2</text>
+    
+    <!-- Row 2 -->
+    <rect x="50" y="540" width="200" height="25" fill="#f9f9f9"/>
+    <rect x="250" y="540" width="280" height="25" fill="#f9f9f9"/>
+    <rect x="530" y="540" width="270" height="25" fill="#f9f9f9"/>
+    <text x="150" y="557" font-size="12" text-anchor="middle" fill="#c0392b" font-family="monospace">student-name</text>
+    <text x="390" y="557" font-size="11" text-anchor="middle" fill="#2c3e50">Hyphen not allowed</text>
+    <text x="665" y="557" font-size="12" text-anchor="middle" fill="#27ae60" font-family="monospace">studentName</text>
+    
+    <!-- Row 3 -->
+    <rect x="50" y="565" width="200" height="25" fill="white"/>
+    <rect x="250" y="565" width="280" height="25" fill="white"/>
+    <rect x="530" y="565" width="270" height="25" fill="white"/>
+    <text x="150" y="582" font-size="12" text-anchor="middle" fill="#c0392b" font-family="monospace">my variable</text>
+    <text x="390" y="582" font-size="11" text-anchor="middle" fill="#2c3e50">Space not allowed</text>
+    <text x="665" y="582" font-size="12" text-anchor="middle" fill="#27ae60" font-family="monospace">myVariable</text>
+    
+    <!-- Row 4 -->
+    <rect x="50" y="590" width="200" height="25" fill="#f9f9f9"/>
+    <rect x="250" y="590" width="280" height="25" fill="#f9f9f9"/>
+    <rect x="530" y="590" width="270" height="25" fill="#f9f9f9"/>
+    <text x="150" y="607" font-size="12" text-anchor="middle" fill="#c0392b" font-family="monospace">class</text>
+    <text x="390" y="607" font-size="11" text-anchor="middle" fill="#2c3e50">Java keyword</text>
+    <text x="665" y="607" font-size="12" text-anchor="middle" fill="#27ae60" font-family="monospace">myClass</text>
+  </g>
+  
+  <!-- Case Sensitivity Note -->
+  <text x="40" y="625" font-size="11" fill="#e67e22" font-weight="bold">
+    WARNING: Java is CASE-SENSITIVE
+  </text>
+  
+  <text x="560" y="625" font-size="11" fill="#3498db" font-weight="bold">
+    TIP: Keep names reasonable!
+  </text>
+</svg>

@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <!-- Background -->
+  <rect width="900" height="650" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" font-family="Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Breaking Down: public static void main(String[] args)
+  </text>
+  
+  <!-- Main method signature in center with individual words positioned -->
+  <g>
+    <rect x="100" y="70" width="700" height="60" fill="#2c3e50" stroke="#34495e" stroke-width="2" rx="8"/>
+    <!-- Words positioned individually for accurate pointer placement -->
+    <text id="public-word" x="190" y="110" font-family="Courier New, monospace" font-size="20" font-weight="bold" fill="#ffffff">public</text>
+    <text id="static-word" x="295" y="110" font-family="Courier New, monospace" font-size="20" font-weight="bold" fill="#ffffff">static</text>
+    <text id="void-word" x="405" y="110" font-family="Courier New, monospace" font-size="20" font-weight="bold" fill="#ffffff">void</text>
+    <text id="main-word" x="485" y="110" font-family="Courier New, monospace" font-size="20" font-weight="bold" fill="#ffffff">main(</text>
+    <text id="args-word" x="575" y="110" font-family="Courier New, monospace" font-size="20" font-weight="bold" fill="#ffffff">String[] args</text>
+    <text x="725" y="110" font-family="Courier New, monospace" font-size="20" font-weight="bold" fill="#ffffff">)</text>
+  </g>
+  
+  <!-- public explanation -->
+  <g>
+    <circle cx="218" cy="130" r="8" fill="#3498db"/>
+    <path d="M 218 138 L 218 160 L 150 160 L 150 220" stroke="#3498db" stroke-width="2" fill="none"/>
+    <rect x="50" y="220" width="200" height="100" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+    <text x="150" y="245" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1976d2">
+      public
+    </text>
+    <text x="150" y="265" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0d47a1">
+      Accessible from
+    </text>
+    <text x="150" y="282" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0d47a1">
+      anywhere
+    </text>
+    <text x="150" y="302" font-family="Arial, sans-serif" font-size="11" font-style="italic" text-anchor="middle" fill="#1565c0">
+      🚪 JVM needs access
+    </text>
+  </g>
+  
+  <!-- static explanation -->
+  <g>
+    <circle cx="330" cy="130" r="8" fill="#9c27b0"/>
+    <path d="M 330 138 L 330 360 L 280 360 L 280 390" stroke="#9c27b0" stroke-width="2" fill="none"/>
+    <rect x="180" y="390" width="200" height="100" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="5"/>
+    <text x="280" y="415" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#7b1fa2">
+      static
+    </text>
+    <text x="280" y="435" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4a148c">
+      No object needed
+    </text>
+    <text x="280" y="452" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4a148c">
+      to call method
+    </text>
+    <text x="280" y="472" font-family="Arial, sans-serif" font-size="11" font-style="italic" text-anchor="middle" fill="#6a1b9a">
+      ⚡ Direct access
+    </text>
+  </g>
+  
+  <!-- void explanation -->
+  <g>
+    <circle cx="430" cy="130" r="8" fill="#f44336"/>
+    <path d="M 430 138 L 430 160 L 390 160 L 390 220" stroke="#f44336" stroke-width="2" fill="none"/>
+    <rect x="290" y="220" width="200" height="100" fill="#ffebee" stroke="#d32f2f" stroke-width="2" rx="5"/>
+    <text x="390" y="245" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">
+      void
+    </text>
+    <text x="390" y="265" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#b71c1c">
+      Returns nothing
+    </text>
+    <text x="390" y="282" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#b71c1c">
+      to JVM
+    </text>
+    <text x="390" y="302" font-family="Arial, sans-serif" font-size="11" font-style="italic" text-anchor="middle" fill="#d32f2f">
+      🚫 No receipt needed
+    </text>
+  </g>
+  
+  <!-- main explanation -->
+  <g>
+    <circle cx="510" cy="130" r="8" fill="#ff9800"/>
+    <path d="M 510 138 L 510 360 L 510 390" stroke="#ff9800" stroke-width="2" fill="none"/>
+    <rect x="410" y="390" width="200" height="100" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="5"/>
+    <text x="510" y="415" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#e65100">
+      main
+    </text>
+    <text x="510" y="435" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#bf360c">
+      The magic name
+    </text>
+    <text x="510" y="452" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#bf360c">
+      JVM looks for
+    </text>
+    <text x="510" y="472" font-family="Arial, sans-serif" font-size="11" font-style="italic" text-anchor="middle" fill="#e65100">
+      🎯 Entry point
+    </text>
+  </g>
+  
+  <!-- String[] args explanation -->
+  <g>
+    <circle cx="650" cy="130" r="8" fill="#4caf50"/>
+    <path d="M 650 138 L 650 160 L 700 160 L 700 220" stroke="#4caf50" stroke-width="2" fill="none"/>
+    <rect x="600" y="220" width="200" height="100" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" rx="5"/>
+    <text x="700" y="245" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+      String[] args
+    </text>
+    <text x="700" y="265" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#1b5e20">
+      Command-line
+    </text>
+    <text x="700" y="282" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#1b5e20">
+      arguments
+    </text>
+    <text x="700" y="302" font-family="Arial, sans-serif" font-size="11" font-style="italic" text-anchor="middle" fill="#2e7d32">
+      🎁 Input at runtime
+    </text>
+  </g>
+  
+  <!-- Summary Box -->
+  <g>
+    <rect x="50" y="520" width="800" height="100" fill="#fff9c4" stroke="#f9a825" stroke-width="3" rx="8"/>
+    <text x="450" y="550" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#f57f17">
+      ⚠️ CRITICAL: Every keyword is mandatory!
+    </text>
+    <text x="450" y="575" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#f57f17">
+      Change any part and the program won't run
+    </text>
+    <text x="450" y="598" font-family="Arial, sans-serif" font-size="13" font-style="italic" text-anchor="middle" fill="#e65100">
+      JVM expects this EXACT signature to start your program
+    </text>
+  </g>
+  
+  <!-- Bottom note -->
+  <text x="450" y="640" font-family="Arial, sans-serif" font-size="12" font-style="italic" text-anchor="middle" fill="#666">
+    This is the most important method signature in Java programming
+  </text>
+</svg>

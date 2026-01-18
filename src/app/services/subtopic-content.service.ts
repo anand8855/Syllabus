@@ -9,7 +9,9 @@ import {
   compilationAndExecutionContent,
   bytecodeAndPlatformIndependenceContent,
   javaEditionsContent,
-  pathAndClasspathContent
+  pathAndClasspathContent,
+  firstJavaProgramContent,
+  keywordsAndIdentifiersContent
 } from '../json/subtopics/subtopic-mapper';
 
 @Injectable({
@@ -26,7 +28,9 @@ export class SubtopicContentService {
     'Compilation and Execution Process': compilationAndExecutionContent,
     'Bytecode and Platform Independence': bytecodeAndPlatformIndependenceContent,
     'Java Editions (SE, EE, ME)': javaEditionsContent,
-    'Path and Classpath (Environment Variables)': pathAndClasspathContent
+    'Path and Classpath (Environment Variables)': pathAndClasspathContent,
+    'First Java Program structure and main method': firstJavaProgramContent,
+    'Java Keywords and Identifiers': keywordsAndIdentifiersContent
     // Add more mappings as you create new subtopic files:
     // 'Checked vs Unchecked Exceptions': checkedVsUncheckedContent,
     // 'try–catch–finally': tryCatchFinallyContent,

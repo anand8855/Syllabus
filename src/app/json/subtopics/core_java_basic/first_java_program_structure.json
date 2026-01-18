@@ -1,0 +1,506 @@
+{
+  "name": "🚀 Structure of a First Java Program & the main Method",
+  "overview": "Every Java developer's journey starts with the legendary 'Hello, World!' program. This tiny program may look simple, but each line has a purpose. Let's break it down step by step, using real-life analogies, light humor, and interview-friendly clarity. Understanding the program structure and main method is fundamental to mastering Java! 💻",
+  "sections": [
+    {
+      "title": "🎯 The Legendary First Program",
+      "content": "Every Java developer's journey starts with this iconic piece of code. It's simple, elegant, and teaches you everything about Java's structure in just 5 lines!",
+      "codeExamples": [
+        {
+          "title": "The Classic Hello World",
+          "description": "The program that started billions of Java journeys",
+          "code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}",
+          "language": "java"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "Why This Program Matters 🌟",
+          "content": "This simple program teaches you:\n• Java's strict structure\n• The importance of the main method\n• Basic syntax and conventions\n• How to print output\n• The foundation for all Java programs\n\n💡 Master this, and you've unlocked Java's door!"
+        },
+        {
+          "title": "First Impressions Count",
+          "content": "When you run this program:\n1. You see 'Hello, World!' printed\n2. You feel accomplished 🎉\n3. You've just executed your first Java program!\n4. You're now part of the Java community\n\nEvery expert was once a beginner who typed this exact program!"
+        }
+      ]
+    },
+    {
+      "title": "🧱 Overall Structure of a Java Program",
+      "content": "A basic Java program can have these parts in a specific order. Think of a Java program like a house 🏠: Package → Area/society, Imports → Tools you borrow, Class → The house itself, main → Front door, Statements → What you do inside the house.",
+      "images": [
+        {
+          "url": "assets/images/java-program-structure.svg",
+          "alt": "Complete Java Program Structure",
+          "caption": "Visual representation of Java program structure - from package declaration to main method execution, showing how all components fit together"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "The Five Components (In Order)",
+          "content": "1️⃣ Package statement (optional)\n2️⃣ Import statements (optional)\n3️⃣ Class declaration (mandatory)\n4️⃣ main method (mandatory for execution)\n5️⃣ Statements inside main\n\n⚠️ Order matters! Java is very particular about structure."
+        },
+        {
+          "title": "🏠 The House Analogy",
+          "content": "Think of your Java program as a house:\n\n🏘️ Package → Your neighborhood/society\n   Groups similar houses together\n\n🧰 Imports → Tools you borrow from neighbors\n   Why build when you can borrow?\n\n🏠 Class → The actual house\n   Contains all your rooms and furniture\n\n🚪 main → The front door\n   The entry point everyone uses\n\n🛋️ Statements → Activities inside the house\n   The actual work that gets done\n\n💡 Without the house (class) and door (main), nothing happens!"
+        }
+      ]
+    },
+    {
+      "title": "1️⃣ Package Statement — Organizing Your Code",
+      "content": "A package is a namespace that groups related classes together. It's the first thing in your Java file (if present).",
+      "codeExamples": [
+        {
+          "title": "Package Declaration",
+          "description": "How to declare a package in Java",
+          "code": "package com.example.demo;\n\nimport java.util.Scanner;\n\npublic class MyApp {\n    public static void main(String[] args) {\n        System.out.println(\"I'm in the com.example.demo package!\");\n    }\n}",
+          "language": "java"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "🧠 What Is a Package?",
+          "content": "A package is a folder-like structure that organizes related classes.\n\n📦 Example packages:\n• java.util → Utility classes (ArrayList, Scanner)\n• java.io → Input/Output classes\n• com.example.myapp → Your custom package\n\nPackages prevent naming conflicts and organize large projects."
+        },
+        {
+          "title": "🎯 Why Packages Exist",
+          "content": "Three main reasons:\n\n1️⃣ Organization\n   Keep related classes together\n   Makes large projects manageable\n\n2️⃣ Avoid Name Conflicts\n   Two classes can have the same name in different packages\n   com.example.Utils vs org.company.Utils ✅\n\n3️⃣ Access Control\n   Package-private access level\n   Control which classes can see each other"
+        },
+        {
+          "title": "🏘️ The Home Address Analogy",
+          "content": "Package is like your home address:\n\nTwo people can be named 'Ravi' but:\n• Ravi at 123 Main Street\n• Ravi at 456 Oak Avenue\n\nTheir addresses make them unique!\n\nSimilarly:\n• com.example.Utils\n• org.company.Utils\n\nSame class name, different packages = No conflict! ✅"
+        },
+        {
+          "title": "😄 Without Packages...",
+          "content": "Imagine a project with:\n• 500 classes\n• All in one folder\n• Names like Utils, Helper, Manager everywhere\n\nResult: Chaos! 😵‍💫\n\nIt's like everyone named 'Utils' living in one room.\n\nPackages save you from this nightmare!"
+        },
+        {
+          "title": "📝 Package Naming Conventions",
+          "content": "Standard naming pattern:\n• All lowercase\n• Reverse domain name: com.company.project\n• Hierarchical: com.company.project.module.feature\n\nExamples:\n• com.google.android\n• org.apache.commons\n• com.example.myapp.controllers"
+        }
+      ]
+    },
+    {
+      "title": "2️⃣ Import Statements — Borrowing Tools",
+      "content": "Import statements tell Java which existing classes you want to use from other packages. They save you from writing fully qualified names everywhere.",
+      "codeExamples": [
+        {
+          "title": "Import Examples",
+          "description": "Different ways to import classes",
+          "code": "// Import specific class\nimport java.util.Scanner;\nimport java.util.ArrayList;\n\n// Import all classes from a package (not recommended)\nimport java.util.*;\n\n// Import static method\nimport static java.lang.Math.sqrt;\n\npublic class ImportDemo {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        ArrayList<String> list = new ArrayList<>();\n        double result = sqrt(25); // No need for Math.sqrt()\n    }\n}",
+          "language": "java"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "🧠 What Are Imports?",
+          "content": "Imports tell Java:\n'Hey, I want to use this existing class from another package.'\n\nWithout import:\njava.util.Scanner sc = new java.util.Scanner(System.in); ❌ (too long!)\n\nWith import:\nimport java.util.Scanner;\nScanner sc = new Scanner(System.in); ✅ (clean!)"
+        },
+        {
+          "title": "🎯 Why Imports Exist",
+          "content": "Three main benefits:\n\n1️⃣ Reuse Existing Code\n   Java has thousands of built-in classes\n   Don't reinvent the wheel!\n\n2️⃣ Cleaner Code\n   Use short names instead of fully qualified names\n\n3️⃣ Organize Dependencies\n   See exactly which external classes you're using"
+        },
+        {
+          "title": "🧰 The Toolbox Analogy",
+          "content": "Imports are like borrowing tools from a toolbox:\n\n🔨 Why build a hammer when one exists?\n🔧 Why create a Scanner when Java provides one?\n\nJava's libraries are your toolbox:\n• java.util → Collection tools\n• java.io → File handling tools\n• java.net → Network tools\n\nImport = Grabbing the tool you need!"
+        },
+        {
+          "title": "😄 Without Imports...",
+          "content": "Imagine cooking without utensils:\n\n'I'll cook pasta... but without pots, pans, or spoons!' 🍝😄\n\nThat's like Java without imports:\n'I'll write a program... but create everything from scratch!'\n\nResult: Exhausting and unnecessary!"
+        },
+        {
+          "title": "📋 Import Best Practices",
+          "content": "✅ DO:\n• Import specific classes: import java.util.ArrayList;\n• Group imports logically\n• Remove unused imports\n\n❌ DON'T:\n• Use wildcard imports: import java.util.*; (unclear what you're using)\n• Import classes from default package (java.lang) - already imported!\n• Import classes you don't use"
+        },
+        {
+          "title": "💡 Fun Fact: java.lang",
+          "content": "The java.lang package is automatically imported!\n\nYou can use without import:\n• String\n• System\n• Math\n• Integer, Double, etc.\n\nThey're like family members - always available! 👨‍👩‍👧‍👦"
+        }
+      ]
+    },
+    {
+      "title": "3️⃣ Class Declaration — The Heart of Java ❤️",
+      "content": "A class is a blueprint that contains methods, variables, and logic. In Java, everything lives inside a class. You cannot write code outside a class - Java is very strict about this!",
+      "images": [
+        {
+          "url": "assets/images/java-class-structure.svg",
+          "alt": "Java Class Structure Diagram",
+          "caption": "Anatomy of a Java class - showing class declaration, fields, constructors, and methods with proper visibility modifiers"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Class Declaration Syntax",
+          "description": "Different types of class declarations",
+          "code": "// Public class - must match filename\npublic class HelloWorld {\n    // This is the class body\n}\n\n// Class with access modifiers\npublic class Student {\n    // Fields (variables)\n    private String name;\n    private int age;\n    \n    // Constructor\n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n    \n    // Methods\n    public void study() {\n        System.out.println(name + \" is studying!\");\n    }\n    \n    public static void main(String[] args) {\n        Student s = new Student(\"Alice\", 20);\n        s.study();\n    }\n}",
+          "language": "java"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "🧠 What Is a Class?",
+          "content": "A class is a blueprint that defines:\n• Properties (variables/fields)\n• Behaviors (methods)\n• Structure of objects\n\nIn Java:\n❗ Everything MUST be inside a class\n❗ No standalone functions/variables allowed\n❗ Object-oriented = class-oriented"
+        },
+        {
+          "title": "🎯 Why Classes Exist",
+          "content": "Java is object-oriented, so:\n\n1️⃣ Organization\n   Classes group related data and methods\n\n2️⃣ Reusability\n   Create objects from class blueprints\n\n3️⃣ Encapsulation\n   Hide internal details, expose what's needed\n\n4️⃣ Real-world Modeling\n   Classes represent real entities (Student, Car, Account)"
+        },
+        {
+          "title": "📐 The Blueprint Analogy",
+          "content": "Class = Blueprint of a house 📐\nObject = Actual house built from blueprint 🏠\n\nExample:\nBlueprint (Class): Student\n• Has name, age, rollNo\n• Can study(), attendClass()\n\nActual Houses (Objects):\n• Student s1 = new Student('Alice', 20);\n• Student s2 = new Student('Bob', 21);\n\nOne blueprint, many houses! One class, many objects!"
+        },
+        {
+          "title": "⚠️ Java's Strict Rule",
+          "content": "In Java, you CANNOT write code outside a class:\n\n❌ This is INVALID:\nSystem.out.println(\"Hello\"); // Compilation error!\n\n✅ This is VALID:\npublic class Test {\n    public static void main(String[] args) {\n        System.out.println(\"Hello\");\n    }\n}\n\nJava is like a strict school principal:\n'Everything in class, no exceptions!' 😄"
+        },
+        {
+          "title": "📝 Class Naming Rules",
+          "content": "✅ MUST follow:\n• Start with uppercase letter\n• Use PascalCase: HelloWorld, StudentInfo\n• No spaces or special characters\n• Should be a noun (represents a thing)\n\n✅ Good names:\n• Student, Employee, BankAccount\n• Calculator, FileReader, DatabaseConnection\n\n❌ Bad names:\n• myclass (lowercase)\n• 123Student (starts with digit)\n• Student-Info (has hyphen)"
+        },
+        {
+          "title": "🔑 Public Class Rule",
+          "content": "⚠️ Critical rule:\nIf a class is declared public, the filename MUST match!\n\npublic class HelloWorld { }\n\n✅ Filename must be: HelloWorld.java\n❌ HelloWorld.txt → Won't work\n❌ helloworld.java → Won't work (case-sensitive!)\n\nOne file = One public class"
+        }
+      ]
+    },
+    {
+      "title": "4️⃣ The main Method — The Star of the Show ⭐",
+      "content": "The main method is the starting point of every Java application. When you run a program, the JVM loads the class, looks for main, and starts execution from there. No main = No execution!",
+      "images": [
+        {
+          "url": "assets/images/main-method-execution.svg",
+          "alt": "JVM Main Method Execution Flow",
+          "caption": "How JVM finds and executes the main method - from class loading to program termination, showing the complete execution lifecycle"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "The Complete main Method",
+          "description": "Understanding every part of the main method signature",
+          "code": "public class MainMethodDemo {\n    // The entry point of Java application\n    public static void main(String[] args) {\n        // Your program starts here!\n        System.out.println(\"Program started!\");\n        System.out.println(\"JVM found main and executed it!\");\n    }\n    \n    // Other methods can exist but won't run automatically\n    public void someOtherMethod() {\n        System.out.println(\"I won't run unless called!\");\n    }\n}",
+          "language": "java"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "🧠 What Is the main Method?",
+          "content": "The main method is:\n• The entry point of your Java program\n• Where execution begins\n• Required for standalone applications\n• Called automatically by JVM\n\n📍 When you run: java HelloWorld\n\nJVM does:\n1. Loads HelloWorld class\n2. Searches for main method\n3. Executes main\n4. Program runs!"
+        },
+        {
+          "title": "🚪 The Front Door Analogy",
+          "content": "main is like:\n\n🚪 Front door of your house\n   Everyone enters here\n\n▶️ Start button of a game\n   Press to begin\n\n🔑 Ignition key of a car\n   Turn to start engine\n\n🎬 Opening scene of a movie\n   Story begins here\n\nNo front door = Can't enter house\nNo main = Can't run program! 😄"
+        },
+        {
+          "title": "⚠️ What If main Is Missing?",
+          "content": "Try running a class without main:\n\npublic class NoMain {\n    public void hello() {\n        System.out.println(\"Hello!\");\n    }\n}\n\nRun: java NoMain\n\nError: ❌\n'Error: Main method not found in class NoMain'\n\nJVM is confused:\n'Where do I start? There's no door!' 😵"
+        },
+        {
+          "title": "📊 Execution Flow",
+          "content": "Step-by-step what happens:\n\n1️⃣ You compile: javac HelloWorld.java\n   → Creates HelloWorld.class (bytecode)\n\n2️⃣ You run: java HelloWorld\n   → JVM starts\n\n3️⃣ JVM loads HelloWorld class\n   → Searches for main method\n\n4️⃣ JVM finds public static void main(String[] args)\n   → Execution begins!\n\n5️⃣ Statements inside main execute\n   → Line by line\n\n6️⃣ main method ends\n   → Program terminates"
+        }
+      ]
+    },
+    {
+      "title": "🔍 Breaking Down: public static void main(String[] args)",
+      "content": "Let's decode the most important method signature in Java, word by word. This is interview gold! Every keyword has a specific purpose and reason.",
+      "images": [
+        {
+          "url": "assets/images/main-method-breakdown.svg",
+          "alt": "Main Method Signature Breakdown",
+          "caption": "Detailed breakdown of each component in the main method signature - public, static, void, main, String[] args - with explanations and visual aids"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "📋 Complete Breakdown Table",
+          "content": "Part          | Meaning                | Why Needed\n------------- | ---------------------- | -------------------------------------\npublic        | Accessible everywhere  | JVM must access it from outside\nstatic        | No object needed       | JVM doesn't create objects to run main\nvoid          | No return value        | JVM doesn't expect anything back\nmain          | Method name            | JVM looks for this exact name\nString[] args | Command-line arguments | Accept input at runtime\n\n🎯 Every word matters! Change one and it won't work!"
+        },
+        {
+          "title": "🔓 public — Open to All",
+          "content": "Why public?\n\nJVM is outside your class and needs to access main.\n\n❌ If private:\nJVM: 'Sorry, I can't access this!' → Error\n\n✅ If public:\nJVM: 'Perfect, I can call this!' → Runs\n\n🚪 Analogy:\nFront door must be public, not locked!\nIf locked, guests can't enter. 🔐😄\n\nReason: JVM is an external caller that needs access."
+        },
+        {
+          "title": "⚡ static — No Object Required",
+          "content": "Why static?\n\nJVM doesn't want to create objects just to run your program.\n\nWithout static:\nJVM would need to do:\nHelloWorld obj = new HelloWorld(); ❌\nobj.main(args); ❌\nToo much work!\n\nWith static:\nJVM directly calls:\nHelloWorld.main(args); ✅\nNo object needed!\n\n☎️ Analogy:\nCalling customer care:\n• You don't need to know the agent personally\n• Just dial and talk\n• static = Direct access without knowing anyone\n\nReason: Simplifies program startup - no object construction needed."
+        },
+        {
+          "title": "🚫 void — No Return Value",
+          "content": "Why void?\n\nmain doesn't return anything to JVM.\n\nJVM says:\n'Just run the program, no receipt needed!' 😄\n\nIf main returned something:\npublic static int main(String[] args) {\n    return 42; // JVM: 'What do I do with this?' 🤷\n}\n\nJVM doesn't care about return values from main.\n\n🎁 Analogy:\nYou give a gift to someone.\nThey say 'Thanks!' and keep it.\nThey don't give you a receipt! 😄\n\nReason: Main is the starting point, not a subroutine that returns data."
+        },
+        {
+          "title": "🎯 main — The Magic Name",
+          "content": "Why 'main'?\n\nIt's a fixed convention! JVM only recognizes this name.\n\n❌ Try renaming:\npublic static void start(String[] args) { }\npublic static void run(String[] args) { }\npublic static void begin(String[] args) { }\n\nJVM: 'Error: Main method not found' 😵\n\n✅ Must be exactly:\npublic static void main(String[] args) { }\n\nJVM: 'Found it! Let's go!' 🚀\n\n🔍 Analogy:\nLike a secret password.\nJVM asks: 'What's the password?'\nYou must say: 'main'\nSay anything else = Access denied!\n\nReason: JVM specification requires this exact name for program entry point."
+        },
+        {
+          "title": "📦 String[] args — Command-Line Arguments",
+          "content": "Why String[] args?\n\nAllows passing input when running the program.\n\nExample:\njava MyProgram hello world 123\n\nInside program:\nargs[0] → 'hello'\nargs[1] → 'world'\nargs[2] → '123'\n\n🎁 Analogy:\nargs is like a gift box 🎁\nJVM hands it to your program at startup.\nYou can open it and use what's inside!\n\n💡 Note:\n• Always an array of Strings\n• Can be empty: new String[0]\n• Can rename: String[] parameters (works, but args is convention)\n\nReason: Provides flexibility to pass runtime arguments without recompiling."
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Using Command-Line Arguments",
+          "description": "How to use args parameter in main method",
+          "code": "public class ArgsDemo {\n    public static void main(String[] args) {\n        // Check if arguments are provided\n        if (args.length == 0) {\n            System.out.println(\"No arguments provided!\");\n            return;\n        }\n        \n        System.out.println(\"Number of arguments: \" + args.length);\n        \n        // Print all arguments\n        for (int i = 0; i < args.length; i++) {\n            System.out.println(\"Argument \" + i + \": \" + args[i]);\n        }\n    }\n}\n\n// Run: java ArgsDemo hello world 123\n// Output:\n// Number of arguments: 3\n// Argument 0: hello\n// Argument 1: world\n// Argument 2: 123",
+          "language": "java"
+        },
+        {
+          "title": "What Happens If You Change main?",
+          "description": "Common mistakes and their consequences",
+          "code": "// ❌ WRONG: Not public\nstatic void main(String[] args) { }\n// Error: Main method not public\n\n// ❌ WRONG: Not static\npublic void main(String[] args) { }\n// Error: Main method not static\n\n// ❌ WRONG: Returns a value\npublic static int main(String[] args) { return 0; }\n// Error: Main method must return void\n\n// ❌ WRONG: Different name\npublic static void start(String[] args) { }\n// Error: Main method not found\n\n// ❌ WRONG: No parameters\npublic static void main() { }\n// Error: Main method signature incorrect\n\n// ✅ CORRECT: Exact signature\npublic static void main(String[] args) { }\n// Works perfectly!",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "5️⃣ Statements Inside main — Where Magic Happens ✨",
+      "content": "The actual logic of your program lives inside the main method. These are the instructions that get executed when your program runs.",
+      "codeExamples": [
+        {
+          "title": "System.out.println Explained",
+          "description": "Understanding the most common statement in Java",
+          "code": "public class PrintDemo {\n    public static void main(String[] args) {\n        // System.out.println - Print with new line\n        System.out.println(\"Hello, World!\");\n        System.out.println(\"Next line\");\n        \n        // System.out.print - Print without new line\n        System.out.print(\"Same \");\n        System.out.print(\"line!\");\n        System.out.println(); // Empty line\n        \n        // System.out.printf - Formatted print\n        String name = \"Alice\";\n        int age = 25;\n        System.out.printf(\"Name: %s, Age: %d%n\", name, age);\n    }\n}\n\n// Output:\n// Hello, World!\n// Next line\n// Same line!\n// Name: Alice, Age: 25",
+          "language": "java"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "🧠 Breaking Down System.out.println",
+          "content": "Let's decode Java's most famous statement:\n\nSystem.out.println('Hello, World!');\n\n📌 System\n• A built-in utility class (from java.lang)\n• Contains standard input/output/error streams\n• Always available (no import needed)\n\n📌 out\n• A static field in System class\n• Type: PrintStream\n• Represents standard output (console/terminal)\n\n📌 println\n• A method of PrintStream class\n• Prints text + adds new line\n• println = print + line break"
+        },
+        {
+          "title": "🗣️ The Speaking Analogy",
+          "content": "System.out.println is Java saying:\n\n'Speak to the screen!' 🗣️💻\n\nThink of it as:\n• System → The building\n• out → The PA system/speakers\n• println → The announcement with pause\n\nJust like:\n'Building.speakers.announce(\"Hello everyone!\")'\n\nResult: Message appears on screen!"
+        },
+        {
+          "title": "😄 Every Beginner's First Print",
+          "content": "Every Java beginner prints:\n'Hello, World!'\n\nIt's like:\n• Baby's first word 👶\n• A bird's first flight 🐦\n• Your first step in Java 👣\n\nWhy 'Hello, World'?\n• Tradition since 1970s (C language)\n• Simple and clear\n• Proves your setup works\n• Universal programming rite of passage!\n\nMillion-dollar apps started with this line! 💰"
+        },
+        {
+          "title": "📝 Common Statement Types",
+          "content": "Inside main, you can have:\n\n1️⃣ Variable declarations\nint age = 25;\nString name = \"Alice\";\n\n2️⃣ Method calls\nSystem.out.println(\"Hello\");\nobj.doSomething();\n\n3️⃣ Control structures\nif (age > 18) { }\nfor (int i = 0; i < 10; i++) { }\n\n4️⃣ Object creation\nStudent s = new Student();\n\n5️⃣ Expressions\nint sum = 10 + 20;\nboolean result = (age > 18);"
+        }
+      ]
+    },
+    {
+      "title": "🔄 Complete Program Execution Flow",
+      "content": "Understanding how Java executes your program from start to finish.",
+      "images": [
+        {
+          "url": "assets/images/java-execution-flow.svg",
+          "alt": "Complete Java Program Execution Flow",
+          "caption": "Step-by-step visualization of Java program execution - from source code compilation to JVM execution and termination"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "📊 Step-by-Step Execution",
+          "content": "1️⃣ You write code\n   HelloWorld.java (source file)\n\n2️⃣ You compile\n   javac HelloWorld.java\n   → Creates HelloWorld.class (bytecode)\n\n3️⃣ You run\n   java HelloWorld\n   → JVM starts\n\n4️⃣ JVM loads the class\n   → Reads HelloWorld.class\n   → Loads into memory\n\n5️⃣ JVM looks for main\n   → Searches: public static void main(String[] args)\n   → Found? → Continue\n   → Not found? → Error!\n\n6️⃣ Execution starts from main\n   → Line by line execution\n   → Top to bottom\n\n7️⃣ Statements execute\n   → Variables created\n   → Methods called\n   → Output produced\n\n8️⃣ main method ends\n   → Program terminates\n   → JVM shuts down"
+        },
+        {
+          "title": "⏱️ Real-Time Example",
+          "content": "Let's trace this program:\n\npublic class Demo {\n    public static void main(String[] args) {\n        System.out.println(\"Step 1\");\n        int x = 10;\n        System.out.println(\"x = \" + x);\n        System.out.println(\"Step 2\");\n    }\n}\n\nExecution trace:\n1. JVM starts\n2. Loads Demo class\n3. Finds main method\n4. Executes: System.out.println('Step 1')\n   Output: Step 1\n5. Executes: int x = 10;\n   Variable x created with value 10\n6. Executes: System.out.println('x = ' + x)\n   Output: x = 10\n7. Executes: System.out.println('Step 2')\n   Output: Step 2\n8. main ends\n9. Program terminates"
+        },
+        {
+          "title": "🎬 Movie Analogy",
+          "content": "Think of program execution like watching a movie:\n\n🎬 Opening scene → main method starts\n📽️ Scenes play → Statements execute one by one\n🎭 Characters act → Objects interact, methods called\n🎵 Background music → JVM managing memory\n🎬 Ending credits → main method ends\n\nJust like you can't skip the opening scene,\nJVM can't skip the main method!"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Tracing Program Flow",
+          "description": "Example showing execution order with comments",
+          "code": "public class ExecutionFlow {\n    public static void main(String[] args) {\n        // Step 1: Program starts here\n        System.out.println(\"1. Main method started\");\n        \n        // Step 2: Variable declaration\n        int number = 42;\n        System.out.println(\"2. Variable created: \" + number);\n        \n        // Step 3: Method call\n        greet(\"Alice\");\n        \n        // Step 4: Conditional logic\n        if (number > 40) {\n            System.out.println(\"4. Number is greater than 40\");\n        }\n        \n        // Step 5: Loop\n        for (int i = 1; i <= 3; i++) {\n            System.out.println(\"5. Loop iteration: \" + i);\n        }\n        \n        // Step 6: Program ends\n        System.out.println(\"6. Main method ending\");\n    }\n    \n    // Helper method (called from main)\n    static void greet(String name) {\n        System.out.println(\"3. Hello, \" + name + \"!\");\n    }\n}\n\n// Output:\n// 1. Main method started\n// 2. Variable created: 42\n// 3. Hello, Alice!\n// 4. Number is greater than 40\n// 5. Loop iteration: 1\n// 5. Loop iteration: 2\n// 5. Loop iteration: 3\n// 6. Main method ending",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "📚 Complete Example: Putting It All Together",
+      "content": "Let's see a complete Java program that demonstrates all components working together.",
+      "codeExamples": [
+        {
+          "title": "Complete Java Program Structure",
+          "description": "A comprehensive example with all components",
+          "code": "// 1. Package declaration (optional)\npackage com.example.demo;\n\n// 2. Import statements (optional)\nimport java.util.Scanner;\nimport java.time.LocalDate;\n\n// 3. Class declaration (mandatory)\npublic class CompleteDemo {\n    \n    // Class variables (fields)\n    private static String appName = \"My First App\";\n    \n    // 4. main method (mandatory for execution)\n    public static void main(String[] args) {\n        // 5. Statements inside main\n        \n        // Print app name\n        System.out.println(\"=== \" + appName + \" ===\");\n        System.out.println();\n        \n        // Use imported class\n        LocalDate today = LocalDate.now();\n        System.out.println(\"Today's date: \" + today);\n        \n        // Create object and call method\n        Student student = new Student(\"Alice\", 20);\n        student.introduce();\n        \n        // Use command-line arguments\n        if (args.length > 0) {\n            System.out.println(\"\\nCommand-line arguments:\");\n            for (int i = 0; i < args.length; i++) {\n                System.out.println(\"  Arg \" + i + \": \" + args[i]);\n            }\n        } else {\n            System.out.println(\"\\nNo command-line arguments provided.\");\n        }\n        \n        // Call other methods\n        displayMessage(\"Program completed successfully!\");\n    }\n    \n    // Helper method\n    private static void displayMessage(String msg) {\n        System.out.println(\"\\n[INFO] \" + msg);\n    }\n}\n\n// Helper class in same file (not public)\nclass Student {\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n    \n    public void introduce() {\n        System.out.println(\"\\nStudent Info:\");\n        System.out.println(\"  Name: \" + name);\n        System.out.println(\"  Age: \" + age);\n    }\n}",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "🧠 Quick Revision Summary",
+      "content": "Let's consolidate everything you've learned with quick reference tables and key points.",
+      "subsections": [
+        {
+          "title": "📋 Component Purpose Table",
+          "content": "Component   | Purpose                        | Required?\n----------- | ------------------------------ | -----------\nPackage     | Organize classes into namespaces | Optional\nImport      | Use external classes           | Optional\nClass       | Blueprint containing code      | Mandatory\nmain method | Entry point of program         | Mandatory*\nStatements  | Actual logic and instructions  | Optional\n\n*Mandatory for standalone applications that need to execute"
+        },
+        {
+          "title": "🔑 main Method Signature Breakdown",
+          "content": "Keyword | Meaning           | Why Required\n------- | ----------------- | -------------------------------------\npublic  | Anyone can access | JVM needs to call it from outside\nstatic  | No object needed  | JVM won't create objects to run main\nvoid    | Returns nothing   | JVM doesn't expect return value\nmain    | Method name       | JVM looks for this exact name\nString[]| Array of Strings  | Command-line arguments\nargs    | Parameter name    | Convention (can be any name)"
+        },
+        {
+          "title": "✅ Key Takeaways",
+          "content": "1️⃣ Java programs have a clear structure\n   Order matters: package → imports → class → main\n\n2️⃣ Class is mandatory\n   Everything must be inside a class\n\n3️⃣ main is the entry point\n   Execution always starts from main\n\n4️⃣ Every keyword in main has a purpose\n   public static void main(String[] args) - all required!\n\n5️⃣ JVM is strict\n   Follow the rules or get compilation/runtime errors\n\n6️⃣ System.out.println is your friend\n   First tool to display output\n\n7️⃣ Understanding structure > memorizing\n   Know WHY each part exists, not just WHAT it is"
+        }
+      ]
+    },
+    {
+      "title": "🎓 Common Mistakes & How to Avoid Them",
+      "content": "Learning from common mistakes helps you become a better programmer faster.",
+      "subsections": [
+        {
+          "title": "❌ Mistake #1: Filename Doesn't Match Class Name",
+          "content": "Wrong:\npublic class HelloWorld { }\nFilename: Test.java ❌\n\nError: 'class HelloWorld is public, should be declared in a file named HelloWorld.java'\n\nCorrect:\npublic class HelloWorld { }\nFilename: HelloWorld.java ✅\n\n💡 Remember: Public class name MUST match filename exactly (case-sensitive)!"
+        },
+        {
+          "title": "❌ Mistake #2: Typo in main Method",
+          "content": "Wrong:\npublic static void Main(String[] args) { } // Capital M\npublic static void main(String args) { }    // Missing []\npublic void main(String[] args) { }         // Missing static\nstatic void main(String[] args) { }          // Missing public\n\nAll result in: 'Error: Main method not found'\n\nCorrect:\npublic static void main(String[] args) { } ✅\n\n💡 Every character matters! Copy it exactly."
+        },
+        {
+          "title": "❌ Mistake #3: Missing Semicolon",
+          "content": "Wrong:\nSystem.out.println(\"Hello\") // Missing semicolon\n\nError: '; expected'\n\nCorrect:\nSystem.out.println(\"Hello\"); ✅\n\n💡 Every statement must end with semicolon (except blocks like if, for, etc.)"
+        },
+        {
+          "title": "❌ Mistake #4: Wrong Quotes",
+          "content": "Wrong:\nSystem.out.println('Hello');  // Single quotes for string\nSystem.out.println(\"Hello\");   // Smart quotes (curly)\n\nError: 'Unclosed character literal' or 'Illegal character'\n\nCorrect:\nSystem.out.println(\\\"Hello\\\"); ✅ // Double straight quotes\n\n💡 Strings use double quotes (\\\"), characters use single quotes ('a')"
+        },
+        {
+          "title": "❌ Mistake #5: Code Outside Class",
+          "content": "Wrong:\nSystem.out.println(\"Hello\"); // Not in any class\npublic class Test { }\n\nError: 'Class, interface, or enum expected'\n\nCorrect:\npublic class Test {\n    public static void main(String[] args) {\n        System.out.println(\"Hello\"); ✅\n    }\n}\n\n💡 All executable code must be inside a class!"
+        },
+        {
+          "title": "💡 Pro Tips to Avoid Mistakes",
+          "content": "1️⃣ Use an IDE (IntelliJ, Eclipse, VS Code)\n   • Syntax highlighting\n   • Auto-completion\n   • Error detection\n\n2️⃣ Copy-paste the main signature initially\n   Don't type it from memory until you're confident\n\n3️⃣ Pay attention to case\n   Java is case-sensitive: Main ≠ main\n\n4️⃣ Check your brackets\n   Every { needs a matching }\n\n5️⃣ Read error messages carefully\n   They tell you exactly what's wrong!"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Common Mistakes Demo",
+          "description": "Example of common errors and their fixes",
+          "code": "// ❌ WRONG: Multiple mistakes\npublic class helloworld {  // Wrong: lowercase class name\n    public static void Main(String[] args) {  // Wrong: Main should be main\n        System.out.println('Hello')  // Wrong: single quotes, missing semicolon\n    }\n}  // Filename must be: helloworld.java (but class name should be uppercase!)\n\n// ✅ CORRECT: All fixed\npublic class HelloWorld {  // Correct: PascalCase class name\n    public static void main(String[] args) {  // Correct: lowercase main\n        System.out.println(\"Hello\");  // Correct: double quotes, semicolon\n    }\n}  // Filename: HelloWorld.java",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "🏁 Final Thoughts",
+      "content": "Understanding the structure of a Java program is your foundation for everything else you'll learn in Java.",
+      "subsections": [
+        {
+          "title": "🎯 What You've Learned",
+          "content": "You now understand:\n✅ Why Java programs are structured the way they are\n✅ The purpose of each component (package, import, class, main)\n✅ Why every keyword in main is necessary\n✅ How JVM executes your program\n✅ Common mistakes and how to avoid them\n\nThis knowledge will serve you throughout your Java journey!"
+        },
+        {
+          "title": "🚀 What's Next?",
+          "content": "Now that you understand program structure:\n\n1️⃣ Practice writing simple programs\n   Start with variations of Hello World\n\n2️⃣ Experiment with command-line arguments\n   Try passing different values\n\n3️⃣ Learn about variables and data types\n   Store and manipulate data\n\n4️⃣ Explore control structures\n   if-else, loops, switch\n\n5️⃣ Create methods\n   Break down your code into reusable pieces\n\nEvery expert started where you are now! 💪"
+        },
+        {
+          "title": "💡 Remember",
+          "content": "The first Java program teaches you:\n• Java is structured (not chaotic)\n• Java is strict (but for good reasons)\n• Java always needs a clear starting point (main)\n\nOnce you understand:\n✅ Program structure\n✅ main method keywords\n✅ Execution flow\n\nJava suddenly feels logical instead of scary! 😄\n\nYou're not memorizing rules - you're understanding a well-designed system.\n\nAnd that's the beauty of Java! ☕✨"
+        }
+      ]
+    }
+  ],
+  "keyPoints": [
+    "Every Java program must have at least one class - code cannot exist outside a class",
+    "The main method signature must be exactly: public static void main(String[] args)",
+    "public allows JVM to access main from outside the class",
+    "static allows JVM to call main without creating an object",
+    "void means main doesn't return any value to the JVM",
+    "'main' is the exact method name JVM looks for - it cannot be renamed",
+    "String[] args holds command-line arguments passed to the program",
+    "Package statement (optional) organizes classes into namespaces",
+    "Import statements (optional) allow using classes from other packages",
+    "Public class name must exactly match the filename (case-sensitive)",
+    "System.out.println() is used to print output to the console",
+    "JVM loads the class, finds main, and starts execution from there",
+    "Execution flow: compile → load class → find main → execute statements → terminate",
+    "One .java file can have only one public class",
+    "Every statement (except blocks) must end with a semicolon",
+    "Java is case-sensitive: Main ≠ main, String ≠ string",
+    "The main method is the entry point for standalone Java applications"
+  ],
+  "references": [
+    "Oracle Java Documentation - Getting Started with Java",
+    "Java Language Specification (JLS) - Chapter 12: Execution",
+    "The Java Tutorial by Oracle - The 'Hello World!' Application",
+    "Effective Java by Joshua Bloch - Item 1: Consider static factory methods",
+    "Java: A Beginner's Guide by Herbert Schildt - Chapter 2",
+    "Head First Java by Kathy Sierra - Chapter 1: Breaking the Surface",
+    "Oracle Java SE Documentation - The main Method",
+    "Java Virtual Machine Specification - Loading, Linking, and Initializing"
+  ],
+  "interviewQA": [
+    {
+      "question": "What is the main method in Java?",
+      "answer": "The main method is the entry point of a Java application. It's where program execution begins. JVM looks for this method when you run a Java program. Signature must be: public static void main(String[] args)",
+      "difficulty": "easy",
+      "tags": ["main-method", "basics", "execution"]
+    },
+    {
+      "question": "Why is main method public in Java?",
+      "answer": "The main method is public because JVM needs to access it from outside the class. If it were private or protected, JVM couldn't call it to start the program. Public access allows JVM (an external caller) to invoke the method.",
+      "difficulty": "easy",
+      "tags": ["main-method", "access-modifiers", "public"]
+    },
+    {
+      "question": "Why is main method static in Java?",
+      "answer": "The main method is static so JVM can call it without creating an object of the class. If it weren't static, JVM would need to instantiate the class first, which is unnecessary and inefficient for program startup. Static allows direct invocation: ClassName.main(args)",
+      "difficulty": "medium",
+      "tags": ["main-method", "static", "execution"]
+    },
+    {
+      "question": "Why does main method return void?",
+      "answer": "The main method returns void because JVM doesn't expect any return value. The method's purpose is to start and run the program, not to return data. Program exit status is controlled through System.exit(int) if needed, not through main's return value.",
+      "difficulty": "easy",
+      "tags": ["main-method", "void", "return-type"]
+    },
+    {
+      "question": "What is String[] args in main method?",
+      "answer": "String[] args is an array of command-line arguments passed to the program at runtime. When you run 'java MyClass arg1 arg2', args[0] = 'arg1' and args[1] = 'arg2'. It allows passing input without recompiling the program. The name 'args' is convention but can be changed.",
+      "difficulty": "medium",
+      "tags": ["main-method", "command-line", "arrays"]
+    },
+    {
+      "question": "Can we have multiple main methods in a Java program?",
+      "answer": "Yes, you can have multiple main methods in different classes within the same program. Each class can have its own main method. When you run the program (java ClassName), JVM executes the main method of that specific class. However, only one public class per file, and filename must match that public class.",
+      "difficulty": "medium",
+      "tags": ["main-method", "multiple-classes"]
+    },
+    {
+      "question": "What happens if we don't define main method in a class?",
+      "answer": "If you try to run a class without a main method, you'll get a runtime error: 'Error: Main method not found in class ClassName'. The class will compile fine, but JVM cannot execute it as a standalone application. Libraries/utility classes don't need main, but executable classes do.",
+      "difficulty": "easy",
+      "tags": ["main-method", "errors"]
+    },
+    {
+      "question": "Can we change the name of main method?",
+      "answer": "No, you cannot rename main to something else (like 'start' or 'run') for the entry point. JVM specifically looks for a method named 'main' with exact signature. You can create other methods with different names, but they won't be execution entry points.",
+      "difficulty": "easy",
+      "tags": ["main-method", "naming"]
+    },
+    {
+      "question": "What is the sequence of execution in a Java program?",
+      "answer": "1) Compile: javac creates .class bytecode. 2) Run: java command starts JVM. 3) JVM loads the class into memory. 4) JVM searches for public static void main(String[] args). 5) Execution begins from first statement in main. 6) Statements execute sequentially. 7) main ends, program terminates.",
+      "difficulty": "medium",
+      "tags": ["execution-flow", "JVM", "lifecycle"]
+    },
+    {
+      "question": "Why must the public class name match the filename?",
+      "answer": "In Java, if a class is declared public, the filename must exactly match the class name (case-sensitive) with .java extension. This helps JVM locate the class file. It's a design decision for organization and clarity. One file can have only one public class, but multiple non-public classes.",
+      "difficulty": "medium",
+      "tags": ["class", "naming", "file-structure"]
+    },
+    {
+      "question": "What is System.out.println()?",
+      "answer": "System.out.println() is used to print output to console. System is a class in java.lang, 'out' is a static PrintStream object, println() is a method that prints and adds a newline. It's the most common way to display output in Java programs.",
+      "difficulty": "easy",
+      "tags": ["output", "println", "System"]
+    },
+    {
+      "question": "Can we overload the main method?",
+      "answer": "Yes, you can overload main method by creating methods with the same name but different parameters. However, JVM will only call public static void main(String[] args) as the entry point. Other overloaded versions must be called explicitly from within the program.",
+      "difficulty": "hard",
+      "tags": ["main-method", "overloading", "advanced"]
+    }
+  ]
+}

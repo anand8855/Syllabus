@@ -1,0 +1,127 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="400" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Java Keywords Overview
+  </text>
+  <text x="400" y="55" font-size="14" text-anchor="middle" fill="#7f8c8d">
+    51 Reserved Words Organized by Purpose
+  </text>
+  
+  <!-- Access Modifiers -->
+  <rect x="20" y="80" width="170" height="80" fill="#3498db" rx="5"/>
+  <text x="105" y="105" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Access Modifiers (4)
+  </text>
+  <text x="105" y="130" font-size="12" text-anchor="middle" fill="white">
+    public, private
+  </text>
+  <text x="105" y="150" font-size="12" text-anchor="middle" fill="white">
+    protected, default
+  </text>
+  
+  <!-- Data Types -->
+  <rect x="210" y="80" width="170" height="80" fill="#2ecc71" rx="5"/>
+  <text x="295" y="105" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Data Types (8)
+  </text>
+  <text x="295" y="125" font-size="11" text-anchor="middle" fill="white">
+    int, double, boolean, char
+  </text>
+  <text x="295" y="143" font-size="11" text-anchor="middle" fill="white">
+    byte, short, long, float
+  </text>
+  
+  <!-- Control Flow -->
+  <rect x="400" y="80" width="170" height="80" fill="#f39c12" rx="5"/>
+  <text x="485" y="105" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Control Flow (11)
+  </text>
+  <text x="485" y="125" font-size="11" text-anchor="middle" fill="white">
+    if, else, switch, case
+  </text>
+  <text x="485" y="143" font-size="11" text-anchor="middle" fill="white">
+    for, while, do, break, etc.
+  </text>
+  
+  <!-- Exception Handling -->
+  <rect x="590" y="80" width="190" height="80" fill="#e74c3c" rx="5"/>
+  <text x="685" y="105" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Exception Handling (6)
+  </text>
+  <text x="685" y="130" font-size="12" text-anchor="middle" fill="white">
+    try, catch, finally
+  </text>
+  <text x="685" y="150" font-size="12" text-anchor="middle" fill="white">
+    throw, throws, assert
+  </text>
+  
+  <!-- Object-Oriented -->
+  <rect x="20" y="180" width="170" height="100" fill="#9b59b6" rx="5"/>
+  <text x="105" y="205" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    OOP Keywords (7)
+  </text>
+  <text x="105" y="228" font-size="11" text-anchor="middle" fill="white">
+    class, interface
+  </text>
+  <text x="105" y="246" font-size="11" text-anchor="middle" fill="white">
+    extends, implements
+  </text>
+  <text x="105" y="264" font-size="11" text-anchor="middle" fill="white">
+    new, this, super
+  </text>
+  
+  <!-- Modifiers -->
+  <rect x="210" y="180" width="170" height="100" fill="#1abc9c" rx="5"/>
+  <text x="295" y="205" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Modifiers (11)
+  </text>
+  <text x="295" y="225" font-size="11" text-anchor="middle" fill="white">
+    static, final, abstract
+  </text>
+  <text x="295" y="243" font-size="11" text-anchor="middle" fill="white">
+    synchronized, volatile
+  </text>
+  <text x="295" y="261" font-size="11" text-anchor="middle" fill="white">
+    transient, native, etc.
+  </text>
+  
+  <!-- Package & Import -->
+  <rect x="400" y="180" width="170" height="100" fill="#34495e" rx="5"/>
+  <text x="485" y="205" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Package/Import (2)
+  </text>
+  <text x="485" y="240" font-size="12" text-anchor="middle" fill="white">
+    package, import
+  </text>
+  
+  <!-- Other Keywords -->
+  <rect x="590" y="180" width="190" height="100" fill="#95a5a6" rx="5"/>
+  <text x="685" y="205" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Other Keywords (2)
+  </text>
+  <text x="685" y="240" font-size="12" text-anchor="middle" fill="white">
+    void, instanceof
+  </text>
+  
+  <!-- Important Notes -->
+  <rect x="20" y="300" width="760" height="180" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" rx="5"/>
+  <text x="400" y="330" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    📌 Important Rules About Keywords
+  </text>
+  
+  <text x="40" y="360" font-size="13" fill="#34495e">
+    ✅ Keywords are RESERVED - Cannot be used as identifiers (variable names, class names, etc.)
+  </text>
+  <text x="40" y="385" font-size="13" fill="#34495e">
+    ✅ All keywords are lowercase (with few exceptions)
+  </text>
+  <text x="40" y="410" font-size="13" fill="#34495e">
+    ✅ Keywords have predefined meanings in Java - Control program structure and behavior
+  </text>
+  <text x="40" y="435" font-size="13" fill="#34495e">
+    ⚠️ 'goto' and 'const' are reserved but NOT used in Java
+  </text>
+  <text x="40" y="460" font-size="13" fill="#e74c3c" font-weight="bold">
+    ❌ Example: int class = 5; // ERROR! 'class' is a keyword
+  </text>
+</svg>

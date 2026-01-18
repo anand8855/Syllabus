@@ -8,6 +8,8 @@ import compilationAndExecutionData from './core_java_basic/compilation_and_execu
 import bytecodeAndPlatformIndependenceData from './core_java_basic/bytecode_and_platform_independence.json';
 import javaEditionsData from './core_java_basic/java_editions.json';
 import pathAndClasspathData from './core_java_basic/path_and_classpath.json';
+import firstJavaProgram from './core_java_basic/first_java_program_structure.json';
+import keywordsAndIdentifiersData from './core_java_basic/keywords_and_identifiers.json';
 import { SubtopicContent } from '../../models/syllabus.model';
 
 export const fundamentalsContent = fundamentalsData as SubtopicContent;
@@ -19,6 +21,8 @@ export const compilationAndExecutionContent = compilationAndExecutionData as Sub
 export const bytecodeAndPlatformIndependenceContent = bytecodeAndPlatformIndependenceData as SubtopicContent;
 export const javaEditionsContent = javaEditionsData as SubtopicContent;
 export const pathAndClasspathContent = pathAndClasspathData as SubtopicContent;
+export const firstJavaProgramContent = firstJavaProgram as SubtopicContent;
+export const keywordsAndIdentifiersContent = keywordsAndIdentifiersData as SubtopicContent;
 
 // Add more exports as you create new category folders
 // Example: ./category_name/subtopic_name/content.json

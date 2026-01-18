@@ -1,0 +1,145 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="450" y="35" font-size="26" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Java Keywords by Category
+  </text>
+  
+  <!-- Category 1: Access Modifiers -->
+  <g id="access-modifiers">
+    <rect x="30" y="60" width="200" height="110" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="8"/>
+    <text x="130" y="85" font-size="15" font-weight="bold" text-anchor="middle" fill="white">
+      🔐 Access Modifiers
+    </text>
+    <rect x="45" y="95" width="170" height="65" fill="white" opacity="0.9" rx="4"/>
+    <text x="130" y="115" font-size="13" text-anchor="middle" fill="#2c3e50" font-family="monospace">public</text>
+    <text x="130" y="135" font-size="13" text-anchor="middle" fill="#2c3e50" font-family="monospace">private</text>
+    <text x="130" y="155" font-size="13" text-anchor="middle" fill="#2c3e50" font-family="monospace">protected</text>
+  </g>
+  
+  <!-- Category 2: Data Types -->
+  <g id="data-types">
+    <rect x="250" y="60" width="200" height="110" fill="#2ecc71" stroke="#27ae60" stroke-width="2" rx="8"/>
+    <text x="350" y="85" font-size="15" font-weight="bold" text-anchor="middle" fill="white">
+      🔢 Primitive Types
+    </text>
+    <rect x="265" y="95" width="170" height="65" fill="white" opacity="0.9" rx="4"/>
+    <text x="290" y="115" font-size="12" fill="#2c3e50" font-family="monospace">int  double</text>
+    <text x="290" y="135" font-size="12" fill="#2c3e50" font-family="monospace">boolean char</text>
+    <text x="290" y="155" font-size="12" fill="#2c3e50" font-family="monospace">byte short...</text>
+  </g>
+  
+  <!-- Category 3: Control Flow -->
+  <g id="control-flow">
+    <rect x="470" y="60" width="200" height="110" fill="#f39c12" stroke="#e67e22" stroke-width="2" rx="8"/>
+    <text x="570" y="85" font-size="15" font-weight="bold" text-anchor="middle" fill="white">
+      🎮 Control Flow
+    </text>
+    <rect x="485" y="95" width="170" height="65" fill="white" opacity="0.9" rx="4"/>
+    <text x="510" y="115" font-size="12" fill="#2c3e50" font-family="monospace">if  else  for</text>
+    <text x="510" y="135" font-size="12" fill="#2c3e50" font-family="monospace">while  switch</text>
+    <text x="510" y="155" font-size="12" fill="#2c3e50" font-family="monospace">break continue</text>
+  </g>
+  
+  <!-- Category 4: Exception Handling -->
+  <g id="exceptions">
+    <rect x="690" y="60" width="180" height="110" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="8"/>
+    <text x="780" y="85" font-size="15" font-weight="bold" text-anchor="middle" fill="white">
+      ⚠️ Exceptions
+    </text>
+    <rect x="705" y="95" width="150" height="65" fill="white" opacity="0.9" rx="4"/>
+    <text x="730" y="115" font-size="12" fill="#2c3e50" font-family="monospace">try  catch</text>
+    <text x="730" y="135" font-size="12" fill="#2c3e50" font-family="monospace">finally  throw</text>
+    <text x="730" y="155" font-size="12" fill="#2c3e50" font-family="monospace">throws  assert</text>
+  </g>
+  
+  <!-- Category 5: OOP Keywords -->
+  <g id="oop">
+    <rect x="30" y="190" width="200" height="130" fill="#9b59b6" stroke="#8e44ad" stroke-width="2" rx="8"/>
+    <text x="130" y="215" font-size="15" font-weight="bold" text-anchor="middle" fill="white">
+      🏗️ OOP Keywords
+    </text>
+    <rect x="45" y="225" width="170" height="85" fill="white" opacity="0.9" rx="4"/>
+    <text x="130" y="245" font-size="12" text-anchor="middle" fill="#2c3e50" font-family="monospace">class  interface</text>
+    <text x="130" y="265" font-size="12" text-anchor="middle" fill="#2c3e50" font-family="monospace">extends  implements</text>
+    <text x="130" y="285" font-size="12" text-anchor="middle" fill="#2c3e50" font-family="monospace">new  this  super</text>
+    <text x="130" y="305" font-size="12" text-anchor="middle" fill="#2c3e50" font-family="monospace">enum</text>
+  </g>
+  
+  <!-- Category 6: Modifiers -->
+  <g id="modifiers">
+    <rect x="250" y="190" width="200" height="130" fill="#1abc9c" stroke="#16a085" stroke-width="2" rx="8"/>
+    <text x="350" y="215" font-size="15" font-weight="bold" text-anchor="middle" fill="white">
+      ⚡ Modifiers
+    </text>
+    <rect x="265" y="225" width="170" height="85" fill="white" opacity="0.9" rx="4"/>
+    <text x="290" y="245" font-size="11" fill="#2c3e50" font-family="monospace">static  final</text>
+    <text x="290" y="263" font-size="11" fill="#2c3e50" font-family="monospace">abstract  synchronized</text>
+    <text x="290" y="281" font-size="11" fill="#2c3e50" font-family="monospace">volatile  transient</text>
+    <text x="290" y="299" font-size="11" fill="#2c3e50" font-family="monospace">native  strictfp</text>
+  </g>
+  
+  <!-- Category 7: Package/Import -->
+  <g id="package">
+    <rect x="470" y="190" width="200" height="130" fill="#34495e" stroke="#2c3e50" stroke-width="2" rx="8"/>
+    <text x="570" y="215" font-size="15" font-weight="bold" text-anchor="middle" fill="white">
+      📦 Package/Import
+    </text>
+    <rect x="485" y="235" width="170" height="65" fill="white" opacity="0.9" rx="4"/>
+    <text x="570" y="260" font-size="13" text-anchor="middle" fill="#2c3e50" font-family="monospace">package</text>
+    <text x="570" y="285" font-size="13" text-anchor="middle" fill="#2c3e50" font-family="monospace">import</text>
+  </g>
+  
+  <!-- Category 8: Other -->
+  <g id="other">
+    <rect x="690" y="190" width="180" height="130" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2" rx="8"/>
+    <text x="780" y="215" font-size="15" font-weight="bold" text-anchor="middle" fill="white">
+      🔧 Other Keywords
+    </text>
+    <rect x="705" y="235" width="150" height="65" fill="white" opacity="0.9" rx="4"/>
+    <text x="780" y="260" font-size="13" text-anchor="middle" fill="#2c3e50" font-family="monospace">void</text>
+    <text x="780" y="285" font-size="13" text-anchor="middle" fill="#2c3e50" font-family="monospace">instanceof</text>
+  </g>
+  
+  <!-- Example Code Section -->
+  <rect x="30" y="340" width="840" height="240" fill="#2c3e50" stroke="#34495e" stroke-width="3" rx="8"/>
+  <text x="450" y="370" font-size="18" font-weight="bold" text-anchor="middle" fill="#ecf0f1">
+    💡 Keywords in Action - Example Code
+  </text>
+  
+  <text x="50" y="400" font-size="13" fill="#3498db" font-family="monospace">public class</text>
+  <text x="170" y="400" font-size="13" fill="#ecf0f1" font-family="monospace">Student {</text>
+  
+  <text x="80" y="425" font-size="13" fill="#3498db" font-family="monospace">private int</text>
+  <text x="180" y="425" font-size="13" fill="#ecf0f1" font-family="monospace">age;</text>
+  
+  <text x="80" y="448" font-size="13" fill="#3498db" font-family="monospace">private static final int</text>
+  <text x="310" y="448" font-size="13" fill="#ecf0f1" font-family="monospace">MAX_AGE = 100;</text>
+  
+  <text x="80" y="473" font-size="13" fill="#3498db" font-family="monospace">public void</text>
+  <text x="180" y="473" font-size="13" fill="#ecf0f1" font-family="monospace">setAge(</text>
+  <text x="255" y="473" font-size="13" fill="#3498db" font-family="monospace">int</text>
+  <text x="285" y="473" font-size="13" fill="#ecf0f1" font-family="monospace">newAge) {</text>
+  
+  <text x="110" y="498" font-size="13" fill="#f39c12" font-family="monospace">if</text>
+  <text x="135" y="498" font-size="13" fill="#ecf0f1" font-family="monospace">(newAge &gt; 0 &amp;&amp; newAge &lt;= MAX_AGE) {</text>
+  
+  <text x="140" y="523" font-size="13" fill="#3498db" font-family="monospace">this</text>
+  <text x="175" y="523" font-size="13" fill="#ecf0f1" font-family="monospace">.age = newAge;</text>
+  
+  <text x="110" y="548" font-size="13" fill="#ecf0f1" font-family="monospace">}</text>
+  <text x="135" y="548" font-size="13" fill="#f39c12" font-family="monospace">else</text>
+  <text x="175" y="548" font-size="13" fill="#ecf0f1" font-family="monospace">{</text>
+  
+  <text x="140" y="568" font-size="13" fill="#e74c3c" font-family="monospace">throw new</text>
+  <text x="230" y="568" font-size="13" fill="#ecf0f1" font-family="monospace">IllegalArgumentException();</text>
+  
+  <!-- Keywords highlighted in blue, orange, red -->
+  <circle cx="755" cy="400" r="6" fill="#3498db"/>
+  <text x="765" y="404" font-size="11" fill="#ecf0f1">Access/Type</text>
+  
+  <circle cx="755" cy="425" r="6" fill="#f39c12"/>
+  <text x="765" y="429" font-size="11" fill="#ecf0f1">Control</text>
+  
+  <circle cx="755" cy="450" r="6" fill="#e74c3c"/>
+  <text x="765" y="454" font-size="11" fill="#ecf0f1">Exception</text>
+</svg>
