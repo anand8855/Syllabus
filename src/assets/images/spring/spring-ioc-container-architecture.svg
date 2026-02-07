@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800">
+  <defs>
+    <style>
+      .title { font: bold 26px sans-serif; fill: #2c3e50; }
+      .subtitle { font: 16px sans-serif; fill: #7f8c8d; }
+      .section-box { fill: #ecf0f1; stroke: #bdc3c7; stroke-width: 2; }
+      .config-box { fill: #9b59b6; stroke: #8e44ad; stroke-width: 2; }
+      .process-box { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+      .bean-box { fill: #2ecc71; stroke: #27ae60; stroke-width: 2; }
+      .app-box { fill: #e67e22; stroke: #d35400; stroke-width: 2; }
+      .header-text { font: bold 16px sans-serif; fill: white; }
+      .body-text { font: 13px sans-serif; fill: white; }
+      .small-text { font: 11px sans-serif; fill: white; }
+      .arrow { stroke: #34495e; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .lifecycle-arrow { stroke: #e74c3c; stroke-width: 2; fill: none; marker-end: url(#arrowhead-red); }
+      .step-number { font: bold 20px sans-serif; fill: white; }
+      .step-circle { fill: #e74c3c; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#34495e" />
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#e74c3c" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" class="title">Spring IoC Container Architecture</text>
+  <text x="500" y="60" text-anchor="middle" class="subtitle">From Configuration to Application - Complete Flow</text>
+  
+  <!-- Step 1: Configuration Sources -->
+  <g id="config-sources">
+    <circle cx="40" cy="110" r="18" class="step-circle"/>
+    <text x="40" y="118" text-anchor="middle" class="step-number">1</text>
+    <text x="70" y="115" font="bold 14px sans-serif" fill="#e74c3c">Configuration Sources</text>
+    
+    <!-- Annotation Config -->
+    <rect x="30" y="140" width="180" height="90" rx="8" class="config-box"/>
+    <text x="120" y="165" text-anchor="middle" class="header-text">📝 Annotations</text>
+    <text x="40" y="185" class="small-text">@Component</text>
+    <text x="40" y="200" class="small-text">@Service</text>
+    <text x="40" y="215" class="small-text">@Repository</text>
+    
+    <!-- Java Config -->
+    <rect x="230" y="140" width="180" height="90" rx="8" class="config-box"/>
+    <text x="320" y="165" text-anchor="middle" class="header-text">☕ Java Config</text>
+    <text x="240" y="185" class="small-text">@Configuration</text>
+    <text x="240" y="200" class="small-text">@Bean methods</text>
+    <text x="240" y="215" class="small-text">@ComponentScan</text>
+    
+    <!-- XML Config -->
+    <rect x="430" y="140" width="180" height="90" rx="8" class="config-box"/>
+    <text x="520" y="165" text-anchor="middle" class="header-text">📄 XML (Legacy)</text>
+    <text x="440" y="185" class="small-text">&lt;bean&gt; tags</text>
+    <text x="440" y="200" class="small-text">&lt;context:scan&gt;</text>
+    <text x="440" y="215" class="small-text">applicationContext.xml</text>
+  </g>
+  
+  <!-- Arrows to Bean Definitions -->
+  <path d="M 120 230 L 250 280" class="arrow"/>
+  <path d="M 320 230 L 320 280" class="arrow"/>
+  <path d="M 520 230 L 390 280" class="arrow"/>
+  
+  <!-- Step 2: Bean Definitions -->
+  <g id="bean-definitions">
+    <circle cx="640" cy="110" r="18" class="step-circle"/>
+    <text x="640" y="118" text-anchor="middle" class="step-number">2</text>
+    <text x="670" y="115" font="bold 14px sans-serif" fill="#e74c3c">Bean Definition Registry</text>
+    
+    <rect x="180" y="290" width="320" height="110" rx="10" class="process-box"/>
+    <text x="340" y="315" text-anchor="middle" class="header-text">🗂️ Bean Definition Registry</text>
+    <text x="190" y="340" class="body-text">Parses configuration and creates metadata:</text>
+    <text x="200" y="360" class="small-text">• Bean name (e.g., "userService")</text>
+    <text x="200" y="375" class="small-text">• Bean class (e.g., UserService.class)</text>
+    <text x="200" y="390" class="small-text">• Scope (singleton, prototype, etc.)</text>
+  </g>
+  
+  <!-- Arrow to BeanFactory -->
+  <path d="M 340 400 L 340 440" class="arrow"/>
+  
+  <!-- Step 3: BeanFactory -->
+  <g id="bean-factory">
+    <circle cx="40" cy="480" r="18" class="step-circle"/>
+    <text x="40" y="488" text-anchor="middle" class="step-number">3</text>
+    <text x="70" y="485" font="bold 14px sans-serif" fill="#e74c3c">Bean Factory</text>
+    
+    <rect x="180" y="450" width="320" height="120" rx="10" class="process-box"/>
+    <text x="340" y="475" text-anchor="middle" class="header-text">🏭 BeanFactory / ApplicationContext</text>
+    <text x="190" y="500" class="body-text">Creates bean instances:</text>
+    <text x="200" y="520" class="small-text">• Instantiates objects using reflection</text>
+    <text x="200" y="535" class="small-text">• Resolves dependencies</text>
+    <text x="200" y="550" class="small-text">• Applies BeanPostProcessors</text>
+  </g>
+  
+  <!-- Arrow to Bean Lifecycle -->
+  <path d="M 340 570 L 340 610" class="arrow"/>
+  
+  <!-- Step 4: Bean Lifecycle -->
+  <g id="lifecycle">
+    <circle cx="640" cy="480" r="18" class="step-circle"/>
+    <text x="640" y="488" text-anchor="middle" class="step-number">4</text>
+    <text x="670" y="485" font="bold 14px sans-serif" fill="#e74c3c">Bean Lifecycle Management</text>
+    
+    <rect x="130" y="620" width="420" height="140" rx="10" fill="#34495e" stroke="#2c3e50" stroke-width="2"/>
+    <text x="340" y="645" text-anchor="middle" class="header-text">♻️ Bean Lifecycle</text>
+    
+    <!-- Lifecycle steps -->
+    <g transform="translate(150, 665)">
+      <circle cx="0" cy="0" r="8" fill="#2ecc71"/>
+      <text x="15" y="5" class="small-text">1. Instantiate</text>
+      <path d="M 90 0 L 110 0" class="lifecycle-arrow"/>
+    </g>
+    
+    <g transform="translate(260, 665)">
+      <circle cx="0" cy="0" r="8" fill="#2ecc71"/>
+      <text x="15" y="5" class="small-text">2. Inject Deps</text>
+      <path d="M 100 0 L 120 0" class="lifecycle-arrow"/>
+    </g>
+    
+    <g transform="translate(150, 700)">
+      <circle cx="0" cy="0" r="8" fill="#f39c12"/>
+      <text x="15" y="5" class="small-text">3. Aware Callbacks</text>
+      <path d="M 110 0 L 130 0" class="lifecycle-arrow"/>
+    </g>
+    
+    <g transform="translate(290, 700)">
+      <circle cx="0" cy="0" r="8" fill="#f39c12"/>
+      <text x="15" y="5" class="small-text">4. @PostConstruct</text>
+    </g>
+    
+    <g transform="translate(150, 735)">
+      <circle cx="0" cy="0" r="8" fill="#3498db"/>
+      <text x="15" y="5" class="small-text">5. Bean Ready!</text>
+      <path d="M 80 0 L 100 0" class="lifecycle-arrow"/>
+    </g>
+    
+    <g transform="translate(250, 735)">
+      <text x="15" y="5" class="small-text">... use bean ...</text>
+      <path d="M 90 0 L 110 0" class="lifecycle-arrow"/>
+    </g>
+    
+    <g transform="translate(360, 735)">
+      <circle cx="0" cy="0" r="8" fill="#e74c3c"/>
+      <text x="15" y="5" class="small-text">6. @PreDestroy</text>
+    </g>
+  </g>
+  
+  <!-- Arrow to Bean Pool -->
+  <path d="M 550 680 L 610 680" class="arrow"/>
+  
+  <!-- Step 5: Bean Pool -->
+  <g id="bean-pool">
+    <rect x="620" y="620" width="350" height="140" rx="10" class="bean-box"/>
+    <circle cx="830" cy="635" r="18" class="step-circle"/>
+    <text x="830" y="643" text-anchor="middle" class="step-number">5</text>
+    <text x="800" y="665" text-anchor="middle" class="header-text">Bean Container (Singleton Pool)</text>
+    
+    <!-- Bean instances -->
+    <rect x="635" y="680" width="100" height="30" rx="5" fill="#27ae60"/>
+    <text x="685" y="700" text-anchor="middle" font="11px sans-serif" fill="white">userService</text>
+    
+    <rect x="750" y="680" width="100" height="30" rx="5" fill="#27ae60"/>
+    <text x="800" y="700" text-anchor="middle" font="11px sans-serif" fill="white">userRepository</text>
+    
+    <rect x="635" y="720" width="100" height="30" rx="5" fill="#27ae60"/>
+    <text x="685" y="740" text-anchor="middle" font="11px sans-serif" fill="white">emailService</text>
+    
+    <rect x="750" y="720" width="100" height="30" rx="5" fill="#27ae60"/>
+    <text x="800" y="740" text-anchor="middle" font="11px sans-serif" fill="white">dataSource</text>
+    
+    <text x="795" y="678" text-anchor="middle" font="10px sans-serif" fill="white">Ready-to-use beans!</text>
+  </g>
+  
+  <!-- Arrow to Application -->
+  <path d="M 650 760 L 500 765" class="arrow"/>
+  <path d="M 795 760 L 795 765 L 500 765" class="arrow"/>
+  
+  <!-- Step 6: Your Application -->
+  <g id="application">
+    <circle cx="40" cy="720" r="18" class="step-circle"/>
+    <text x="40" y="728" text-anchor="middle" class="step-number">6</text>
+    <text x="70" y="725" font="bold 14px sans-serif" fill="#e74c3c">Your Application</text>
+    
+    <rect x="130" y="765" width="370" height="15" rx="0" fill="none" stroke="none"/>
+    <path d="M 130 765 L 500 765" class="arrow" stroke-width="4"/>
+    
+    <rect x="200" y="775" width="230" height="15" rx="0" fill="none" stroke="none"/>
+    <text x="315" y="787" text-anchor="middle" font="bold 13px sans-serif" fill="#e74c3c">getBean() or @Autowired</text>
+  </g>
+  
+  <rect x="50" y="790" width="900" height="5" rx="0" fill="none" stroke="none"/>
+  
+  <rect x="250" y="795" width="500" height="5" rx="0" fill="none" stroke="none"/>
+  <path d="M 250 795 L 750 795" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+</svg>

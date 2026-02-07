@@ -1,0 +1,263 @@
+{
+  "name": "What is IoC and Why Spring Uses It",
+  "overview": "🎭 Welcome to the World of Inversion of Control! Imagine you're throwing a party. In the traditional approach, you'd do EVERYTHING yourself - buy groceries, cook food, serve drinks, manage music, clean up... exhausting, right? Now imagine hiring a party planner who handles all of that while you just enjoy being the host. That's essentially what Inversion of Control (IoC) does in the Spring Framework! IoC is the secret sauce that makes Spring powerful, flexible, and your code maintainable. It's not just a design pattern - it's a paradigm shift in how you think about building applications. Let's dive into this game-changing concept with some fun analogies and real examples! 🚀",
+  "sections": [
+    {
+      "title": "🤔 What is Inversion of Control (IoC)?",
+      "content": "Inversion of Control is a design principle where the control of object creation and dependency management is inverted from your code to a framework or container.\n\nThe Traditional Way (You're in Control): You create objects, manage their lifecycle, and wire dependencies manually.\n\nThe IoC Way (Framework is in Control): The framework creates objects, manages their lifecycle, and injects dependencies for you.\n\n🍔 The Restaurant Analogy:\n\nWithout IoC (Cooking at Home):\n• You decide what to eat\n• You buy ingredients\n• You cook the meal\n• You manage all dependencies (utensils, stove, ingredients)\n• You clean up\n\nWith IoC (Ordering at a Restaurant):\n• You just tell the waiter what you want (declare dependencies)\n• The kitchen (Spring Container) prepares everything\n• The waiter (Spring) serves you the ready meal (injects dependencies)\n• You just enjoy the food (focus on business logic)\n• The restaurant manages everything behind the scenes!\n\n🎉 Result: You went from being a stressed chef to a relaxed diner!\n\nDefinition: IoC is a principle where the framework takes control of the flow of a program and calls into the code you write, rather than your code being in control and calling into framework libraries. In Spring, this means the IoC Container manages object creation, lifecycle, and dependency injection.",
+      "subsections": [
+        {
+          "title": "Traditional Control Flow",
+          "content": "In traditional programming, your code is in charge:\n• You use the 'new' keyword to create objects\n• You manually manage object lifecycles\n• You wire dependencies yourself\n• You control when objects are created and destroyed\n\nThis leads to tight coupling and maintenance nightmares!"
+        },
+        {
+          "title": "Inverted Control Flow",
+          "content": "With IoC, the framework is in charge:\n• The container creates objects for you\n• The container manages lifecycles automatically\n• Dependencies are injected by the framework\n• You just declare what you need, Spring provides it\n\nThis leads to loose coupling and maintainable code!"
+        }
+      ]
+    },
+    {
+      "title": "🚫 The Problem: Traditional Approach (Tightly Coupled Code)",
+      "content": "Let's see what happens when YOU are in control of everything. Here's a classic example of tightly coupled code that creates maintenance nightmares.",
+      "subsections": [
+        {
+          "title": "😱 What's Wrong with This Code?",
+          "content": "❌ Hard Dependency: UserService is MARRIED to MySQLUserRepository. Want to switch to PostgreSQL? Too bad, you'll need a divorce (code rewrite)!\n\n❌ Impossible to Test: How do you test UserService without hitting the actual database? You can't inject a mock repository!\n\n❌ No Flexibility: Want to use a different repository in production vs development? Prepare to create multiple versions of UserService.\n\n❌ Violates DRY: Every class that needs a UserRepository has to create its own instance. Copy-paste nightmare!\n\n❌ Lifecycle Chaos: Who manages the repository lifecycle? What if it needs initialization or cleanup? Your code becomes a mess!\n\nThis is like being a control freak who insists on making their own furniture, growing their own vegetables, and building their own smartphone. Technically possible, but... why? 😅",
+          "table": {
+            "headers": ["Aspect", "Traditional (You Control)", "IoC (Framework Controls)"],
+            "rows": [
+              ["Object Creation", "You use `new` keyword everywhere", "Container creates objects for you"],
+              ["Dependency Management", "You manually wire dependencies", "Container injects dependencies automatically"],
+              ["Coupling", "Tight coupling (hard-coded dependencies)", "Loose coupling (depends on abstractions)"],
+              ["Testing", "Hard to test (can't mock dependencies)", "Easy to test (inject mocks)"],
+              ["Flexibility", "Change = rewrite code", "Change = update configuration"],
+              ["Lifecycle Management", "You manage init/destroy manually", "Container manages entire lifecycle"],
+              ["Code Focus", "Infrastructure + business logic", "Only business logic"],
+              ["Maintainability", "Nightmare for large apps", "Scales beautifully"]
+            ]
+          }
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "❌ Tightly Coupled Code - The Nightmare",
+          "description": "UserService is tightly coupled to MySQLUserRepository, creating maintenance and testing nightmares.",
+          "code": "// UserService is tightly coupled to MySQLUserRepository\npublic class UserService {\n    private MySQLUserRepository userRepository;\n    \n    public UserService() {\n        // UserService is creating its own dependency\n        // This is TIGHT COUPLING!\n        this.userRepository = new MySQLUserRepository();\n    }\n    \n    public User findUser(Long id) {\n        return userRepository.findById(id);\n    }\n}\n\n// In your application\npublic class Application {\n    public static void main(String[] args) {\n        UserService service = new UserService();\n        User user = service.findUser(1L);\n    }\n}",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "✨ How IoC Solves These Problems",
+      "content": "Now let's rewrite the same code using IoC principles. Notice how UserService no longer creates its dependencies - it simply declares what it needs, and Spring provides it!",
+      "subsections": [
+        {
+          "title": "🎉 What Changed?",
+          "content": "✅ UserService doesn't create UserRepository: Someone else (Spring Container) creates it and hands it over. UserService just says 'I need a UserRepository' and Spring delivers!\n\n✅ Depends on Interface, not Implementation: UserService doesn't care if it's MySQL, PostgreSQL, or MongoUserRepository. It just needs something that implements UserRepository.\n\n✅ Easy to Test: Just pass a mock repository during testing. No database required!\n\n✅ Easy to Switch Implementations: Change configuration, not code. MySQL today, PostgreSQL tomorrow!\n\n🔌 The Power Socket Analogy:\n\nYour laptop doesn't care whether electricity comes from solar panels, a power plant, or a generator. It just needs a standard socket (interface). The power company (Spring Container) handles the details.\n\nSimilarly:\n• UserService = Your laptop\n• UserRepository Interface = Standard power socket\n• MySQLUserRepository = Solar power\n• PostgreSQLUserRepository = Power plant\n• Spring Container = The power company managing everything\n\nYou just plug in and work! ⚡"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "✅ Loosely Coupled Code with IoC",
+          "description": "Using IoC principles, UserService depends on abstractions and Spring handles dependency injection.",
+          "code": "// Step 1: Depend on abstraction, not concrete implementation\npublic interface UserRepository {\n    User findById(Long id);\n}\n\n// Step 2: UserService no longer creates its dependency\npublic class UserService {\n    private UserRepository userRepository;\n    \n    // Constructor Injection - Spring will provide the dependency\n    public UserService(UserRepository userRepository) {\n        this.userRepository = userRepository;\n    }\n    \n    public User findUser(Long id) {\n        return userRepository.findById(id);\n    }\n}\n\n// Implementations (Spring will manage these)\n@Repository\npublic class MySQLUserRepository implements UserRepository {\n    @Override\n    public User findById(Long id) {\n        // MySQL implementation\n        return null;\n    }\n}\n\n@Repository\npublic class PostgreSQLUserRepository implements UserRepository {\n    @Override\n    public User findById(Long id) {\n        // PostgreSQL implementation\n        return null;\n    }\n}",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "🏗️ How Spring Implements IoC",
+      "content": "Spring implements IoC through a magical component called the IoC Container (also called the Spring Container). Think of it as your personal assistant who manages all your objects.",
+      "subsections": [
+        {
+          "title": "IoC vs DI: What's the Difference?",
+          "content": "Many developers confuse IoC and DI - but they're NOT the same thing!\n\nIoC (Inversion of Control):\n• The PRINCIPLE or IDEA\n• A design pattern concept\n• Answers: WHAT is being achieved?\n\nDI (Dependency Injection):\n• The MECHANISM or IMPLEMENTATION\n• How IoC is actually done\n• Answers: HOW is it achieved?\n\nThink of it this way:\n• IoC = The goal (loose coupling)\n• DI = The tool to achieve it (constructor/setter/field injection)\n\nMemory Trick:\n• IoC = idea\n• DI = how Spring does it\n\nInterview One-Liner: DI is one way to achieve IoC. IoC is the principle, DI is the mechanism Spring uses to implement it."
+        },
+        {
+          "title": "1️⃣ The IoC Container (Spring's Heart)",
+          "content": "The IoC Container is responsible for:\n• Creating objects (called Beans in Spring)\n• Wiring dependencies (Dependency Injection)\n• Managing lifecycles (initialization, destruction)\n• Configuration management\n\nThink of the IoC Container as your personal assistant who remembers:\n• Who needs what\n• When to create it\n• When to destroy it\n• How to wire everything together\n\nSpring provides two main containers:\n\nBeanFactory: Basic container with lazy loading. Like a small convenience store - gets items only when you ask. Rarely used directly (too basic for modern apps).\n\nApplicationContext: Advanced container with eager loading, event propagation, AOP support, and more. Like a full-service supermarket - everything ready when you arrive! This is what you actually use (99.9% of the time).\n\nFinal Thought: IoC Container says 'Relax, I've got this. Stop micro-managing. Focus on business logic - I'll handle the plumbing!'"
+        },
+        {
+          "title": "2️⃣ Beans - The Managed Objects",
+          "content": "A Bean is simply an object that is created, managed, and wired by the Spring IoC Container. Think of beans as VIP objects - they get special treatment from Spring!\n\nHow to Create Beans:\n\nMethod 1: Using @Component (and its specializations)\n• @Component - Generic bean\n• @Service - Business logic beans\n• @Repository - Data access beans\n• @Controller - Web layer beans\n\nMethod 2: Using @Bean in Configuration\n• For complex object creation\n• For third-party library integration\n• When you need full control\n\nMethod 3: XML Configuration (old-school, rarely used now)\n• Legacy projects only\n• Please don't use in new code!"
+        },
+        {
+          "title": "3️⃣ Dependency Injection - The Magic Wand",
+          "content": "Dependency Injection (DI) is HOW Spring achieves IoC. It's the mechanism by which the container injects dependencies into your beans.\n\nThree Types of Dependency Injection:\n\n1. Constructor Injection (BEST PRACTICE ⭐)\n• Immutable objects (final fields)\n• Mandatory dependencies clear\n• Easy to test (no reflection needed)\n• Fails fast if dependencies missing\n• @Autowired is optional in modern Spring\n\n2. Setter Injection (for optional dependencies)\n• Good for optional dependencies\n• Can be changed after creation\n• Useful for circular dependencies (though you should avoid them)\n\n3. Field Injection (easy but NOT recommended)\n• Very concise and easy to write\n• But... Cannot use final, hard to test, tight coupling to Spring\n• Avoid in production code!\n\nInterview Tip: Spring officially recommends constructor injection because it's safer, more testable, and makes mandatory dependencies explicit.",
+          "table": {
+            "headers": ["Type", "How It Works", "Best For", "Recommendation"],
+            "rows": [
+              ["Constructor Injection", "Dependencies via constructor parameters", "Mandatory dependencies, immutable objects", "ALWAYS USE (Best Practice)"],
+              ["Setter Injection", "Dependencies via setter methods with @Autowired", "Optional dependencies that can change", "Use sparingly for optional deps"],
+              ["Field Injection", "@Autowired directly on fields", "Quick prototypes only", "AVOID in production (hard to test)"]
+            ]
+          }
+        },
+        {
+          "title": "4️⃣ Bean Lifecycle Management",
+          "content": "Spring manages the entire lifecycle of beans - from birth to death. It's like having a royal butler for your objects!\n\nHigh-Level Overview:\nThink of bean lifecycle like hiring an employee:\n1. Creation (hiring)\n2. Dependency Injection (training)\n3. Initialization (first day setup)\n4. Usage (working)\n5. Destruction (retirement party)\n\nComplete Bean Lifecycle (Detailed):\n1. Spring instantiates bean\n2. Spring injects dependencies\n3. Bean name and factory awareness (if implemented)\n4. @PostConstruct / init-method called\n5. Bean is ready to use!\n6. ... (bean does its work) ...\n7. Container shutdown triggered\n8. @PreDestroy / destroy-method called\n9. Bean is destroyed\n\nKey Takeaway: Spring handles the entire lifecycle automatically - you just focus on business logic!"
+        },
+        {
+          "title": "5️⃣ Configuration Styles",
+          "content": "Spring gives you multiple ways to configure beans:\n\nAnnotation-based (@Component, @Service, etc.):\n• Modern, concise, type-safe\n• Like texting - quick and convenient! 📱\n• Use for your own classes\n\nJava-based (@Configuration, @Bean):\n• Full Java power, refactoring-friendly\n• Like a phone call - more control! 📞\n• Use for third-party libraries or complex bean creation\n\nXML-based (<bean> tags):\n• Old-school, verbose, external to code\n• Like sending a letter - still works but... why? 📧\n• Legacy projects only"
+        }
+      ],
+      "codeExamples": [
+        {
+          "title": "Creating the Spring Container",
+          "description": "Configuration class and container initialization showing how Spring creates and wires beans.",
+          "code": "// Configuration class tells Spring what beans to create\n@Configuration\npublic class AppConfig {\n    \n    @Bean\n    public UserRepository userRepository() {\n        return new MySQLUserRepository();\n    }\n    \n    @Bean\n    public UserService userService(UserRepository userRepository) {\n        // Spring automatically injects the dependency!\n        return new UserService(userRepository);\n    }\n}\n\n// Starting the container\npublic class Application {\n    public static void main(String[] args) {\n        // Create the IoC Container\n        ApplicationContext context = \n            new AnnotationConfigApplicationContext(AppConfig.class);\n        \n        // Get beans from container (already created & wired!)\n        UserService userService = context.getBean(UserService.class);\n        \n        // Just use it - Spring handled everything!\n        User user = userService.findUser(1L);\n    }\n}",
+          "language": "java"
+        },
+        {
+          "title": "Three Ways to Define Beans",
+          "description": "Demonstrating the three approaches to bean creation in Spring.",
+          "code": "// Method 1: Using @Component (and its specializations)\n@Component  // Generic bean\npublic class EmailService { }\n\n@Service    // Business logic beans\npublic class OrderService { }\n\n@Repository // Data access beans\npublic class UserRepository { }\n\n@Controller // Web layer beans\npublic class UserController { }\n\n// Method 2: Using @Bean in Configuration\n@Configuration\npublic class AppConfig {\n    @Bean\n    public DataSource dataSource() {\n        // Complex object creation\n        return new HikariDataSource();\n    }\n}\n\n// Method 3: XML Configuration (old-school, rarely used now)\n<!-- applicationContext.xml -->\n<bean id=\"userService\" class=\"com.example.UserService\">\n    <property name=\"userRepository\" ref=\"userRepository\"/>\n</bean>",
+          "language": "java"
+        },
+        {
+          "title": "Three Types of Dependency Injection",
+          "description": "Comparing Constructor, Setter, and Field injection with their pros and cons.",
+          "code": "public class UserService {\n    \n    private UserRepository userRepository;\n    private EmailService emailService;\n    private LoggingService loggingService;\n    \n    // 1. Constructor Injection (BEST PRACTICE ⭐)\n    @Autowired  // Optional in modern Spring\n    public UserService(UserRepository userRepository, \n                      EmailService emailService) {\n        this.userRepository = userRepository;\n        this.emailService = emailService;\n    }\n    \n    // 2. Setter Injection (for optional dependencies)\n    @Autowired\n    public void setLoggingService(LoggingService loggingService) {\n        this.loggingService = loggingService;\n    }\n    \n    // 3. Field Injection (easy but not recommended)\n    @Autowired\n    private AuditService auditService;\n}\n\n// Why Constructor Injection is best:\n// ✅ Immutable objects (final fields)\n// ✅ Mandatory dependencies clear\n// ✅ Easy to test (no reflection needed)\n// ✅ Fails fast if dependencies missing",
+          "language": "java"
+        },
+        {
+          "title": "Bean Lifecycle Hooks",
+          "description": "Using @PostConstruct and @PreDestroy to manage bean initialization and cleanup.",
+          "code": "@Component\npublic class DatabaseService {\n    \n    private Connection connection;\n    \n    // Called after dependency injection\n    @PostConstruct\n    public void init() {\n        System.out.println(\"🎬 Bean is born! Opening database connection...\");\n        connection = openConnection();\n    }\n    \n    // Bean does its work here\n    public void doWork() {\n        System.out.println(\"💼 Bean is working hard!\");\n    }\n    \n    // Called before bean is destroyed\n    @PreDestroy\n    public void cleanup() {\n        System.out.println(\"👋 Bean is retiring! Closing connection...\");\n        connection.close();\n    }\n}",
+          "language": "java"
+        }
+      ]
+    },
+    {
+      "title": "🎯 Why Spring Uses IoC - The Big Picture",
+      "content": "IoC isn't just a fancy design pattern - it solves real problems in software development. Let's explore the benefits that make IoC essential for modern applications.",
+      "subsections": [
+        {
+          "title": "Benefits of IoC in Spring",
+          "content": "Loose Coupling: Classes depend on abstractions, not implementations. Real Impact: Change database? Just swap the bean!\n\nTestability: Easy to inject mocks and stubs. Real Impact: Unit tests run in milliseconds without database.\n\nMaintainability: Changes isolated to configuration. Real Impact: Add new feature? Don't touch existing code!\n\nReusability: Beans can be shared across the app. Real Impact: One bean, multiple consumers.\n\nFlexibility: Switch implementations via config. Real Impact: Dev/Prod environments? Different beans, same code!\n\nSeparation of Concerns: Business logic separated from object creation. Real Impact: Your code does ONE thing well.\n\nAOP Support: Cross-cutting concerns (logging, security) handled separately. Real Impact: Add logging to all methods without touching them!\n\nLifecycle Management: Consistent initialization and cleanup. Real Impact: No memory leaks or resource issues.",
+          "table": {
+            "headers": ["Benefit", "Description", "Real Impact"],
+            "rows": [
+              ["Loose Coupling", "Classes depend on abstractions, not implementations", "Change database? Just swap the bean!"],
+              ["Testability", "Easy to inject mocks and stubs", "Unit tests run in milliseconds without database"],
+              ["Maintainability", "Changes isolated to configuration", "Add new feature? Don't touch existing code!"],
+              ["Reusability", "Beans can be shared across the app", "One bean, multiple consumers"],
+              ["Flexibility", "Switch implementations via config", "Dev/Prod environments? Different beans, same code!"],
+              ["Separation of Concerns", "Business logic separated from object creation", "Your code does ONE thing well"],
+              ["AOP Support", "Cross-cutting concerns handled separately", "Add logging to all methods without touching them!"],
+              ["Lifecycle Management", "Consistent initialization and cleanup", "No memory leaks or resource issues"]
+            ]
+          }
+        },
+        {
+          "title": "🏢 The Company Analogy",
+          "content": "Imagine a company:\n\nWithout IoC (Chaotic Startup):\n• Every employee builds their own desk\n• Everyone buys their own computer\n• Each person manages their own office supplies\n• No HR, no IT department\n• Result: Chaos, duplication, inefficiency!\n\nWith IoC (Professional Company):\n• HR department (Spring Container) hires and manages employees (beans)\n• IT department provides computers (dependencies) to everyone who needs them\n• Facilities team manages desks and office supplies\n• Employees just focus on their job (business logic)\n• Result: Organized, efficient, scalable!\n\nSpring is like having HR, IT, and Facilities departments for your code. You just focus on writing business logic! 🎯"
+        }
+      ]
+    },
+    {
+      "title": "💡 Real-World Example - E-Commerce Application",
+      "content": "Let's see a complete example showing how IoC makes a real application maintainable and testable. This example demonstrates profile-based configuration, lifecycle management, and dependency injection in action.",
+      "codeExamples": [
+        {
+          "title": "Complete IoC Example with Spring",
+          "description": "Full e-commerce application showing dependency injection, lifecycle management, and profile-based configuration.",
+          "code": "// Domain Model\npublic class Order {\n    private Long id;\n    private String product;\n    private double amount;\n    // getters, setters...\n}\n\n// Repository Interface\npublic interface OrderRepository {\n    void save(Order order);\n    Order findById(Long id);\n}\n\n// Service Layer\n@Service\npublic class OrderService {\n    private final OrderRepository orderRepository;\n    private final EmailService emailService;\n    private final PaymentService paymentService;\n    \n    @Autowired\n    public OrderService(OrderRepository orderRepository,\n                       EmailService emailService,\n                       PaymentService paymentService) {\n        this.orderRepository = orderRepository;\n        this.emailService = emailService;\n        this.paymentService = paymentService;\n    }\n    \n    @PostConstruct\n    public void init() {\n        System.out.println(\"🚀 OrderService initialized!\");\n    }\n    \n    public void placeOrder(Order order) {\n        paymentService.processPayment(order.getAmount());\n        orderRepository.save(order);\n        emailService.sendConfirmation(order);\n        System.out.println(\"✅ Order placed successfully!\");\n    }\n    \n    @PreDestroy\n    public void cleanup() {\n        System.out.println(\"👋 OrderService shutting down\");\n    }\n}\n\n/* What Spring Did for Us:\n1. ✅ Created all beans automatically\n2. ✅ Wired all dependencies \n3. ✅ Called @PostConstruct after initialization\n4. ✅ Managed bean lifecycle\n5. ✅ Let us focus ONLY on business logic!\n*/",
+          "language": "java"
+        }
+      ]
+    }
+  ],
+  "keyPoints": [
+    "IoC (Inversion of Control) removes object creation responsibility from developers and gives it to the framework",
+    "Traditional approach = You create objects with 'new' (tight coupling); IoC = Framework creates objects (loose coupling)",
+    "Spring IoC Container (ApplicationContext) is the brain that manages bean creation, wiring, and lifecycle",
+    "IoC vs DI: IoC is the PRINCIPLE (what), DI is the MECHANISM (how) - DI implements IoC",
+    "Beans are objects managed by Spring - they're VIP objects with automatic lifecycle management",
+    "Three types of DI: Constructor (best practice), Setter (optional deps), Field (avoid in production)",
+    "Constructor injection is ALWAYS preferred - immutable, testable, fails fast, and mandatory deps are clear",
+    "IoC solves: tight coupling, testing difficulties, maintainability issues, and inflexibility",
+    "Benefits: Loose coupling, easy testing with mocks, flexibility, reusability, and cleaner architecture",
+    "Three ways to configure beans: Annotations (@Component/@Service/@Repository), Java Config (@Bean), XML (legacy)",
+    "Bean lifecycle in 5 steps: Creation → Dependency Injection → Initialization → Usage → Destruction",
+    "ApplicationContext vs BeanFactory: Always use ApplicationContext (99.9% of cases) - eager loading and advanced features",
+    "IoC Container is like a personal assistant: remembers who needs what, when to create it, when to destroy it",
+    "The Hollywood Principle: 'Don't call us, we'll call you' - framework controls the flow, not your code",
+    "Interview killer line: Spring uses IoC to decouple application components by managing object creation and dependency injection through its IoC container",
+    "Final thought: IoC says 'Stop micro-managing. Focus on business logic. I'll handle the plumbing.'"
+  ],
+  "images": [
+    {
+      "url": "assets/images/spring/traditional-control-flow.svg",
+      "alt": "Traditional Control Flow Diagram",
+      "caption": "Traditional approach showing tight coupling with manual object creation and dependency management"
+    },
+    {
+      "url": "assets/images/spring/ioc-control-flow.svg",
+      "alt": "IoC Control Flow Diagram",
+      "caption": "IoC approach with Spring Container creating beans and injecting dependencies automatically"
+    },
+    {
+      "url": "assets/images/spring/spring-ioc-container-architecture.svg",
+      "alt": "Spring IoC Container Architecture",
+      "caption": "Complete architecture showing Configuration → Bean Definitions → Bean Factory → Lifecycle → Application"
+    },
+    {
+      "url": "assets/images/spring/dependency-injection-types.svg",
+      "alt": "Dependency Injection Types",
+      "caption": "Comparison of Constructor (best), Setter (optional deps), and Field (avoid) injection types"
+    }
+  ],
+  "references": [
+    "Spring Framework Documentation - IoC Container",
+    "Martin Fowler - Inversion of Control Containers and the Dependency Injection pattern",
+    "Spring in Action by Craig Walls",
+    "Pro Spring 5 by Iuliana Cosmina",
+    "Expert One-on-One J2EE Design and Development by Rod Johnson",
+    "Spring Framework Reference - Core Technologies",
+    "Dependency Injection Principles, Practices, and Patterns by Steven van Deursen"
+  ],
+  "interviewQA": [
+    {
+      "question": "What is Inversion of Control?",
+      "answer": "IoC is a design principle where the control of object creation and dependency management is inverted from the application code to a framework/container. Instead of your code creating objects using 'new', the framework creates them and injects dependencies. Use an analogy! Compare it to ordering food (IoC) vs cooking yourself (traditional)."
+    },
+    {
+      "question": "Why does Spring use IoC?",
+      "answer": "Spring uses IoC to achieve: 1) Loose coupling - depend on abstractions, 2) Better testability - easy to inject mocks, 3) Maintainability - change config not code, 4) Lifecycle management - consistent init/destroy, 5) Separation of concerns - business logic separate from object creation. Mention real examples - switching databases, testing without real DB, etc."
+    },
+    {
+      "question": "What's the difference between IoC and DI?",
+      "answer": "IoC is the PRINCIPLE (what), DI is the MECHANISM (how). IoC = Framework controls object creation. DI = How framework provides dependencies (constructor/setter/field injection). DI is one way to achieve IoC. Think: IoC is the goal, DI is the tool to achieve it."
+    },
+    {
+      "question": "What is the Spring IoC Container?",
+      "answer": "The IoC Container (ApplicationContext or BeanFactory) is the core of Spring that: Creates and manages beans, Injects dependencies, Manages bean lifecycle, Handles configuration. ApplicationContext is the commonly used container with advanced features. Mention it's like a 'factory + lifecycle manager + dependency resolver' all in one!"
+    },
+    {
+      "question": "How do you configure beans in Spring?",
+      "answer": "Three ways: 1) Annotation-based: @Component, @Service, @Repository, @Controller, 2) Java-based: @Configuration with @Bean methods, 3) XML-based: <bean> tags (legacy). Modern apps prefer annotations for simplicity and Java config for complex scenarios. Show you know modern approaches (annotations) and when to use Java config (third-party libs)."
+    },
+    {
+      "question": "What are the types of Dependency Injection?",
+      "answer": "Three types: 1) Constructor Injection - BEST PRACTICE (immutable, testable, fails fast), 2) Setter Injection - for optional dependencies (mutable, flexible), 3) Field Injection - NOT recommended (easy but hard to test, can't use final). Always prefer constructor injection for mandatory dependencies and setter injection for optional ones."
+    },
+    {
+      "question": "What is a Bean in Spring?",
+      "answer": "A Bean is an object that is created, managed, and wired by the Spring IoC Container. Beans are VIP objects that get special treatment - Spring handles their creation, dependency injection, and lifecycle (init/destroy). Created using @Component annotations, @Bean methods, or XML configuration."
+    },
+    {
+      "question": "Explain the Bean Lifecycle in Spring.",
+      "answer": "1) Instantiation - Spring creates bean, 2) Dependency Injection - Spring injects dependencies, 3) Aware Callbacks - BeanNameAware, ApplicationContextAware, 4) @PostConstruct/init-method - initialization, 5) Bean Ready - available for use, 6) Container Shutdown, 7) @PreDestroy/destroy-method - cleanup, 8) Bean Destroyed. Spring manages the complete lifecycle automatically."
+    },
+    {
+      "question": "ApplicationContext vs BeanFactory?",
+      "answer": "BeanFactory: Basic container, lazy loading, minimal features. ApplicationContext: Advanced container, eager loading, event propagation, AOP, i18n, more features. Always use ApplicationContext in modern apps (99.9% of the time). Think: BeanFactory = convenience store, ApplicationContext = full supermarket."
+    },
+    {
+      "question": "Why is Constructor Injection preferred?",
+      "answer": "Constructor Injection is preferred because: 1) Immutable objects (final fields), 2) Mandatory dependencies are explicit in constructor, 3) Easy to test (just pass mocks to constructor), 4) Fails fast at startup if dependencies missing, 5) No need for @Autowired in modern Spring, 6) Thread-safe by design. Setter injection is only for optional dependencies."
+    }
+  ]
+}

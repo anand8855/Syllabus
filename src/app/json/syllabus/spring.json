@@ -7,26 +7,194 @@
       {
         "name": "Inversion of Control (IoC) & Dependency Injection (DI)",
         "subTopics": [
+          { "name": "What is IoC and why Spring uses it" },
+          { "name": "What problem does DI solve?" },
+          { "name": "How Spring creates and injects beans internally" },
           { "name": "ApplicationContext vs BeanFactory" },
-          { "name": "Bean Scopes (Singleton, Prototype, Request, Session)" },
+          { "name": "Eager vs Lazy loading - When to use which?" },
+          { "name": "Bean Scopes (Singleton, Prototype, Request, Session, Application)" },
+          { "name": "Why prototype beans don't get destroyed automatically?" },
           { "name": "Bean Lifecycle (@PostConstruct, @PreDestroy)" },
+          { "name": "Complete bean lifecycle steps" },
+          { "name": "Bean Initialization and Destruction callbacks" },
+          { "name": "Aware Interfaces (BeanNameAware, ApplicationContextAware)" },
           { "name": "Configuration Styles: Java-based (@Configuration), Annotation-based (@Component), XML" },
-          { "name": "Dependency Injection types: Constructor (Best Practice) vs Setter vs Field" }
+          { "name": "Dependency Injection types: Constructor (WHY preferred) vs Setter vs Field (WHY discouraged)" },
+          { "name": "Autowiring modes and @Qualifier usage" },
+          { "name": "@Primary vs @Qualifier" }
         ]
       },
-      { "name": "Spring Expression Language (SpEL)" },
+      {
+        "name": "Spring Bean Management",
+        "subTopics": [
+          { "name": "@Component, @Service, @Repository, @Controller" },
+          { "name": "Why @Repository exists (exception translation)" },
+          { "name": "@Configuration vs @Component" },
+          { "name": "@Bean vs @Component" },
+          { "name": "Bean Naming Strategies" },
+          { "name": "Lazy vs Eager Initialization" },
+          { "name": "@DependsOn annotation" },
+          { "name": "BeanFactoryPostProcessor vs BeanPostProcessor" },
+          { "name": "Real-time use cases for BeanPostProcessor and BeanFactoryPostProcessor" }
+        ]
+      },
+      {
+        "name": "Autowiring & Bean Resolution",
+        "subTopics": [
+          { "name": "How Spring resolves dependency when multiple beans of same type" },
+          { "name": "@Autowired working internally" },
+          { "name": "Required = false (deprecated behavior)" },
+          { "name": "Circular Dependency - Constructor vs Setter injection case" },
+          { "name": "Why constructor injection fails for circular dependency" }
+        ]
+      },
+      {
+        "name": "Spring Expression Language (SpEL)",
+        "subTopics": [
+          { "name": "SpEL basics and syntax" },
+          { "name": "Using SpEL with @Value" },
+          { "name": "Accessing beans, properties, collections via SpEL" }
+        ]
+      },
       {
         "name": "Aspect-Oriented Programming (AOP)",
         "subTopics": [
+          { "name": "What is AOP? Why needed?" },
           { "name": "Cross-cutting concerns (Logging, Transaction management)" },
           { "name": "Aspect, Advice, Pointcut, JoinPoint" },
-          { "name": "Annotations: @Before, @After, @Around, @AfterThrowing" }
+          { "name": "Types of Advice (Before, After, Around, AfterReturning, AfterThrowing)" },
+          { "name": "Annotations: @Before, @After, @Around (MOST IMPORTANT), @AfterReturning, @AfterThrowing" },
+          { "name": "Pointcut expressions execution(), within()" },
+          { "name": "Proxy Mechanism - JDK Dynamic Proxy vs CGLIB" },
+          { "name": "Why interface-based proxy preferred?" },
+          { "name": "Self-invocation problem in Spring AOP" },
+          { "name": "Transaction & AOP relation" },
+          { "name": "Why @Transactional uses AOP" },
+          { "name": "Why private methods don't work with @Transactional" }
+        ]
+      },
+      {
+        "name": "Spring Events",
+        "subTopics": [
+          { "name": "ApplicationEvent and ApplicationListener" },
+          { "name": "Custom Events" },
+          { "name": "@EventListener annotation" }
+        ]
+      },
+      {
+        "name": "Spring Profiles & Environment",
+        "subTopics": [
+          { "name": "@Profile usage" },
+          { "name": "Environment abstraction" },
+          { "name": "PropertySource and Property resolution" }
         ]
       }
     ]
   },
   {
     "id": 2,
+    "title": "Spring MVC (Web Layer)",
+    "difficulty": "intermediate",
+    "topics": [
+      {
+        "name": "Spring MVC Architecture",
+        "subTopics": [
+          { "name": "DispatcherServlet workflow (VERY COMMON)" },
+          { "name": "Front Controller Pattern" },
+          { "name": "HandlerMapping role" },
+          { "name": "Controller, ViewResolver, Model" }
+        ]
+      },
+      {
+        "name": "Controller Development",
+        "subTopics": [
+          { "name": "@Controller vs @RestController" },
+          { "name": "@RequestMapping vs @GetMapping, @PostMapping" },
+          { "name": "@PathVariable vs @RequestParam" },
+          { "name": "@RequestBody vs @ResponseBody" },
+          { "name": "@RequestBody vs @ModelAttribute" }
+        ]
+      },
+      {
+        "name": "Data Binding & Validation",
+        "subTopics": [
+          { "name": "@ModelAttribute" },
+          { "name": "@ModelAttribute lifecycle" },
+          { "name": "BindingResult" },
+          { "name": "JSR-380 Bean Validation (@NotNull, @Size, @Email)" },
+          { "name": "Custom validators" }
+        ]
+      },
+      {
+        "name": "Exception Handling",
+        "subTopics": [
+          { "name": "@ExceptionHandler" },
+          { "name": "@ControllerAdvice" },
+          { "name": "@ExceptionHandler vs @ControllerAdvice" },
+          { "name": "Global vs local exception handling" },
+          { "name": "Global Exception Handling Strategy and Best Practices" }
+        ]
+      },
+      {
+        "name": "View Technologies",
+        "subTopics": [
+          { "name": "JSP integration" },
+          { "name": "Thymeleaf basics" },
+          { "name": "ViewResolver configuration" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Spring Data Access & ORM",
+    "difficulty": "intermediate",
+    "topics": [
+      {
+        "name": "Spring JDBC",
+        "subTopics": [
+          { "name": "JdbcTemplate" },
+          { "name": "RowMapper" },
+          { "name": "ResultSetExtractor" },
+          { "name": "Exception translation" }
+        ]
+      },
+      {
+        "name": "Spring ORM & JPA Integration",
+        "subTopics": [
+          { "name": "JPA integration with Spring" },
+          { "name": "EntityManager vs Session" },
+          { "name": "@PersistenceContext" },
+          { "name": "Lazy vs Eager loading" },
+          { "name": "N+1 problem (VERY COMMON)" }
+        ]
+      },
+      {
+        "name": "Transaction Management",
+        "subTopics": [
+          { "name": "What is transaction management?" },
+          { "name": "Declarative vs Programmatic Transactions" },
+          { "name": "@Transactional annotation" },
+          { "name": "@Transactional working internally" },
+          { "name": "Propagation and Isolation levels" },
+          { "name": "Propagation types (REQUIRED, REQUIRES_NEW, etc.)" },
+          { "name": "Rollback rules" },
+          { "name": "Rollback - Checked vs Runtime exception" },
+          { "name": "Why @Transactional doesn't work on private methods" },
+          { "name": "Why @Transactional doesn't work on internal method calls" }
+        ]
+      },
+      {
+        "name": "Exception Handling",
+        "subTopics": [
+          { "name": "DataAccessException hierarchy" },
+          { "name": "Checked vs Runtime exceptions in Spring" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
     "title": "Spring Security (Security 6.x)",
     "difficulty": "advanced",
     "topics": [
@@ -34,15 +202,19 @@
         "name": "Core Concepts",
         "subTopics": [
           { "name": "Authentication vs Authorization" },
+          { "name": "SecurityContext & SecurityContextHolder" },
           { "name": "SecurityFilterChain & Filters" },
-          { "name": "UserDetailsService & PasswordEncoding (BCrypt)" }
+          { "name": "Filter order importance" },
+          { "name": "UserDetailsService & PasswordEncoding (BCrypt)" },
+          { "name": "UserDetailsService flow" }
         ]
       },
       {
         "name": "Authentication Mechanisms",
         "subTopics": [
           { "name": "Basic Auth & Form Login" },
-          { "name": "JWT (JSON Web Tokens): Implementation & Best Practices" }
+          { "name": "JWT (JSON Web Tokens): Implementation & Best Practices" },
+          { "name": "Stateless vs Stateful authentication" }
         ]
       },
       {
@@ -56,6 +228,8 @@
         "name": "Authorization",
         "subTopics": [
           { "name": "Role-based vs Authority-based access" },
+          { "name": "Role vs Authority" },
+          { "name": "hasRole vs hasAuthority" },
           { "name": "Method Level Security (@PreAuthorize, @PostAuthorize)" }
         ]
       },
@@ -63,7 +237,48 @@
         "name": "Protection",
         "subTopics": [
           { "name": "CORS (Cross-Origin Resource Sharing)" },
-          { "name": "CSRF (Cross-Site Request Forgery)" }
+          { "name": "CORS - browser vs server perspective" },
+          { "name": "CSRF (Cross-Site Request Forgery)" },
+          { "name": "CSRF - what, why, when to disable" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Spring Internals & Advanced Topics (Senior-level)",
+    "difficulty": "advanced",
+    "topics": [
+      {
+        "name": "Spring Container & Initialization",
+        "subTopics": [
+          { "name": "How Spring container starts" },
+          { "name": "ClassPath scanning" },
+          { "name": "Reflection usage in Spring" }
+        ]
+      },
+      {
+        "name": "Design Principles & Best Practices",
+        "subTopics": [
+          { "name": "Why Spring prefers interfaces" },
+          { "name": "Immutable beans and thread safety" },
+          { "name": "Memory impact of singleton beans" }
+        ]
+      },
+      {
+        "name": "Spring Events",
+        "subTopics": [
+          { "name": "ApplicationEvent and ApplicationListener" },
+          { "name": "Custom Events" },
+          { "name": "@EventListener annotation" }
+        ]
+      },
+      {
+        "name": "Spring Profiles & Environment",
+        "subTopics": [
+          { "name": "@Profile usage" },
+          { "name": "Environment abstraction" },
+          { "name": "PropertySource and Property resolution" }
         ]
       }
     ]

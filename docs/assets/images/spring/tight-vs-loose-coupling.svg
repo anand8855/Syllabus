@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <marker id="arrow-tight" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrow-loose" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font="bold 24px sans-serif" fill="#2c3e50">
+    Tight Coupling vs Loose Coupling
+  </text>
+
+  <!-- Left Side: Tight Coupling -->
+  <rect x="20" y="60" width="400" height="400" rx="10" fill="#fde8e8" stroke="#e74c3c" stroke-width="3"/>
+  <text x="220" y="90" text-anchor="middle" font="bold 20px sans-serif" fill="#e74c3c">
+    Tight Coupling (BAD)
+  </text>
+  <text x="220" y="115" text-anchor="middle" font="14px sans-serif" fill="#c0392b">
+    Classes welded together
+  </text>
+
+  <!-- Tight Coupling: UserService -->
+  <rect x="90" y="140" width="260" height="80" rx="8" fill="#e74c3c"/>
+  <text x="220" y="165" text-anchor="middle" font="bold 16px sans-serif" fill="white">
+    UserService
+  </text>
+  <text x="100" y="190" font="13px monospace" fill="white">
+    MySQLRepo repo =
+  </text>
+  <text x="110" y="210" font="13px monospace" fill="white">
+    new MySQLRepo();
+  </text>
+
+  <!-- Arrow pointing down -->
+  <path d="M 220 220 L 220 260" stroke="#e74c3c" stroke-width="4" fill="none" marker-end="url(#arrow-tight)"/>
+  <text x="230" y="245" font="bold 12px sans-serif" fill="#c0392b">
+    Creates
+  </text>
+
+  <!-- Tight Coupling: MySQLRepo -->
+  <rect x="90" y="270" width="260" height="70" rx="8" fill="#c0392b"/>
+  <text x="220" y="295" text-anchor="middle" font="bold 16px sans-serif" fill="white">
+    MySQLUserRepository
+  </text>
+  <text x="100" y="318" font="12px sans-serif" fill="white">
+    Concrete implementation
+  </text>
+  <text x="100" y="335" font="12px sans-serif" fill="white">
+    Cannot be replaced easily
+  </text>
+
+  <!-- Problems -->
+  <text x="220" y="375" text-anchor="middle" font="bold 14px sans-serif" fill="#c0392b">
+    Problems:
+  </text>
+  <text x="50" y="395" font="12px sans-serif" fill="#c0392b">
+    X Cannot switch implementations
+  </text>
+  <text x="50" y="415" font="12px sans-serif" fill="#c0392b">
+    X Cannot inject mocks for testing
+  </text>
+  <text x="50" y="435" font="12px sans-serif" fill="#c0392b">
+    X Hard-coded dependency
+  </text>
+
+  <!-- Right Side: Loose Coupling -->
+  <rect x="480" y="60" width="400" height="400" rx="10" fill="#e8f8f0" stroke="#27ae60" stroke-width="3"/>
+  <text x="680" y="90" text-anchor="middle" font="bold 20px sans-serif" fill="#27ae60">
+    Loose Coupling (GOOD)
+  </text>
+  <text x="680" y="115" text-anchor="middle" font="14px sans-serif" fill="#229954">
+    Classes connected via interfaces
+  </text>
+
+  <!-- Loose Coupling: UserService -->
+  <rect x="550" y="140" width="260" height="80" rx="8" fill="#27ae60"/>
+  <text x="680" y="165" text-anchor="middle" font="bold 16px sans-serif" fill="white">
+    UserService
+  </text>
+  <text x="560" y="190" font="13px monospace" fill="white">
+    UserRepository repo;
+  </text>
+  <text x="560" y="210" font="13px monospace" fill="white">
+    // Injected from outside
+  </text>
+
+  <!-- Arrow to Interface -->
+  <path d="M 680 220 L 680 260" stroke="#27ae60" stroke-width="3" fill="none" marker-end="url(#arrow-loose)"/>
+  <text x="690" y="245" font="bold 12px sans-serif" fill="#229954">
+    Depends on
+  </text>
+
+  <!-- Interface -->
+  <rect x="550" y="270" width="260" height="70" rx="8" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="680" y="295" text-anchor="middle" font="bold 16px sans-serif" fill="white">
+    Interface: UserRepository
+  </text>
+  <text x="560" y="318" font="12px sans-serif" fill="white">
+    + findById(Long): User
+  </text>
+  <text x="560" y="335" font="12px sans-serif" fill="white">
+    + save(User): void
+  </text>
+
+  <!-- Benefits -->
+  <text x="680" y="375" text-anchor="middle" font="bold 14px sans-serif" fill="#229954">
+    Benefits:
+  </text>
+  <text x="510" y="395" font="12px sans-serif" fill="#229954">
+    + Can inject ANY implementation
+  </text>
+  <text x="510" y="415" font="12px sans-serif" fill="229954">
+    + Easy to mock for testing
+  </text>
+  <text x="510" y="435" font="12px sans-serif" fill="#229954">
+    + Flexible and maintainable
+  </text>
+</svg>

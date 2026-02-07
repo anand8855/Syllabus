@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font="bold 24px sans-serif" fill="#2c3e50">
+    IoC Control Flow in Spring
+  </text>
+
+  <!-- Spring Container -->
+  <rect x="50" y="70" width="700" height="480" rx="10" fill="#e8f4f8" stroke="#3498db" stroke-width="3"/>
+  <text x="400" y="100" text-anchor="middle" font="bold 18px sans-serif" fill="#3498db">
+    Spring Container
+  </text>
+
+  <!-- Step 1: Configuration -->
+  <g transform="translate(100, 130)">
+    <rect width="220" height="70" rx="8" fill="#9b59b6"/>
+    <text x="110" y="25" text-anchor="middle" font="bold 16px sans-serif" fill="white">
+      Configuration
+    </text>
+    <text x="110" y="50" text-anchor="middle" font="13px sans-serif" fill="white">
+      @Configuration + @ComponentScan
+    </text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 400 165 L 400 230" stroke="#3498db" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <text x="420" y="200" font="bold 13px sans-serif" fill="#3498db">Creates</text>
+
+  <!-- Step 2: Beans -->
+  <g transform="translate(100, 240)">
+    <rect width="600" height="150" rx="8" fill="white" stroke="#bdc3c7" stroke-width="2"/>
+    <text x="300" y="25" text-anchor="middle" font="bold 15px sans-serif" fill="#34495e">
+      Spring Creates and Manages Beans
+    </text>
+
+    <!-- Repository Bean -->
+    <rect x="30" y="50" width="160" height="70" rx="6" fill="#2ecc71"/>
+    <text x="110" y="73" text-anchor="middle" font="bold 14px sans-serif" fill="white">
+      @Repository
+    </text>
+    <text x="110" y="93" text-anchor="middle" font="12px sans-serif" fill="white">
+      UserRepository
+    </text>
+
+    <!-- Service Bean -->
+    <rect x="220" y="50" width="160" height="70" rx="6" fill="#16a085"/>
+    <text x="300" y="73" text-anchor="middle" font="bold 14px sans-serif" fill="white">
+      @Service
+    </text>
+    <text x="300" y="93" text-anchor="middle" font="12px sans-serif" fill="white">
+      UserService
+    </text>
+
+    <!-- Controller Bean -->
+    <rect x="410" y="50" width="160" height="70" rx="6" fill="#e67e22"/>
+    <text x="490" y="73" text-anchor="middle" font="bold 14px sans-serif" fill="white">
+      @Controller
+    </text>
+    <text x="490" y="93" text-anchor="middle" font="12px sans-serif" fill="white">
+      UserController
+    </text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 400 400 L 400 440" stroke="#e74c3c" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <text x="420" y="425" font="bold 14px sans-serif" fill="#e74c3c">Injects</text>
+
+  <!-- Step 3: Dependency Injection -->
+  <g transform="translate(180, 450)">
+    <rect width="440" height="70" rx="8" fill="#3498db"/>
+    <text x="220" y="25" text-anchor="middle" font="bold 16px sans-serif" fill="white">
+      Automatic Dependency Injection
+    </text>
+    <text x="220" y="50" text-anchor="middle" font="13px sans-serif" fill="white">
+      Spring wires dependencies - no manual creation
+    </text>
+  </g>
+
+  <!-- Benefits -->
+  <rect x="50" y="570" width="700" height="65" rx="8" fill="#d5f4e6" stroke="#27ae60" stroke-width="2"/>
+  <text x="400" y="595" text-anchor="middle" font="bold 16px sans-serif" fill="#27ae60">
+    Benefits: Loose Coupling | Easy Testing | Clean Code
+  </text>
+  <text x="400" y="620" text-anchor="middle" font="13px sans-serif" fill="#27ae60">
+    Spring manages lifecycle - You focus on business logic
+  </text>
+</svg>

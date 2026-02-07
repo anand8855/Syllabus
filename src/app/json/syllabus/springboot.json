@@ -5,19 +5,41 @@
     "difficulty": "intermediate",
     "topics": [
       {
-        "name": "Introduction",
+        "name": "Spring Boot vs Spring",
         "subTopics": [
-          { "name": "Opinionated Defaults & \"Convention over Configuration\"" },
-          { "name": "Starters (spring-boot-starter-web, etc.)" },
-          { "name": "Auto-configuration magic (@EnableAutoConfiguration)" }
+          { "name": "Why Spring Boot was introduced" },
+          { "name": "Problems it solves" },
+          { "name": "Spring vs Spring Boot (VERY COMMON)" }
+        ]
+      },
+      {
+        "name": "@SpringBootApplication",
+        "subTopics": [
+          { "name": "What it is internally" },
+          { "name": "Combination of: @Configuration, @ComponentScan, @EnableAutoConfiguration" },
+          { "name": "Why it should be placed in root package" }
+        ]
+      },
+      {
+        "name": "Starters",
+        "subTopics": [
+          { "name": "What are starters?" },
+          { "name": "How spring-boot-starter-web works" },
+          { "name": "Why starters reduce dependency conflicts" }
         ]
       },
       {
         "name": "Configuration Management",
         "subTopics": [
           { "name": "application.properties vs application.yml" },
-          { "name": "@Value, @ConfigurationProperties" },
-          { "name": "Profiles (Dev, QA, Prod)" }
+          { "name": "YAML advantages" },
+          { "name": "Profile-specific files" },
+          { "name": "Profiles (Dev, QA, Prod)" },
+          { "name": "Externalized Configuration - Property priority order (ENV > JVM > config files)" },
+          { "name": "How environment variables override config" },
+          { "name": "@Value vs @ConfigurationProperties" },
+          { "name": "@Value vs @ConfigurationProperties - Differences and When to use which" },
+          { "name": "Type safety advantages of @ConfigurationProperties" }
         ]
       },
       {
@@ -31,6 +53,70 @@
   },
   {
     "id": 2,
+    "title": "Auto-Configuration (TOP INTERVIEW AREA)",
+    "difficulty": "intermediate",
+    "topics": [
+      {
+        "name": "Auto-Configuration Internals",
+        "subTopics": [
+          { "name": "What is auto-configuration?" },
+          { "name": "How Spring Boot decides which bean to create" },
+          { "name": "@ConditionalOnClass" },
+          { "name": "@ConditionalOnMissingBean" },
+          { "name": "@ConditionalOnProperty" }
+        ]
+      },
+      {
+        "name": "Auto-Configuration Files",
+        "subTopics": [
+          { "name": "spring.factories (Boot < 3)" },
+          { "name": "AutoConfiguration.imports (Boot 3+)" },
+          { "name": "How auto-config classes are loaded" }
+        ]
+      },
+      {
+        "name": "Disable / Customize Auto-Config",
+        "subTopics": [
+          { "name": "exclude attribute" },
+          { "name": "spring.autoconfigure.exclude" },
+          { "name": "Overriding auto-configured beans" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Spring Boot Startup Lifecycle",
+    "difficulty": "intermediate",
+    "topics": [
+      {
+        "name": "Application Startup",
+        "subTopics": [
+          { "name": "What happens during SpringApplication.run()" },
+          { "name": "Order of execution" },
+          { "name": "When beans are created" }
+        ]
+      },
+      {
+        "name": "Runners",
+        "subTopics": [
+          { "name": "CommandLineRunner vs ApplicationRunner" },
+          { "name": "Use cases" },
+          { "name": "Execution order" }
+        ]
+      },
+      {
+        "name": "Embedded Server",
+        "subTopics": [
+          { "name": "Embedded Tomcat / Jetty / Netty" },
+          { "name": "How Boot starts server internally" },
+          { "name": "How to change port & server type" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
     "title": "Data Access & Persistence",
     "difficulty": "intermediate",
     "topics": [
@@ -43,17 +129,34 @@
       {
         "name": "Spring Data JPA (Hibernate)",
         "subTopics": [
+          { "name": "Why repositories don't need implementation" },
           { "name": "Entity Mapping (@Entity, @Table, @Id, @GeneratedValue)" },
+          { "name": "Entity scanning" },
+          { "name": "Auto-DDL (ddl-auto)" },
           { "name": "Repositories (CrudRepository, JpaRepository)" },
+          { "name": "CrudRepository vs JpaRepository" },
           { "name": "Query Methods (Derived queries, @Query, Native Queries)" },
+          { "name": "Derived query method rules" },
           { "name": "Relationships (OneToOne, OneToMany, ManyToMany)" },
-          { "name": "Pagination & Sorting" }
+          { "name": "Lazy vs Eager loading" },
+          { "name": "Pagination & Sorting" },
+          { "name": "N+1 Problem - What it is" },
+          { "name": "N+1 Problem - How to identify" },
+          { "name": "N+1 Problem - Solutions (fetch join, EntityGraph)" }
         ]
       },
       {
-        "name": "Transaction Management",
+        "name": "Transaction Management (INTERVIEW FAVORITE)",
         "subTopics": [
-          { "name": "@Transactional (Propagation, Isolation levels, Rollback rules)" }
+          { "name": "@Transactional - How it works internally" },
+          { "name": "Why @Transactional uses AOP" },
+          { "name": "Propagation types (REQUIRED, REQUIRES_NEW)" },
+          { "name": "Isolation levels" },
+          { "name": "Rollback Rules - Checked vs Runtime exception" },
+          { "name": "How to force rollback" },
+          { "name": "Common Pitfalls - Why @Transactional doesn't work on private methods" },
+          { "name": "Common Pitfalls - Why @Transactional doesn't work on internal method calls" },
+          { "name": "Proxy limitation explanation" }
         ]
       },
       {
@@ -72,23 +175,37 @@
     ]
   },
   {
-    "id": 3,
+    "id": 5,
     "title": "Web & REST API Development",
     "difficulty": "intermediate",
     "topics": [
       {
-        "name": "Spring MVC",
+        "name": "Controllers",
         "subTopics": [
-          { "name": "DispatcherServlet architecture" },
-          { "name": "Controllers (@RestController, @RequestMapping)" },
-          { "name": "Request/Response Handling (@RequestBody, @ResponseBody, @RequestParam, @PathVariable)" },
-          { "name": "Status Codes & ResponseEntity" }
+          { "name": "@RestController vs @Controller" },
+          { "name": "@RequestMapping vs @GetMapping" },
+          { "name": "@PathVariable vs @RequestParam" },
+          { "name": "@RequestBody vs @ModelAttribute" }
+        ]
+      },
+      {
+        "name": "Response Handling",
+        "subTopics": [
+          { "name": "ResponseEntity" },
+          { "name": "HTTP status codes best practices" }
+        ]
+      },
+      {
+        "name": "Exception Handling",
+        "subTopics": [
+          { "name": "@ExceptionHandler" },
+          { "name": "@ControllerAdvice" },
+          { "name": "Global vs local exception handling" }
         ]
       },
       {
         "name": "Advanced REST",
         "subTopics": [
-          { "name": "Global Exception Handling (@ControllerAdvice, @ExceptionHandler)" },
           { "name": "Bean Validation (Hibernate Validator, @Valid, @NotNull, @Size)" },
           { "name": "HATEOAS (Hypermedia as the Engine of Application State)" },
           { "name": "Content Negotiation (JSON vs XML)" },
@@ -104,7 +221,46 @@
     ]
   },
   {
-    "id": 4,
+    "id": 6,
+    "title": "Spring Boot Security (HIGH DEMAND)",
+    "difficulty": "advanced",
+    "topics": [
+      {
+        "name": "Core Concepts",
+        "subTopics": [
+          { "name": "Authentication vs Authorization" },
+          { "name": "Stateless vs Stateful auth" },
+          { "name": "SecurityFilterChain" }
+        ]
+      },
+      {
+        "name": "JWT with Spring Boot",
+        "subTopics": [
+          { "name": "Why JWT is stateless" },
+          { "name": "Filter flow" },
+          { "name": "Where token is validated" }
+        ]
+      },
+      {
+        "name": "Method Security",
+        "subTopics": [
+          { "name": "@PreAuthorize" },
+          { "name": "@PostAuthorize" },
+          { "name": "Role vs Authority" }
+        ]
+      },
+      {
+        "name": "CSRF & CORS",
+        "subTopics": [
+          { "name": "What CSRF is" },
+          { "name": "Why CSRF disabled for REST APIs" },
+          { "name": "Browser-side vs server-side CORS" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
     "title": "Microservices & Spring Cloud",
     "difficulty": "advanced",
     "topics": [
@@ -141,7 +297,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 8,
     "title": "Spring AI (Generative AI)",
     "difficulty": "advanced",
     "topics": [
@@ -184,7 +340,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 9,
     "title": "Messaging & Event-Driven Architecture",
     "difficulty": "advanced",
     "topics": [
@@ -216,7 +372,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": 10,
     "title": "Spring Batch & Scheduling",
     "difficulty": "advanced",
     "topics": [
@@ -240,7 +396,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 11,
     "title": "Reactive Programming (WebFlux)",
     "difficulty": "advanced",
     "topics": [
@@ -262,10 +418,16 @@
     ]
   },
   {
-    "id": 9,
+    "id": 12,
     "title": "Spring Boot Testing",
     "difficulty": "intermediate",
     "topics": [
+      {
+        "name": "Testing Types",
+        "subTopics": [
+          { "name": "Unit vs Integration testing" }
+        ]
+      },
       {
         "name": "Unit Testing",
         "subTopics": [
@@ -280,6 +442,13 @@
         ]
       },
       {
+        "name": "Mocking",
+        "subTopics": [
+          { "name": "Mockito basics" },
+          { "name": "MockBean vs SpyBean" }
+        ]
+      },
+      {
         "name": "Advanced Testing",
         "subTopics": [
           { "name": "Testcontainers (Spinning up real DBs/Kafka in Docker for tests)" },
@@ -289,21 +458,22 @@
     ]
   },
   {
-    "id": 10,
-    "title": "Observability & Production Ready",
+    "id": 13,
+    "title": "Observability & Production Ready (Actuator)",
     "difficulty": "advanced",
     "topics": [
       {
         "name": "Spring Boot Actuator",
         "subTopics": [
-          { "name": "Health checks, Metrics, Info, Beans endpoints" }
+          { "name": "Important endpoints: /health, /metrics, /info" },
+          { "name": "Custom health indicators" }
         ]
       },
       {
         "name": "Monitoring",
         "subTopics": [
-          { "name": "Micrometer (Metrics facade)" },
-          { "name": "Prometheus & Grafana integration" }
+          { "name": "Micrometer basics" },
+          { "name": "Prometheus & Grafana overview" }
         ]
       },
       {
@@ -317,13 +487,38 @@
         "name": "Deployment",
         "subTopics": [
           { "name": "Dockerizing Spring Boot" },
-          { "name": "GraalVM Native Images (AOT Compilation for instant startup)" }
+          { "name": "Why Boot apps are container-friendly" },
+          { "name": "Fat JAR vs Thin JAR" }
         ]
       }
     ]
   },
   {
-    "id": 11,
+    "id": 14,
+    "title": "Performance & Real-World Scenarios (Senior Level)",
+    "difficulty": "advanced",
+    "topics": [
+      {
+        "name": "Startup & Memory",
+        "subTopics": [
+          { "name": "Why Spring Boot apps are heavy" },
+          { "name": "Reduce startup time" },
+          { "name": "GraalVM Native Image (concept)" },
+          { "name": "GraalVM Native Images (AOT Compilation for instant startup)" }
+        ]
+      },
+      {
+        "name": "Common Production Issues",
+        "subTopics": [
+          { "name": "Bean overriding issues" },
+          { "name": "Circular dependencies" },
+          { "name": "Configuration mismatch across environments" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
     "title": "Miscellaneous / Advanced Spring",
     "difficulty": "advanced",
     "topics": [

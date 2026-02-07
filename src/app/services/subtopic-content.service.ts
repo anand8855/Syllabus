@@ -11,8 +11,10 @@ import {
   javaEditionsContent,
   pathAndClasspathContent,
   firstJavaProgramContent,
-  keywordsAndIdentifiersContent
-} from '../json/subtopics/subtopic-mapper';
+  keywordsAndIdentifiersContent,
+  iocAndWhySpringUsesItContent,
+  dependencyInjectionContent
+} from './subtopic-mapper';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +32,12 @@ export class SubtopicContentService {
     'Java Editions (SE, EE, ME)': javaEditionsContent,
     'Path and Classpath (Environment Variables)': pathAndClasspathContent,
     'First Java Program structure and main method': firstJavaProgramContent,
-    'Java Keywords and Identifiers': keywordsAndIdentifiersContent
+    'Java Keywords and Identifiers': keywordsAndIdentifiersContent,
+
+
+    // Spring 
+    'What is IoC and why Spring uses it': iocAndWhySpringUsesItContent,
+    'What problem does DI solve?': dependencyInjectionContent
     // Add more mappings as you create new subtopic files:
     // 'Checked vs Unchecked Exceptions': checkedVsUncheckedContent,
     // 'try–catch–finally': tryCatchFinallyContent,

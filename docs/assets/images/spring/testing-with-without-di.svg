@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font="bold 24px sans-serif" fill="#2c3e50">
+    Testing: Without DI vs With DI
+  </text>
+
+  <!-- WITHOUT DI -->
+  <rect x="30" y="60" width="400" height="480" rx="10" fill="#fde8e8" stroke="#e74c3c" stroke-width="3"/>
+  <text x="230" y="90" text-anchor="middle" font="bold 20px sans-serif" fill="#e74c3c">
+    WITHOUT DI
+  </text>
+  <text x="230" y="115" text-anchor="middle" font="14px sans-serif" fill="#c0392b">
+    Integration Test Nightmare
+  </text>
+
+  <!-- Test class -->
+  <rect x="60" y="140" width="340" height="70" rx="8" fill="#e74c3c"/>
+  <text x="230" y="165" text-anchor="middle" font="bold 15px sans-serif" fill="white">
+    UserServiceTest
+  </text>
+  <text x="70" y="188" font="12px monospace" fill="white">
+    void testEmailValidation()
+  </text>
+
+  <!-- Arrow down -->
+  <path d="M 230 210 L 230 240" stroke="#c0392b" stroke-width="4" fill="none"/>
+  <text x="240" y="230" font="bold 11px sans-serif" fill="#c0392b">needs</text>
+
+  <!-- All dependencies required -->
+  <g transform="translate(60, 250)">
+    <rect width="340" height="200" rx="8" fill="#c0392b"/>
+    <text x="170" y="25" text-anchor="middle" font="bold 14px sans-serif" fill="white">
+      Must Set Up EVERYTHING
+    </text>
+    
+    <rect x="15" y="40" width="150" height="35" rx="5" fill="#a93226"/>
+    <text x="90" y="62" text-anchor="middle" font="12px sans-serif" fill="white">Database Server</text>
+    
+    <rect x="175" y="40" width="150" height="35" rx="5" fill="#a93226"/>
+    <text x="250" y="62" text-anchor="middle" font="12px sans-serif" fill="white">Email Server</text>
+    
+    <rect x="15" y="85" width="150" height="35" rx="5" fill="#a93226"/>
+    <text x="90" y="107" text-anchor="middle" font="12px sans-serif" fill="white">Network Config</text>
+    
+    <rect x="175" y="85" width="150" height="35" rx="5" fill="#a93226"/>
+    <text x="250" y="107" text-anchor="middle" font="12px sans-serif" fill="white">File System</text>
+    
+    <rect x="15" y="130" width="150" height="35" rx="5" fill="#a93226"/>
+    <text x="90" y="152" text-anchor="middle" font="12px sans-serif" fill="white">Test Data</text>
+    
+    <rect x="175" y="130" width="150" height="35" rx="5" fill="#a93226"/>
+    <text x="250" y="152" text-anchor="middle" font="12px sans-serif" fill="white">External APIs</text>
+    
+    <text x="170" y="185" text-anchor="middle" font="bold 13px sans-serif" fill="white">
+      Just to test 1 method!
+    </text>
+  </g>
+
+  <!-- Problems -->
+  <text x="60" y="475" font="bold 13px sans-serif" fill="#c0392b">
+    Test Time: 5 minutes
+  </text>
+  <text x="60" y="495" font="12px sans-serif" fill="#c0392b">
+    X Slow tests
+  </text>
+  <text x="60" y="515" font="12px sans-serif" fill="#c0392b">
+    X Flaky (random failures)
+  </text>
+  <text x="230" y="495" font="12px sans-serif" fill="#c0392b">
+    X Complex setup
+  </text>
+  <text x="230" y="515" font="12px sans-serif" fill="#c0392b">
+    X Hard to reproduce bugs
+  </text>
+
+  <!-- WITH DI -->
+  <rect x="470" y="60" width="400" height="480" rx="10" fill="#e8f8f0" stroke="#27ae60" stroke-width="3"/>
+  <text x="670" y="90" text-anchor="middle" font="bold 20px sans-serif" fill="#27ae60">
+    WITH DI
+  </text>
+  <text x="670" y="115" text-anchor="middle" font="14px sans-serif" fill="#229954">
+    True Unit Test Paradise
+  </text>
+
+  <!-- Test class -->
+  <rect x="500" y="140" width="340" height="90" rx="8" fill="#27ae60"/>
+  <text x="670" y="165" text-anchor="middle" font="bold 15px sans-serif" fill="white">
+    UserServiceTest
+  </text>
+  <text x="510" y="188" font="12px monospace" fill="white">
+    void testEmailValidation() {
+  </text>
+  <text x="520" y="205" font="12px monospace" fill="white">
+    repo = mock(UserRepository);
+  </text>
+  <text x="520" y="222" font="12px monospace" fill="white">
+    service = new UserService(repo);
+  </text>
+
+  <!-- Arrow down -->
+  <path d="M 670 230 L 670 260" stroke="#229954" stroke-width="4" fill="none"/>
+  <text x="680" y="250" font="bold 11px sans-serif" fill="#229954">uses</text>
+
+  <!-- Simple mocks -->
+  <g transform="translate(500, 270)">
+    <rect width="340" height="130" rx="8" fill="#229954"/>
+    <text x="170" y="25" text-anchor="middle" font="bold 14px sans-serif" fill="white">
+      Just Inject Mocks
+    </text>
+    
+    <rect x="40" y="45" width="260" height="30" rx="5" fill="#1e8449"/>
+    <text x="170" y="67" text-anchor="middle" font="13px sans-serif" fill="white">
+      MockRepository (in-memory)
+    </text>
+    
+    <rect x="40" y="85" width="260" height="30" rx="5" fill="#1e8449"/>
+    <text x="170" y="107" text-anchor="middle" font="13px sans-serif" fill="white">
+      No external dependencies needed!
+    </text>
+  </g>
+
+  <!-- Fast execution -->
+  <rect x="530" y="420" width="280" height="40" rx="8" fill="#1e8449"/>
+  <text x="670" y="435" text-anchor="middle" font="bold 16px sans-serif" fill="white">
+    Test executes in milliseconds
+  </text>
+  <text x="670" y="453" text-anchor="middle" font="13px sans-serif" fill="white">
+    Pure in-memory, super fast
+  </text>
+
+  <!-- Benefits -->
+  <text x="510" y="485" font="bold 13px sans-serif" fill="#229954">
+    Test Time: 10 milliseconds
+  </text>
+  <text x="510" y="505" font="12px sans-serif" fill="#229954">
+    + Lightning fast
+  </text>
+  <text x="510" y="525" font="12px sans-serif" fill="#229954">
+    + Rock solid (no flakiness)
+  </text>
+  <text x="680" y="505" font="12px sans-serif" fill="#229954">
+    + Simple setup
+  </text>
+  <text x="680" y="525" font="12px sans-serif" fill="#229954">
+    + Easy debugging
+  </text>
+
+  <!-- Bottom comparison -->
+  <rect x="50" y="560" width="800" height="30" rx="8" fill="#3498db"/>
+  <text x="450" y="582" text-anchor="middle" font="bold 14px sans-serif" fill="white">
+    DI turns testing from a nightmare into a joy - 1000x faster, 100% reliable
+  </text>
+</svg>

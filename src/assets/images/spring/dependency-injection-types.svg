@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700">
+  <defs>
+    <style>
+      .title { font: bold 26px sans-serif; fill: #2c3e50; }
+      .subtitle { font: 16px sans-serif; fill: #7f8c8d; }
+      .best-box { fill: #2ecc71; stroke: #27ae60; stroke-width: 3; }
+      .okay-box { fill: #f39c12; stroke: #e67e22; stroke-width: 3; }
+      .bad-box { fill: #e74c3c; stroke: #c0392b; stroke-width: 3; }
+      .header-text { font: bold 18px sans-serif; fill: white; }
+      .code-text { font: 13px monospace; fill: white; }
+      .small-code { font: 11px monospace; fill: white; }
+      .pros-text { font: 12px sans-serif; fill: white; }
+      .badge { font: bold 14px sans-serif; fill: white; }
+      .icon { font: 24px sans-serif; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="550" y="40" text-anchor="middle" class="title">Types of Dependency Injection in Spring</text>
+  <text x="550" y="70" text-anchor="middle" class="subtitle">Three ways to inject dependencies - but only one is recommended!</text>
+  
+  <!-- Constructor Injection - BEST -->
+  <g id="constructor-injection">
+    <rect x="50" y="110" width="320" height="550" rx="12" class="best-box"/>
+    
+    <!-- Badge -->
+    <circle cx="210" cy="140" r="35" fill="#27ae60"/>
+    <text x="210" y="135" text-anchor="middle" class="icon">🏆</text>
+    <text x="210" y="165" text-anchor="middle" class="badge">BEST PRACTICE</text>
+    
+    <text x="210" y="195" text-anchor="middle" class="header-text">Constructor Injection</text>
+    
+    <!-- Code Example -->
+    <rect x="70" y="210" width="280" height="140" rx="8" fill="#229954"/>
+    <text x="80" y="230" class="code-text">@Service</text>
+    <text x="80" y="250" class="code-text">public class UserService {</text>
+    <text x="90" y="270" class="code-text">  private final UserRepo repo;</text>
+    <text x="90" y="290" class="code-text">  private final EmailService email;</text>
+    <text x="80" y="310" class="code-text" font-weight="bold">  @Autowired // optional</text>
+    <text x="80" y="330" class="code-text">  public UserService(</text>
+    <text x="90" y="345" class="code-text">    UserRepo repo, ...</text>
+    
+    <!-- Pros -->
+    <text x="80" y="375" font="bold 14px sans-serif" fill="white">✅ Pros:</text>
+    <text x="80" y="395" class="pros-text">• Immutable objects (final fields)</text>
+    <text x="80" y="415" class="pros-text">• Mandatory dependencies are clear</text>
+    <text x="80" y="435" class="pros-text">• Easy to test (no reflection)</text>
+    <text x="80" y="455" class="pros-text">• Fails fast if dependency missing</text>
+    <text x="80" y="475" class="pros-text">• Thread-safe by default</text>
+    <text x="80" y="495" class="pros-text">• No need for @Autowired (Spring 4.3+)</text>
+    <text x="80" y="515" class="pros-text">• Prevents circular dependencies</text>
+    
+    <!-- Cons -->
+    <text x="80" y="545" font="bold 14px sans-serif" fill="white">⚠️ Cons:</text>
+    <text x="80" y="565" class="pros-text">• Verbose if many dependencies</text>
+    <text x="80" y="585" class="pros-text">• (But that's a code smell anyway!)</text>
+    
+    <!-- Recommendation -->
+    <rect x="70" y="605" width="280" height="40" rx="8" fill="#1e8449"/>
+    <text x="210" y="630" text-anchor="middle" font="bold 14px sans-serif" fill="white">👍 Use this 99% of the time!</text>
+  </g>
+  
+  <!-- Setter Injection - OKAY -->
+  <g id="setter-injection">
+    <rect x="390" y="110" width="320" height="550" rx="12" class="okay-box"/>
+    
+    <!-- Badge -->
+    <circle cx="550" cy="140" r="35" fill="#e67e22"/>
+    <text x="550" y="135" text-anchor="middle" class="icon">⚠️</text>
+    <text x="550" y="165" text-anchor="middle" class="badge">OPTIONAL USE</text>
+    
+    <text x="550" y="195" text-anchor="middle" class="header-text">Setter Injection</text>
+    
+    <!-- Code Example -->
+    <rect x="410" y="210" width="280" height="140" rx="8" fill="#d68910"/>
+    <text x="420" y="230" class="code-text">@Service</text>
+    <text x="420" y="250" class="code-text">public class UserService {</text>
+    <text x="430" y="270" class="code-text">  private LoggingService logger;</text>
+    <text x="420" y="290" class="code-text" font-weight="bold">  @Autowired</text>
+    <text x="420" y="310" class="code-text">  public void setLogger(</text>
+    <text x="430" y="330" class="code-text">    LoggingService logger) {</text>
+    <text x="440" y="345" class="code-text">    this.logger = logger;</text>
+    
+    <!-- Pros -->
+    <text x="420" y="375" font="bold 14px sans-serif" fill="white">✅ Pros:</text>
+    <text x="420" y="395" class="pros-text">• Good for optional dependencies</text>
+    <text x="420" y="415" class="pros-text">• Can be changed after creation</text>
+    <text x="420" y="435" class="pros-text">• Useful for circular dependencies</text>
+    <text x="420" y="455" class="pros-text">  (though you should avoid them)</text>
+    
+    <!-- Cons -->
+    <text x="420" y="485" font="bold 14px sans-serif" fill="white">❌ Cons:</text>
+    <text x="420" y="505" class="pros-text">• Mutable objects (not thread-safe)</text>
+    <text x="420" y="525" class="pros-text">• Dependencies not immediately clear</text>
+    <text x="420" y="545" class="pros-text">• Object can be in invalid state</text>
+    <text x="420" y="565" class="pros-text">• Requires @Autowired annotation</text>
+    <text x="420" y="585" class="pros-text">• Harder to test</text>
+    
+    <!-- Recommendation -->
+    <rect x="410" y="605" width="280" height="40" rx="8" fill="#b9770e"/>
+    <text x="550" y="630" text-anchor="middle" font="bold 14px sans-serif" fill="white">Use only for optional deps!</text>
+  </g>
+  
+  <!-- Field Injection - BAD -->
+  <g id="field-injection">
+    <rect x="730" y="110" width="320" height="550" rx="12" class="bad-box"/>
+    
+    <!-- Badge -->
+    <circle cx="890" cy="140" r="35" fill="#c0392b"/>
+    <text x="890" y="135" text-anchor="middle" class="icon">❌</text>
+    <text x="890" y="165" text-anchor="middle" class="badge">NOT RECOMMENDED</text>
+    
+    <text x="890" y="195" text-anchor="middle" class="header-text">Field Injection</text>
+    
+    <!-- Code Example -->
+    <rect x="750" y="210" width="280" height="140" rx="8" fill="#a93226"/>
+    <text x="760" y="230" class="code-text">@Service</text>
+    <text x="760" y="250" class="code-text">public class UserService {</text>
+    <text x="760" y="270" class="code-text" font-weight="bold">  @Autowired</text>
+    <text x="760" y="290" class="code-text">  private UserRepository repo;</text>
+    <text x="760" y="310" class="code-text" font-weight="bold">  @Autowired</text>
+    <text x="760" y="330" class="code-text">  private EmailService email;</text>
+    <text x="760" y="345" class="code-text">}</text>
+    
+    <!-- Pros -->
+    <text x="760" y="375" font="bold 14px sans-serif" fill="white">✅ Pros:</text>
+    <text x="760" y="395" class="pros-text">• Very concise and easy to write</text>
+    <text x="760" y="415" class="pros-text">• Less boilerplate code</text>
+    <text x="760" y="435" class="pros-text">• ...that's it! 😅</text>
+    
+    <!-- Cons -->
+    <text x="760" y="465" font="bold 14px sans-serif" fill="white">❌ Cons (MANY!):</text>
+    <text x="760" y="485" class="pros-text">• Cannot use final (not immutable)</text>
+    <text x="760" y="505" class="pros-text">• Hard to test (need reflection)</text>
+    <text x="760" y="525" class="pros-text">• Tight coupling to Spring</text>
+    <text x="760" y="545" class="pros-text">• Dependencies hidden (not in API)</text>
+    <text x="760" y="565" class="pros-text">• Can't detect circular dependencies</text>
+    <text x="760" y="585" class="pros-text">• Violates single responsibility</text>
+    
+    <!-- Recommendation -->
+    <rect x="750" y="605" width="280" height="40" rx="8" fill="#7b241c"/>
+    <text x="890" y="630" text-anchor="middle" font="bold 14px sans-serif" fill="white">❌ Avoid in production code!</text>
+  </g>
+  
+  <!-- Bottom Summary -->
+  <rect x="50" y="675" width="1000" height="15" rx="0" fill="none" stroke="none"/>
+  <text x="550" y="687" text-anchor="middle" font="bold 16px sans-serif" fill="#2c3e50">
+    Constructor Injection = Best | Setter Injection = For optional deps | Field Injection = Never use!
+  </text>
+</svg>

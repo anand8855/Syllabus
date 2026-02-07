@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#3498db"/>
+    </marker>
+    <marker id="arrow-inject" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font="bold 24px sans-serif" fill="#2c3e50">
+    Dependency Injection Flow
+  </text>
+
+  <!-- DI Container -->
+  <rect x="50" y="70" width="700" height="480" rx="15" fill="#ecf0f1" stroke="#3498db" stroke-width="4"/>
+  <text x="400" y="105" text-anchor="middle" font="bold 20px sans-serif" fill="#3498db">
+    DI Container / IoC Container
+  </text>
+
+  <!-- Step 1: Container creates dependencies -->
+  <g transform="translate(100, 140)">
+    <circle cx="-30" cy="35" r="20" fill="#e74c3c"/>
+    <text x="-30" y="42" text-anchor="middle" font="bold 16px sans-serif" fill="white">1</text>
+    
+    <rect width="250" height="140" rx="10" fill="#2ecc71"/>
+    <text x="125" y="25" text-anchor="middle" font="bold 16px sans-serif" fill="white">
+      Container Creates Dependencies
+    </text>
+    <line x1="10" y1="35" x2="240" y2="35" stroke="white" stroke-width="2"/>
+    
+    <!-- Repository -->
+    <rect x="15" y="50" width="220" height="35" rx="6" fill="#27ae60"/>
+    <text x="125" y="73" text-anchor="middle" font="13px sans-serif" fill="white">
+      UserRepository (MySQL)
+    </text>
+    
+    <!-- EmailService -->
+    <rect x="15" y="95" width="220" height="35" rx="6" fill="#27ae60"/>
+    <text x="125" y="118" text-anchor="middle" font="13px sans-serif" fill="white">
+      EmailService
+    </text>
+  </g>
+
+  <!-- Step 2: Container creates dependent class -->
+  <g transform="translate(450, 140)">
+    <circle cx="-30" cy="35" r="20" fill="#e74c3c"/>
+    <text x="-30" y="42" text-anchor="middle" font="bold 16px sans-serif" fill="white">2</text>
+    
+    <rect width="250" height="140" rx="10" fill="#3498db"/>
+    <text x="125" y="25" text-anchor="middle" font="bold 16px sans-serif" fill="white">
+      Container Creates Class
+    </text>
+    <line x1="10" y1="35" x2="240" y2="35" stroke="white" stroke-width="2"/>
+    
+    <text x="125" y="65" text-anchor="middle" font="14px sans-serif" fill="white">
+      UserService
+    </text>
+    <text x="20" y="90" font="11px monospace" fill="white">
+      UserService(
+    </text>
+    <text x="30" y="107" font="11px monospace" fill="white">
+      UserRepository repo,
+    </text>
+    <text x="30" y="124" font="11px monospace" fill="white">
+      EmailService email)
+    </text>
+  </g>
+
+  <!-- Arrow from dependencies to class -->
+  <path d="M 350 210 L 420 210" stroke="#e74c3c" stroke-width="4" fill="none" marker-end="url(#arrow-inject)"/>
+  <rect x="355" y="185" width="60" height="28" fill="#e74c3c" rx="5"/>
+  <text x="385" y="204" text-anchor="middle" font="bold 11px sans-serif" fill="white">
+    Injects
+  </text>
+
+  <!-- Step 3: Container provides to application -->
+  <g transform="translate(225, 350)">
+    <circle cx="125" cy="-30" r="20" fill="#e74c3c"/>
+    <text x="125" y="-23" text-anchor="middle" font="bold 16px sans-serif" fill="white">3</text>
+    
+    <rect width="350" height="110" rx="10" fill="#34495e"/>
+    <text x="175" y="30" text-anchor="middle" font="bold 18px sans-serif" fill="white">
+      Your Application Code
+    </text>
+    <line x1="15" y1="40" x2="335" y2="40" stroke="white" stroke-width="2"/>
+    
+    <text x="20" y="65" font="13px monospace" fill="white">
+      // Get fully-wired object
+    </text>
+    <text x="20" y="85" font="13px monospace" fill="white">
+      UserService service =
+    </text>
+    <text x="30" y="102" font="13px monospace" fill="white">
+      container.getBean(UserService.class);
+    </text>
+  </g>
+
+  <!-- Arrow from container to application -->
+  <path d="M 575 280 L 475 350" stroke="#3498db" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <text x="510" y="320" font="bold 13px sans-serif" fill="#3498db">
+    Provides ready object
+  </text>
+
+  <!-- Benefits Box -->
+  <rect x="50" y="500" width="700" height="80" rx="10" fill="#d5f4e6" stroke="#27ae60" stroke-width="2"/>
+  <text x="400" y="525" text-anchor="middle" font="bold 16px sans-serif" fill="#27ae60">
+    Result: Clean, Testable, Maintainable Code
+  </text>
+  <text x="100" y="550" font="13px sans-serif" fill="#229954">
+    + No manual object creation
+  </text>
+  <text x="100" y="570" font="13px sans-serif" fill="#229954">
+    + Dependencies automatically wired
+  </text>
+  <text x="400" y="550" font="13px sans-serif" fill="#229954">
+    + Easy to test with mocks
+  </text>
+  <text x="400" y="570" font="13px sans-serif" fill="#229954">
+    + Flexible configuration
+  </text>
+</svg>
