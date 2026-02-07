@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <text x="600" y="90" text-anchor="middle" font-family="Segoe UI, Arial" font-size="40" fill="#e2e8f0">Application Scope</text>
+  <text x="600" y="130" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" fill="#94a3b8">One shared instance per application</text>
+
+  <rect x="280" y="200" width="640" height="360" rx="24" fill="#1f2937" stroke="#f97316" stroke-width="3"/>
+  <text x="600" y="250" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#e2e8f0">Application (ServletContext)</text>
+
+  <rect x="460" y="310" width="280" height="120" rx="16" fill="#0b1220" stroke="#f97316"/>
+  <text x="600" y="380" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#e2e8f0">App‑Scoped Bean</text>
+</svg>

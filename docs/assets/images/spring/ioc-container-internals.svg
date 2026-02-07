@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <rect x="60" y="60" width="1080" height="555" rx="24" fill="#111827" stroke="#38bdf8" stroke-width="4"/>
+  <text x="600" y="170" text-anchor="middle" font-family="Segoe UI, Arial" font-size="44" fill="#e2e8f0">IoC Container Internals</text>
+  <text x="600" y="235" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#94a3b8">BeanDefinitions • BeanFactory • Post-Processors • Lifecycle</text>
+  <rect x="140" y="290" width="920" height="260" rx="18" fill="#0b1220" stroke="#334155" stroke-width="2"/>
+  <text x="600" y="420" text-anchor="middle" font-family="Segoe UI, Arial" font-size="26" fill="#cbd5f5">Diagram Placeholder</text>
+</svg>

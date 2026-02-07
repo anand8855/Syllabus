@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0b1324"/>
+  <text x="600" y="90" text-anchor="middle" font-family="Segoe UI, Arial" font-size="36" fill="#e2e8f0">Eager vs Lazy Comparison</text>
+  <text x="600" y="130" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" fill="#94a3b8">Spring Beans vs JPA Entities</text>
+
+  <rect x="120" y="180" width="960" height="380" rx="16" fill="#111827" stroke="#38bdf8"/>
+  <g font-family="Segoe UI, Arial" font-size="16" fill="#e2e8f0">
+    <text x="160" y="230">Context</text>
+    <text x="520" y="230">Eager</text>
+    <text x="820" y="230">Lazy</text>
+
+    <text x="160" y="290">Spring Beans</text>
+    <text x="520" y="290">Startup</text>
+    <text x="820" y="290">First use</text>
+
+    <text x="160" y="350">JPA Entities</text>
+    <text x="520" y="350">Immediate fetch</text>
+    <text x="820" y="350">On demand</text>
+
+    <text x="160" y="410">Risk</text>
+    <text x="520" y="410">Slower startup / heavy joins</text>
+    <text x="820" y="410">Runtime delay / LIE</text>
+  </g>
+</svg>

@@ -13,6 +13,10 @@ import keywordsAndIdentifiersData from '../json/subtopics/java/core_java_basic/k
 // Spring imports will be added here as content is created
 import iocAndWhySpringUsesItData from '../json/subtopics/spring/ioc_and_why_spring_uses_it.json';
 import dependencyInjection from '../json/subtopics/spring/dependency_injection_problems_and_solutions.json'
+import springBeenLifecycleInternal  from '../json/subtopics/spring/spring_bean_lifecycle_internals.json'
+import applicationContextVsBeanFactory from '../json/subtopics/spring/applicationcontext_vs_beanfactory.json'
+import eagerVsLazyLoading from '../json/subtopics/spring/eager_vs_lazy_loading.json'
+import beanScope from '../json/subtopics/spring/bean_scopes.json'
 import { SubtopicContent } from '../models/syllabus.model';
 
 export const fundamentalsContent = fundamentalsData as SubtopicContent;
@@ -29,6 +33,10 @@ export const keywordsAndIdentifiersContent = keywordsAndIdentifiersData as Subto
 // Spring exports will be added here
 export const iocAndWhySpringUsesItContent = iocAndWhySpringUsesItData as SubtopicContent;
 export const dependencyInjectionContent = dependencyInjection as SubtopicContent;
+export const springBeenLifecycleInternalContent = springBeenLifecycleInternal as SubtopicContent;
+export const applicationContextVsBeanFactoryContent = applicationContextVsBeanFactory as SubtopicContent;
+export const eagerVsLazyLoadingContent = eagerVsLazyLoading as SubtopicContent;
+export const beanScopeContent = beanScope as SubtopicContent;
 
 // Add more exports as you create new category folders
 // Example: ./category_name/subtopic_name/content.json

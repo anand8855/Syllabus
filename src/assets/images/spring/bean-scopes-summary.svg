@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <text x="600" y="90" text-anchor="middle" font-family="Segoe UI, Arial" font-size="38" fill="#e2e8f0">Bean Scopes Summary</text>
+  <text x="600" y="130" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" fill="#94a3b8">Interview‑ready snapshot</text>
+
+  <rect x="160" y="180" width="880" height="360" rx="16" fill="#111827" stroke="#38bdf8"/>
+  <g font-family="Segoe UI, Arial" font-size="18" fill="#e2e8f0">
+    <text x="200" y="230">• Singleton = default, shared</text>
+    <text x="200" y="270">• Prototype = new instance each time</text>
+    <text x="200" y="310">• Request/Session = web scopes</text>
+    <text x="200" y="350">• Application = shared across app</text>
+    <text x="200" y="390">• Prototype destruction not managed</text>
+  </g>
+</svg>

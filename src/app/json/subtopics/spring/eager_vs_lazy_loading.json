@@ -1,0 +1,258 @@
+{
+  "name": "Eager vs Lazy Loading — When to Use Which?",
+  "overview": "🍽️ Eager vs Lazy loading sounds simple… until performance spikes, memory climbs, or the legendary LazyInitializationException appears. This guide explains both *Spring beans* and *JPA/Hibernate entities* with buffet vs à‑la‑carte analogies, clear tables, and interview‑ready takeaways.",
+  "sections": [
+    {
+      "title": "🧠 The Big Idea (Plain English)",
+      "content": "Eager loading = load everything immediately (even if not needed yet).\nLazy loading = load only when needed, not a second earlier.\n\nAnalogy 😄 Eager = buffet prepared upfront. Lazy = order only when hungry.\n\nChoosing the wrong one at the wrong time is where trouble begins.",
+      "images": [
+        {
+          "url": "assets/images/spring/eager-vs-lazy-overview.svg",
+          "alt": "Eager vs Lazy Overview",
+          "caption": "Buffet vs à‑la‑carte: two valid strategies with different costs"
+        }
+      ]
+    },
+    {
+      "title": "🏭 Part 1: Eager vs Lazy in Spring Beans",
+      "content": "In Spring, eager vs lazy controls *when beans are created*. ApplicationContext creates singletons eagerly by default.",
+      "subsections": [
+        {
+          "title": "⚡ Eager Loading (Default)",
+          "content": "All singleton beans are created at startup.\n\nPros: Fail fast, faster runtime access, safer for production.\nCons: Slower startup, higher initial memory usage.\n\nAnalogy 😄 Office opens → all employees show up at 9 AM, even if work starts at 11.",
+          "table": {
+            "headers": ["Aspect", "Eager (Spring Beans)"],
+            "rows": [
+              ["Creation time", "Startup"],
+              ["Startup time", "Slower"],
+              ["Runtime delay", "None"],
+              ["Error detection", "Early"],
+              ["Memory usage", "Higher initially"]
+            ]
+          }
+        },
+        {
+          "title": "🐢 Lazy Loading (@Lazy)",
+          "content": "Beans are created only when first requested.\n\nPros: Faster startup, lower initial memory.\nCons: Runtime delay possible, errors appear later.\n\nAnalogy 😄 Freelancer called only when work arrives 📞",
+          "table": {
+            "headers": ["Aspect", "Lazy (Spring Beans)"],
+            "rows": [
+              ["Creation time", "First use"],
+              ["Startup time", "Faster"],
+              ["Runtime delay", "Possible"],
+              ["Error detection", "Late"],
+              ["Memory usage", "Lower initially"]
+            ]
+          }
+        },
+        {
+          "title": "🧠 When to Use Lazy Beans?",
+          "content": "Use lazy for heavy or rarely used beans. Avoid lazy for core infrastructure beans.",
+          "table": {
+            "headers": ["Use Case", "Recommendation"],
+            "rows": [
+              ["Heavy beans (PDF, reports)", "✅ Lazy"],
+              ["Rarely used features", "✅ Lazy"],
+              ["Core services", "❌ Eager"],
+              ["Critical startup validation", "❌ Lazy"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/spring/spring-eager-vs-lazy-beans.svg",
+          "alt": "Spring Beans Eager vs Lazy",
+          "caption": "Startup creation vs on‑demand creation in Spring"
+        }
+      ]
+    },
+    {
+      "title": "🗄️ Part 2: Eager vs Lazy in JPA / Hibernate",
+      "content": "In JPA, eager vs lazy controls *when related entities are fetched*. This is where performance disasters and LazyInitializationException appear.",
+      "subsections": [
+        {
+          "title": "⚡ Eager Fetching (JPA)",
+          "content": "When the parent entity is loaded, related entities are fetched immediately.\n\nRisks: huge joins, N+1 queries, memory explosion 💥\n\nAnalogy 😄 You ask for your name… database brings your entire life history 📚",
+          "table": {
+            "headers": ["Aspect", "Eager (JPA)"],
+            "rows": [
+              ["Data fetching", "Immediate"],
+              ["SQL queries", "Heavy"],
+              ["Memory usage", "High"],
+              ["Risk", "Performance issues"]
+            ]
+          }
+        },
+        {
+          "title": "🐢 Lazy Fetching (JPA)",
+          "content": "Associations are proxies; DB call happens only when accessed.\n\nAnalogy 😄 You ask for dessert 🍰, then the kitchen starts cooking.",
+          "table": {
+            "headers": ["Aspect", "Lazy (JPA)"],
+            "rows": [
+              ["Data fetching", "On demand"],
+              ["SQL queries", "Controlled"],
+              ["Memory usage", "Optimized"],
+              ["Risk", "LazyInitializationException"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/spring/jpa-eager-vs-lazy.svg",
+          "alt": "JPA Eager vs Lazy",
+          "caption": "Entity fetch strategies and their impact"
+        }
+      ]
+    },
+    {
+      "title": "😱 LazyInitializationException (The Classic)",
+      "content": "Occurs when a lazy association is accessed outside an open persistence context.\n\nHibernate says: “I wanted to fetch orders… but the restaurant is closed” 🚪😄",
+      "subsections": [
+        {
+          "title": "How to Fix It",
+          "content": "Common solutions used in production.",
+          "table": {
+            "headers": ["Solution", "Explanation"],
+            "rows": [
+              ["Open Session in View", "Keep session open in web apps"],
+              ["Fetch join", "JOIN FETCH in query"],
+              ["DTO projection", "Fetch only needed data"],
+              ["Access inside transaction", "Use @Transactional"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/spring/lazy-initialization-exception.svg",
+          "alt": "LazyInitializationException",
+          "caption": "Accessing lazy data outside session triggers the exception"
+        }
+      ]
+    },
+    {
+      "title": "⚖️ Side‑by‑Side Comparison",
+      "content": "Two contexts, two different risks.",
+      "subsections": [
+        {
+          "title": "Spring Beans",
+          "content": "Creation timing and startup vs runtime tradeoffs.",
+          "table": {
+            "headers": ["Aspect", "Eager", "Lazy"],
+            "rows": [
+              ["Creation time", "Startup", "First use"],
+              ["Startup time", "Slower", "Faster"],
+              ["Runtime delay", "None", "Possible"],
+              ["Error detection", "Early", "Late"]
+            ]
+          }
+        },
+        {
+          "title": "JPA Entities",
+          "content": "Fetch timing and performance tradeoffs.",
+          "table": {
+            "headers": ["Aspect", "Eager", "Lazy"],
+            "rows": [
+              ["Data fetching", "Immediate", "On demand"],
+              ["SQL queries", "Heavy", "Controlled"],
+              ["Memory usage", "High", "Optimized"],
+              ["Risk", "Performance issues", "LazyInitializationException"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/spring/eager-vs-lazy-comparison.svg",
+          "alt": "Eager vs Lazy Comparison",
+          "caption": "Spring beans vs JPA entities side‑by‑side"
+        }
+      ]
+    },
+    {
+      "title": "✅ Best Practices (Real World)",
+      "content": "Rule of thumb: Eager in Spring (carefully), Lazy in JPA (almost always).",
+      "subsections": [
+        {
+          "title": "Spring",
+          "content": "Keep default eager loading, use @Lazy selectively, avoid lazy for core infrastructure beans.",
+          "table": {
+            "headers": ["Practice", "Why"],
+            "rows": [
+              ["Default eager for core", "Fail fast and stable startup"],
+              ["Lazy for heavy beans", "Save memory & time"],
+              ["Avoid lazy for critical beans", "Prevent runtime surprises"]
+            ]
+          }
+        },
+        {
+          "title": "JPA / Hibernate",
+          "content": "Prefer LAZY for associations, control fetching with queries, use DTOs for APIs.",
+          "table": {
+            "headers": ["Practice", "Why"],
+            "rows": [
+              ["Prefer LAZY", "Avoid huge joins"],
+              ["Use fetch joins", "Load what you need"],
+              ["DTO projections", "Return only required data"],
+              ["Transactional access", "Avoid LazyInitializationException"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "🧠 Interview‑Ready One‑Liners",
+      "content": "• Spring uses eager loading by default for singleton beans.\n• Lazy loading defers object creation until needed.\n• JPA eager fetching can cause performance issues.\n• LazyInitializationException happens outside the persistence context.\n• Fetch strategies depend on use case.",
+      "images": [
+        {
+          "url": "assets/images/spring/eager-vs-lazy-summary.svg",
+          "alt": "Eager vs Lazy Summary",
+          "caption": "Quick interview revision snapshot"
+        }
+      ]
+    },
+    {
+      "title": "🏁 Final Thoughts",
+      "content": "Eager vs Lazy isn’t about *which is better*—it’s about *when to use which*.\n\nSmart host rule 😄 Don’t cook the entire buffet if guests may not eat. Don’t wait too long if everyone is hungry.",
+      "images": [
+        {
+          "url": "assets/images/spring/eager-vs-lazy-final.svg",
+          "alt": "Final Thoughts",
+          "caption": "Balance performance and usability with the right strategy"
+        }
+      ]
+    }
+  ],
+  "keyPoints": [
+    "Eager loads immediately; lazy loads on demand",
+    "Spring beans are eager by default; @Lazy defers creation",
+    "JPA eager fetching can cause heavy joins and memory spikes",
+    "LazyInitializationException occurs outside persistence context",
+    "Use lazy selectively in Spring, and prefer lazy for JPA associations"
+  ],
+  "references": [
+    "Spring Framework Reference - Core Container",
+    "Hibernate ORM Documentation - Fetching",
+    "Spring Data JPA Reference"
+  ],
+  "interviewQA": [
+    {
+      "question": "What is eager loading?",
+      "answer": "Eager loading creates/fetches data immediately (startup for beans, immediate fetch for entities), improving runtime access but increasing startup time or SQL load."
+    },
+    {
+      "question": "What is lazy loading?",
+      "answer": "Lazy loading defers creation/fetching until first use, improving startup time and memory usage but risking runtime delays or LazyInitializationException."
+    },
+    {
+      "question": "When should you use lazy loading in Spring?",
+      "answer": "Use @Lazy for heavy or rarely used beans; avoid it for critical infrastructure beans that should fail fast at startup."
+    },
+    {
+      "question": "Why is EAGER risky in JPA?",
+      "answer": "It can produce heavy joins, N+1 queries, and memory spikes by fetching large graphs eagerly."
+    }
+  ]
+}

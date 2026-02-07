@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <text x="600" y="90" text-anchor="middle" font-family="Segoe UI, Arial" font-size="38" fill="#e2e8f0">Spring Beans: Eager vs Lazy</text>
+  <text x="600" y="130" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" fill="#94a3b8">Startup vs On‑Demand</text>
+
+  <g font-family="Segoe UI, Arial" fill="#e2e8f0" text-anchor="middle">
+    <rect x="120" y="200" width="420" height="140" rx="14" fill="#1f2937" stroke="#f59e0b"/>
+    <text x="330" y="250">Startup</text>
+    <text x="330" y="280" font-size="16" fill="#94a3b8">Create all singletons</text>
+
+    <rect x="660" y="200" width="420" height="140" rx="14" fill="#1f2937" stroke="#22c55e"/>
+    <text x="870" y="250">First Use</text>
+    <text x="870" y="280" font-size="16" fill="#94a3b8">Create on demand</text>
+
+    <rect x="120" y="380" width="420" height="200" rx="16" fill="#0b1220" stroke="#f59e0b"/>
+    <text x="330" y="430">Eager Beans</text>
+    <text x="330" y="470" font-size="28">⚡</text>
+
+    <rect x="660" y="380" width="420" height="200" rx="16" fill="#0b1220" stroke="#22c55e"/>
+    <text x="870" y="430">Lazy Beans</text>
+    <text x="870" y="470" font-size="28">🐢</text>
+  </g>
+</svg>

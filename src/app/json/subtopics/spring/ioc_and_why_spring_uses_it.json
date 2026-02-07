@@ -19,6 +19,14 @@
     {
       "title": "🚫 The Problem: Traditional Approach (Tightly Coupled Code)",
       "content": "Let's see what happens when YOU are in control of everything. Here's a classic example of tightly coupled code that creates maintenance nightmares.",
+      "codeExamples": [
+        {
+          "title": "❌ Tightly Coupled Code - The Nightmare",
+          "description": "UserService is tightly coupled to MySQLUserRepository, creating maintenance and testing nightmares.",
+          "code": "// UserService is tightly coupled to MySQLUserRepository\npublic class UserService {\n    private MySQLUserRepository userRepository;\n    \n    public UserService() {\n        // UserService is creating its own dependency\n        // This is TIGHT COUPLING!\n        this.userRepository = new MySQLUserRepository();\n    }\n    \n    public User findUser(Long id) {\n        return userRepository.findById(id);\n    }\n}\n\n// In your application\npublic class Application {\n    public static void main(String[] args) {\n        UserService service = new UserService();\n        User user = service.findUser(1L);\n    }\n}",
+          "language": "java"
+        }
+      ],
       "subsections": [
         {
           "title": "😱 What's Wrong with This Code?",
@@ -36,14 +44,6 @@
               ["Maintainability", "Nightmare for large apps", "Scales beautifully"]
             ]
           }
-        }
-      ],
-      "codeExamples": [
-        {
-          "title": "❌ Tightly Coupled Code - The Nightmare",
-          "description": "UserService is tightly coupled to MySQLUserRepository, creating maintenance and testing nightmares.",
-          "code": "// UserService is tightly coupled to MySQLUserRepository\npublic class UserService {\n    private MySQLUserRepository userRepository;\n    \n    public UserService() {\n        // UserService is creating its own dependency\n        // This is TIGHT COUPLING!\n        this.userRepository = new MySQLUserRepository();\n    }\n    \n    public User findUser(Long id) {\n        return userRepository.findById(id);\n    }\n}\n\n// In your application\npublic class Application {\n    public static void main(String[] args) {\n        UserService service = new UserService();\n        User user = service.findUser(1L);\n    }\n}",
-          "language": "java"
         }
       ]
     },

@@ -1,0 +1,245 @@
+{
+  "name": "ApplicationContext vs BeanFactory in Spring",
+  "overview": "🏭 Same family, very different personalities! If Spring containers were workplaces: BeanFactory is a small workshop that only works when asked, while ApplicationContext is a huge smart factory/shopping mall with everything ready before you walk in. This guide keeps the comparison fun, clear, and interview‑safe.",
+  "sections": [
+    {
+      "title": "🏭 Big Picture: Two Containers, Two Vibes",
+      "content": "BeanFactory is the basic IoC container: lightweight, minimal, lazy by default. ApplicationContext extends BeanFactory and adds enterprise features like events, AOP, i18n, and resource loading.\n\nFunny truth 😄 BeanFactory walked so ApplicationContext could run 🏃‍♂️.",
+      "images": [
+        {
+          "url": "assets/images/spring/beanfactory-vs-applicationcontext.svg",
+          "alt": "BeanFactory vs ApplicationContext Overview",
+          "caption": "High‑level comparison of the two Spring containers"
+        }
+      ]
+    },
+    {
+      "title": "🔹 What is BeanFactory?",
+      "content": "BeanFactory is the basic IoC container in Spring. It creates beans, manages dependencies, and uses lazy initialization by default.\n\nAnalogy 😄 BeanFactory is like a roadside tea stall ☕—tea is made only when you order.",
+      "subsections": [
+        {
+          "title": "Key Characteristics",
+          "content": "Lightweight, minimal features, beans created on demand, used mostly in simple or memory‑constrained environments.",
+          "table": {
+            "headers": ["Trait", "BeanFactory"],
+            "rows": [
+              ["Initialization", "Lazy by default"],
+              ["Features", "Minimal"],
+              ["Use case", "Small/simple apps"],
+              ["Typical usage", "Rare in modern apps"]
+            ]
+          }
+        },
+        {
+          "title": "Interview Line 💡",
+          "content": "“BeanFactory is the basic container that provides core DI functionality.”"
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/spring/beanfactory-lazy-loading.svg",
+          "alt": "BeanFactory Lazy Loading",
+          "caption": "Beans are created only when requested (getBean)"
+        }
+      ]
+    },
+    {
+      "title": "🔹 What is ApplicationContext?",
+      "content": "ApplicationContext is an advanced IoC container that extends BeanFactory. It includes all BeanFactory features *plus* enterprise‑level capabilities like events, AOP, i18n, and resource loading.\n\nAnalogy 😄 ApplicationContext is a full shopping mall 🏬—lights on, shops open, escalators running.",
+      "subsections": [
+        {
+          "title": "What ApplicationContext Adds",
+          "content": "Eager bean initialization, event handling, AOP integration, internationalization, resource loading, and better annotation support.",
+          "table": {
+            "headers": ["Capability", "ApplicationContext"],
+            "rows": [
+              ["Initialization", "Eager by default"],
+              ["Events", "Supported"],
+              ["AOP", "Supported"],
+              ["i18n", "Supported"],
+              ["Resource loading", "Advanced"],
+              ["Typical usage", "Very common (Spring Boot)"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/spring/applicationcontext-features.svg",
+          "alt": "ApplicationContext Features",
+          "caption": "Enterprise features layered on top of BeanFactory"
+        }
+      ]
+    },
+    {
+      "title": "🔄 Relationship Between Them",
+      "content": "ApplicationContext extends BeanFactory. BeanFactory is the foundation, ApplicationContext is the upgrade.\n\nAnalogy 😄 BeanFactory = basic assistant, ApplicationContext = personal assistant + manager + HR.",
+      "images": [
+        {
+          "url": "assets/images/spring/container-inheritance-diagram.svg",
+          "alt": "Container Inheritance",
+          "caption": "ApplicationContext extends BeanFactory"
+        }
+      ]
+    },
+    {
+      "title": "⚙️ Bean Instantiation Strategy (Lazy vs Eager)",
+      "content": "BeanFactory uses lazy loading by default; beans are created only when getBean() is called. ApplicationContext eagerly loads singleton beans at startup.\n\nInterview tip 💡 “ApplicationContext fails fast; BeanFactory fails late.”",
+      "subsections": [
+        {
+          "title": "Lazy vs Eager Summary",
+          "content": "Lazy loading saves startup time but may hide errors until runtime. Eager loading catches configuration issues early.",
+          "table": {
+            "headers": ["Container", "Default Strategy", "Analogy"],
+            "rows": [
+              ["BeanFactory", "Lazy", "Cook when ordered 🍳"],
+              ["ApplicationContext", "Eager", "Buffet ready 🍱"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/spring/lazy-vs-eager-beans.svg",
+          "alt": "Lazy vs Eager Loading",
+          "caption": "Startup vs runtime behavior in each container"
+        }
+      ]
+    },
+    {
+      "title": "🧩 Feature‑by‑Feature Comparison (Interview Gold 💎)",
+      "content": "Quick comparison that interviewers love.",
+      "subsections": [
+        {
+          "title": "Feature Table",
+          "content": "BeanFactory is basic; ApplicationContext is advanced.",
+          "table": {
+            "headers": ["Feature", "BeanFactory", "ApplicationContext"],
+            "rows": [
+              ["Container type", "Basic", "Advanced"],
+              ["Bean instantiation", "Lazy", "Eager (default)"],
+              ["Dependency Injection", "Yes", "Yes"],
+              ["Autowiring annotations", "Limited", "Full support"],
+              ["AOP integration", "No", "Yes"],
+              ["Event handling", "No", "Yes"],
+              ["Internationalization (i18n)", "No", "Yes"],
+              ["Resource loading", "Basic", "Advanced"],
+              ["Enterprise readiness", "Low", "High"],
+              ["Common usage", "Rare", "Very common"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/spring/feature-comparison-table.svg",
+          "alt": "Feature Comparison",
+          "caption": "Side‑by‑side view of container capabilities"
+        }
+      ]
+    },
+    {
+      "title": "📢 Events, AOP, i18n, Resources (Why AppContext Wins)",
+      "content": "ApplicationContext supports events, AOP, i18n, and resource loading out of the box. BeanFactory doesn’t.\n\nAnalogy 😄 BeanFactory = no CCTV. ApplicationContext = CCTV + alarm + security guards 🚨.",
+      "subsections": [
+        {
+          "title": "Mini‑Examples",
+          "content": "Events: context started/refreshed events.\nAOP: transactions, logging, security.\ni18n: message sources by locale.\nResources: classpath, filesystem, URL loading.",
+          "table": {
+            "headers": ["Capability", "ApplicationContext Benefit"],
+            "rows": [
+              ["Events", "Publish & listen to app events"],
+              ["AOP", "Cross‑cutting concerns"],
+              ["i18n", "Locale‑aware messages"],
+              ["Resources", "Unified resource loading"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/spring/applicationcontext-enterprise-features.svg",
+          "alt": "Enterprise Features",
+          "caption": "Why ApplicationContext is preferred for real apps"
+        }
+      ]
+    },
+    {
+      "title": "🧠 When Should You Use What?",
+      "content": "Use BeanFactory only when you need minimal features or memory is extremely limited (rare). Use ApplicationContext for most apps, especially Spring Boot, AOP, events, and annotations.\n\nReality check 😄 99% of Spring apps use ApplicationContext.",
+      "subsections": [
+        {
+          "title": "Quick Decision Table",
+          "content": "Choose the container based on your needs.",
+          "table": {
+            "headers": ["Scenario", "Best Choice"],
+            "rows": [
+              ["Minimal features, low memory", "BeanFactory"],
+              ["Enterprise app or Spring Boot", "ApplicationContext"],
+              ["Need AOP/events/i18n", "ApplicationContext"],
+              ["Modern annotation‑heavy apps", "ApplicationContext"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "⚡ Quick Revision Table",
+      "content": "Memorize these for interviews.",
+      "subsections": [
+        {
+          "title": "Rapid‑Fire Answers",
+          "content": "Short answers, big confidence.",
+          "table": {
+            "headers": ["Question", "Answer"],
+            "rows": [
+              ["Which is basic?", "BeanFactory"],
+              ["Which is advanced?", "ApplicationContext"],
+              ["Lazy loading by default?", "BeanFactory"],
+              ["Enterprise‑ready?", "ApplicationContext"],
+              ["Common in Spring Boot?", "ApplicationContext"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "🏁 Final Thoughts",
+      "content": "BeanFactory = bare minimum to survive. ApplicationContext = fully equipped to thrive 😄.\n\nOnce you understand this comparison, Spring architecture makes sense and interviews become much less scary.",
+      "images": [
+        {
+          "url": "assets/images/spring/beanfactory-vs-appcontext-summary.svg",
+          "alt": "Summary Diagram",
+          "caption": "Quick visual summary of the comparison"
+        }
+      ]
+    }
+  ],
+  "keyPoints": [
+    "BeanFactory is the basic IoC container with lazy initialization by default",
+    "ApplicationContext extends BeanFactory and adds enterprise features",
+    "ApplicationContext eagerly loads singleton beans by default",
+    "BeanFactory is rarely used in modern Spring apps",
+    "ApplicationContext supports events, AOP, i18n, and advanced resource loading",
+    "Interview tip: ApplicationContext fails fast; BeanFactory fails late"
+  ],
+  "references": [
+    "Spring Framework Reference - Core Container (Beans, Context)",
+    "Spring Framework Documentation - IoC Container",
+    "Spring in Action by Craig Walls"
+  ],
+  "interviewQA": [
+    {
+      "question": "What is the difference between BeanFactory and ApplicationContext?",
+      "answer": "BeanFactory is the basic IoC container with lazy initialization and minimal features. ApplicationContext extends it and adds enterprise capabilities like events, AOP, i18n, and resource loading."
+    },
+    {
+      "question": "Why is ApplicationContext used more often?",
+      "answer": "It provides richer features, eager singleton initialization, better annotation support, events, AOP, and resource loading—making it ideal for real‑world applications and Spring Boot."
+    },
+    {
+      "question": "What does “ApplicationContext fails fast” mean?",
+      "answer": "It eagerly creates singleton beans at startup, catching configuration errors early, whereas BeanFactory creates beans only when requested and may fail later at runtime."
+    }
+  ]
+}

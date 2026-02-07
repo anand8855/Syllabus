@@ -13,7 +13,11 @@ import {
   firstJavaProgramContent,
   keywordsAndIdentifiersContent,
   iocAndWhySpringUsesItContent,
-  dependencyInjectionContent
+  dependencyInjectionContent,
+  springBeenLifecycleInternalContent,
+  applicationContextVsBeanFactoryContent,
+  eagerVsLazyLoadingContent,
+  beanScopeContent
 } from './subtopic-mapper';
 
 @Injectable({
@@ -37,7 +41,11 @@ export class SubtopicContentService {
 
     // Spring 
     'What is IoC and why Spring uses it': iocAndWhySpringUsesItContent,
-    'What problem does DI solve?': dependencyInjectionContent
+    'What problem does DI solve?': dependencyInjectionContent,
+    'How Spring creates and injects beans internally': springBeenLifecycleInternalContent,
+    'ApplicationContext vs BeanFactory': applicationContextVsBeanFactoryContent,
+    'Eager vs Lazy loading - When to use which?':eagerVsLazyLoadingContent,
+    'Bean Scopes (Singleton, Prototype, Request, Session, Application)': beanScopeContent,
     // Add more mappings as you create new subtopic files:
     // 'Checked vs Unchecked Exceptions': checkedVsUncheckedContent,
     // 'try–catch–finally': tryCatchFinallyContent,

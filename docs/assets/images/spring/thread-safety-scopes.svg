@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <text x="600" y="90" text-anchor="middle" font-family="Segoe UI, Arial" font-size="40" fill="#e2e8f0">Thread Safety by Scope</text>
+  <text x="600" y="130" text-anchor="middle" font-family="Segoe UI, Arial" font-size="18" fill="#94a3b8">Shared vs isolated instances</text>
+
+  <rect x="140" y="200" width="420" height="320" rx="20" fill="#111827" stroke="#ef4444"/>
+  <rect x="640" y="200" width="420" height="320" rx="20" fill="#111827" stroke="#22c55e"/>
+  <text x="350" y="250" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#fecaca">Risky (Shared State)</text>
+  <text x="850" y="250" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#bbf7d0">Safer (Isolated)</text>
+  <text x="350" y="320" text-anchor="middle" font-family="Segoe UI, Arial" font-size="16" fill="#e2e8f0">Singleton • Application</text>
+  <text x="850" y="320" text-anchor="middle" font-family="Segoe UI, Arial" font-size="16" fill="#e2e8f0">Prototype • Request</text>
+  <text x="850" y="360" text-anchor="middle" font-family="Segoe UI, Arial" font-size="16" fill="#e2e8f0">Session (per user)</text>
+</svg>

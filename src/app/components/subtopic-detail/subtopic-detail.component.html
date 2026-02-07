@@ -27,6 +27,20 @@
         <h2>{{ i + 1 }}. {{ section.title }}</h2>
         <div class="section-content" [innerHTML]="formatContent(section.content)"></div>
 
+        <!-- Code Examples within Section -->
+        <div *ngIf="section.codeExamples && section.codeExamples.length > 0" class="section-code-examples">
+          <div *ngFor="let example of section.codeExamples" class="code-example">
+            <h3>{{ example.title }}</h3>
+            <p *ngIf="example.description" class="code-description">{{ example.description }}</p>
+            <div class="code-block">
+              <div class="code-header">
+                <span class="language-badge">{{ example.language }}</span>
+              </div>
+              <pre><code>{{ example.code }}</code></pre>
+            </div>
+          </div>
+        </div>
+
         <!-- Subsections -->
         <div *ngIf="section.subsections && section.subsections.length > 0" class="subsections">
           <div *ngFor="let subsection of section.subsections" class="subsection">
@@ -56,20 +70,6 @@
           <div *ngFor="let image of section.images" class="image-container">
             <img [src]="image.url" [alt]="image.alt" class="content-image">
             <p *ngIf="image.caption" class="image-caption">{{ image.caption }}</p>
-          </div>
-        </div>
-
-        <!-- Code Examples within Section -->
-        <div *ngIf="section.codeExamples && section.codeExamples.length > 0" class="section-code-examples">
-          <div *ngFor="let example of section.codeExamples" class="code-example">
-            <h3>{{ example.title }}</h3>
-            <p *ngIf="example.description" class="code-description">{{ example.description }}</p>
-            <div class="code-block">
-              <div class="code-header">
-                <span class="language-badge">{{ example.language }}</span>
-              </div>
-              <pre><code>{{ example.code }}</code></pre>
-            </div>
           </div>
         </div>
       </div>
