@@ -16,7 +16,7 @@
     <ul class="sub-topics">
       <li *ngFor="let subTopic of topic.subTopics" 
           class="subtopic-item"
-          (click)="navigateToSubtopic(subTopic.name)">
+          (click)="navigateToSubtopic(subTopic)">
         {{ subTopic.name }}
       </li>
     </ul>

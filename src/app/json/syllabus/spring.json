@@ -7,87 +7,244 @@
       {
         "name": "Inversion of Control (IoC) & Dependency Injection (DI)",
         "subTopics": [
-          { "name": "What is IoC and why Spring uses it" },
-          { "name": "What problem does DI solve?" },
-          { "name": "How Spring creates and injects beans internally" },
-          { "name": "ApplicationContext vs BeanFactory" },
-          { "name": "Eager vs Lazy loading - When to use which?" },
-          { "name": "Bean Scopes (Singleton, Prototype, Request, Session, Application)" },
-          { "name": "Why prototype beans don't get destroyed automatically?" },
-          { "name": "Bean Lifecycle (@PostConstruct, @PreDestroy)" },
-          { "name": "Complete bean lifecycle steps" },
-          { "name": "Bean Initialization and Destruction callbacks" },
-          { "name": "Aware Interfaces (BeanNameAware, ApplicationContextAware)" },
-          { "name": "Configuration Styles: Java-based (@Configuration), Annotation-based (@Component), XML" },
-          { "name": "Dependency Injection types: Constructor (WHY preferred) vs Setter vs Field (WHY discouraged)" },
-          { "name": "Autowiring modes and @Qualifier usage" },
-          { "name": "@Primary vs @Qualifier" }
-        ]
+          {
+            "name": "What is IoC and why Spring uses it",
+            "id": "what_is_ioc_and_why_spring_uses_it"
+          },
+          {
+            "name": "What problem does DI solve?",
+            "id": "what_problem_does_di_solve"
+          },
+          {
+            "name": "How Spring creates and injects beans internally",
+            "id": "how_spring_creates_and_injects_beans_internally"
+          },
+          {
+            "name": "ApplicationContext vs BeanFactory",
+            "id": "applicationcontext_vs_beanfactory"
+          },
+          {
+            "name": "Eager vs Lazy loading - When to use which?",
+            "id": "eager_vs_lazy_loading_when_to_use_which"
+          },
+          {
+            "name": "Bean Scopes (Singleton, Prototype, Request, Session, Application)",
+            "id": "bean_scopes_singleton_prototype_request_session_application"
+          },
+          {
+            "name": "Why prototype beans don't get destroyed automatically?",
+            "id": "why_prototype_beans_don_t_get_destroyed_automatically"
+          },
+          {
+            "name": "Bean Lifecycle (@PostConstruct, @PreDestroy)",
+            "id": "bean_lifecycle_postconstruct_predestroy"
+          },
+          {
+            "name": "Complete bean lifecycle steps",
+            "id": "complete_bean_lifecycle_steps"
+          },
+          {
+            "name": "Bean Initialization and Destruction callbacks",
+            "id": "bean_initialization_and_destruction_callbacks"
+          },
+          {
+            "name": "Aware Interfaces (BeanNameAware, ApplicationContextAware)",
+            "id": "aware_interfaces_beannameaware_applicationcontextaware"
+          },
+          {
+            "name": "Configuration Styles: Java-based (@Configuration), Annotation-based (@Component), XML",
+            "id": "configuration_styles_java_based_configuration_annotation_based_component_xml"
+          },
+          {
+            "name": "Dependency Injection types: Constructor (WHY preferred) vs Setter vs Field (WHY discouraged)",
+            "id": "dependency_injection_types_constructor_why_preferred_vs_setter_vs_field_why_discouraged"
+          },
+          {
+            "name": "Autowiring modes and @Qualifier usage",
+            "id": "autowiring_modes_and_qualifier_usage"
+          },
+          {
+            "name": "@Primary vs @Qualifier",
+            "id": "primary_vs_qualifier"
+          }
+        ],
+        "id": "inversion_of_control_ioc_and_dependency_injection_di"
       },
       {
         "name": "Spring Bean Management",
         "subTopics": [
-          { "name": "@Component, @Service, @Repository, @Controller" },
-          { "name": "Why @Repository exists (exception translation)" },
-          { "name": "@Configuration vs @Component" },
-          { "name": "@Bean vs @Component" },
-          { "name": "Bean Naming Strategies" },
-          { "name": "Lazy vs Eager Initialization" },
-          { "name": "@DependsOn annotation" },
-          { "name": "BeanFactoryPostProcessor vs BeanPostProcessor" },
-          { "name": "Real-time use cases for BeanPostProcessor and BeanFactoryPostProcessor" }
-        ]
+          {
+            "name": "@Component, @Service, @Repository, @Controller",
+            "id": "component_service_repository_controller"
+          },
+          {
+            "name": "Why @Repository exists (exception translation)",
+            "id": "why_repository_exists_exception_translation"
+          },
+          {
+            "name": "@Configuration vs @Component",
+            "id": "configuration_vs_component"
+          },
+          {
+            "name": "@Bean vs @Component",
+            "id": "bean_vs_component"
+          },
+          {
+            "name": "Bean Naming Strategies",
+            "id": "bean_naming_strategies"
+          },
+          {
+            "name": "Lazy vs Eager Initialization",
+            "id": "lazy_vs_eager_initialization"
+          },
+          {
+            "name": "@DependsOn annotation",
+            "id": "dependson_annotation"
+          },
+          {
+            "name": "BeanFactoryPostProcessor vs BeanPostProcessor",
+            "id": "beanfactorypostprocessor_vs_beanpostprocessor"
+          },
+          {
+            "name": "Real-time use cases for BeanPostProcessor and BeanFactoryPostProcessor",
+            "id": "real_time_use_cases_for_beanpostprocessor_and_beanfactorypostprocessor"
+          }
+        ],
+        "id": "spring_bean_management"
       },
       {
         "name": "Autowiring & Bean Resolution",
         "subTopics": [
-          { "name": "How Spring resolves dependency when multiple beans of same type" },
-          { "name": "@Autowired working internally" },
-          { "name": "Required = false (deprecated behavior)" },
-          { "name": "Circular Dependency - Constructor vs Setter injection case" },
-          { "name": "Why constructor injection fails for circular dependency" }
-        ]
+          {
+            "name": "How Spring resolves dependency when multiple beans of same type",
+            "id": "how_spring_resolves_dependency_when_multiple_beans_of_same_type"
+          },
+          {
+            "name": "@Autowired working internally",
+            "id": "autowired_working_internally"
+          },
+          {
+            "name": "Required = false (deprecated behavior)",
+            "id": "required_false_deprecated_behavior"
+          },
+          {
+            "name": "Circular Dependency - Constructor vs Setter injection case",
+            "id": "circular_dependency_constructor_vs_setter_injection_case"
+          },
+          {
+            "name": "Why constructor injection fails for circular dependency",
+            "id": "why_constructor_injection_fails_for_circular_dependency"
+          }
+        ],
+        "id": "autowiring_and_bean_resolution"
       },
       {
         "name": "Spring Expression Language (SpEL)",
         "subTopics": [
-          { "name": "SpEL basics and syntax" },
-          { "name": "Using SpEL with @Value" },
-          { "name": "Accessing beans, properties, collections via SpEL" }
-        ]
+          {
+            "name": "SpEL basics and syntax",
+            "id": "spel_basics_and_syntax"
+          },
+          {
+            "name": "Using SpEL with @Value",
+            "id": "using_spel_with_value"
+          },
+          {
+            "name": "Accessing beans, properties, collections via SpEL",
+            "id": "accessing_beans_properties_collections_via_spel"
+          }
+        ],
+        "id": "spring_expression_language_spel"
       },
       {
         "name": "Aspect-Oriented Programming (AOP)",
         "subTopics": [
-          { "name": "What is AOP? Why needed?" },
-          { "name": "Cross-cutting concerns (Logging, Transaction management)" },
-          { "name": "Aspect, Advice, Pointcut, JoinPoint" },
-          { "name": "Types of Advice (Before, After, Around, AfterReturning, AfterThrowing)" },
-          { "name": "Annotations: @Before, @After, @Around (MOST IMPORTANT), @AfterReturning, @AfterThrowing" },
-          { "name": "Pointcut expressions execution(), within()" },
-          { "name": "Proxy Mechanism - JDK Dynamic Proxy vs CGLIB" },
-          { "name": "Why interface-based proxy preferred?" },
-          { "name": "Self-invocation problem in Spring AOP" },
-          { "name": "Transaction & AOP relation" },
-          { "name": "Why @Transactional uses AOP" },
-          { "name": "Why private methods don't work with @Transactional" }
-        ]
+          {
+            "name": "What is AOP? Why needed?",
+            "id": "what_is_aop_why_needed"
+          },
+          {
+            "name": "Cross-cutting concerns (Logging, Transaction management)",
+            "id": "cross_cutting_concerns_logging_transaction_management"
+          },
+          {
+            "name": "Aspect, Advice, Pointcut, JoinPoint",
+            "id": "aspect_advice_pointcut_joinpoint"
+          },
+          {
+            "name": "Types of Advice (Before, After, Around, AfterReturning, AfterThrowing)",
+            "id": "types_of_advice_before_after_around_afterreturning_afterthrowing"
+          },
+          {
+            "name": "Annotations: @Before, @After, @Around (MOST IMPORTANT), @AfterReturning, @AfterThrowing",
+            "id": "annotations_before_after_around_most_important_afterreturning_afterthrowing"
+          },
+          {
+            "name": "Pointcut expressions execution(), within()",
+            "id": "pointcut_expressions_execution_within"
+          },
+          {
+            "name": "Proxy Mechanism - JDK Dynamic Proxy vs CGLIB",
+            "id": "proxy_mechanism_jdk_dynamic_proxy_vs_cglib"
+          },
+          {
+            "name": "Why interface-based proxy preferred?",
+            "id": "why_interface_based_proxy_preferred"
+          },
+          {
+            "name": "Self-invocation problem in Spring AOP",
+            "id": "self_invocation_problem_in_spring_aop"
+          },
+          {
+            "name": "Transaction & AOP relation",
+            "id": "transaction_and_aop_relation"
+          },
+          {
+            "name": "Why @Transactional uses AOP",
+            "id": "why_transactional_uses_aop"
+          },
+          {
+            "name": "Why private methods don't work with @Transactional",
+            "id": "why_private_methods_don_t_work_with_transactional"
+          }
+        ],
+        "id": "aspect_oriented_programming_aop"
       },
       {
         "name": "Spring Events",
         "subTopics": [
-          { "name": "ApplicationEvent and ApplicationListener" },
-          { "name": "Custom Events" },
-          { "name": "@EventListener annotation" }
-        ]
+          {
+            "name": "ApplicationEvent and ApplicationListener",
+            "id": "applicationevent_and_applicationlistener"
+          },
+          {
+            "name": "Custom Events",
+            "id": "custom_events"
+          },
+          {
+            "name": "@EventListener annotation",
+            "id": "eventlistener_annotation"
+          }
+        ],
+        "id": "spring_events"
       },
       {
         "name": "Spring Profiles & Environment",
         "subTopics": [
-          { "name": "@Profile usage" },
-          { "name": "Environment abstraction" },
-          { "name": "PropertySource and Property resolution" }
-        ]
+          {
+            "name": "@Profile usage",
+            "id": "profile_usage"
+          },
+          {
+            "name": "Environment abstraction",
+            "id": "environment_abstraction"
+          },
+          {
+            "name": "PropertySource and Property resolution",
+            "id": "propertysource_and_property_resolution"
+          }
+        ],
+        "id": "spring_profiles_and_environment"
       }
     ]
   },
@@ -99,49 +256,120 @@
       {
         "name": "Spring MVC Architecture",
         "subTopics": [
-          { "name": "DispatcherServlet workflow (VERY COMMON)" },
-          { "name": "Front Controller Pattern" },
-          { "name": "HandlerMapping role" },
-          { "name": "Controller, ViewResolver, Model" }
-        ]
+          {
+            "name": "DispatcherServlet workflow (VERY COMMON)",
+            "id": "dispatcherservlet_workflow_very_common"
+          },
+          {
+            "name": "Front Controller Pattern",
+            "id": "front_controller_pattern"
+          },
+          {
+            "name": "HandlerMapping role",
+            "id": "handlermapping_role"
+          },
+          {
+            "name": "Controller, ViewResolver, Model",
+            "id": "controller_viewresolver_model"
+          }
+        ],
+        "id": "spring_mvc_architecture"
       },
       {
         "name": "Controller Development",
         "subTopics": [
-          { "name": "@Controller vs @RestController" },
-          { "name": "@RequestMapping vs @GetMapping, @PostMapping" },
-          { "name": "@PathVariable vs @RequestParam" },
-          { "name": "@RequestBody vs @ResponseBody" },
-          { "name": "@RequestBody vs @ModelAttribute" }
-        ]
+          {
+            "name": "@Controller vs @RestController",
+            "id": "controller_vs_restcontroller"
+          },
+          {
+            "name": "@RequestMapping vs @GetMapping, @PostMapping",
+            "id": "requestmapping_vs_getmapping_postmapping"
+          },
+          {
+            "name": "@PathVariable vs @RequestParam",
+            "id": "pathvariable_vs_requestparam"
+          },
+          {
+            "name": "@RequestBody vs @ResponseBody",
+            "id": "requestbody_vs_responsebody"
+          },
+          {
+            "name": "@RequestBody vs @ModelAttribute",
+            "id": "requestbody_vs_modelattribute"
+          }
+        ],
+        "id": "controller_development"
       },
       {
         "name": "Data Binding & Validation",
         "subTopics": [
-          { "name": "@ModelAttribute" },
-          { "name": "@ModelAttribute lifecycle" },
-          { "name": "BindingResult" },
-          { "name": "JSR-380 Bean Validation (@NotNull, @Size, @Email)" },
-          { "name": "Custom validators" }
-        ]
+          {
+            "name": "@ModelAttribute",
+            "id": "modelattribute"
+          },
+          {
+            "name": "@ModelAttribute lifecycle",
+            "id": "modelattribute_lifecycle"
+          },
+          {
+            "name": "BindingResult",
+            "id": "bindingresult"
+          },
+          {
+            "name": "JSR-380 Bean Validation (@NotNull, @Size, @Email)",
+            "id": "jsr_380_bean_validation_notnull_size_email"
+          },
+          {
+            "name": "Custom validators",
+            "id": "custom_validators"
+          }
+        ],
+        "id": "data_binding_and_validation"
       },
       {
         "name": "Exception Handling",
         "subTopics": [
-          { "name": "@ExceptionHandler" },
-          { "name": "@ControllerAdvice" },
-          { "name": "@ExceptionHandler vs @ControllerAdvice" },
-          { "name": "Global vs local exception handling" },
-          { "name": "Global Exception Handling Strategy and Best Practices" }
-        ]
+          {
+            "name": "@ExceptionHandler",
+            "id": "exceptionhandler"
+          },
+          {
+            "name": "@ControllerAdvice",
+            "id": "controlleradvice"
+          },
+          {
+            "name": "@ExceptionHandler vs @ControllerAdvice",
+            "id": "exceptionhandler_vs_controlleradvice"
+          },
+          {
+            "name": "Global vs local exception handling",
+            "id": "global_vs_local_exception_handling"
+          },
+          {
+            "name": "Global Exception Handling Strategy and Best Practices",
+            "id": "global_exception_handling_strategy_and_best_practices"
+          }
+        ],
+        "id": "exception_handling"
       },
       {
         "name": "View Technologies",
         "subTopics": [
-          { "name": "JSP integration" },
-          { "name": "Thymeleaf basics" },
-          { "name": "ViewResolver configuration" }
-        ]
+          {
+            "name": "JSP integration",
+            "id": "jsp_integration"
+          },
+          {
+            "name": "Thymeleaf basics",
+            "id": "thymeleaf_basics"
+          },
+          {
+            "name": "ViewResolver configuration",
+            "id": "viewresolver_configuration"
+          }
+        ],
+        "id": "view_technologies"
       }
     ]
   },
@@ -153,43 +381,110 @@
       {
         "name": "Spring JDBC",
         "subTopics": [
-          { "name": "JdbcTemplate" },
-          { "name": "RowMapper" },
-          { "name": "ResultSetExtractor" },
-          { "name": "Exception translation" }
-        ]
+          {
+            "name": "JdbcTemplate",
+            "id": "jdbctemplate"
+          },
+          {
+            "name": "RowMapper",
+            "id": "rowmapper"
+          },
+          {
+            "name": "ResultSetExtractor",
+            "id": "resultsetextractor"
+          },
+          {
+            "name": "Exception translation",
+            "id": "exception_translation"
+          }
+        ],
+        "id": "spring_jdbc"
       },
       {
         "name": "Spring ORM & JPA Integration",
         "subTopics": [
-          { "name": "JPA integration with Spring" },
-          { "name": "EntityManager vs Session" },
-          { "name": "@PersistenceContext" },
-          { "name": "Lazy vs Eager loading" },
-          { "name": "N+1 problem (VERY COMMON)" }
-        ]
+          {
+            "name": "JPA integration with Spring",
+            "id": "jpa_integration_with_spring"
+          },
+          {
+            "name": "EntityManager vs Session",
+            "id": "entitymanager_vs_session"
+          },
+          {
+            "name": "@PersistenceContext",
+            "id": "persistencecontext"
+          },
+          {
+            "name": "Lazy vs Eager loading",
+            "id": "lazy_vs_eager_loading"
+          },
+          {
+            "name": "N+1 problem (VERY COMMON)",
+            "id": "n_1_problem_very_common"
+          }
+        ],
+        "id": "spring_orm_and_jpa_integration"
       },
       {
         "name": "Transaction Management",
         "subTopics": [
-          { "name": "What is transaction management?" },
-          { "name": "Declarative vs Programmatic Transactions" },
-          { "name": "@Transactional annotation" },
-          { "name": "@Transactional working internally" },
-          { "name": "Propagation and Isolation levels" },
-          { "name": "Propagation types (REQUIRED, REQUIRES_NEW, etc.)" },
-          { "name": "Rollback rules" },
-          { "name": "Rollback - Checked vs Runtime exception" },
-          { "name": "Why @Transactional doesn't work on private methods" },
-          { "name": "Why @Transactional doesn't work on internal method calls" }
-        ]
+          {
+            "name": "What is transaction management?",
+            "id": "what_is_transaction_management"
+          },
+          {
+            "name": "Declarative vs Programmatic Transactions",
+            "id": "declarative_vs_programmatic_transactions"
+          },
+          {
+            "name": "@Transactional annotation",
+            "id": "transactional_annotation"
+          },
+          {
+            "name": "@Transactional working internally",
+            "id": "transactional_working_internally"
+          },
+          {
+            "name": "Propagation and Isolation levels",
+            "id": "propagation_and_isolation_levels"
+          },
+          {
+            "name": "Propagation types (REQUIRED, REQUIRES_NEW, etc.)",
+            "id": "propagation_types_required_requires_new_etc"
+          },
+          {
+            "name": "Rollback rules",
+            "id": "rollback_rules"
+          },
+          {
+            "name": "Rollback - Checked vs Runtime exception",
+            "id": "rollback_checked_vs_runtime_exception"
+          },
+          {
+            "name": "Why @Transactional doesn't work on private methods",
+            "id": "why_transactional_doesn_t_work_on_private_methods"
+          },
+          {
+            "name": "Why @Transactional doesn't work on internal method calls",
+            "id": "why_transactional_doesn_t_work_on_internal_method_calls"
+          }
+        ],
+        "id": "transaction_management"
       },
       {
         "name": "Exception Handling",
         "subTopics": [
-          { "name": "DataAccessException hierarchy" },
-          { "name": "Checked vs Runtime exceptions in Spring" }
-        ]
+          {
+            "name": "DataAccessException hierarchy",
+            "id": "dataaccessexception_hierarchy"
+          },
+          {
+            "name": "Checked vs Runtime exceptions in Spring",
+            "id": "checked_vs_runtime_exceptions_in_spring"
+          }
+        ],
+        "id": "exception_handling"
       }
     ]
   },
@@ -201,46 +496,108 @@
       {
         "name": "Core Concepts",
         "subTopics": [
-          { "name": "Authentication vs Authorization" },
-          { "name": "SecurityContext & SecurityContextHolder" },
-          { "name": "SecurityFilterChain & Filters" },
-          { "name": "Filter order importance" },
-          { "name": "UserDetailsService & PasswordEncoding (BCrypt)" },
-          { "name": "UserDetailsService flow" }
-        ]
+          {
+            "name": "Authentication vs Authorization",
+            "id": "authentication_vs_authorization"
+          },
+          {
+            "name": "SecurityContext & SecurityContextHolder",
+            "id": "securitycontext_and_securitycontextholder"
+          },
+          {
+            "name": "SecurityFilterChain & Filters",
+            "id": "securityfilterchain_and_filters"
+          },
+          {
+            "name": "Filter order importance",
+            "id": "filter_order_importance"
+          },
+          {
+            "name": "UserDetailsService & PasswordEncoding (BCrypt)",
+            "id": "userdetailsservice_and_passwordencoding_bcrypt"
+          },
+          {
+            "name": "UserDetailsService flow",
+            "id": "userdetailsservice_flow"
+          }
+        ],
+        "id": "core_concepts"
       },
       {
         "name": "Authentication Mechanisms",
         "subTopics": [
-          { "name": "Basic Auth & Form Login" },
-          { "name": "JWT (JSON Web Tokens): Implementation & Best Practices" },
-          { "name": "Stateless vs Stateful authentication" }
-        ]
+          {
+            "name": "Basic Auth & Form Login",
+            "id": "basic_auth_and_form_login"
+          },
+          {
+            "name": "JWT (JSON Web Tokens): Implementation & Best Practices",
+            "id": "jwt_json_web_tokens_implementation_and_best_practices"
+          },
+          {
+            "name": "Stateless vs Stateful authentication",
+            "id": "stateless_vs_stateful_authentication"
+          }
+        ],
+        "id": "authentication_mechanisms"
       },
       {
         "name": "OAuth2 & OpenID Connect (OIDC)",
         "subTopics": [
-          { "name": "Resource Server, Authorization Server, Client" },
-          { "name": "Social Login (Google, GitHub)" }
-        ]
+          {
+            "name": "Resource Server, Authorization Server, Client",
+            "id": "resource_server_authorization_server_client"
+          },
+          {
+            "name": "Social Login (Google, GitHub)",
+            "id": "social_login_google_github"
+          }
+        ],
+        "id": "oauth2_and_openid_connect_oidc"
       },
       {
         "name": "Authorization",
         "subTopics": [
-          { "name": "Role-based vs Authority-based access" },
-          { "name": "Role vs Authority" },
-          { "name": "hasRole vs hasAuthority" },
-          { "name": "Method Level Security (@PreAuthorize, @PostAuthorize)" }
-        ]
+          {
+            "name": "Role-based vs Authority-based access",
+            "id": "role_based_vs_authority_based_access"
+          },
+          {
+            "name": "Role vs Authority",
+            "id": "role_vs_authority"
+          },
+          {
+            "name": "hasRole vs hasAuthority",
+            "id": "hasrole_vs_hasauthority"
+          },
+          {
+            "name": "Method Level Security (@PreAuthorize, @PostAuthorize)",
+            "id": "method_level_security_preauthorize_postauthorize"
+          }
+        ],
+        "id": "authorization"
       },
       {
         "name": "Protection",
         "subTopics": [
-          { "name": "CORS (Cross-Origin Resource Sharing)" },
-          { "name": "CORS - browser vs server perspective" },
-          { "name": "CSRF (Cross-Site Request Forgery)" },
-          { "name": "CSRF - what, why, when to disable" }
-        ]
+          {
+            "name": "CORS (Cross-Origin Resource Sharing)",
+            "id": "cors_cross_origin_resource_sharing"
+          },
+          {
+            "name": "CORS - browser vs server perspective",
+            "id": "cors_browser_vs_server_perspective"
+          },
+          {
+            "name": "CSRF (Cross-Site Request Forgery)",
+            "id": "csrf_cross_site_request_forgery"
+          },
+          {
+            "name": "CSRF - what, why, when to disable",
+            "id": "csrf_what_why_when_to_disable"
+          }
+        ],
+        "id": "protection"
       }
     ]
   },
@@ -252,34 +609,74 @@
       {
         "name": "Spring Container & Initialization",
         "subTopics": [
-          { "name": "How Spring container starts" },
-          { "name": "ClassPath scanning" },
-          { "name": "Reflection usage in Spring" }
-        ]
+          {
+            "name": "How Spring container starts",
+            "id": "how_spring_container_starts"
+          },
+          {
+            "name": "ClassPath scanning",
+            "id": "classpath_scanning"
+          },
+          {
+            "name": "Reflection usage in Spring",
+            "id": "reflection_usage_in_spring"
+          }
+        ],
+        "id": "spring_container_and_initialization"
       },
       {
         "name": "Design Principles & Best Practices",
         "subTopics": [
-          { "name": "Why Spring prefers interfaces" },
-          { "name": "Immutable beans and thread safety" },
-          { "name": "Memory impact of singleton beans" }
-        ]
+          {
+            "name": "Why Spring prefers interfaces",
+            "id": "why_spring_prefers_interfaces"
+          },
+          {
+            "name": "Immutable beans and thread safety",
+            "id": "immutable_beans_and_thread_safety"
+          },
+          {
+            "name": "Memory impact of singleton beans",
+            "id": "memory_impact_of_singleton_beans"
+          }
+        ],
+        "id": "design_principles_and_best_practices"
       },
       {
         "name": "Spring Events",
         "subTopics": [
-          { "name": "ApplicationEvent and ApplicationListener" },
-          { "name": "Custom Events" },
-          { "name": "@EventListener annotation" }
-        ]
+          {
+            "name": "ApplicationEvent and ApplicationListener",
+            "id": "applicationevent_and_applicationlistener"
+          },
+          {
+            "name": "Custom Events",
+            "id": "custom_events"
+          },
+          {
+            "name": "@EventListener annotation",
+            "id": "eventlistener_annotation"
+          }
+        ],
+        "id": "spring_events"
       },
       {
         "name": "Spring Profiles & Environment",
         "subTopics": [
-          { "name": "@Profile usage" },
-          { "name": "Environment abstraction" },
-          { "name": "PropertySource and Property resolution" }
-        ]
+          {
+            "name": "@Profile usage",
+            "id": "profile_usage"
+          },
+          {
+            "name": "Environment abstraction",
+            "id": "environment_abstraction"
+          },
+          {
+            "name": "PropertySource and Property resolution",
+            "id": "propertysource_and_property_resolution"
+          }
+        ],
+        "id": "spring_profiles_and_environment"
       }
     ]
   }

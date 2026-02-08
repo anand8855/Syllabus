@@ -12,9 +12,12 @@ import { SubtopicContent } from '../../models/syllabus.model';
 })
 export class SubtopicDetailComponent implements OnInit {
   subtopicName: string = '';
+  subtopicId: string = '';
   topicName: string = '';
   sectionTitle: string = '';
+  technologyKey: string = '';
   content: SubtopicContent | null = null;
+  isLoading: boolean = false;
   showBackToTop: boolean = false;
 
   constructor(
@@ -26,12 +29,20 @@ export class SubtopicDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.subtopicName = params['subtopic'] || '';
+      this.subtopicName = params['subtopicName'] || params['subtopic'] || '';
+      this.subtopicId = params['subtopicId'] || '';
       this.topicName = params['topic'] || '';
       this.sectionTitle = params['section'] || '';
-      
-      // Load content for this subtopic
-      this.content = this.contentService.getSubtopicContent(this.subtopicName);
+      this.technologyKey = params['tech'] || '';
+
+      this.isLoading = true;
+      this.content = null;
+      this.contentService
+        .getSubtopicContent(this.technologyKey, this.sectionTitle, this.subtopicId)
+        .subscribe(content => {
+          this.content = content;
+          this.isLoading = false;
+        });
     });
   }
 

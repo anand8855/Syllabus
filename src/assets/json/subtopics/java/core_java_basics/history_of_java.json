@@ -25,7 +25,7 @@
       ],
       "images": [
         {
-          "url": "assets/images/green-team.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/history_of_java/green-team.svg",
           "alt": "The Green Team Members at Sun Microsystems",
           "caption": "The visionary team led by James Gosling who created Java - including Mike Sheridan, Patrick Naughton, and other core engineers"
         }
@@ -50,7 +50,7 @@
       ],
       "images": [
         {
-          "url": "assets/images/oak-to-java.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/history_of_java/oak-to-java.svg",
           "alt": "Oak to Java Naming History",
           "caption": "The story of how Java got its name - from Oak (1991) to Java (1995) during a coffee shop brainstorming session"
         }
@@ -83,7 +83,7 @@
       "content": "Java has evolved significantly over the years with major releases bringing revolutionary features.",
       "images": [
         {
-          "url": "assets/images/java-timeline.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/history_of_java/java-timeline.svg",
           "alt": "Java Evolution Timeline from 1991 to 2026",
           "caption": "Complete timeline showing Java's journey from Oak (1991) to modern LTS versions, highlighting major milestones and revolutionary releases"
         }
@@ -156,7 +156,7 @@
       "content": "Java stopped being 'old and boring' and started getting cool upgrades. Java went from 'verbose uncle' to 'fit gym-going uncle' 💪😄. Despite new languages popping up every year, Java remains strong.",
       "images": [
         {
-          "url": "assets/images/java-features-evolution.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/history_of_java/java-features-evolution.svg",
           "alt": "Evolution of Java Features from Java 5 to Java 21",
           "caption": "Key features introduced in major Java releases - from Generics in Java 5 to Virtual Threads in Java 21, showing how Java evolved to meet modern development needs"
         }
@@ -213,7 +213,7 @@
       "content": "Understanding the corporate history behind Java is crucial for its evolution.",
       "images": [
         {
-          "url": "assets/images/sun-oracle-acquisition.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/history_of_java/sun-oracle-acquisition.svg",
           "alt": "Timeline of Java from Sun Microsystems to Oracle",
           "caption": "The transition of Java from Sun Microsystems (1982-2010) to Oracle Corporation in 2010 for $7.4 billion, showing how Java evolved under different ownership"
         }
@@ -238,7 +238,7 @@
       "content": "Java's core principle that made it revolutionary and remains its biggest strength.",
       "images": [
         {
-          "url": "assets/images/wora-concept.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/history_of_java/wora-concept.svg",
           "alt": "Write Once Run Anywhere Concept Diagram",
           "caption": "Visual explanation of Java's WORA philosophy - how bytecode enables platform independence across Windows, Linux, and macOS through JVM"
         },
@@ -359,49 +359,81 @@
       "question": "Who created Java and when?",
       "answer": "James Gosling and the Green Team at Sun Microsystems created Java. Started as 'Oak' in 1991, renamed to Java and publicly released in 1995, with JDK 1.0 in January 1996.",
       "difficulty": "easy",
-      "tags": ["history", "creator", "timeline"]
+      "tags": [
+        "history",
+        "creator",
+        "timeline"
+      ]
     },
     {
       "question": "Why was Java originally created?",
       "answer": "Java was created for programming consumer electronic devices like interactive television and set-top boxes. They needed a platform-independent language simpler than C++ with automatic memory management.",
       "difficulty": "easy",
-      "tags": ["history", "purpose", "design"]
+      "tags": [
+        "history",
+        "purpose",
+        "design"
+      ]
     },
     {
       "question": "What does WORA mean?",
       "answer": "Write Once, Run Anywhere - Java's philosophy where you compile code once to bytecode, which runs on any platform with a JVM, achieving platform independence.",
       "difficulty": "easy",
-      "tags": ["WORA", "philosophy", "platform-independence"]
+      "tags": [
+        "WORA",
+        "philosophy",
+        "platform-independence"
+      ]
     },
     {
       "question": "Why was Oak renamed to Java?",
       "answer": "'Oak' was already trademarked by Oak Technologies. The team chose 'Java' after Java coffee from Indonesia during a brainstorming session at a coffee shop.",
       "difficulty": "easy",
-      "tags": ["history", "naming", "trivia"]
+      "tags": [
+        "history",
+        "naming",
+        "trivia"
+      ]
     },
     {
       "question": "What are the LTS (Long-Term Support) versions of Java?",
       "answer": "Java 8 (2014), Java 11 (2018), Java 17 (2021), and Java 21 (2023). LTS versions receive extended support and updates.",
       "difficulty": "medium",
-      "tags": ["versions", "LTS", "timeline"]
+      "tags": [
+        "versions",
+        "LTS",
+        "timeline"
+      ]
     },
     {
       "question": "Who owns Java now?",
       "answer": "Oracle Corporation owns Java after acquiring Sun Microsystems in January 2010 for $7.4 billion.",
       "difficulty": "easy",
-      "tags": ["history", "Oracle", "ownership"]
+      "tags": [
+        "history",
+        "Oracle",
+        "ownership"
+      ]
     },
     {
       "question": "What were the most revolutionary Java versions?",
       "answer": "Java 5 (2004) introduced Generics, enhanced for-loop, autoboxing, enums. Java 8 (2014) brought Lambda expressions, Stream API, and functional programming features. Java 21 (2023) introduced Virtual Threads.",
       "difficulty": "medium",
-      "tags": ["versions", "features", "evolution"]
+      "tags": [
+        "versions",
+        "features",
+        "evolution"
+      ]
     },
     {
       "question": "What is the significance of Java bytecode?",
       "answer": "Bytecode (.class files) is platform-independent intermediate code generated by the Java compiler. It enables WORA by running on any JVM regardless of the underlying operating system or hardware.",
       "difficulty": "medium",
-      "tags": ["bytecode", "JVM", "platform-independence"]
+      "tags": [
+        "bytecode",
+        "JVM",
+        "platform-independence"
+      ]
     }
   ]
 }

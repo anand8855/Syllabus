@@ -61,17 +61,47 @@
           "title": "Common Bytecode Opcodes",
           "content": "Here are frequently used bytecode instructions:",
           "table": {
-            "headers": ["Bytecode", "What It Does"],
+            "headers": [
+              "Bytecode",
+              "What It Does"
+            ],
             "rows": [
-              ["`getstatic`", "Gets a static field from a class (e.g., `System.out`)"],
-              ["`ldc`", "Loads a constant value (e.g., string \"Hello, World!\")"],
-              ["`invokevirtual`", "Calls an instance method (e.g., `println()`)"],
-              ["`aload_0`", "Loads a local variable from position 0 (usually `this`)"],
-              ["`return`", "Returns from the method"],
-              ["`iadd`", "Adds two integers"],
-              ["`istore`", "Stores an integer in a local variable"],
-              ["`iload`", "Loads an integer from a local variable"],
-              ["`if_icmpge`", "Compares two integers (if greater than or equal)"]
+              [
+                "`getstatic`",
+                "Gets a static field from a class (e.g., `System.out`)"
+              ],
+              [
+                "`ldc`",
+                "Loads a constant value (e.g., string \"Hello, World!\")"
+              ],
+              [
+                "`invokevirtual`",
+                "Calls an instance method (e.g., `println()`)"
+              ],
+              [
+                "`aload_0`",
+                "Loads a local variable from position 0 (usually `this`)"
+              ],
+              [
+                "`return`",
+                "Returns from the method"
+              ],
+              [
+                "`iadd`",
+                "Adds two integers"
+              ],
+              [
+                "`istore`",
+                "Stores an integer in a local variable"
+              ],
+              [
+                "`iload`",
+                "Loads an integer from a local variable"
+              ],
+              [
+                "`if_icmpge`",
+                "Compares two integers (if greater than or equal)"
+              ]
             ]
           }
         },
@@ -114,13 +144,37 @@
           "title": "🗣️ The JVM's Role: Universal Translator",
           "content": "The JVM acts as a universal translator:\n\nYour bytecode → JVM → Platform-specific machine code\n\nDifferent platforms have different JVMs, but they all understand the same bytecode specification:",
           "table": {
-            "headers": ["Platform", "JVM Type", "Translation Target"],
+            "headers": [
+              "Platform",
+              "JVM Type",
+              "Translation Target"
+            ],
             "rows": [
-              ["Windows", "HotSpot JVM for Windows", "x86/x64 Windows instructions"],
-              ["Linux", "HotSpot JVM for Linux", "Linux ELF executable format"],
-              ["Mac OS", "HotSpot JVM for macOS", "Mach-O executable format"],
-              ["Android", "Dalvik/ART", "ARM processor instructions"],
-              ["Embedded", "Java ME", "Optimized for IoT/embedded systems"]
+              [
+                "Windows",
+                "HotSpot JVM for Windows",
+                "x86/x64 Windows instructions"
+              ],
+              [
+                "Linux",
+                "HotSpot JVM for Linux",
+                "Linux ELF executable format"
+              ],
+              [
+                "Mac OS",
+                "HotSpot JVM for macOS",
+                "Mach-O executable format"
+              ],
+              [
+                "Android",
+                "Dalvik/ART",
+                "ARM processor instructions"
+              ],
+              [
+                "Embedded",
+                "Java ME",
+                "Optimized for IoT/embedded systems"
+              ]
             ]
           }
         },
@@ -335,17 +389,17 @@
   ],
   "images": [
     {
-      "url": "assets/images/bytecode-to-platforms.svg",
+      "url": "assets/images/subtopics/java/core_java_basics/bytecode_and_platform_independence/bytecode-to-platforms.svg",
       "alt": "Java Bytecode to Multiple Platforms",
       "caption": "Same bytecode distributed to Windows, Linux, and Mac platforms where JVMs translate it to native machine code"
     },
     {
-      "url": "assets/images/bytecode-universal-language.svg",
+      "url": "assets/images/subtopics/java/core_java_basics/bytecode_and_platform_independence/bytecode-universal-language.svg",
       "alt": "Bytecode as Universal Language",
       "caption": "Bytecode instructions are interpreted differently by platform-specific JVMs but produce the same results"
     },
     {
-      "url": "assets/images/wora-visualization.svg",
+      "url": "assets/images/subtopics/java/core_java_basics/bytecode_and_platform_independence/wora-visualization.svg",
       "alt": "Write Once Run Anywhere",
       "caption": "WORA philosophy: Developer writes and compiles once, users run the same bytecode on any platform"
     }
@@ -416,4 +470,3 @@
     }
   ]
 }
-

@@ -21,7 +21,7 @@
       "content": "Keywords are special reserved words in Java that have predefined meanings and purposes. They're like the royal family of the Java language - you can't use their names for anything else!",
       "images": [
         {
-          "url": "assets/images/java-keywords-overview.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/java_keywords_and_identifiers/java-keywords-overview.svg",
           "alt": "Java Keywords Overview and Categories",
           "caption": "Complete visual guide to Java keywords organized by categories - from access modifiers to control flow, with color-coded groupings for easy understanding"
         }
@@ -54,7 +54,7 @@
       "content": "Let's explore Java keywords grouped by their purpose. Understanding categories makes them easier to remember!",
       "images": [
         {
-          "url": "assets/images/keywords-categories.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/java_keywords_and_identifiers/keywords-categories.svg",
           "alt": "Java Keywords Organized by Categories",
           "caption": "Visual categorization of all Java keywords - Access Modifiers, Data Types, Control Flow, Exception Handling, OOP, and more"
         }
@@ -99,7 +99,7 @@
       "content": "Identifiers are names you give to variables, classes, methods, packages, etc. Think of them as name tags for everything in your program!",
       "images": [
         {
-          "url": "assets/images/identifiers-overview.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/java_keywords_and_identifiers/identifiers-overview.svg",
           "alt": "Java Identifiers and Naming Rules",
           "caption": "Complete guide to Java identifiers - what they are, naming rules, valid examples, invalid examples, and best practices"
         }
@@ -136,7 +136,7 @@
       "content": "Rules tell you what you CAN do. Conventions tell you what you SHOULD do. Following conventions makes your code professional and readable!",
       "images": [
         {
-          "url": "assets/images/naming-conventions.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/java_keywords_and_identifiers/naming-conventions.svg",
           "alt": "Java Naming Conventions Guide",
           "caption": "Visual guide to Java naming conventions - camelCase for variables and methods, PascalCase for classes, UPPER_SNAKE_CASE for constants"
         }
@@ -276,73 +276,121 @@
       "question": "What are keywords in Java? Give examples.",
       "answer": "Keywords are reserved words in Java that have predefined meanings and purposes. They cannot be used as identifiers. Examples: public, private, class, if, else, int, void, static, final. Java has 51 keywords in total.",
       "difficulty": "easy",
-      "tags": ["keywords", "basics", "syntax"]
+      "tags": [
+        "keywords",
+        "basics",
+        "syntax"
+      ]
     },
     {
       "question": "What are identifiers in Java?",
       "answer": "Identifiers are programmer-defined names given to variables, classes, methods, packages, and other program elements. Examples: studentAge, BankAccount, calculateTotal(). They must follow specific naming rules and conventions.",
       "difficulty": "easy",
-      "tags": ["identifiers", "naming", "basics"]
+      "tags": [
+        "identifiers",
+        "naming",
+        "basics"
+      ]
     },
     {
       "question": "What are the rules for naming identifiers in Java?",
       "answer": "Rules: 1) Must start with letter, underscore (_), or dollar ($). 2) After first character, can contain letters, digits, _, $. 3) Cannot be a keyword. 4) Case-sensitive. 5) No spaces allowed. 6) Cannot start with digit. Examples: studentAge ✅, 2students ❌, class ❌",
       "difficulty": "medium",
-      "tags": ["identifiers", "naming-rules", "syntax"]
+      "tags": [
+        "identifiers",
+        "naming-rules",
+        "syntax"
+      ]
     },
     {
       "question": "Can we use keywords as identifiers? Why or why not?",
       "answer": "No, we cannot use keywords as identifiers because they are reserved by Java with predefined meanings. If we use 'class' or 'if' as variable names, the compiler gets confused and throws an error. Example: int class = 5; // Error",
       "difficulty": "easy",
-      "tags": ["keywords", "identifiers", "rules"]
+      "tags": [
+        "keywords",
+        "identifiers",
+        "rules"
+      ]
     },
     {
       "question": "What is the difference between keywords and identifiers?",
       "answer": "Keywords are reserved words predefined by Java (e.g., if, class, public) with special meanings. Identifiers are names created by programmers (e.g., studentAge, BankAccount). Keywords cannot be used as identifiers, are all lowercase, and have fixed meanings.",
       "difficulty": "medium",
-      "tags": ["keywords", "identifiers", "comparison"]
+      "tags": [
+        "keywords",
+        "identifiers",
+        "comparison"
+      ]
     },
     {
       "question": "Explain Java naming conventions for different elements.",
       "answer": "1) Variables/Methods: camelCase (studentAge, calculateTotal). 2) Classes/Interfaces: PascalCase (BankAccount, Runnable). 3) Constants: UPPER_SNAKE_CASE (MAX_SIZE, PI_VALUE). 4) Packages: lowercase (com.example.myapp). These are conventions, not compiler rules.",
       "difficulty": "medium",
-      "tags": ["naming-conventions", "best-practices", "code-style"]
+      "tags": [
+        "naming-conventions",
+        "best-practices",
+        "code-style"
+      ]
     },
     {
       "question": "Which of these are valid identifiers: studentAge, 2students, student_age, student-age, class?",
       "answer": "Valid: studentAge ✅ (starts with letter), student_age ✅ (underscore allowed). Invalid: 2students ❌ (starts with digit), student-age ❌ (hyphen not allowed), class ❌ (keyword). Explanation: Must start with letter/underscore/dollar, no hyphens, no keywords.",
       "difficulty": "medium",
-      "tags": ["identifiers", "validation", "examples"]
+      "tags": [
+        "identifiers",
+        "validation",
+        "examples"
+      ]
     },
     {
       "question": "Is Java case-sensitive? Give examples with identifiers.",
       "answer": "Yes, Java is case-sensitive. Variables 'age', 'Age', and 'AGE' are three completely different identifiers. Same applies to keywords: 'public' is a keyword but 'Public' or 'PUBLIC' are valid identifiers. This is why following naming conventions is important.",
       "difficulty": "easy",
-      "tags": ["case-sensitivity", "identifiers", "syntax"]
+      "tags": [
+        "case-sensitivity",
+        "identifiers",
+        "syntax"
+      ]
     },
     {
       "question": "How many keywords are there in Java? Name some categories.",
       "answer": "Java has 51 keywords. Categories: 1) Access modifiers (public, private, protected). 2) Data types (int, boolean, char). 3) Control flow (if, else, while, for). 4) Exception handling (try, catch, finally). 5) OOP (class, interface, extends). 6) Modifiers (static, final, abstract).",
       "difficulty": "medium",
-      "tags": ["keywords", "categories", "count"]
+      "tags": [
+        "keywords",
+        "categories",
+        "count"
+      ]
     },
     {
       "question": "Can identifiers start with a digit? Why or why not?",
       "answer": "No, identifiers cannot start with a digit. They must start with a letter, underscore (_), or dollar sign ($). Example: 2students ❌ (invalid), students2 ✅ (valid). This rule helps the compiler distinguish between identifiers and numeric literals.",
       "difficulty": "easy",
-      "tags": ["identifiers", "rules", "syntax"]
+      "tags": [
+        "identifiers",
+        "rules",
+        "syntax"
+      ]
     },
     {
       "question": "What are reserved keywords 'goto' and 'const' in Java?",
       "answer": "goto and const are reserved keywords in Java but not currently used. They're reserved to prevent programmers from using them and to keep them available for potential future use. Use 'final' instead of 'const'. Java intentionally doesn't support goto to promote structured programming.",
       "difficulty": "hard",
-      "tags": ["keywords", "reserved", "advanced"]
+      "tags": [
+        "keywords",
+        "reserved",
+        "advanced"
+      ]
     },
     {
       "question": "Why should we follow naming conventions even though they're not enforced?",
       "answer": "Naming conventions improve: 1) Code readability - others understand your code. 2) Maintainability - easier to modify later. 3) Professionalism - shows you follow standards. 4) Team collaboration - consistent style across team. 5) Industry standard - recognized by all Java developers worldwide.",
       "difficulty": "medium",
-      "tags": ["naming-conventions", "best-practices", "professional"]
+      "tags": [
+        "naming-conventions",
+        "best-practices",
+        "professional"
+      ]
     }
   ]
 }

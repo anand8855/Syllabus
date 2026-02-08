@@ -1,62 +1,38 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { catchError, Observable, of } from 'rxjs';
 import { SubtopicContent } from '../models/syllabus.model';
-import { 
-  fundamentalsContent,
-  exceptionHierarchyContent,
-  historyOfJavaContent,
-  featuresOfJavaContent,
-  jdkJreJvmContent,
-  compilationAndExecutionContent,
-  bytecodeAndPlatformIndependenceContent,
-  javaEditionsContent,
-  pathAndClasspathContent,
-  firstJavaProgramContent,
-  keywordsAndIdentifiersContent,
-  iocAndWhySpringUsesItContent,
-  dependencyInjectionContent,
-  springBeenLifecycleInternalContent,
-  applicationContextVsBeanFactoryContent,
-  eagerVsLazyLoadingContent,
-  beanScopeContent
-} from './subtopic-mapper';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SubtopicContentService {
+  constructor(private http: HttpClient) {}
 
-  private subtopicContents: { [key: string]: SubtopicContent } = {
-    'Fundamentals': fundamentalsContent,
-    'Exception Hierarchy': exceptionHierarchyContent,
-    'History of Java': historyOfJavaContent,
-    'Features of Java (Platform Independent, OOP, etc.)': featuresOfJavaContent,
-    'JDK, JRE, JVM Architecture': jdkJreJvmContent,
-    'Compilation and Execution Process': compilationAndExecutionContent,
-    'Bytecode and Platform Independence': bytecodeAndPlatformIndependenceContent,
-    'Java Editions (SE, EE, ME)': javaEditionsContent,
-    'Path and Classpath (Environment Variables)': pathAndClasspathContent,
-    'First Java Program structure and main method': firstJavaProgramContent,
-    'Java Keywords and Identifiers': keywordsAndIdentifiersContent,
+  getSubtopicContent(
+    technologyKey: string,
+    sectionTitle: string,
+    subtopicId: string
+  ): Observable<SubtopicContent | null> {
+    if (!technologyKey || !sectionTitle || !subtopicId) {
+      return of(null);
+    }
 
+    const sectionSlug = this.slugify(sectionTitle);
+    const url = `/assets/json/subtopics/${technologyKey}/${sectionSlug}/${subtopicId}.json`;
 
-    // Spring 
-    'What is IoC and why Spring uses it': iocAndWhySpringUsesItContent,
-    'What problem does DI solve?': dependencyInjectionContent,
-    'How Spring creates and injects beans internally': springBeenLifecycleInternalContent,
-    'ApplicationContext vs BeanFactory': applicationContextVsBeanFactoryContent,
-    'Eager vs Lazy loading - When to use which?':eagerVsLazyLoadingContent,
-    'Bean Scopes (Singleton, Prototype, Request, Session, Application)': beanScopeContent,
-    // Add more mappings as you create new subtopic files:
-    // 'Checked vs Unchecked Exceptions': checkedVsUncheckedContent,
-    // 'try–catch–finally': tryCatchFinallyContent,
-    // etc.
-  };
-
-  getSubtopicContent(subtopicName: string): SubtopicContent | null {
-    return this.subtopicContents[subtopicName] || null;
+    return this.http.get<SubtopicContent>(url).pipe(
+      catchError(() => of(null))
+    );
   }
 
-  getAllSubtopicNames(): string[] {
-    return Object.keys(this.subtopicContents);
+  private slugify(value: string): string {
+    return value
+      .toLowerCase()
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/&/g, ' and ')
+      .replace(/[^a-z0-9]+/g, '_')
+      .replace(/^_+|_+$/g, '');
   }
 }

@@ -7,47 +7,112 @@
       {
         "name": "Spring Boot vs Spring",
         "subTopics": [
-          { "name": "Why Spring Boot was introduced" },
-          { "name": "Problems it solves" },
-          { "name": "Spring vs Spring Boot (VERY COMMON)" }
-        ]
+          {
+            "name": "Why Spring Boot was introduced",
+            "id": "why_spring_boot_was_introduced"
+          },
+          {
+            "name": "Problems it solves",
+            "id": "problems_it_solves"
+          },
+          {
+            "name": "Spring vs Spring Boot (VERY COMMON)",
+            "id": "spring_vs_spring_boot_very_common"
+          }
+        ],
+        "id": "spring_boot_vs_spring"
       },
       {
         "name": "@SpringBootApplication",
         "subTopics": [
-          { "name": "What it is internally" },
-          { "name": "Combination of: @Configuration, @ComponentScan, @EnableAutoConfiguration" },
-          { "name": "Why it should be placed in root package" }
-        ]
+          {
+            "name": "What it is internally",
+            "id": "what_it_is_internally"
+          },
+          {
+            "name": "Combination of: @Configuration, @ComponentScan, @EnableAutoConfiguration",
+            "id": "combination_of_configuration_componentscan_enableautoconfiguration"
+          },
+          {
+            "name": "Why it should be placed in root package",
+            "id": "why_it_should_be_placed_in_root_package"
+          }
+        ],
+        "id": "springbootapplication"
       },
       {
         "name": "Starters",
         "subTopics": [
-          { "name": "What are starters?" },
-          { "name": "How spring-boot-starter-web works" },
-          { "name": "Why starters reduce dependency conflicts" }
-        ]
+          {
+            "name": "What are starters?",
+            "id": "what_are_starters"
+          },
+          {
+            "name": "How spring-boot-starter-web works",
+            "id": "how_spring_boot_starter_web_works"
+          },
+          {
+            "name": "Why starters reduce dependency conflicts",
+            "id": "why_starters_reduce_dependency_conflicts"
+          }
+        ],
+        "id": "starters"
       },
       {
         "name": "Configuration Management",
         "subTopics": [
-          { "name": "application.properties vs application.yml" },
-          { "name": "YAML advantages" },
-          { "name": "Profile-specific files" },
-          { "name": "Profiles (Dev, QA, Prod)" },
-          { "name": "Externalized Configuration - Property priority order (ENV > JVM > config files)" },
-          { "name": "How environment variables override config" },
-          { "name": "@Value vs @ConfigurationProperties" },
-          { "name": "@Value vs @ConfigurationProperties - Differences and When to use which" },
-          { "name": "Type safety advantages of @ConfigurationProperties" }
-        ]
+          {
+            "name": "application.properties vs application.yml",
+            "id": "application_properties_vs_application_yml"
+          },
+          {
+            "name": "YAML advantages",
+            "id": "yaml_advantages"
+          },
+          {
+            "name": "Profile-specific files",
+            "id": "profile_specific_files"
+          },
+          {
+            "name": "Profiles (Dev, QA, Prod)",
+            "id": "profiles_dev_qa_prod"
+          },
+          {
+            "name": "Externalized Configuration - Property priority order (ENV > JVM > config files)",
+            "id": "externalized_configuration_property_priority_order_env_jvm_config_files"
+          },
+          {
+            "name": "How environment variables override config",
+            "id": "how_environment_variables_override_config"
+          },
+          {
+            "name": "@Value vs @ConfigurationProperties",
+            "id": "value_vs_configurationproperties"
+          },
+          {
+            "name": "@Value vs @ConfigurationProperties - Differences and When to use which",
+            "id": "value_vs_configurationproperties_differences_and_when_to_use_which"
+          },
+          {
+            "name": "Type safety advantages of @ConfigurationProperties",
+            "id": "type_safety_advantages_of_configurationproperties"
+          }
+        ],
+        "id": "configuration_management"
       },
       {
         "name": "Developer Tools",
         "subTopics": [
-          { "name": "Spring Boot DevTools (Live Reload)" },
-          { "name": "Lombok integration" }
-        ]
+          {
+            "name": "Spring Boot DevTools (Live Reload)",
+            "id": "spring_boot_devtools_live_reload"
+          },
+          {
+            "name": "Lombok integration",
+            "id": "lombok_integration"
+          }
+        ],
+        "id": "developer_tools"
       }
     ]
   },
@@ -59,28 +124,64 @@
       {
         "name": "Auto-Configuration Internals",
         "subTopics": [
-          { "name": "What is auto-configuration?" },
-          { "name": "How Spring Boot decides which bean to create" },
-          { "name": "@ConditionalOnClass" },
-          { "name": "@ConditionalOnMissingBean" },
-          { "name": "@ConditionalOnProperty" }
-        ]
+          {
+            "name": "What is auto-configuration?",
+            "id": "what_is_auto_configuration"
+          },
+          {
+            "name": "How Spring Boot decides which bean to create",
+            "id": "how_spring_boot_decides_which_bean_to_create"
+          },
+          {
+            "name": "@ConditionalOnClass",
+            "id": "conditionalonclass"
+          },
+          {
+            "name": "@ConditionalOnMissingBean",
+            "id": "conditionalonmissingbean"
+          },
+          {
+            "name": "@ConditionalOnProperty",
+            "id": "conditionalonproperty"
+          }
+        ],
+        "id": "auto_configuration_internals"
       },
       {
         "name": "Auto-Configuration Files",
         "subTopics": [
-          { "name": "spring.factories (Boot < 3)" },
-          { "name": "AutoConfiguration.imports (Boot 3+)" },
-          { "name": "How auto-config classes are loaded" }
-        ]
+          {
+            "name": "spring.factories (Boot < 3)",
+            "id": "spring_factories_boot_3"
+          },
+          {
+            "name": "AutoConfiguration.imports (Boot 3+)",
+            "id": "autoconfiguration_imports_boot_3"
+          },
+          {
+            "name": "How auto-config classes are loaded",
+            "id": "how_auto_config_classes_are_loaded"
+          }
+        ],
+        "id": "auto_configuration_files"
       },
       {
         "name": "Disable / Customize Auto-Config",
         "subTopics": [
-          { "name": "exclude attribute" },
-          { "name": "spring.autoconfigure.exclude" },
-          { "name": "Overriding auto-configured beans" }
-        ]
+          {
+            "name": "exclude attribute",
+            "id": "exclude_attribute"
+          },
+          {
+            "name": "spring.autoconfigure.exclude",
+            "id": "spring_autoconfigure_exclude"
+          },
+          {
+            "name": "Overriding auto-configured beans",
+            "id": "overriding_auto_configured_beans"
+          }
+        ],
+        "id": "disable_customize_auto_config"
       }
     ]
   },
@@ -92,26 +193,56 @@
       {
         "name": "Application Startup",
         "subTopics": [
-          { "name": "What happens during SpringApplication.run()" },
-          { "name": "Order of execution" },
-          { "name": "When beans are created" }
-        ]
+          {
+            "name": "What happens during SpringApplication.run()",
+            "id": "what_happens_during_springapplication_run"
+          },
+          {
+            "name": "Order of execution",
+            "id": "order_of_execution"
+          },
+          {
+            "name": "When beans are created",
+            "id": "when_beans_are_created"
+          }
+        ],
+        "id": "application_startup"
       },
       {
         "name": "Runners",
         "subTopics": [
-          { "name": "CommandLineRunner vs ApplicationRunner" },
-          { "name": "Use cases" },
-          { "name": "Execution order" }
-        ]
+          {
+            "name": "CommandLineRunner vs ApplicationRunner",
+            "id": "commandlinerunner_vs_applicationrunner"
+          },
+          {
+            "name": "Use cases",
+            "id": "use_cases"
+          },
+          {
+            "name": "Execution order",
+            "id": "execution_order"
+          }
+        ],
+        "id": "runners"
       },
       {
         "name": "Embedded Server",
         "subTopics": [
-          { "name": "Embedded Tomcat / Jetty / Netty" },
-          { "name": "How Boot starts server internally" },
-          { "name": "How to change port & server type" }
-        ]
+          {
+            "name": "Embedded Tomcat / Jetty / Netty",
+            "id": "embedded_tomcat_jetty_netty"
+          },
+          {
+            "name": "How Boot starts server internally",
+            "id": "how_boot_starts_server_internally"
+          },
+          {
+            "name": "How to change port & server type",
+            "id": "how_to_change_port_and_server_type"
+          }
+        ],
+        "id": "embedded_server"
       }
     ]
   },
@@ -123,54 +254,140 @@
       {
         "name": "Spring JDBC",
         "subTopics": [
-          { "name": "JdbcTemplate & NamedParameterJdbcTemplate" }
-        ]
+          {
+            "name": "JdbcTemplate & NamedParameterJdbcTemplate",
+            "id": "jdbctemplate_and_namedparameterjdbctemplate"
+          }
+        ],
+        "id": "spring_jdbc"
       },
       {
         "name": "Spring Data JPA (Hibernate)",
         "subTopics": [
-          { "name": "Why repositories don't need implementation" },
-          { "name": "Entity Mapping (@Entity, @Table, @Id, @GeneratedValue)" },
-          { "name": "Entity scanning" },
-          { "name": "Auto-DDL (ddl-auto)" },
-          { "name": "Repositories (CrudRepository, JpaRepository)" },
-          { "name": "CrudRepository vs JpaRepository" },
-          { "name": "Query Methods (Derived queries, @Query, Native Queries)" },
-          { "name": "Derived query method rules" },
-          { "name": "Relationships (OneToOne, OneToMany, ManyToMany)" },
-          { "name": "Lazy vs Eager loading" },
-          { "name": "Pagination & Sorting" },
-          { "name": "N+1 Problem - What it is" },
-          { "name": "N+1 Problem - How to identify" },
-          { "name": "N+1 Problem - Solutions (fetch join, EntityGraph)" }
-        ]
+          {
+            "name": "Why repositories don't need implementation",
+            "id": "why_repositories_don_t_need_implementation"
+          },
+          {
+            "name": "Entity Mapping (@Entity, @Table, @Id, @GeneratedValue)",
+            "id": "entity_mapping_entity_table_id_generatedvalue"
+          },
+          {
+            "name": "Entity scanning",
+            "id": "entity_scanning"
+          },
+          {
+            "name": "Auto-DDL (ddl-auto)",
+            "id": "auto_ddl_ddl_auto"
+          },
+          {
+            "name": "Repositories (CrudRepository, JpaRepository)",
+            "id": "repositories_crudrepository_jparepository"
+          },
+          {
+            "name": "CrudRepository vs JpaRepository",
+            "id": "crudrepository_vs_jparepository"
+          },
+          {
+            "name": "Query Methods (Derived queries, @Query, Native Queries)",
+            "id": "query_methods_derived_queries_query_native_queries"
+          },
+          {
+            "name": "Derived query method rules",
+            "id": "derived_query_method_rules"
+          },
+          {
+            "name": "Relationships (OneToOne, OneToMany, ManyToMany)",
+            "id": "relationships_onetoone_onetomany_manytomany"
+          },
+          {
+            "name": "Lazy vs Eager loading",
+            "id": "lazy_vs_eager_loading"
+          },
+          {
+            "name": "Pagination & Sorting",
+            "id": "pagination_and_sorting"
+          },
+          {
+            "name": "N+1 Problem - What it is",
+            "id": "n_1_problem_what_it_is"
+          },
+          {
+            "name": "N+1 Problem - How to identify",
+            "id": "n_1_problem_how_to_identify"
+          },
+          {
+            "name": "N+1 Problem - Solutions (fetch join, EntityGraph)",
+            "id": "n_1_problem_solutions_fetch_join_entitygraph"
+          }
+        ],
+        "id": "spring_data_jpa_hibernate"
       },
       {
         "name": "Transaction Management (INTERVIEW FAVORITE)",
         "subTopics": [
-          { "name": "@Transactional - How it works internally" },
-          { "name": "Why @Transactional uses AOP" },
-          { "name": "Propagation types (REQUIRED, REQUIRES_NEW)" },
-          { "name": "Isolation levels" },
-          { "name": "Rollback Rules - Checked vs Runtime exception" },
-          { "name": "How to force rollback" },
-          { "name": "Common Pitfalls - Why @Transactional doesn't work on private methods" },
-          { "name": "Common Pitfalls - Why @Transactional doesn't work on internal method calls" },
-          { "name": "Proxy limitation explanation" }
-        ]
+          {
+            "name": "@Transactional - How it works internally",
+            "id": "transactional_how_it_works_internally"
+          },
+          {
+            "name": "Why @Transactional uses AOP",
+            "id": "why_transactional_uses_aop"
+          },
+          {
+            "name": "Propagation types (REQUIRED, REQUIRES_NEW)",
+            "id": "propagation_types_required_requires_new"
+          },
+          {
+            "name": "Isolation levels",
+            "id": "isolation_levels"
+          },
+          {
+            "name": "Rollback Rules - Checked vs Runtime exception",
+            "id": "rollback_rules_checked_vs_runtime_exception"
+          },
+          {
+            "name": "How to force rollback",
+            "id": "how_to_force_rollback"
+          },
+          {
+            "name": "Common Pitfalls - Why @Transactional doesn't work on private methods",
+            "id": "common_pitfalls_why_transactional_doesn_t_work_on_private_methods"
+          },
+          {
+            "name": "Common Pitfalls - Why @Transactional doesn't work on internal method calls",
+            "id": "common_pitfalls_why_transactional_doesn_t_work_on_internal_method_calls"
+          },
+          {
+            "name": "Proxy limitation explanation",
+            "id": "proxy_limitation_explanation"
+          }
+        ],
+        "id": "transaction_management_interview_favorite"
       },
       {
         "name": "NoSQL Integration",
         "subTopics": [
-          { "name": "Spring Data MongoDB" },
-          { "name": "Spring Data Redis (Caching & Pub/Sub)" }
-        ]
+          {
+            "name": "Spring Data MongoDB",
+            "id": "spring_data_mongodb"
+          },
+          {
+            "name": "Spring Data Redis (Caching & Pub/Sub)",
+            "id": "spring_data_redis_caching_and_pub_sub"
+          }
+        ],
+        "id": "nosql_integration"
       },
       {
         "name": "Database Migration",
         "subTopics": [
-          { "name": "Flyway or Liquibase integration" }
-        ]
+          {
+            "name": "Flyway or Liquibase integration",
+            "id": "flyway_or_liquibase_integration"
+          }
+        ],
+        "id": "database_migration"
       }
     ]
   },
@@ -182,41 +399,88 @@
       {
         "name": "Controllers",
         "subTopics": [
-          { "name": "@RestController vs @Controller" },
-          { "name": "@RequestMapping vs @GetMapping" },
-          { "name": "@PathVariable vs @RequestParam" },
-          { "name": "@RequestBody vs @ModelAttribute" }
-        ]
+          {
+            "name": "@RestController vs @Controller",
+            "id": "restcontroller_vs_controller"
+          },
+          {
+            "name": "@RequestMapping vs @GetMapping",
+            "id": "requestmapping_vs_getmapping"
+          },
+          {
+            "name": "@PathVariable vs @RequestParam",
+            "id": "pathvariable_vs_requestparam"
+          },
+          {
+            "name": "@RequestBody vs @ModelAttribute",
+            "id": "requestbody_vs_modelattribute"
+          }
+        ],
+        "id": "controllers"
       },
       {
         "name": "Response Handling",
         "subTopics": [
-          { "name": "ResponseEntity" },
-          { "name": "HTTP status codes best practices" }
-        ]
+          {
+            "name": "ResponseEntity",
+            "id": "responseentity"
+          },
+          {
+            "name": "HTTP status codes best practices",
+            "id": "http_status_codes_best_practices"
+          }
+        ],
+        "id": "response_handling"
       },
       {
         "name": "Exception Handling",
         "subTopics": [
-          { "name": "@ExceptionHandler" },
-          { "name": "@ControllerAdvice" },
-          { "name": "Global vs local exception handling" }
-        ]
+          {
+            "name": "@ExceptionHandler",
+            "id": "exceptionhandler"
+          },
+          {
+            "name": "@ControllerAdvice",
+            "id": "controlleradvice"
+          },
+          {
+            "name": "Global vs local exception handling",
+            "id": "global_vs_local_exception_handling"
+          }
+        ],
+        "id": "exception_handling"
       },
       {
         "name": "Advanced REST",
         "subTopics": [
-          { "name": "Bean Validation (Hibernate Validator, @Valid, @NotNull, @Size)" },
-          { "name": "HATEOAS (Hypermedia as the Engine of Application State)" },
-          { "name": "Content Negotiation (JSON vs XML)" },
-          { "name": "File Upload/Download" }
-        ]
+          {
+            "name": "Bean Validation (Hibernate Validator, @Valid, @NotNull, @Size)",
+            "id": "bean_validation_hibernate_validator_valid_notnull_size"
+          },
+          {
+            "name": "HATEOAS (Hypermedia as the Engine of Application State)",
+            "id": "hateoas_hypermedia_as_the_engine_of_application_state"
+          },
+          {
+            "name": "Content Negotiation (JSON vs XML)",
+            "id": "content_negotiation_json_vs_xml"
+          },
+          {
+            "name": "File Upload/Download",
+            "id": "file_upload_download"
+          }
+        ],
+        "id": "advanced_rest"
       },
       {
         "name": "API Documentation",
         "subTopics": [
-          { "name": "OpenAPI 3.0 / Swagger (SpringDoc)" }
-        ]
+          {
+            "name": "OpenAPI 3.0 / Swagger (SpringDoc)",
+            "id": "openapi_3_0_swagger_springdoc"
+          }
+        ],
+        "id": "api_documentation"
       }
     ]
   },
@@ -228,34 +492,74 @@
       {
         "name": "Core Concepts",
         "subTopics": [
-          { "name": "Authentication vs Authorization" },
-          { "name": "Stateless vs Stateful auth" },
-          { "name": "SecurityFilterChain" }
-        ]
+          {
+            "name": "Authentication vs Authorization",
+            "id": "authentication_vs_authorization"
+          },
+          {
+            "name": "Stateless vs Stateful auth",
+            "id": "stateless_vs_stateful_auth"
+          },
+          {
+            "name": "SecurityFilterChain",
+            "id": "securityfilterchain"
+          }
+        ],
+        "id": "core_concepts"
       },
       {
         "name": "JWT with Spring Boot",
         "subTopics": [
-          { "name": "Why JWT is stateless" },
-          { "name": "Filter flow" },
-          { "name": "Where token is validated" }
-        ]
+          {
+            "name": "Why JWT is stateless",
+            "id": "why_jwt_is_stateless"
+          },
+          {
+            "name": "Filter flow",
+            "id": "filter_flow"
+          },
+          {
+            "name": "Where token is validated",
+            "id": "where_token_is_validated"
+          }
+        ],
+        "id": "jwt_with_spring_boot"
       },
       {
         "name": "Method Security",
         "subTopics": [
-          { "name": "@PreAuthorize" },
-          { "name": "@PostAuthorize" },
-          { "name": "Role vs Authority" }
-        ]
+          {
+            "name": "@PreAuthorize",
+            "id": "preauthorize"
+          },
+          {
+            "name": "@PostAuthorize",
+            "id": "postauthorize"
+          },
+          {
+            "name": "Role vs Authority",
+            "id": "role_vs_authority"
+          }
+        ],
+        "id": "method_security"
       },
       {
         "name": "CSRF & CORS",
         "subTopics": [
-          { "name": "What CSRF is" },
-          { "name": "Why CSRF disabled for REST APIs" },
-          { "name": "Browser-side vs server-side CORS" }
-        ]
+          {
+            "name": "What CSRF is",
+            "id": "what_csrf_is"
+          },
+          {
+            "name": "Why CSRF disabled for REST APIs",
+            "id": "why_csrf_disabled_for_rest_apis"
+          },
+          {
+            "name": "Browser-side vs server-side CORS",
+            "id": "browser_side_vs_server_side_cors"
+          }
+        ],
+        "id": "csrf_and_cors"
       }
     ]
   },
@@ -267,32 +571,52 @@
       {
         "name": "Service Discovery",
         "subTopics": [
-          { "name": "Netflix Eureka / HashiCorp Consul" }
-        ]
+          {
+            "name": "Netflix Eureka / HashiCorp Consul",
+            "id": "netflix_eureka_hashicorp_consul"
+          }
+        ],
+        "id": "service_discovery"
       },
       {
         "name": "API Gateway",
         "subTopics": [
-          { "name": "Spring Cloud Gateway (Routing, Filtering, Rate Limiting)" }
-        ]
+          {
+            "name": "Spring Cloud Gateway (Routing, Filtering, Rate Limiting)",
+            "id": "spring_cloud_gateway_routing_filtering_rate_limiting"
+          }
+        ],
+        "id": "api_gateway"
       },
       {
         "name": "Config Management",
         "subTopics": [
-          { "name": "Spring Cloud Config Server (Centralized configuration)" }
-        ]
+          {
+            "name": "Spring Cloud Config Server (Centralized configuration)",
+            "id": "spring_cloud_config_server_centralized_configuration"
+          }
+        ],
+        "id": "config_management"
       },
       {
         "name": "Resilience & Fault Tolerance",
         "subTopics": [
-          { "name": "Resilience4j (Circuit Breaker, Retry, Rate Limiter, Bulkhead)" }
-        ]
+          {
+            "name": "Resilience4j (Circuit Breaker, Retry, Rate Limiter, Bulkhead)",
+            "id": "resilience4j_circuit_breaker_retry_rate_limiter_bulkhead"
+          }
+        ],
+        "id": "resilience_and_fault_tolerance"
       },
       {
         "name": "Distributed Tracing",
         "subTopics": [
-          { "name": "Micrometer Tracing (formerly Sleuth) + Zipkin/Brave" }
-        ]
+          {
+            "name": "Micrometer Tracing (formerly Sleuth) + Zipkin/Brave",
+            "id": "micrometer_tracing_formerly_sleuth_zipkin_brave"
+          }
+        ],
+        "id": "distributed_tracing"
       }
     ]
   },
@@ -304,38 +628,76 @@
       {
         "name": "Introduction to Generative AI",
         "subTopics": [
-          { "name": "Large Language Models (LLMs) concepts" }
-        ]
+          {
+            "name": "Large Language Models (LLMs) concepts",
+            "id": "large_language_models_llms_concepts"
+          }
+        ],
+        "id": "introduction_to_generative_ai"
       },
       {
         "name": "Spring AI Core",
         "subTopics": [
-          { "name": "Chat Client API: Interacting with OpenAI, Azure OpenAI, Ollama, HuggingFace" },
-          { "name": "Prompts: Prompt Templates, Prompt Engineering within Java" },
-          { "name": "Output Parsers: Converting AI text responses into Java Objects (POJOs)" }
-        ]
+          {
+            "name": "Chat Client API: Interacting with OpenAI, Azure OpenAI, Ollama, HuggingFace",
+            "id": "chat_client_api_interacting_with_openai_azure_openai_ollama_huggingface"
+          },
+          {
+            "name": "Prompts: Prompt Templates, Prompt Engineering within Java",
+            "id": "prompts_prompt_templates_prompt_engineering_within_java"
+          },
+          {
+            "name": "Output Parsers: Converting AI text responses into Java Objects (POJOs)",
+            "id": "output_parsers_converting_ai_text_responses_into_java_objects_pojos"
+          }
+        ],
+        "id": "spring_ai_core"
       },
       {
         "name": "Embeddings & Vector Databases",
         "subTopics": [
-          { "name": "Text Embeddings models" },
-          { "name": "Vector Store integration (PGVector, Pinecone, Milvus, Redis)" }
-        ]
+          {
+            "name": "Text Embeddings models",
+            "id": "text_embeddings_models"
+          },
+          {
+            "name": "Vector Store integration (PGVector, Pinecone, Milvus, Redis)",
+            "id": "vector_store_integration_pgvector_pinecone_milvus_redis"
+          }
+        ],
+        "id": "embeddings_and_vector_databases"
       },
       {
         "name": "RAG (Retrieval Augmented Generation)",
         "subTopics": [
-          { "name": "Document Readers (PDF, Text, JSON)" },
-          { "name": "Token Splitters" },
-          { "name": "Contextual search implementation" }
-        ]
+          {
+            "name": "Document Readers (PDF, Text, JSON)",
+            "id": "document_readers_pdf_text_json"
+          },
+          {
+            "name": "Token Splitters",
+            "id": "token_splitters"
+          },
+          {
+            "name": "Contextual search implementation",
+            "id": "contextual_search_implementation"
+          }
+        ],
+        "id": "rag_retrieval_augmented_generation"
       },
       {
         "name": "Advanced AI",
         "subTopics": [
-          { "name": "Function Calling (Letting AI call your Java methods)" },
-          { "name": "Image Generation (DALL-E, Stability AI)" }
-        ]
+          {
+            "name": "Function Calling (Letting AI call your Java methods)",
+            "id": "function_calling_letting_ai_call_your_java_methods"
+          },
+          {
+            "name": "Image Generation (DALL-E, Stability AI)",
+            "id": "image_generation_dall_e_stability_ai"
+          }
+        ],
+        "id": "advanced_ai"
       }
     ]
   },
@@ -347,27 +709,46 @@
       {
         "name": "JMS (Java Message Service)",
         "subTopics": [
-          { "name": "ActiveMQ integration" }
-        ]
+          {
+            "name": "ActiveMQ integration",
+            "id": "activemq_integration"
+          }
+        ],
+        "id": "jms_java_message_service"
       },
       {
         "name": "Apache Kafka",
         "subTopics": [
-          { "name": "Spring for Apache Kafka" },
-          { "name": "Producers, Consumers, Consumer Groups" }
-        ]
+          {
+            "name": "Spring for Apache Kafka",
+            "id": "spring_for_apache_kafka"
+          },
+          {
+            "name": "Producers, Consumers, Consumer Groups",
+            "id": "producers_consumers_consumer_groups"
+          }
+        ],
+        "id": "apache_kafka"
       },
       {
         "name": "RabbitMQ",
         "subTopics": [
-          { "name": "Exchanges, Queues, Routing Keys" }
-        ]
+          {
+            "name": "Exchanges, Queues, Routing Keys",
+            "id": "exchanges_queues_routing_keys"
+          }
+        ],
+        "id": "rabbitmq"
       },
       {
         "name": "Spring Cloud Stream",
         "subTopics": [
-          { "name": "Binder abstraction (Switch between Kafka/RabbitMQ easily)" }
-        ]
+          {
+            "name": "Binder abstraction (Switch between Kafka/RabbitMQ easily)",
+            "id": "binder_abstraction_switch_between_kafka_rabbitmq_easily"
+          }
+        ],
+        "id": "spring_cloud_stream"
       }
     ]
   },
@@ -379,19 +760,42 @@
       {
         "name": "Scheduling",
         "subTopics": [
-          { "name": "@Scheduled (FixedRate, FixedDelay, Cron expressions)" },
-          { "name": "Quartz Scheduler integration" }
-        ]
+          {
+            "name": "@Scheduled (FixedRate, FixedDelay, Cron expressions)",
+            "id": "scheduled_fixedrate_fixeddelay_cron_expressions"
+          },
+          {
+            "name": "Quartz Scheduler integration",
+            "id": "quartz_scheduler_integration"
+          }
+        ],
+        "id": "scheduling"
       },
       {
         "name": "Spring Batch",
         "subTopics": [
-          { "name": "Job, Step, JobRepository" },
-          { "name": "ItemReader, ItemProcessor, ItemWriter" },
-          { "name": "Chunk-oriented processing" },
-          { "name": "Error handling (Skip, Retry policies)" },
-          { "name": "Parallel processing & Partitioning" }
-        ]
+          {
+            "name": "Job, Step, JobRepository",
+            "id": "job_step_jobrepository"
+          },
+          {
+            "name": "ItemReader, ItemProcessor, ItemWriter",
+            "id": "itemreader_itemprocessor_itemwriter"
+          },
+          {
+            "name": "Chunk-oriented processing",
+            "id": "chunk_oriented_processing"
+          },
+          {
+            "name": "Error handling (Skip, Retry policies)",
+            "id": "error_handling_skip_retry_policies"
+          },
+          {
+            "name": "Parallel processing & Partitioning",
+            "id": "parallel_processing_and_partitioning"
+          }
+        ],
+        "id": "spring_batch"
       }
     ]
   },
@@ -403,17 +807,34 @@
       {
         "name": "Project Reactor",
         "subTopics": [
-          { "name": "Mono vs Flux" },
-          { "name": "Backpressure" }
-        ]
+          {
+            "name": "Mono vs Flux",
+            "id": "mono_vs_flux"
+          },
+          {
+            "name": "Backpressure",
+            "id": "backpressure"
+          }
+        ],
+        "id": "project_reactor"
       },
       {
         "name": "Spring WebFlux",
         "subTopics": [
-          { "name": "Non-blocking REST APIs" },
-          { "name": "Netty Server" },
-          { "name": "Reactive Database Access (R2DBC)" }
-        ]
+          {
+            "name": "Non-blocking REST APIs",
+            "id": "non_blocking_rest_apis"
+          },
+          {
+            "name": "Netty Server",
+            "id": "netty_server"
+          },
+          {
+            "name": "Reactive Database Access (R2DBC)",
+            "id": "reactive_database_access_r2dbc"
+          }
+        ],
+        "id": "spring_webflux"
       }
     ]
   },
@@ -425,35 +846,64 @@
       {
         "name": "Testing Types",
         "subTopics": [
-          { "name": "Unit vs Integration testing" }
-        ]
+          {
+            "name": "Unit vs Integration testing",
+            "id": "unit_vs_integration_testing"
+          }
+        ],
+        "id": "testing_types"
       },
       {
         "name": "Unit Testing",
         "subTopics": [
-          { "name": "JUnit 5 & Mockito (Mocking dependencies)" }
-        ]
+          {
+            "name": "JUnit 5 & Mockito (Mocking dependencies)",
+            "id": "junit_5_and_mockito_mocking_dependencies"
+          }
+        ],
+        "id": "unit_testing"
       },
       {
         "name": "Integration Testing",
         "subTopics": [
-          { "name": "@SpringBootTest" },
-          { "name": "Test Slices (@WebMvcTest, @DataJpaTest)" }
-        ]
+          {
+            "name": "@SpringBootTest",
+            "id": "springboottest"
+          },
+          {
+            "name": "Test Slices (@WebMvcTest, @DataJpaTest)",
+            "id": "test_slices_webmvctest_datajpatest"
+          }
+        ],
+        "id": "integration_testing"
       },
       {
         "name": "Mocking",
         "subTopics": [
-          { "name": "Mockito basics" },
-          { "name": "MockBean vs SpyBean" }
-        ]
+          {
+            "name": "Mockito basics",
+            "id": "mockito_basics"
+          },
+          {
+            "name": "MockBean vs SpyBean",
+            "id": "mockbean_vs_spybean"
+          }
+        ],
+        "id": "mocking"
       },
       {
         "name": "Advanced Testing",
         "subTopics": [
-          { "name": "Testcontainers (Spinning up real DBs/Kafka in Docker for tests)" },
-          { "name": "WireMock (Mocking external APIs)" }
-        ]
+          {
+            "name": "Testcontainers (Spinning up real DBs/Kafka in Docker for tests)",
+            "id": "testcontainers_spinning_up_real_dbs_kafka_in_docker_for_tests"
+          },
+          {
+            "name": "WireMock (Mocking external APIs)",
+            "id": "wiremock_mocking_external_apis"
+          }
+        ],
+        "id": "advanced_testing"
       }
     ]
   },
@@ -465,31 +915,62 @@
       {
         "name": "Spring Boot Actuator",
         "subTopics": [
-          { "name": "Important endpoints: /health, /metrics, /info" },
-          { "name": "Custom health indicators" }
-        ]
+          {
+            "name": "Important endpoints: /health, /metrics, /info",
+            "id": "important_endpoints_health_metrics_info"
+          },
+          {
+            "name": "Custom health indicators",
+            "id": "custom_health_indicators"
+          }
+        ],
+        "id": "spring_boot_actuator"
       },
       {
         "name": "Monitoring",
         "subTopics": [
-          { "name": "Micrometer basics" },
-          { "name": "Prometheus & Grafana overview" }
-        ]
+          {
+            "name": "Micrometer basics",
+            "id": "micrometer_basics"
+          },
+          {
+            "name": "Prometheus & Grafana overview",
+            "id": "prometheus_and_grafana_overview"
+          }
+        ],
+        "id": "monitoring"
       },
       {
         "name": "Logging",
         "subTopics": [
-          { "name": "SLF4J, Logback" },
-          { "name": "Log aggregation (ELK Stack: Elasticsearch, Logstash, Kibana)" }
-        ]
+          {
+            "name": "SLF4J, Logback",
+            "id": "slf4j_logback"
+          },
+          {
+            "name": "Log aggregation (ELK Stack: Elasticsearch, Logstash, Kibana)",
+            "id": "log_aggregation_elk_stack_elasticsearch_logstash_kibana"
+          }
+        ],
+        "id": "logging"
       },
       {
         "name": "Deployment",
         "subTopics": [
-          { "name": "Dockerizing Spring Boot" },
-          { "name": "Why Boot apps are container-friendly" },
-          { "name": "Fat JAR vs Thin JAR" }
-        ]
+          {
+            "name": "Dockerizing Spring Boot",
+            "id": "dockerizing_spring_boot"
+          },
+          {
+            "name": "Why Boot apps are container-friendly",
+            "id": "why_boot_apps_are_container_friendly"
+          },
+          {
+            "name": "Fat JAR vs Thin JAR",
+            "id": "fat_jar_vs_thin_jar"
+          }
+        ],
+        "id": "deployment"
       }
     ]
   },
@@ -501,19 +982,42 @@
       {
         "name": "Startup & Memory",
         "subTopics": [
-          { "name": "Why Spring Boot apps are heavy" },
-          { "name": "Reduce startup time" },
-          { "name": "GraalVM Native Image (concept)" },
-          { "name": "GraalVM Native Images (AOT Compilation for instant startup)" }
-        ]
+          {
+            "name": "Why Spring Boot apps are heavy",
+            "id": "why_spring_boot_apps_are_heavy"
+          },
+          {
+            "name": "Reduce startup time",
+            "id": "reduce_startup_time"
+          },
+          {
+            "name": "GraalVM Native Image (concept)",
+            "id": "graalvm_native_image_concept"
+          },
+          {
+            "name": "GraalVM Native Images (AOT Compilation for instant startup)",
+            "id": "graalvm_native_images_aot_compilation_for_instant_startup"
+          }
+        ],
+        "id": "startup_and_memory"
       },
       {
         "name": "Common Production Issues",
         "subTopics": [
-          { "name": "Bean overriding issues" },
-          { "name": "Circular dependencies" },
-          { "name": "Configuration mismatch across environments" }
-        ]
+          {
+            "name": "Bean overriding issues",
+            "id": "bean_overriding_issues"
+          },
+          {
+            "name": "Circular dependencies",
+            "id": "circular_dependencies"
+          },
+          {
+            "name": "Configuration mismatch across environments",
+            "id": "configuration_mismatch_across_environments"
+          }
+        ],
+        "id": "common_production_issues"
       }
     ]
   },
@@ -525,21 +1029,36 @@
       {
         "name": "GraphQL",
         "subTopics": [
-          { "name": "Spring for GraphQL (Controller, Schema, DataFetchers)" }
-        ]
+          {
+            "name": "Spring for GraphQL (Controller, Schema, DataFetchers)",
+            "id": "spring_for_graphql_controller_schema_datafetchers"
+          }
+        ],
+        "id": "graphql"
       },
       {
         "name": "WebSockets",
         "subTopics": [
-          { "name": "STOMP protocol, SockJS, Real-time chat" }
-        ]
+          {
+            "name": "STOMP protocol, SockJS, Real-time chat",
+            "id": "stomp_protocol_sockjs_real_time_chat"
+          }
+        ],
+        "id": "websockets"
       },
       {
         "name": "Caching",
         "subTopics": [
-          { "name": "@Cacheable, @CacheEvict" },
-          { "name": "Providers: Caffeine, Redis" }
-        ]
+          {
+            "name": "@Cacheable, @CacheEvict",
+            "id": "cacheable_cacheevict"
+          },
+          {
+            "name": "Providers: Caffeine, Redis",
+            "id": "providers_caffeine_redis"
+          }
+        ],
+        "id": "caching"
       }
     ]
   }

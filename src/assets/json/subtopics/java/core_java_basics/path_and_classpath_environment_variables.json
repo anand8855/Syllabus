@@ -25,7 +25,7 @@
       ],
       "images": [
         {
-          "url": "assets/images/path-google-maps-analogy.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/path_and_classpath_environment_variables/path-google-maps-analogy.svg",
           "alt": "PATH as Google Maps for Executables",
           "caption": "Visual analogy showing how PATH works like Google Maps — helping the OS navigate to executable programs like javac and java without needing full addresses"
         }
@@ -54,7 +54,7 @@
       ],
       "images": [
         {
-          "url": "assets/images/classpath-library-analogy.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/path_and_classpath_environment_variables/classpath-library-analogy.svg",
           "alt": "CLASSPATH as Library Index",
           "caption": "Visual analogy showing how CLASSPATH works like a library catalog — helping the JVM find classes and JAR files like a librarian finding books on shelves"
         }
@@ -79,7 +79,7 @@
       ],
       "images": [
         {
-          "url": "assets/images/path-classpath-workflow.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/path_and_classpath_environment_variables/path-classpath-workflow.svg",
           "alt": "PATH and CLASSPATH Workflow Diagram",
           "caption": "Complete workflow showing how PATH helps the OS find Java tools (javac, java) and how CLASSPATH helps the JVM find classes and JAR files during compilation and execution"
         }
@@ -112,20 +112,72 @@
         {
           "title": "Detailed Comparison Table",
           "table": {
-            "headers": ["Feature", "PATH", "CLASSPATH"],
+            "headers": [
+              "Feature",
+              "PATH",
+              "CLASSPATH"
+            ],
             "rows": [
-              ["Used by", "Operating System (Windows, Linux, macOS)", "Java Virtual Machine (JVM)"],
-              ["Purpose", "Find executable programs (javac, java, jar)", "Find classes, packages, and JAR files"],
-              ["Scope", "All programs on the system", "Java applications only"],
-              ["Needed for", "Running java, javac commands", "Class loading at compile time and runtime"],
-              ["Contains", "Directory paths to executables", "Paths to .class files, folders, and .jar files"],
-              ["Common error", "'javac' is not recognized as a command", "ClassNotFoundException or NoClassDefFoundError"],
-              ["Set at", "OS level (System/User environment variables)", "JVM level (command-line or environment variable)"],
-              ["Separator", "; (Windows) or : (Linux/macOS)", "; (Windows) or : (Linux/macOS)"],
-              ["Example entry", "C:\\Program Files\\Java\\jdk-17\\bin", ".;C:\\myapp\\classes;C:\\libs\\mysql.jar"],
-              ["Analogy", "Google Maps for executables 🗺️", "Library catalog for classes 📖"],
-              ["Modern usage", "Always needed for Java commands", "Rarely set manually (build tools handle it)"],
-              ["Best practice", "Set permanently in system", "Use -cp option, avoid global setting"]
+              [
+                "Used by",
+                "Operating System (Windows, Linux, macOS)",
+                "Java Virtual Machine (JVM)"
+              ],
+              [
+                "Purpose",
+                "Find executable programs (javac, java, jar)",
+                "Find classes, packages, and JAR files"
+              ],
+              [
+                "Scope",
+                "All programs on the system",
+                "Java applications only"
+              ],
+              [
+                "Needed for",
+                "Running java, javac commands",
+                "Class loading at compile time and runtime"
+              ],
+              [
+                "Contains",
+                "Directory paths to executables",
+                "Paths to .class files, folders, and .jar files"
+              ],
+              [
+                "Common error",
+                "'javac' is not recognized as a command",
+                "ClassNotFoundException or NoClassDefFoundError"
+              ],
+              [
+                "Set at",
+                "OS level (System/User environment variables)",
+                "JVM level (command-line or environment variable)"
+              ],
+              [
+                "Separator",
+                "; (Windows) or : (Linux/macOS)",
+                "; (Windows) or : (Linux/macOS)"
+              ],
+              [
+                "Example entry",
+                "C:\\Program Files\\Java\\jdk-17\\bin",
+                ".;C:\\myapp\\classes;C:\\libs\\mysql.jar"
+              ],
+              [
+                "Analogy",
+                "Google Maps for executables 🗺️",
+                "Library catalog for classes 📖"
+              ],
+              [
+                "Modern usage",
+                "Always needed for Java commands",
+                "Rarely set manually (build tools handle it)"
+              ],
+              [
+                "Best practice",
+                "Set permanently in system",
+                "Use -cp option, avoid global setting"
+              ]
             ]
           }
         },
@@ -280,73 +332,132 @@
       "question": "What is the difference between PATH and CLASSPATH in Java?",
       "answer": "PATH is an OS-level environment variable that helps the operating system locate executable programs like java, javac, and jar. CLASSPATH is a JVM-level environment variable that tells the Java Virtual Machine where to find .class files, packages, and JAR files at compile time and runtime. PATH is for finding tools (OS scope), while CLASSPATH is for finding classes and libraries (JVM scope).",
       "difficulty": "easy",
-      "tags": ["PATH", "CLASSPATH", "environment-variables", "fundamentals"]
+      "tags": [
+        "PATH",
+        "CLASSPATH",
+        "environment-variables",
+        "fundamentals"
+      ]
     },
     {
       "question": "What does the error 'javac' is not recognized mean and how do you fix it?",
       "answer": "This error means PATH is not configured correctly — the operating system cannot find the javac executable. To fix: (1) Locate your JDK installation (e.g., C:\\Program Files\\Java\\jdk-17), (2) Add the bin folder to PATH (C:\\Program Files\\Java\\jdk-17\\bin), (3) Restart your terminal, (4) Verify with 'javac -version'. On Linux/macOS, add 'export PATH=$PATH:/path/to/jdk/bin' to ~/.bashrc or ~/.zshrc.",
       "difficulty": "easy",
-      "tags": ["PATH", "troubleshooting", "errors"]
+      "tags": [
+        "PATH",
+        "troubleshooting",
+        "errors"
+      ]
     },
     {
       "question": "What is ClassNotFoundException and how is it different from NoClassDefFoundError?",
       "answer": "ClassNotFoundException occurs when the JVM cannot find a class in CLASSPATH at runtime — the class was never available. NoClassDefFoundError occurs when a class was present during compilation but is missing at runtime, typically due to CLASSPATH changes, missing JARs, or deleted .class files. ClassNotFoundException means 'never found it', NoClassDefFoundError means 'had it before, lost it now'.",
       "difficulty": "medium",
-      "tags": ["CLASSPATH", "exceptions", "errors", "troubleshooting"]
+      "tags": [
+        "CLASSPATH",
+        "exceptions",
+        "errors",
+        "troubleshooting"
+      ]
     },
     {
       "question": "How do you set CLASSPATH for a Java program?",
       "answer": "There are three ways: (1) RECOMMENDED: Use -cp or -classpath option: 'java -cp .;libs/* MyApp' (explicit, no side effects), (2) Temporary environment variable: 'set CLASSPATH=.;libs/*' on Windows or 'export CLASSPATH=.:libs/*' on Linux (current session only), (3) AVOID: Permanent system variable (affects all Java apps globally, hard to debug). Modern best practice is using build tools (Maven, Gradle) or the -cp option.",
       "difficulty": "medium",
-      "tags": ["CLASSPATH", "configuration", "best-practices"]
+      "tags": [
+        "CLASSPATH",
+        "configuration",
+        "best-practices"
+      ]
     },
     {
       "question": "What can be included in CLASSPATH?",
       "answer": "CLASSPATH can contain: (1) Current directory (.), (2) Directory paths to .class files (C:\\myapp\\classes), (3) Individual JAR files (C:\\libs\\mysql.jar), (4) Wildcard for multiple JARs (C:\\libs/*). Entries are separated by semicolons (;) on Windows or colons (:) on Linux/macOS. The JVM searches entries from left to right and uses the first match found.",
       "difficulty": "medium",
-      "tags": ["CLASSPATH", "configuration", "JAR-files"]
+      "tags": [
+        "CLASSPATH",
+        "configuration",
+        "JAR-files"
+      ]
     },
     {
       "question": "Do you need to set CLASSPATH in modern Java development?",
       "answer": "Rarely. Modern Java development uses build tools (Maven, Gradle) that auto-manage dependencies and CLASSPATH, or IDEs (IntelliJ, Eclipse) that auto-configure build paths. You only set CLASSPATH manually when: (1) Learning Java basics without tools, (2) Running standalone programs with external JARs, (3) Troubleshooting classpath issues, (4) Working with legacy projects. Best practice: Use -cp option when needed, avoid global CLASSPATH environment variable.",
       "difficulty": "medium",
-      "tags": ["CLASSPATH", "modern-development", "best-practices", "build-tools"]
+      "tags": [
+        "CLASSPATH",
+        "modern-development",
+        "best-practices",
+        "build-tools"
+      ]
     },
     {
       "question": "Why does CLASSPATH order matter?",
       "answer": "The JVM searches CLASSPATH entries from left to right and uses the FIRST matching class it finds, ignoring duplicates. If you have multiple JARs with the same class (e.g., old-version.jar and new-version.jar), the order determines which version loads. Example: '.;old.jar;new.jar' loads the old version first. To fix: put the desired version first or remove duplicates. This is why dependency management tools (Maven/Gradle) are crucial for preventing version conflicts.",
       "difficulty": "hard",
-      "tags": ["CLASSPATH", "class-loading", "dependency-management", "troubleshooting"]
+      "tags": [
+        "CLASSPATH",
+        "class-loading",
+        "dependency-management",
+        "troubleshooting"
+      ]
     },
     {
       "question": "How does PATH help during Java compilation and execution?",
       "answer": "During compilation: When you type 'javac HelloWorld.java', the OS searches PATH directories to find the javac executable. Without PATH, you'd need to type the full path like 'C:\\Program Files\\Java\\jdk-17\\bin\\javac HelloWorld.java'. During execution: Same for 'java HelloWorld' — OS uses PATH to find the java executable. PATH makes commands work from any directory without specifying full paths to Java tools.",
       "difficulty": "easy",
-      "tags": ["PATH", "compilation", "execution", "fundamentals"]
+      "tags": [
+        "PATH",
+        "compilation",
+        "execution",
+        "fundamentals"
+      ]
     },
     {
       "question": "Explain how PATH and CLASSPATH work together with an example.",
       "answer": "Example: 'javac -cp libs/mysql.jar DBApp.java' then 'java -cp .;libs/mysql.jar DBApp'. Step 1: OS uses PATH to find javac executable. Step 2: javac uses CLASSPATH (libs/mysql.jar) to find MySQL driver classes during compilation. Step 3: OS uses PATH to find java executable. Step 4: JVM uses CLASSPATH (. and libs/mysql.jar) to load DBApp.class and MySQL driver at runtime. PATH finds the tools, CLASSPATH finds the code.",
       "difficulty": "hard",
-      "tags": ["PATH", "CLASSPATH", "compilation", "execution", "workflow"]
+      "tags": [
+        "PATH",
+        "CLASSPATH",
+        "compilation",
+        "execution",
+        "workflow"
+      ]
     },
     {
       "question": "What are the best practices for managing CLASSPATH in production?",
       "answer": "Best practices: (1) Use build tools (Maven, Gradle) for automatic dependency management, (2) Never set CLASSPATH as a global environment variable (causes conflicts), (3) Use -cp option for standalone programs, (4) Include current directory (.) when needed, (5) Use relative paths for portability, (6) Leverage fat JARs (Spring Boot) that bundle all dependencies, (7) Use wildcard (libs/*) for multiple JARs, (8) Document dependencies clearly, (9) Avoid mixing library versions. Modern production rarely touches CLASSPATH manually.",
       "difficulty": "hard",
-      "tags": ["CLASSPATH", "best-practices", "production", "build-tools", "dependency-management"]
+      "tags": [
+        "CLASSPATH",
+        "best-practices",
+        "production",
+        "build-tools",
+        "dependency-management"
+      ]
     },
     {
       "question": "How can you programmatically check the current CLASSPATH?",
       "answer": "Use System.getProperty(\"java.class.path\") to get the current CLASSPATH at runtime. Example: String cp = System.getProperty(\"java.class.path\"); String[] paths = cp.split(System.getProperty(\"path.separator\")); for(String p : paths) { System.out.println(p); }. This prints all CLASSPATH entries. You can also use 'java -verbose:class MyApp' to see every class loading with its source JAR/directory. Useful for debugging ClassNotFoundException.",
       "difficulty": "medium",
-      "tags": ["CLASSPATH", "debugging", "runtime", "troubleshooting"]
+      "tags": [
+        "CLASSPATH",
+        "debugging",
+        "runtime",
+        "troubleshooting"
+      ]
     },
     {
       "question": "What is the difference between setting PATH permanently vs temporarily?",
       "answer": "Permanent (System Environment Variable): Survives terminal restarts, affects all sessions, set via System Properties (Windows) or .bashrc/.zshrc (Linux/macOS). Recommended for PATH since Java tools are always needed. Temporary (Session Variable): Lasts only for current terminal session, set with 'set PATH=...' (Windows) or 'export PATH=...' (Linux/macOS). Lost when terminal closes. Useful for testing without affecting global settings. PATH should generally be permanent, CLASSPATH should be temporary (or use -cp).",
       "difficulty": "medium",
-      "tags": ["PATH", "CLASSPATH", "environment-variables", "configuration"]
+      "tags": [
+        "PATH",
+        "CLASSPATH",
+        "environment-variables",
+        "configuration"
+      ]
     }
   ]
 }

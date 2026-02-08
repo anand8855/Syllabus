@@ -13,6 +13,7 @@ export class SyllabusComponent implements OnInit {
   sections: Section[] = [];
   filteredSections: Section[] = [];
   technology: string = '';
+  technologyKey: string = '';
   techIcon: string = '';
   techSubtitle: string = '';
   themeClass: string = '';
@@ -35,6 +36,7 @@ export class SyllabusComponent implements OnInit {
   }
 
   loadTechnology(tech: string) {
+    this.technologyKey = tech;
     switch(tech) {
       case 'java':
         this.technology = 'Java';

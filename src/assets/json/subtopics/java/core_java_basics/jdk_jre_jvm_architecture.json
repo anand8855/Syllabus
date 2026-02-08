@@ -95,7 +95,7 @@
       "content": "Understanding the hierarchy is crucial for Java development.",
       "images": [
         {
-          "url": "assets/images/jdk-jre-jvm-relationship.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/jdk_jre_jvm_architecture/jdk-jre-jvm-relationship.svg",
           "alt": "JDK, JRE, JVM Relationship Diagram",
           "caption": "Visual hierarchy showing JDK contains JRE, which contains JVM, along with the specific components in each layer"
         }
@@ -124,7 +124,7 @@
       "content": "Now let's open the JVM and see what happens when you run a Java program. This is where the magic happens!",
       "images": [
         {
-          "url": "assets/images/jvm-architecture-detailed.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/jdk_jre_jvm_architecture/jvm-architecture-detailed.svg",
           "alt": "Detailed JVM Architecture Diagram",
           "caption": "Complete JVM architecture showing Class Loader Subsystem, Runtime Data Areas (Method Area, Heap, Stack, PC Register, Native Stack), Execution Engine (Interpreter, JIT, GC), and Native Method Interface"
         }
@@ -493,61 +493,104 @@
       "question": "What is the difference between JDK, JRE, and JVM?",
       "answer": "JDK (Java Development Kit) = JRE + Development Tools (javac, jar, javadoc, debugger). Used by developers to write and compile Java programs.\n\nJRE (Java Runtime Environment) = JVM + Core Libraries + Runtime Files. Used to execute Java applications.\n\nJVM (Java Virtual Machine) = The virtual machine that executes Java bytecode. Platform-specific and provides platform independence.\n\nRelationship: JDK ⊃ JRE ⊃ JVM",
       "difficulty": "easy",
-      "tags": ["JDK", "JRE", "JVM", "fundamentals"]
+      "tags": [
+        "JDK",
+        "JRE",
+        "JVM",
+        "fundamentals"
+      ]
     },
     {
       "question": "When do you need JDK vs JRE?",
       "answer": "You need JDK when:\n• You're a Java developer\n• Writing/compiling Java code\n• Need javac, jar, javadoc tools\n\nYou need only JRE when:\n• You're an end user\n• Just running Java applications\n• Don't need to compile code\n\nRule: Developers need JDK, end users need only JRE.",
       "difficulty": "easy",
-      "tags": ["JDK", "JRE", "usage"]
+      "tags": [
+        "JDK",
+        "JRE",
+        "usage"
+      ]
     },
     {
       "question": "Explain JVM architecture components.",
       "answer": "JVM has 3 main subsystems:\n\n1. Class Loader Subsystem:\n   - Loading (Bootstrap, Extension, Application loaders)\n   - Linking (Verification, Preparation, Resolution)\n   - Initialization\n\n2. Runtime Data Areas:\n   - Method Area (class metadata, static vars)\n   - Heap (objects, instance vars)\n   - Stack (method calls, local vars)\n   - PC Register (current instruction)\n   - Native Method Stack (native calls)\n\n3. Execution Engine:\n   - Interpreter (bytecode execution)\n   - JIT Compiler (performance optimization)\n   - Garbage Collector (memory management)",
       "difficulty": "medium",
-      "tags": ["JVM", "architecture", "components"]
+      "tags": [
+        "JVM",
+        "architecture",
+        "components"
+      ]
     },
     {
       "question": "What is the difference between Heap and Stack memory?",
       "answer": "Heap:\n• Stores objects and instance variables\n• Shared across all threads\n• Larger memory area\n• Slower access\n• Managed by Garbage Collector\n• OutOfMemoryError\n\nStack:\n• Stores method calls and local variables\n• Thread-specific (each thread has own stack)\n• Smaller, faster access\n• LIFO structure\n• Automatically cleared when method returns\n• StackOverflowError\n\nExample:\nMyObject obj = new MyObject();\n// 'obj' reference → Stack\n// Actual MyObject → Heap",
       "difficulty": "medium",
-      "tags": ["heap", "stack", "memory"]
+      "tags": [
+        "heap",
+        "stack",
+        "memory"
+      ]
     },
     {
       "question": "What is JIT compiler and how does it improve performance?",
       "answer": "JIT (Just-In-Time) Compiler improves performance by:\n\n1. Profiling: Monitors frequently executed code ('hot spots')\n2. Compilation: Converts hot bytecode to native machine code\n3. Optimization: Applies optimizations (inlining, dead code elimination, loop optimization)\n4. Caching: Stores compiled code for reuse\n\nBenefit:\n• First execution: Interpreted (slower)\n• Subsequent executions: Native code (10-100x faster)\n• Long-running apps benefit most\n\nThis is why Java servers get faster over time!",
       "difficulty": "medium",
-      "tags": ["JIT", "performance", "optimization"]
+      "tags": [
+        "JIT",
+        "performance",
+        "optimization"
+      ]
     },
     {
       "question": "How does Garbage Collection work in Java?",
       "answer": "Garbage Collection automatically manages memory:\n\n1. Mark Phase:\n   - Identifies live objects (still referenced)\n   - Marks them as 'in use'\n\n2. Sweep Phase:\n   - Finds unmarked objects (unreachable)\n   - Removes them and frees memory\n\n3. Compact Phase (optional):\n   - Defragments memory\n   - Moves objects together\n\nHeap Generations:\n• Young Gen: New objects, frequent GC\n• Old Gen: Long-lived objects, infrequent GC\n• MetaSpace: Class metadata\n\nAdvantage: No manual memory management (unlike C/C++)",
       "difficulty": "medium",
-      "tags": ["GC", "memory", "garbage-collection"]
+      "tags": [
+        "GC",
+        "memory",
+        "garbage-collection"
+      ]
     },
     {
       "question": "Explain the Class Loading process.",
       "answer": "Class Loading has 3 phases:\n\n1. Loading:\n   - Bootstrap ClassLoader (core Java classes)\n   - Extension ClassLoader (extensions)\n   - Application ClassLoader (application classes)\n   - Reads .class file into memory\n\n2. Linking:\n   a) Verification: Validates bytecode\n   b) Preparation: Allocates memory for static vars\n   c) Resolution: Converts symbolic references to direct\n\n3. Initialization:\n   - Executes static blocks\n   - Initializes static variables\n\nAnalogy: Like airport security - verify, prepare, clear for entry!",
       "difficulty": "hard",
-      "tags": ["class-loader", "loading", "jvm"]
+      "tags": [
+        "class-loader",
+        "loading",
+        "jvm"
+      ]
     },
     {
       "question": "What is stored in Method Area?",
       "answer": "Method Area (MetaSpace in Java 8+) stores:\n\n• Class metadata (structure, methods, fields)\n• Static variables\n• Method bytecode\n• Runtime constant pool\n• Field information\n\nCharacteristics:\n• Shared across all threads\n• Created at JVM startup\n• In Java 8+, moved from Heap to native memory\n• No more PermGen errors (auto-sized)\n\nAnalogy: Like a library - everyone reads from same class definitions.",
       "difficulty": "medium",
-      "tags": ["method-area", "metaspace", "memory"]
+      "tags": [
+        "method-area",
+        "metaspace",
+        "memory"
+      ]
     },
     {
       "question": "What causes StackOverflowError and OutOfMemoryError?",
       "answer": "StackOverflowError:\n• Caused by: Too many method calls\n• Common reason: Infinite recursion, very deep recursion\n• Location: Stack memory\n• Example: Method calling itself without base case\n\nOutOfMemoryError:\n• Caused by: Heap memory exhausted\n• Common reason: Too many objects, memory leak, large data\n• Location: Heap memory\n• Solutions: Increase heap size (-Xmx), fix memory leaks, optimize code\n\nStack = method calls (limited depth)\nHeap = objects (can be very large)",
       "difficulty": "medium",
-      "tags": ["errors", "stack", "heap", "memory"]
+      "tags": [
+        "errors",
+        "stack",
+        "heap",
+        "memory"
+      ]
     },
     {
       "question": "Why is Java called platform-independent? How does JVM enable this?",
       "answer": "Platform Independence (WORA - Write Once, Run Anywhere):\n\n1. Write Java code once\n2. Compile to bytecode (.class) - platform-independent\n3. Bytecode runs on any JVM\n4. JVM is platform-specific (different for Windows/Linux/Mac)\n5. JVM translates bytecode to native machine code\n\nKey:\n• Same bytecode works everywhere\n• Different JVMs for different platforms\n• JVM acts as abstraction layer\n\nAnalogy: JVM is a universal translator - one language in (bytecode), platform-specific output.\n\nThis is Java's superpower!",
       "difficulty": "easy",
-      "tags": ["platform-independence", "WORA", "JVM", "bytecode"]
+      "tags": [
+        "platform-independence",
+        "WORA",
+        "JVM",
+        "bytecode"
+      ]
     }
   ]
 }

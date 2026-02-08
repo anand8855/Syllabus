@@ -10,6 +10,7 @@ import { Section } from '../../models/syllabus.model';
 export class SectionComponent {
   @Input() section!: Section;
   @Input() allSections: Section[] = [];
+  @Input() technologyKey: string = '';
 
   toggleSection() {
     // Collapse all other sections

@@ -12,6 +12,14 @@
     </div>
   </div>
 
+  <!-- Loader -->
+  <div class="content loading" *ngIf="isLoading">
+    <div class="loader">
+      <div class="spinner"></div>
+      <p>Loading subtopic content...</p>
+    </div>
+  </div>
+
   <div class="content" *ngIf="content">
     <h1>{{ content.name }}</h1>
 
@@ -143,7 +151,7 @@
   </div>
 
   <!-- No Content Available Message -->
-  <div class="content no-content" *ngIf="!content">
+  <div class="content no-content" *ngIf="!isLoading && !content">
     <h1>{{ subtopicName }}</h1>
     <div class="no-content-message">
       <p>📝 Content for this subtopic is not yet available.</p>

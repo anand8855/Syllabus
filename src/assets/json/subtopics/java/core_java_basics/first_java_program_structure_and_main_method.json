@@ -29,7 +29,7 @@
       "content": "A basic Java program can have these parts in a specific order. Think of a Java program like a house 🏠: Package → Area/society, Imports → Tools you borrow, Class → The house itself, main → Front door, Statements → What you do inside the house.",
       "images": [
         {
-          "url": "assets/images/java-program-structure.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/first_java_program_structure_and_main_method/java-program-structure.svg",
           "alt": "Complete Java Program Structure",
           "caption": "Visual representation of Java program structure - from package declaration to main method execution, showing how all components fit together"
         }
@@ -122,7 +122,7 @@
       "content": "A class is a blueprint that contains methods, variables, and logic. In Java, everything lives inside a class. You cannot write code outside a class - Java is very strict about this!",
       "images": [
         {
-          "url": "assets/images/java-class-structure.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/first_java_program_structure_and_main_method/java-class-structure.svg",
           "alt": "Java Class Structure Diagram",
           "caption": "Anatomy of a Java class - showing class declaration, fields, constructors, and methods with proper visibility modifiers"
         }
@@ -167,7 +167,7 @@
       "content": "The main method is the starting point of every Java application. When you run a program, the JVM loads the class, looks for main, and starts execution from there. No main = No execution!",
       "images": [
         {
-          "url": "assets/images/main-method-execution.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/first_java_program_structure_and_main_method/main-method-execution.svg",
           "alt": "JVM Main Method Execution Flow",
           "caption": "How JVM finds and executes the main method - from class loading to program termination, showing the complete execution lifecycle"
         }
@@ -204,7 +204,7 @@
       "content": "Let's decode the most important method signature in Java, word by word. This is interview gold! Every keyword has a specific purpose and reason.",
       "images": [
         {
-          "url": "assets/images/main-method-breakdown.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/first_java_program_structure_and_main_method/main-method-breakdown.svg",
           "alt": "Main Method Signature Breakdown",
           "caption": "Detailed breakdown of each component in the main method signature - public, static, void, main, String[] args - with explanations and visual aids"
         }
@@ -285,7 +285,7 @@
       "content": "Understanding how Java executes your program from start to finish.",
       "images": [
         {
-          "url": "assets/images/java-execution-flow.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/first_java_program_structure_and_main_method/java-execution-flow.svg",
           "alt": "Complete Java Program Execution Flow",
           "caption": "Step-by-step visualization of Java program execution - from source code compilation to JVM execution and termination"
         }
@@ -434,73 +434,118 @@
       "question": "What is the main method in Java?",
       "answer": "The main method is the entry point of a Java application. It's where program execution begins. JVM looks for this method when you run a Java program. Signature must be: public static void main(String[] args)",
       "difficulty": "easy",
-      "tags": ["main-method", "basics", "execution"]
+      "tags": [
+        "main-method",
+        "basics",
+        "execution"
+      ]
     },
     {
       "question": "Why is main method public in Java?",
       "answer": "The main method is public because JVM needs to access it from outside the class. If it were private or protected, JVM couldn't call it to start the program. Public access allows JVM (an external caller) to invoke the method.",
       "difficulty": "easy",
-      "tags": ["main-method", "access-modifiers", "public"]
+      "tags": [
+        "main-method",
+        "access-modifiers",
+        "public"
+      ]
     },
     {
       "question": "Why is main method static in Java?",
       "answer": "The main method is static so JVM can call it without creating an object of the class. If it weren't static, JVM would need to instantiate the class first, which is unnecessary and inefficient for program startup. Static allows direct invocation: ClassName.main(args)",
       "difficulty": "medium",
-      "tags": ["main-method", "static", "execution"]
+      "tags": [
+        "main-method",
+        "static",
+        "execution"
+      ]
     },
     {
       "question": "Why does main method return void?",
       "answer": "The main method returns void because JVM doesn't expect any return value. The method's purpose is to start and run the program, not to return data. Program exit status is controlled through System.exit(int) if needed, not through main's return value.",
       "difficulty": "easy",
-      "tags": ["main-method", "void", "return-type"]
+      "tags": [
+        "main-method",
+        "void",
+        "return-type"
+      ]
     },
     {
       "question": "What is String[] args in main method?",
       "answer": "String[] args is an array of command-line arguments passed to the program at runtime. When you run 'java MyClass arg1 arg2', args[0] = 'arg1' and args[1] = 'arg2'. It allows passing input without recompiling the program. The name 'args' is convention but can be changed.",
       "difficulty": "medium",
-      "tags": ["main-method", "command-line", "arrays"]
+      "tags": [
+        "main-method",
+        "command-line",
+        "arrays"
+      ]
     },
     {
       "question": "Can we have multiple main methods in a Java program?",
       "answer": "Yes, you can have multiple main methods in different classes within the same program. Each class can have its own main method. When you run the program (java ClassName), JVM executes the main method of that specific class. However, only one public class per file, and filename must match that public class.",
       "difficulty": "medium",
-      "tags": ["main-method", "multiple-classes"]
+      "tags": [
+        "main-method",
+        "multiple-classes"
+      ]
     },
     {
       "question": "What happens if we don't define main method in a class?",
       "answer": "If you try to run a class without a main method, you'll get a runtime error: 'Error: Main method not found in class ClassName'. The class will compile fine, but JVM cannot execute it as a standalone application. Libraries/utility classes don't need main, but executable classes do.",
       "difficulty": "easy",
-      "tags": ["main-method", "errors"]
+      "tags": [
+        "main-method",
+        "errors"
+      ]
     },
     {
       "question": "Can we change the name of main method?",
       "answer": "No, you cannot rename main to something else (like 'start' or 'run') for the entry point. JVM specifically looks for a method named 'main' with exact signature. You can create other methods with different names, but they won't be execution entry points.",
       "difficulty": "easy",
-      "tags": ["main-method", "naming"]
+      "tags": [
+        "main-method",
+        "naming"
+      ]
     },
     {
       "question": "What is the sequence of execution in a Java program?",
       "answer": "1) Compile: javac creates .class bytecode. 2) Run: java command starts JVM. 3) JVM loads the class into memory. 4) JVM searches for public static void main(String[] args). 5) Execution begins from first statement in main. 6) Statements execute sequentially. 7) main ends, program terminates.",
       "difficulty": "medium",
-      "tags": ["execution-flow", "JVM", "lifecycle"]
+      "tags": [
+        "execution-flow",
+        "JVM",
+        "lifecycle"
+      ]
     },
     {
       "question": "Why must the public class name match the filename?",
       "answer": "In Java, if a class is declared public, the filename must exactly match the class name (case-sensitive) with .java extension. This helps JVM locate the class file. It's a design decision for organization and clarity. One file can have only one public class, but multiple non-public classes.",
       "difficulty": "medium",
-      "tags": ["class", "naming", "file-structure"]
+      "tags": [
+        "class",
+        "naming",
+        "file-structure"
+      ]
     },
     {
       "question": "What is System.out.println()?",
       "answer": "System.out.println() is used to print output to console. System is a class in java.lang, 'out' is a static PrintStream object, println() is a method that prints and adds a newline. It's the most common way to display output in Java programs.",
       "difficulty": "easy",
-      "tags": ["output", "println", "System"]
+      "tags": [
+        "output",
+        "println",
+        "System"
+      ]
     },
     {
       "question": "Can we overload the main method?",
       "answer": "Yes, you can overload main method by creating methods with the same name but different parameters. However, JVM will only call public static void main(String[] args) as the entry point. Other overloaded versions must be called explicitly from within the program.",
       "difficulty": "hard",
-      "tags": ["main-method", "overloading", "advanced"]
+      "tags": [
+        "main-method",
+        "overloading",
+        "advanced"
+      ]
     }
   ]
 }

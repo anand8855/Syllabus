@@ -7,46 +7,122 @@
       {
         "name": "Introduction to Java",
         "subTopics": [
-          { "name": "History of Java" },
-          { "name": "Features of Java (Platform Independent, OOP, etc.)" },
-          { "name": "JDK, JRE, JVM Architecture" },
-          { "name": "Compilation and Execution Process" },
-          { "name": "Bytecode and Platform Independence" },
-          { "name": "Java Editions (SE, EE, ME)" },
-          { "name": "Path and Classpath (Environment Variables)" },
-          { "name": "First Java Program structure and main method" },
-          { "name": "Java Keywords and Identifiers" },
-          { "name": "Comments in Java (Single-line, Multi-line, Documentation)" },
-          { "name": "Java vs C++ comparison" },
-          { "name": "Java is Pass-by-Value" }
-        ]
+          {
+            "name": "History of Java",
+            "id": "history_of_java"
+          },
+          {
+            "name": "Features of Java (Platform Independent, OOP, etc.)",
+            "id": "features_of_java_platform_independent_oop_etc"
+          },
+          {
+            "name": "JDK, JRE, JVM Architecture",
+            "id": "jdk_jre_jvm_architecture"
+          },
+          {
+            "name": "Compilation and Execution Process",
+            "id": "compilation_and_execution_process"
+          },
+          {
+            "name": "Bytecode and Platform Independence",
+            "id": "bytecode_and_platform_independence"
+          },
+          {
+            "name": "Java Editions (SE, EE, ME)",
+            "id": "java_editions_se_ee_me"
+          },
+          {
+            "name": "Path and Classpath (Environment Variables)",
+            "id": "path_and_classpath_environment_variables"
+          },
+          {
+            "name": "First Java Program structure and main method",
+            "id": "first_java_program_structure_and_main_method"
+          },
+          {
+            "name": "Java Keywords and Identifiers",
+            "id": "java_keywords_and_identifiers"
+          },
+          {
+            "name": "Comments in Java (Single-line, Multi-line, Documentation)",
+            "id": "comments_in_java_single_line_multi_line_documentation"
+          },
+          {
+            "name": "Java vs C++ comparison",
+            "id": "java_vs_c_comparison"
+          },
+          {
+            "name": "Java is Pass-by-Value",
+            "id": "java_is_pass_by_value"
+          }
+        ],
+        "id": "introduction_to_java"
       },
       {
         "name": "Data Types & Variables",
         "subTopics": [
-          { "name": "Primitive data types" },
-          { "name": "Reference types" },
-          { "name": "Type casting and conversion" },
-          { "name": "Variables (local, instance, static)" }
-        ]
+          {
+            "name": "Primitive data types",
+            "id": "primitive_data_types"
+          },
+          {
+            "name": "Reference types",
+            "id": "reference_types"
+          },
+          {
+            "name": "Type casting and conversion",
+            "id": "type_casting_and_conversion"
+          },
+          {
+            "name": "Variables (local, instance, static)",
+            "id": "variables_local_instance_static"
+          }
+        ],
+        "id": "data_types_and_variables"
       },
       {
         "name": "Operators & Control Statements",
         "subTopics": [
-          { "name": "Arithmetic, Logical, Relational operators" },
-          { "name": "If-else, switch statements" },
-          { "name": "Loops (for, while, do-while, enhanced for)" },
-          { "name": "Break, continue, return statements" }
-        ]
+          {
+            "name": "Arithmetic, Logical, Relational operators",
+            "id": "arithmetic_logical_relational_operators"
+          },
+          {
+            "name": "If-else, switch statements",
+            "id": "if_else_switch_statements"
+          },
+          {
+            "name": "Loops (for, while, do-while, enhanced for)",
+            "id": "loops_for_while_do_while_enhanced_for"
+          },
+          {
+            "name": "Break, continue, return statements",
+            "id": "break_continue_return_statements"
+          }
+        ],
+        "id": "operators_and_control_statements"
       },
       {
         "name": "Arrays & Basic I/O",
         "subTopics": [
-          { "name": "Single and multidimensional arrays" },
-          { "name": "Array manipulation" },
-          { "name": "Jagged arrays" },
-          { "name": "Scanner class and Console I/O" }
-        ]
+          {
+            "name": "Single and multidimensional arrays",
+            "id": "single_and_multidimensional_arrays"
+          },
+          {
+            "name": "Array manipulation",
+            "id": "array_manipulation"
+          },
+          {
+            "name": "Jagged arrays",
+            "id": "jagged_arrays"
+          },
+          {
+            "name": "Scanner class and Console I/O",
+            "id": "scanner_class_and_console_i_o"
+          }
+        ],
+        "id": "arrays_and_basic_i_o"
       }
     ]
   },
@@ -58,47 +134,112 @@
       {
         "name": "Classes and Objects",
         "subTopics": [
-          { "name": "Class definition and object creation" },
-          { "name": "Constructors (default, parameterized, copy)" },
-          { "name": "Constructor overloading" },
-          { "name": "this keyword" },
-          { "name": "Object Initialization Order" }
-        ]
+          {
+            "name": "Class definition and object creation",
+            "id": "class_definition_and_object_creation"
+          },
+          {
+            "name": "Constructors (default, parameterized, copy)",
+            "id": "constructors_default_parameterized_copy"
+          },
+          {
+            "name": "Constructor overloading",
+            "id": "constructor_overloading"
+          },
+          {
+            "name": "this keyword",
+            "id": "this_keyword"
+          },
+          {
+            "name": "Object Initialization Order",
+            "id": "object_initialization_order"
+          }
+        ],
+        "id": "classes_and_objects"
       },
       {
         "name": "Encapsulation",
         "subTopics": [
-          { "name": "Access modifiers (private, public, protected, default)" },
-          { "name": "Getters and Setters" },
-          { "name": "Data hiding" }
-        ]
+          {
+            "name": "Access modifiers (private, public, protected, default)",
+            "id": "access_modifiers_private_public_protected_default"
+          },
+          {
+            "name": "Getters and Setters",
+            "id": "getters_and_setters"
+          },
+          {
+            "name": "Data hiding",
+            "id": "data_hiding"
+          }
+        ],
+        "id": "encapsulation"
       },
       {
         "name": "Inheritance & Composition",
         "subTopics": [
-          { "name": "Types of inheritance" },
-          { "name": "super keyword" },
-          { "name": "Method overriding" },
-          { "name": "final keyword" },
-          { "name": "IS-A vs HAS-A relationship" }
-        ]
+          {
+            "name": "Types of inheritance",
+            "id": "types_of_inheritance"
+          },
+          {
+            "name": "super keyword",
+            "id": "super_keyword"
+          },
+          {
+            "name": "Method overriding",
+            "id": "method_overriding"
+          },
+          {
+            "name": "final keyword",
+            "id": "final_keyword"
+          },
+          {
+            "name": "IS-A vs HAS-A relationship",
+            "id": "is_a_vs_has_a_relationship"
+          }
+        ],
+        "id": "inheritance_and_composition"
       },
       {
         "name": "Polymorphism",
         "subTopics": [
-          { "name": "Compile-time (Method Overloading)" },
-          { "name": "Runtime (Method Overriding)" },
-          { "name": "Dynamic method dispatch" }
-        ]
+          {
+            "name": "Compile-time (Method Overloading)",
+            "id": "compile_time_method_overloading"
+          },
+          {
+            "name": "Runtime (Method Overriding)",
+            "id": "runtime_method_overriding"
+          },
+          {
+            "name": "Dynamic method dispatch",
+            "id": "dynamic_method_dispatch"
+          }
+        ],
+        "id": "polymorphism"
       },
       {
         "name": "Abstraction",
         "subTopics": [
-          { "name": "Abstract classes and methods" },
-          { "name": "Interfaces" },
-          { "name": "Multiple inheritance using interfaces" },
-          { "name": "Marker interfaces" }
-        ]
+          {
+            "name": "Abstract classes and methods",
+            "id": "abstract_classes_and_methods"
+          },
+          {
+            "name": "Interfaces",
+            "id": "interfaces"
+          },
+          {
+            "name": "Multiple inheritance using interfaces",
+            "id": "multiple_inheritance_using_interfaces"
+          },
+          {
+            "name": "Marker interfaces",
+            "id": "marker_interfaces"
+          }
+        ],
+        "id": "abstraction"
       }
     ]
   },
@@ -110,36 +251,82 @@
       {
         "name": "Static keyword",
         "subTopics": [
-          { "name": "Static variables and methods" },
-          { "name": "Static blocks" },
-          { "name": "Static nested classes" }
-        ]
+          {
+            "name": "Static variables and methods",
+            "id": "static_variables_and_methods"
+          },
+          {
+            "name": "Static blocks",
+            "id": "static_blocks"
+          },
+          {
+            "name": "Static nested classes",
+            "id": "static_nested_classes"
+          }
+        ],
+        "id": "static_keyword"
       },
       {
         "name": "Inner Classes",
         "subTopics": [
-          { "name": "Member inner class" },
-          { "name": "Static nested class" },
-          { "name": "Local inner class" },
-          { "name": "Anonymous inner class" }
-        ]
+          {
+            "name": "Member inner class",
+            "id": "member_inner_class"
+          },
+          {
+            "name": "Static nested class",
+            "id": "static_nested_class"
+          },
+          {
+            "name": "Local inner class",
+            "id": "local_inner_class"
+          },
+          {
+            "name": "Anonymous inner class",
+            "id": "anonymous_inner_class"
+          }
+        ],
+        "id": "inner_classes"
       },
       {
         "name": "Packages",
         "subTopics": [
-          { "name": "Creating and using packages" },
-          { "name": "Import statements" },
-          { "name": "Access protection" }
-        ]
+          {
+            "name": "Creating and using packages",
+            "id": "creating_and_using_packages"
+          },
+          {
+            "name": "Import statements",
+            "id": "import_statements"
+          },
+          {
+            "name": "Access protection",
+            "id": "access_protection"
+          }
+        ],
+        "id": "packages"
       },
       {
         "name": "Object Class Methods",
         "subTopics": [
-          { "name": "equals() and hashCode() contract" },
-          { "name": "toString()" },
-          { "name": "clone()" },
-          { "name": "finalize()" }
-        ]
+          {
+            "name": "equals() and hashCode() contract",
+            "id": "equals_and_hashcode_contract"
+          },
+          {
+            "name": "toString()",
+            "id": "tostring"
+          },
+          {
+            "name": "clone()",
+            "id": "clone"
+          },
+          {
+            "name": "finalize()",
+            "id": "finalize"
+          }
+        ],
+        "id": "object_class_methods"
       }
     ]
   },
@@ -151,17 +338,48 @@
       {
         "name": "Core Exception Handling",
         "subTopics": [
-          { "name": "Fundamentals" },
-          { "name": "Exception Hierarchy" },
-          { "name": "Checked vs Unchecked Exceptions" },
-          { "name": "try–catch–finally blocks" },
-          { "name": "Multi-Catch and try-with-resources" },
-          { "name": "throw vs throws keyword" },
-          { "name": "Custom Exceptions" },
-          { "name": "Exception Propagation" },
-          { "name": "Exception Chaining" },
-          { "name": "Best Practices for Core Java Exception Handling" }
-        ]
+          {
+            "name": "Fundamentals",
+            "id": "fundamentals"
+          },
+          {
+            "name": "Exception Hierarchy",
+            "id": "exception_hierarchy"
+          },
+          {
+            "name": "Checked vs Unchecked Exceptions",
+            "id": "checked_vs_unchecked_exceptions"
+          },
+          {
+            "name": "try–catch–finally blocks",
+            "id": "try_catch_finally_blocks"
+          },
+          {
+            "name": "Multi-Catch and try-with-resources",
+            "id": "multi_catch_and_try_with_resources"
+          },
+          {
+            "name": "throw vs throws keyword",
+            "id": "throw_vs_throws_keyword"
+          },
+          {
+            "name": "Custom Exceptions",
+            "id": "custom_exceptions"
+          },
+          {
+            "name": "Exception Propagation",
+            "id": "exception_propagation"
+          },
+          {
+            "name": "Exception Chaining",
+            "id": "exception_chaining"
+          },
+          {
+            "name": "Best Practices for Core Java Exception Handling",
+            "id": "best_practices_for_core_java_exception_handling"
+          }
+        ],
+        "id": "core_exception_handling"
       }
     ]
   },
@@ -173,26 +391,56 @@
       {
         "name": "Collection Interfaces",
         "subTopics": [
-          { "name": "Collection, List, Set, Queue, Map" },
-          { "name": "Iterator, ListIterator, and Spliterator" }
-        ]
+          {
+            "name": "Collection, List, Set, Queue, Map",
+            "id": "collection_list_set_queue_map"
+          },
+          {
+            "name": "Iterator, ListIterator, and Spliterator",
+            "id": "iterator_listiterator_and_spliterator"
+          }
+        ],
+        "id": "collection_interfaces"
       },
       {
         "name": "Implementations",
         "subTopics": [
-          { "name": "ArrayList, LinkedList, Vector, Stack" },
-          { "name": "HashSet, LinkedHashSet, TreeSet" },
-          { "name": "HashMap, LinkedHashMap, TreeMap" },
-          { "name": "Hashtable and ConcurrentHashMap" },
-          { "name": "PriorityQueue and ArrayDeque" }
-        ]
+          {
+            "name": "ArrayList, LinkedList, Vector, Stack",
+            "id": "arraylist_linkedlist_vector_stack"
+          },
+          {
+            "name": "HashSet, LinkedHashSet, TreeSet",
+            "id": "hashset_linkedhashset_treeset"
+          },
+          {
+            "name": "HashMap, LinkedHashMap, TreeMap",
+            "id": "hashmap_linkedhashmap_treemap"
+          },
+          {
+            "name": "Hashtable and ConcurrentHashMap",
+            "id": "hashtable_and_concurrenthashmap"
+          },
+          {
+            "name": "PriorityQueue and ArrayDeque",
+            "id": "priorityqueue_and_arraydeque"
+          }
+        ],
+        "id": "implementations"
       },
       {
         "name": "Sorting and Utility",
         "subTopics": [
-          { "name": "Comparable vs Comparator" },
-          { "name": "Collections and Arrays utility classes" }
-        ]
+          {
+            "name": "Comparable vs Comparator",
+            "id": "comparable_vs_comparator"
+          },
+          {
+            "name": "Collections and Arrays utility classes",
+            "id": "collections_and_arrays_utility_classes"
+          }
+        ],
+        "id": "sorting_and_utility"
       }
     ]
   },
@@ -201,11 +449,26 @@
     "title": "Generics",
     "difficulty": "intermediate",
     "topics": [
-      { "name": "Generic Classes and Methods" },
-      { "name": "Bounded Type Parameters" },
-      { "name": "Wildcards (?, extends, super)" },
-      { "name": "PECS Principle" },
-      { "name": "Type Erasure" }
+      {
+        "name": "Generic Classes and Methods",
+        "id": "generic_classes_and_methods"
+      },
+      {
+        "name": "Bounded Type Parameters",
+        "id": "bounded_type_parameters"
+      },
+      {
+        "name": "Wildcards (?, extends, super)",
+        "id": "wildcards_extends_super"
+      },
+      {
+        "name": "PECS Principle",
+        "id": "pecs_principle"
+      },
+      {
+        "name": "Type Erasure",
+        "id": "type_erasure"
+      }
     ]
   },
   {
@@ -216,37 +479,86 @@
       {
         "name": "Thread Basics",
         "subTopics": [
-          { "name": "Thread class vs Runnable interface" },
-          { "name": "Thread lifecycle" },
-          { "name": "sleep, join, yield, interrupt" }
-        ]
+          {
+            "name": "Thread class vs Runnable interface",
+            "id": "thread_class_vs_runnable_interface"
+          },
+          {
+            "name": "Thread lifecycle",
+            "id": "thread_lifecycle"
+          },
+          {
+            "name": "sleep, join, yield, interrupt",
+            "id": "sleep_join_yield_interrupt"
+          }
+        ],
+        "id": "thread_basics"
       },
       {
         "name": "Synchronization",
         "subTopics": [
-          { "name": "synchronized keyword (blocks/methods)" },
-          { "name": "Locking: Object level vs Class level" },
-          { "name": "volatile keyword" },
-          { "name": "Deadlock, Livelock, and Starvation" }
-        ]
+          {
+            "name": "synchronized keyword (blocks/methods)",
+            "id": "synchronized_keyword_blocks_methods"
+          },
+          {
+            "name": "Locking: Object level vs Class level",
+            "id": "locking_object_level_vs_class_level"
+          },
+          {
+            "name": "volatile keyword",
+            "id": "volatile_keyword"
+          },
+          {
+            "name": "Deadlock, Livelock, and Starvation",
+            "id": "deadlock_livelock_and_starvation"
+          }
+        ],
+        "id": "synchronization"
       },
       {
         "name": "Inter-thread Communication",
         "subTopics": [
-          { "name": "wait, notify, and notifyAll" },
-          { "name": "Producer-Consumer problem" }
-        ]
+          {
+            "name": "wait, notify, and notifyAll",
+            "id": "wait_notify_and_notifyall"
+          },
+          {
+            "name": "Producer-Consumer problem",
+            "id": "producer_consumer_problem"
+          }
+        ],
+        "id": "inter_thread_communication"
       },
       {
         "name": "Concurrency Utilities",
         "subTopics": [
-          { "name": "Executor Framework and Thread Pools" },
-          { "name": "Callable and Future" },
-          { "name": "CompletableFuture" },
-          { "name": "Locks (ReentrantLock, ReadWriteLock)" },
-          { "name": "Atomic variables" },
-          { "name": "CountDownLatch and CyclicBarrier" }
-        ]
+          {
+            "name": "Executor Framework and Thread Pools",
+            "id": "executor_framework_and_thread_pools"
+          },
+          {
+            "name": "Callable and Future",
+            "id": "callable_and_future"
+          },
+          {
+            "name": "CompletableFuture",
+            "id": "completablefuture"
+          },
+          {
+            "name": "Locks (ReentrantLock, ReadWriteLock)",
+            "id": "locks_reentrantlock_readwritelock"
+          },
+          {
+            "name": "Atomic variables",
+            "id": "atomic_variables"
+          },
+          {
+            "name": "CountDownLatch and CyclicBarrier",
+            "id": "countdownlatch_and_cyclicbarrier"
+          }
+        ],
+        "id": "concurrency_utilities"
       }
     ]
   },
@@ -258,42 +570,106 @@
       {
         "name": "Java 8 Features",
         "subTopics": [
-          { "name": "Lambda Expressions" },
-          { "name": "Functional Interfaces" },
-          { "name": "Stream API" },
-          { "name": "Optional Class" },
-          { "name": "Default and Static methods in Interfaces" },
-          { "name": "Date and Time API (java.time)" }
-        ]
+          {
+            "name": "Lambda Expressions",
+            "id": "lambda_expressions"
+          },
+          {
+            "name": "Functional Interfaces",
+            "id": "functional_interfaces"
+          },
+          {
+            "name": "Stream API",
+            "id": "stream_api"
+          },
+          {
+            "name": "Optional Class",
+            "id": "optional_class"
+          },
+          {
+            "name": "Default and Static methods in Interfaces",
+            "id": "default_and_static_methods_in_interfaces"
+          },
+          {
+            "name": "Date and Time API (java.time)",
+            "id": "date_and_time_api_java_time"
+          }
+        ],
+        "id": "java_8_features"
       },
       {
         "name": "Java 9 to 11 Features",
         "subTopics": [
-          { "name": "Module System (JPMS)" },
-          { "name": "Private methods in Interfaces" },
-          { "name": "JShell" },
-          { "name": "var keyword (Local Variable Type Inference)" },
-          { "name": "HTTP Client API" }
-        ]
+          {
+            "name": "Module System (JPMS)",
+            "id": "module_system_jpms"
+          },
+          {
+            "name": "Private methods in Interfaces",
+            "id": "private_methods_in_interfaces"
+          },
+          {
+            "name": "JShell",
+            "id": "jshell"
+          },
+          {
+            "name": "var keyword (Local Variable Type Inference)",
+            "id": "var_keyword_local_variable_type_inference"
+          },
+          {
+            "name": "HTTP Client API",
+            "id": "http_client_api"
+          }
+        ],
+        "id": "java_9_to_11_features"
       },
       {
         "name": "Java 12 to 17 Features (LTS)",
         "subTopics": [
-          { "name": "Switch Expressions" },
-          { "name": "Text Blocks" },
-          { "name": "Records" },
-          { "name": "Sealed Classes" },
-          { "name": "Pattern Matching for instanceof" }
-        ]
+          {
+            "name": "Switch Expressions",
+            "id": "switch_expressions"
+          },
+          {
+            "name": "Text Blocks",
+            "id": "text_blocks"
+          },
+          {
+            "name": "Records",
+            "id": "records"
+          },
+          {
+            "name": "Sealed Classes",
+            "id": "sealed_classes"
+          },
+          {
+            "name": "Pattern Matching for instanceof",
+            "id": "pattern_matching_for_instanceof"
+          }
+        ],
+        "id": "java_12_to_17_features_lts"
       },
       {
         "name": "Java 21 Features (LTS)",
         "subTopics": [
-          { "name": "Virtual Threads (Project Loom)" },
-          { "name": "Sequenced Collections" },
-          { "name": "Record Patterns" },
-          { "name": "Pattern Matching for Switch" }
-        ]
+          {
+            "name": "Virtual Threads (Project Loom)",
+            "id": "virtual_threads_project_loom"
+          },
+          {
+            "name": "Sequenced Collections",
+            "id": "sequenced_collections"
+          },
+          {
+            "name": "Record Patterns",
+            "id": "record_patterns"
+          },
+          {
+            "name": "Pattern Matching for Switch",
+            "id": "pattern_matching_for_switch"
+          }
+        ],
+        "id": "java_21_features_lts"
       }
     ]
   },
@@ -302,10 +678,22 @@
     "title": "String Handling",
     "difficulty": "basic",
     "topics": [
-      { "name": "String immutability and String Pool" },
-      { "name": "String vs StringBuilder vs StringBuffer" },
-      { "name": "Common String methods" },
-      { "name": "String formatting and manipulation" }
+      {
+        "name": "String immutability and String Pool",
+        "id": "string_immutability_and_string_pool"
+      },
+      {
+        "name": "String vs StringBuilder vs StringBuffer",
+        "id": "string_vs_stringbuilder_vs_stringbuffer"
+      },
+      {
+        "name": "Common String methods",
+        "id": "common_string_methods"
+      },
+      {
+        "name": "String formatting and manipulation",
+        "id": "string_formatting_and_manipulation"
+      }
     ]
   },
   {
@@ -313,10 +701,22 @@
     "title": "Regular Expressions (Regex)",
     "difficulty": "intermediate",
     "topics": [
-      { "name": "Pattern and Matcher classes" },
-      { "name": "Regex metacharacters and quantifiers" },
-      { "name": "Groups and capturing" },
-      { "name": "Common regex patterns for validation" }
+      {
+        "name": "Pattern and Matcher classes",
+        "id": "pattern_and_matcher_classes"
+      },
+      {
+        "name": "Regex metacharacters and quantifiers",
+        "id": "regex_metacharacters_and_quantifiers"
+      },
+      {
+        "name": "Groups and capturing",
+        "id": "groups_and_capturing"
+      },
+      {
+        "name": "Common regex patterns for validation",
+        "id": "common_regex_patterns_for_validation"
+      }
     ]
   },
   {
@@ -324,11 +724,26 @@
     "title": "File I/O & Serialization",
     "difficulty": "intermediate",
     "topics": [
-      { "name": "Byte Streams vs Character Streams" },
-      { "name": "BufferedReader and BufferedWriter" },
-      { "name": "Java NIO (Path, Files, Channels)" },
-      { "name": "Serialization and Deserialization (transient, serialVersionUID)" },
-      { "name": "Externalizable interface" }
+      {
+        "name": "Byte Streams vs Character Streams",
+        "id": "byte_streams_vs_character_streams"
+      },
+      {
+        "name": "BufferedReader and BufferedWriter",
+        "id": "bufferedreader_and_bufferedwriter"
+      },
+      {
+        "name": "Java NIO (Path, Files, Channels)",
+        "id": "java_nio_path_files_channels"
+      },
+      {
+        "name": "Serialization and Deserialization (transient, serialVersionUID)",
+        "id": "serialization_and_deserialization_transient_serialversionuid"
+      },
+      {
+        "name": "Externalizable interface",
+        "id": "externalizable_interface"
+      }
     ]
   },
   {
@@ -336,10 +751,22 @@
     "title": "Networking in Java",
     "difficulty": "intermediate",
     "topics": [
-      { "name": "Socket Programming (TCP/UDP)" },
-      { "name": "URL and URLConnection" },
-      { "name": "HttpURLConnection" },
-      { "name": "InetAddress class" }
+      {
+        "name": "Socket Programming (TCP/UDP)",
+        "id": "socket_programming_tcp_udp"
+      },
+      {
+        "name": "URL and URLConnection",
+        "id": "url_and_urlconnection"
+      },
+      {
+        "name": "HttpURLConnection",
+        "id": "httpurlconnection"
+      },
+      {
+        "name": "InetAddress class",
+        "id": "inetaddress_class"
+      }
     ]
   },
   {
@@ -347,10 +774,22 @@
     "title": "JDBC (Database Connectivity)",
     "difficulty": "intermediate",
     "topics": [
-      { "name": "JDBC Architecture and Drivers" },
-      { "name": "Statement vs PreparedStatement vs CallableStatement" },
-      { "name": "ResultSet and Transaction Management" },
-      { "name": "Connection Pooling concepts" }
+      {
+        "name": "JDBC Architecture and Drivers",
+        "id": "jdbc_architecture_and_drivers"
+      },
+      {
+        "name": "Statement vs PreparedStatement vs CallableStatement",
+        "id": "statement_vs_preparedstatement_vs_callablestatement"
+      },
+      {
+        "name": "ResultSet and Transaction Management",
+        "id": "resultset_and_transaction_management"
+      },
+      {
+        "name": "Connection Pooling concepts",
+        "id": "connection_pooling_concepts"
+      }
     ]
   },
   {
@@ -358,12 +797,30 @@
     "title": "JVM Internals & Memory Management",
     "difficulty": "advanced",
     "topics": [
-      { "name": "JVM Architecture: ClassLoader, Runtime Data Areas, Execution Engine" },
-      { "name": "Heap vs Stack Memory" },
-      { "name": "Garbage Collection Algorithms (G1, ZGC, etc.)" },
-      { "name": "JIT Compiler and Memory Leaks" },
-      { "name": "Memory Model and happens-before relationship" },
-      { "name": "Reference Types (Strong, Weak, Soft, Phantom)" }
+      {
+        "name": "JVM Architecture: ClassLoader, Runtime Data Areas, Execution Engine",
+        "id": "jvm_architecture_classloader_runtime_data_areas_execution_engine"
+      },
+      {
+        "name": "Heap vs Stack Memory",
+        "id": "heap_vs_stack_memory"
+      },
+      {
+        "name": "Garbage Collection Algorithms (G1, ZGC, etc.)",
+        "id": "garbage_collection_algorithms_g1_zgc_etc"
+      },
+      {
+        "name": "JIT Compiler and Memory Leaks",
+        "id": "jit_compiler_and_memory_leaks"
+      },
+      {
+        "name": "Memory Model and happens-before relationship",
+        "id": "memory_model_and_happens_before_relationship"
+      },
+      {
+        "name": "Reference Types (Strong, Weak, Soft, Phantom)",
+        "id": "reference_types_strong_weak_soft_phantom"
+      }
     ]
   },
   {
@@ -371,12 +828,30 @@
     "title": "Advanced Java Concepts",
     "difficulty": "advanced",
     "topics": [
-      { "name": "Cloning (Shallow vs Deep)" },
-      { "name": "Immutable Objects creation" },
-      { "name": "Java Native Interface (JNI)" },
-      { "name": "Java Beans" },
-      { "name": "RMI (Remote Method Invocation)" },
-      { "name": "Java Security Manager" }
+      {
+        "name": "Cloning (Shallow vs Deep)",
+        "id": "cloning_shallow_vs_deep"
+      },
+      {
+        "name": "Immutable Objects creation",
+        "id": "immutable_objects_creation"
+      },
+      {
+        "name": "Java Native Interface (JNI)",
+        "id": "java_native_interface_jni"
+      },
+      {
+        "name": "Java Beans",
+        "id": "java_beans"
+      },
+      {
+        "name": "RMI (Remote Method Invocation)",
+        "id": "rmi_remote_method_invocation"
+      },
+      {
+        "name": "Java Security Manager",
+        "id": "java_security_manager"
+      }
     ]
   },
   {
@@ -384,12 +859,30 @@
     "title": "Miscellaneous Core Topics",
     "difficulty": "intermediate",
     "topics": [
-      { "name": "Reflection API" },
-      { "name": "Annotations (Built-in and Custom)" },
-      { "name": "Enums" },
-      { "name": "Wrapper Classes and Autoboxing/Unboxing" },
-      { "name": "Internationalization (i18n) and Localization" },
-      { "name": "JavaDoc and Code Documentation" }
+      {
+        "name": "Reflection API",
+        "id": "reflection_api"
+      },
+      {
+        "name": "Annotations (Built-in and Custom)",
+        "id": "annotations_built_in_and_custom"
+      },
+      {
+        "name": "Enums",
+        "id": "enums"
+      },
+      {
+        "name": "Wrapper Classes and Autoboxing/Unboxing",
+        "id": "wrapper_classes_and_autoboxing_unboxing"
+      },
+      {
+        "name": "Internationalization (i18n) and Localization",
+        "id": "internationalization_i18n_and_localization"
+      },
+      {
+        "name": "JavaDoc and Code Documentation",
+        "id": "javadoc_and_code_documentation"
+      }
     ]
   },
   {
@@ -397,10 +890,22 @@
     "title": "Core Java Design Principles",
     "difficulty": "advanced",
     "topics": [
-      { "name": "SOLID Principles" },
-      { "name": "Creational Design Patterns (Singleton, Factory, Builder)" },
-      { "name": "Structural Design Patterns (Adapter, Proxy, Decorator)" },
-      { "name": "Behavioral Design Patterns (Observer, Strategy)" }
+      {
+        "name": "SOLID Principles",
+        "id": "solid_principles"
+      },
+      {
+        "name": "Creational Design Patterns (Singleton, Factory, Builder)",
+        "id": "creational_design_patterns_singleton_factory_builder"
+      },
+      {
+        "name": "Structural Design Patterns (Adapter, Proxy, Decorator)",
+        "id": "structural_design_patterns_adapter_proxy_decorator"
+      },
+      {
+        "name": "Behavioral Design Patterns (Observer, Strategy)",
+        "id": "behavioral_design_patterns_observer_strategy"
+      }
     ]
   },
   {
@@ -408,12 +913,30 @@
     "title": "Best Practices & Code Quality",
     "difficulty": "intermediate",
     "topics": [
-      { "name": "Clean Code principles" },
-      { "name": "Code smells and refactoring" },
-      { "name": "Exception handling best practices" },
-      { "name": "Naming conventions and coding standards" },
-      { "name": "Performance optimization techniques" },
-      { "name": "Unit Testing with JUnit and Mockito" }
+      {
+        "name": "Clean Code principles",
+        "id": "clean_code_principles"
+      },
+      {
+        "name": "Code smells and refactoring",
+        "id": "code_smells_and_refactoring"
+      },
+      {
+        "name": "Exception handling best practices",
+        "id": "exception_handling_best_practices"
+      },
+      {
+        "name": "Naming conventions and coding standards",
+        "id": "naming_conventions_and_coding_standards"
+      },
+      {
+        "name": "Performance optimization techniques",
+        "id": "performance_optimization_techniques"
+      },
+      {
+        "name": "Unit Testing with JUnit and Mockito",
+        "id": "unit_testing_with_junit_and_mockito"
+      }
     ]
   }
 ]

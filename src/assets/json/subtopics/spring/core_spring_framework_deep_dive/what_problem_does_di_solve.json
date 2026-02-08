@@ -7,7 +7,7 @@
       "content": "Before we understand how amazing DI is, let's experience the pain of NOT having it. Picture this: You're building a house where every brick is cemented to specific neighbors. Want to change one brick? Demolish the entire wall! That's your code without DI.",
       "images": [
         {
-          "url": "assets/images/spring/tight-vs-loose-coupling.svg",
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/what_problem_does_di_solve/tight-vs-loose-coupling.svg",
           "alt": "Tight vs Loose Coupling Comparison",
           "caption": "Visual comparison showing tightly coupled classes (welded together) vs loosely coupled classes (connected via interfaces)"
         }
@@ -17,14 +17,42 @@
           "title": "Problem 1: Tight Coupling - The Marriage You Can't Divorce",
           "content": "Tight coupling is when your classes are so dependent on specific implementations that they're basically married... with no prenup!\n\nThe Horror Story:\nImagine you own a car that ONLY works with Michelin tires, brand X engine oil, and a specific battery model. Want to switch brands? Buy a new car!\n\nCode Example of Pain:\nYour UserService is married to MySQLUserRepository. Want to switch to PostgreSQL for testing? Too bad! Rewrite everything!\n\nReal-World Impact:\n• Change one class? Break five others\n• Want to test? Must set up entire database\n• Need flexibility? Dream on!\n• Code review? Prepare for criticism\n\nThe Furniture Analogy:\nTight coupling is like buying a sofa with built-in, non-removable cushions. Spill coffee? Buy a new sofa. With DI, cushions are removable and washable. Spill coffee? Wash the cushion!\n\nWhy This Hurts in Real Projects:\n• Team velocity slows down (afraid to change anything)\n• Bug fixes take forever (changing A breaks B, C, D...)\n• New features? Risky business!\n• Onboarding new developers? Good luck explaining the spaghetti!",
           "table": {
-            "headers": ["Aspect", "Tightly Coupled Code", "Pain Level"],
+            "headers": [
+              "Aspect",
+              "Tightly Coupled Code",
+              "Pain Level"
+            ],
             "rows": [
-              ["Changing implementation", "Rewrite multiple classes", "EXTREME"],
-              ["Adding new feature", "Touch 10+ files, pray nothing breaks", "HIGH"],
-              ["Unit testing", "Must set up entire infrastructure", "EXTREME"],
-              ["Code reusability", "Copy-paste code everywhere", "HIGH"],
-              ["Team collaboration", "Merge conflicts and breaking changes", "HIGH"],
-              ["Production bugs", "Fix one thing, break two others", "EXTREME"]
+              [
+                "Changing implementation",
+                "Rewrite multiple classes",
+                "EXTREME"
+              ],
+              [
+                "Adding new feature",
+                "Touch 10+ files, pray nothing breaks",
+                "HIGH"
+              ],
+              [
+                "Unit testing",
+                "Must set up entire infrastructure",
+                "EXTREME"
+              ],
+              [
+                "Code reusability",
+                "Copy-paste code everywhere",
+                "HIGH"
+              ],
+              [
+                "Team collaboration",
+                "Merge conflicts and breaking changes",
+                "HIGH"
+              ],
+              [
+                "Production bugs",
+                "Fix one thing, break two others",
+                "EXTREME"
+              ]
             ]
           }
         },
@@ -32,13 +60,37 @@
           "title": "Problem 2: Hard-Coded Dependencies - The Concrete Prison",
           "content": "Hard-coded dependencies are like having your phone number tattooed on your forehead. It works... until you need to change it!\n\nThe Kitchen Disaster:\nImagine a chef who has knives welded to his hands. Great for chopping! But washing hands? Playing piano? Typing? Houston, we have a problem!\n\nIn Code:\nWhen you hard-code dependencies using 'new', you're essentially welding objects together. Your class now OWNS its dependencies and must MANAGE them.\n\nThe 'new' Keyword Trap:\nEvery time you write 'new SomeDependency()', you're saying:\n• 'I know exactly what I need'\n• 'I'll never need anything else'\n• 'Testing? Who needs that!'\n• 'Flexibility is overrated'\n\nReal Problems This Creates:\n1. Impossible to Mock: Unit tests need real database, real payment gateway, real email server\n2. Configuration Nightmare: Different configs for dev/test/prod? Copy-paste the class!\n3. Hidden Dependencies: What does this class need? Read 200 lines to find out!\n4. Violation of SRP: Your class does business logic AND manages object creation\n\nThe Lego vs Welding Analogy:\nHard-coding is like welding metal pieces together to build a toy. Built it wrong? Grab the blowtorch! DI is like Lego blocks - snap together, pull apart, rebuild. Made a mistake? Just disconnect and reconnect!",
           "table": {
-            "headers": ["Scenario", "Hard-Coded Dependencies", "With DI"],
+            "headers": [
+              "Scenario",
+              "Hard-Coded Dependencies",
+              "With DI"
+            ],
             "rows": [
-              ["Testing", "Need real database, real servers", "Inject mocks - test in isolation"],
-              ["Switching implementations", "Rewrite class code", "Change configuration only"],
-              ["Multiple environments", "Duplicate classes for dev/prod", "Same class, different injections"],
-              ["Understanding dependencies", "Read entire class", "Check constructor signature"],
-              ["Code maintenance", "Fear-driven development", "Confident refactoring"]
+              [
+                "Testing",
+                "Need real database, real servers",
+                "Inject mocks - test in isolation"
+              ],
+              [
+                "Switching implementations",
+                "Rewrite class code",
+                "Change configuration only"
+              ],
+              [
+                "Multiple environments",
+                "Duplicate classes for dev/prod",
+                "Same class, different injections"
+              ],
+              [
+                "Understanding dependencies",
+                "Read entire class",
+                "Check constructor signature"
+              ],
+              [
+                "Code maintenance",
+                "Fear-driven development",
+                "Confident refactoring"
+              ]
             ]
           }
         },
@@ -46,14 +98,42 @@
           "title": "Problem 3: Poor Testability - The Integration Test Hell",
           "content": "Without DI, your 'unit' tests are actually integration tests in disguise. It's like trying to test if your car's horn works by starting the engine, driving around, and then honking. Overkill much?\n\nThe Testing Nightmare:\nYou want to test if UserService validates email correctly. But without DI:\n1. Start database server\n2. Create test schema\n3. Seed test data\n4. Configure email server\n5. Set up payment gateway\n6. THEN finally test email validation\n\nTime taken: 5 minutes. Test result: Email validation works! Congratulations, you just waited 5 minutes to test a 2-line regex!\n\nWhy This Is Terrible:\n• Slow tests = developers skip testing\n• Flaky tests = random failures, wasted time\n• Hard to reproduce bugs = fix takes days\n• Test maintenance = nightmare fuel\n\nThe Microwave Test Analogy:\nTesting without DI is like needing to test your microwave's door button... but first you must:\n• Connect it to power grid\n• Install cooling system\n• Set up electrical infrastructure\n• Call electrician for inspection\n\nWith DI? Just press the button. Done!\n\nReal Developer Pain:\n'I spent 3 hours debugging why my test fails... turns out the test database was down. The actual code was fine.' - Every Developer Ever",
           "table": {
-            "headers": ["Testing Aspect", "Without DI", "With DI"],
+            "headers": [
+              "Testing Aspect",
+              "Without DI",
+              "With DI"
+            ],
             "rows": [
-              ["Test execution time", "Minutes (database, network, etc.)", "Milliseconds (in-memory mocks)"],
-              ["Test reliability", "Flaky (external dependencies)", "Rock solid (controlled mocks)"],
-              ["Test coverage", "Low (too hard to test)", "High (easy to test everything)"],
-              ["Debugging failed tests", "Which dependency failed?", "Clear - it's your code"],
-              ["CI/CD pipeline", "Slow, expensive infrastructure", "Fast, runs anywhere"],
-              ["Developer happiness", "😢", "😊"]
+              [
+                "Test execution time",
+                "Minutes (database, network, etc.)",
+                "Milliseconds (in-memory mocks)"
+              ],
+              [
+                "Test reliability",
+                "Flaky (external dependencies)",
+                "Rock solid (controlled mocks)"
+              ],
+              [
+                "Test coverage",
+                "Low (too hard to test)",
+                "High (easy to test everything)"
+              ],
+              [
+                "Debugging failed tests",
+                "Which dependency failed?",
+                "Clear - it's your code"
+              ],
+              [
+                "CI/CD pipeline",
+                "Slow, expensive infrastructure",
+                "Fast, runs anywhere"
+              ],
+              [
+                "Developer happiness",
+                "😢",
+                "😊"
+              ]
             ]
           }
         },
@@ -61,14 +141,42 @@
           "title": "Problem 4: Difficult Maintenance - The Spaghetti Code Syndrome",
           "content": "Code without DI ages like milk, not wine. Six months later, even YOU won't understand what YOU wrote!\n\nThe Spaghetti Restaurant:\nImagine a restaurant where every dish is connected by noodles. Want to serve one plate? You must serve all 50 plates simultaneously! That's your codebase without DI.\n\nWhy Maintenance Becomes Hell:\n• Change Propagation: Fix one bug, create three more\n• Fear-Driven Development: 'It works, DON'T TOUCH IT!'\n• Knowledge Silos: Only one person understands this module\n• Technical Debt: Compounds faster than credit card interest\n\nThe Domino Effect:\nUserService depends on MySQLRepository\nMySQLRepository depends on ConnectionPool\nConnectionPool depends on ConfigLoader\nConfigLoader depends on FileSystem\n\nChange FileSystem? 💥 EVERYTHING BREAKS!\n\nReal Team Conversations:\nDeveloper 1: 'Can we add a new feature?'\nDeveloper 2: 'Which module?'\nDeveloper 1: 'UserService'\nDeveloper 2: 'The one with 47 dependencies?'\nDeveloper 1: 'Yes'\nDeveloper 2: 'See you next month!'\n\nThe Jenga Tower Analogy:\nMaintaining tightly coupled code is like playing Jenga with glued blocks. Pull one block? The whole tower comes down! With DI, blocks are independent. Pull one block? Everything else stays stable.",
           "table": {
-            "headers": ["Maintenance Task", "Difficulty Without DI", "Time Impact"],
+            "headers": [
+              "Maintenance Task",
+              "Difficulty Without DI",
+              "Time Impact"
+            ],
             "rows": [
-              ["Understanding code", "Must trace 10+ dependencies", "Hours"],
-              ["Adding new feature", "Modify multiple interconnected classes", "Days"],
-              ["Fixing bugs", "Risk breaking unrelated features", "High"],
-              ["Onboarding developers", "Requires deep system knowledge", "Weeks"],
-              ["Refactoring", "Impossible without breaking things", "Never happens"],
-              ["Code reviews", "Reviewer gives up and approves", "Trust issues"]
+              [
+                "Understanding code",
+                "Must trace 10+ dependencies",
+                "Hours"
+              ],
+              [
+                "Adding new feature",
+                "Modify multiple interconnected classes",
+                "Days"
+              ],
+              [
+                "Fixing bugs",
+                "Risk breaking unrelated features",
+                "High"
+              ],
+              [
+                "Onboarding developers",
+                "Requires deep system knowledge",
+                "Weeks"
+              ],
+              [
+                "Refactoring",
+                "Impossible without breaking things",
+                "Never happens"
+              ],
+              [
+                "Code reviews",
+                "Reviewer gives up and approves",
+                "Trust issues"
+              ]
             ]
           }
         },
@@ -76,14 +184,42 @@
           "title": "Problem 5: Lack of Flexibility - The One-Size-Fits-None Trap",
           "content": "Without DI, your code is inflexible like a concrete statue. It does ONE thing, in ONE way, forever. Need variation? Chisel away!\n\nThe Restaurant Menu Problem:\nImagine a restaurant that can ONLY serve chicken pizza. No beef, no veggie, no customization. Customer wants beef? Sorry! Vegetarian? Tough luck! That's your hard-coded class.\n\nReal Scenarios Where This Hurts:\n\n1. Multiple Environments:\n• Dev: Use mock database\n• Test: Use in-memory database\n• Prod: Use real database\nWithout DI: Create UserServiceDev, UserServiceTest, UserServiceProd 🤦\n\n2. Client-Specific Customization:\n• Client A: Send email notifications\n• Client B: Send SMS notifications\n• Client C: Send both\nWithout DI: if-else hell or duplicate classes\n\n3. Feature Toggles:\n• Enable feature for beta users\n• Disable for regular users\nWithout DI: Impossible without code changes\n\n4. A/B Testing:\n• Algorithm A for group 1\n• Algorithm B for group 2\nWithout DI: Deploy two different codebases\n\nThe Smartphone vs Landline Analogy:\nCode without DI is like a landline phone - fixed location, fixed features, fixed everything. DI makes your code like a smartphone - plug in different apps, change settings, customize everything!\n\nThe Cost of Inflexibility:\n• Lost business opportunities (can't adapt quickly)\n• Competitive disadvantage (competitors ship faster)\n• Developer burnout (same problems, different day)\n• Technical debt (workarounds piling up)",
           "table": {
-            "headers": ["Need", "Without DI Solution", "Problems Created"],
+            "headers": [
+              "Need",
+              "Without DI Solution",
+              "Problems Created"
+            ],
             "rows": [
-              ["Multiple databases", "Copy entire service per database", "Code duplication, maintenance nightmare"],
-              ["Different notification channels", "if-else chains everywhere", "Unmaintainable, hard to extend"],
-              ["Environment-specific config", "Hardcode values, comment/uncomment", "Error-prone, dangerous"],
-              ["Third-party integrations", "Tightly couple to one provider", "Vendor lock-in, can't switch"],
-              ["Feature experimentation", "Deploy multiple versions", "Operational complexity"],
-              ["Client customization", "Create custom branches per client", "Merge hell, diverging codebases"]
+              [
+                "Multiple databases",
+                "Copy entire service per database",
+                "Code duplication, maintenance nightmare"
+              ],
+              [
+                "Different notification channels",
+                "if-else chains everywhere",
+                "Unmaintainable, hard to extend"
+              ],
+              [
+                "Environment-specific config",
+                "Hardcode values, comment/uncomment",
+                "Error-prone, dangerous"
+              ],
+              [
+                "Third-party integrations",
+                "Tightly couple to one provider",
+                "Vendor lock-in, can't switch"
+              ],
+              [
+                "Feature experimentation",
+                "Deploy multiple versions",
+                "Operational complexity"
+              ],
+              [
+                "Client customization",
+                "Create custom branches per client",
+                "Merge hell, diverging codebases"
+              ]
             ]
           }
         }
@@ -99,7 +235,7 @@
           "caption": "Complete flow showing how DI container creates dependencies and injects them into dependent classes"
         },
         {
-          "url": "assets/images/spring/testing-with-without-di.svg",
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/what_problem_does_di_solve/testing-with-without-di.svg",
           "alt": "Testing Comparison",
           "caption": "Visual showing testing without DI (complex setup, many dependencies) vs with DI (simple mocks, isolated testing)"
         }
@@ -109,14 +245,42 @@
           "title": "Solution 1: Loose Coupling - The Freedom of Choice",
           "content": "DI transforms marriages into friendly partnerships. Classes work together without being welded together!\n\nThe Magic Transformation:\nBefore DI: Car with built-in, non-replaceable engine\nWith DI: Car with standard engine interface - swap V6 for V8 anytime!\n\nHow DI Creates Loose Coupling:\n1. Depend on Abstractions: Use interfaces, not concrete classes\n2. Inject Dependencies: Don't create them yourself\n3. Single Responsibility: Classes do ONE thing well\n4. Open/Closed Principle: Open for extension, closed for modification\n\nCode Transformation:\nBefore: class UserService { repo = new MySQLRepo(); }\nAfter: class UserService(UserRepository repo) { this.repo = repo; }\n\nThe Beautiful Results:\n• Change MySQL to Postgres? Just inject different implementation!\n• Want to test? Inject a mock!\n• Need caching? Inject a caching decorator!\n• Client wants MongoDB? No problem, inject MongoRepo!\n\nThe USB Port Analogy:\nLoose coupling is like USB ports on your laptop. You don't have a 'keyboard laptop' and a 'mouse laptop' - you have ONE laptop with USB ports. Plug in keyboard, mouse, external drive, phone - anything with USB interface works! That's loose coupling!\n\nReal Developer Joy:\n'I switched from MySQL to PostgreSQL in production. Changed ONE line in configuration. Everything worked. I cried tears of joy.' - Happy Developer",
           "table": {
-            "headers": ["Change Needed", "Tightly Coupled Effort", "Loosely Coupled (DI) Effort"],
+            "headers": [
+              "Change Needed",
+              "Tightly Coupled Effort",
+              "Loosely Coupled (DI) Effort"
+            ],
             "rows": [
-              ["Switch database", "Rewrite UserService + tests", "Change config file - done!"],
-              ["Add caching layer", "Modify UserService code", "Create CachingRepository wrapper"],
-              ["Support multiple databases", "Duplicate entire codebase", "Create new implementation"],
-              ["Mock for testing", "Create test-specific version", "Inject mock - 1 line"],
-              ["Add logging", "Modify every method", "Inject logging decorator"],
-              ["Client customization", "Branch codebase", "Inject client-specific impl"]
+              [
+                "Switch database",
+                "Rewrite UserService + tests",
+                "Change config file - done!"
+              ],
+              [
+                "Add caching layer",
+                "Modify UserService code",
+                "Create CachingRepository wrapper"
+              ],
+              [
+                "Support multiple databases",
+                "Duplicate entire codebase",
+                "Create new implementation"
+              ],
+              [
+                "Mock for testing",
+                "Create test-specific version",
+                "Inject mock - 1 line"
+              ],
+              [
+                "Add logging",
+                "Modify every method",
+                "Inject logging decorator"
+              ],
+              [
+                "Client customization",
+                "Branch codebase",
+                "Inject client-specific impl"
+              ]
             ]
           }
         },
@@ -124,14 +288,49 @@
           "title": "Solution 2: Testability - The Joy of Fast, Reliable Tests",
           "content": "With DI, testing becomes a pleasure instead of a chore. It's like switching from a manual typewriter to a modern keyboard!\n\nThe Testing Revolution:\nWithout DI: 'Let me spend 10 minutes setting up databases, servers, and infrastructure to test a 5-line method'\nWith DI: 'Inject mock, run test, get result in 10 milliseconds. Done!'\n\nHow DI Makes Testing Easy:\n\n1. Isolation: Test ONE thing at a time\n• Inject mocks for all dependencies\n• Focus on logic being tested\n• No external dependencies needed\n\n2. Speed: Tests run in milliseconds\n• No database connections\n• No network calls\n• No file system access\n• Pure in-memory operations\n\n3. Reliability: No more flaky tests\n• Controlled environment\n• Predictable behavior\n• No random failures\n\n4. Coverage: Test edge cases easily\n• Mock can throw any exception\n• Mock can return any data\n• Test all scenarios\n\nThe Microwave Button Test:\nRemember testing the microwave? With DI, it's like having a test button that just checks if the door mechanism works - no power needed, no heating, just the button click!\n\nReal Testing Examples:\n\nTest: Does UserService validate email?\nWithout DI: Start DB, configure server, seed data, run test\nWith DI: userService = new UserService(mockRepo); assertThrows(InvalidEmailException);\n\nTest: Does PaymentService handle failed payments?\nWithout DI: Create test payment gateway account, force failure somehow\nWith DI: mockGateway.throwsException(); assertPaymentFailed();\n\nDeveloper Happiness Metrics:\n• Test suite runtime: 2 hours → 2 minutes\n• Flaky tests: 30% → 0%\n• Developer testing: 'Ugh' → 'Let me add more tests!'\n• Code coverage: 40% → 90%",
           "table": {
-            "headers": ["Testing Aspect", "Before DI", "After DI", "Impact"],
+            "headers": [
+              "Testing Aspect",
+              "Before DI",
+              "After DI",
+              "Impact"
+            ],
             "rows": [
-              ["Test execution time", "Minutes per test", "Milliseconds per test", "1000x faster"],
-              ["Test setup complexity", "50+ lines", "3 lines", "Clean tests"],
-              ["External dependencies", "Database, servers, network", "None - pure mocks", "Zero infrastructure"],
-              ["Test reliability", "Flaky, random failures", "Rock solid", "Trust your tests"],
-              ["Edge case testing", "Hard/impossible", "Easy", "Better coverage"],
-              ["CI/CD integration", "Slow, expensive", "Fast, cheap", "Ship faster"]
+              [
+                "Test execution time",
+                "Minutes per test",
+                "Milliseconds per test",
+                "1000x faster"
+              ],
+              [
+                "Test setup complexity",
+                "50+ lines",
+                "3 lines",
+                "Clean tests"
+              ],
+              [
+                "External dependencies",
+                "Database, servers, network",
+                "None - pure mocks",
+                "Zero infrastructure"
+              ],
+              [
+                "Test reliability",
+                "Flaky, random failures",
+                "Rock solid",
+                "Trust your tests"
+              ],
+              [
+                "Edge case testing",
+                "Hard/impossible",
+                "Easy",
+                "Better coverage"
+              ],
+              [
+                "CI/CD integration",
+                "Slow, expensive",
+                "Fast, cheap",
+                "Ship faster"
+              ]
             ]
           }
         },
@@ -139,14 +338,49 @@
           "title": "Solution 3: Maintainability - The Joy of Clean Code",
           "content": "DI transforms your codebase from spaghetti into organized, modular architecture. It's like going from a messy drawer to a perfectly organized toolbox!\n\nThe Organizational Miracle:\nBefore DI: Jenga tower - pull one block, everything falls\nWith DI: Lego blocks - remove, replace, reorganize freely\n\nHow DI Improves Maintainability:\n\n1. Clear Dependencies:\n• Look at constructor - know exactly what's needed\n• No hidden dependencies\n• No surprises\n\n2. Single Responsibility:\n• Classes do ONE thing\n• Easy to understand\n• Easy to modify\n\n3. Modular Design:\n• Change one module - others unaffected\n• Add new modules easily\n• Remove old modules safely\n\n4. Self-Documenting:\n• Constructor shows dependencies\n• Interfaces define contracts\n• Code tells its own story\n\nThe Library Analogy:\nCode without DI is like books scattered randomly on the floor. Looking for a book? Good luck! With DI, it's like a well-organized library - fiction here, non-fiction there, everything has its place. Need a book? Go to the right section!\n\nReal Maintenance Scenarios:\n\nScenario 1: Add Logging\nWithout DI: Modify 20 files, add logging to each method\nWith DI: Create LoggingDecorator, inject it - done!\n\nScenario 2: Fix Performance Issue\nWithout DI: Debug through 10 interconnected classes\nWith DI: Check which component is slow, replace it\n\nScenario 3: Onboard New Developer\nWithout DI: 'Good luck understanding this mess'\nWith DI: 'Check interfaces, see what depends on what, dive in!'\n\nThe Maintenance Cost Reduction:\n• Bug fix time: Days → Hours\n• New feature development: Weeks → Days\n• Code review time: Hours → Minutes\n• Onboarding time: Months → Weeks",
           "table": {
-            "headers": ["Maintenance Task", "Time Without DI", "Time With DI", "Difference"],
+            "headers": [
+              "Maintenance Task",
+              "Time Without DI",
+              "Time With DI",
+              "Difference"
+            ],
             "rows": [
-              ["Understanding code", "2 hours (trace dependencies)", "15 mins (check constructor)", "8x faster"],
-              ["Adding new feature", "3 days (fear of breaking)", "4 hours (isolated change)", "6x faster"],
-              ["Fixing production bug", "1 day (find root cause)", "2 hours (clear structure)", "4x faster"],
-              ["Refactoring", "Never (too risky)", "Regularly (safe changes)", "∞x better"],
-              ["Code review", "1 hour (complex changes)", "15 mins (clear changes)", "4x faster"],
-              ["Onboarding developer", "1 month (learn spaghetti)", "1 week (clear structure)", "4x faster"]
+              [
+                "Understanding code",
+                "2 hours (trace dependencies)",
+                "15 mins (check constructor)",
+                "8x faster"
+              ],
+              [
+                "Adding new feature",
+                "3 days (fear of breaking)",
+                "4 hours (isolated change)",
+                "6x faster"
+              ],
+              [
+                "Fixing production bug",
+                "1 day (find root cause)",
+                "2 hours (clear structure)",
+                "4x faster"
+              ],
+              [
+                "Refactoring",
+                "Never (too risky)",
+                "Regularly (safe changes)",
+                "∞x better"
+              ],
+              [
+                "Code review",
+                "1 hour (complex changes)",
+                "15 mins (clear changes)",
+                "4x faster"
+              ],
+              [
+                "Onboarding developer",
+                "1 month (learn spaghetti)",
+                "1 week (clear structure)",
+                "4x faster"
+              ]
             ]
           }
         },
@@ -154,14 +388,42 @@
           "title": "Solution 4: Flexibility - The Power of Configuration",
           "content": "DI makes your code flexible like a Swiss Army knife - one tool, multiple uses, endless configurations!\n\nThe Configuration Revolution:\nWithout DI: Hard-coded everything, change requires recompile\nWith DI: Configure everything, change on the fly\n\nHow DI Enables Flexibility:\n\n1. Runtime Configuration:\n• Inject different implementations based on config\n• No code changes needed\n• Change behavior via configuration files\n\n2. Environment-Specific Behavior:\n• Dev: Inject mock email sender\n• Test: Inject test email sender\n• Prod: Inject real email sender\nSame code, different injections!\n\n3. Feature Toggles:\n• Feature enabled? Inject feature implementation\n• Feature disabled? Inject no-op implementation\n• Toggle via config, no deployment!\n\n4. A/B Testing:\n• User in group A? Inject algorithm A\n• User in group B? Inject algorithm B\n• Measure results, pick winner!\n\n5. Client Customization:\n• Client wants email? Inject EmailNotifier\n• Client wants SMS? Inject SMSNotifier\n• Client wants both? Inject CompositeNotifier\n\nThe Restaurant Evolution:\nRemember our inflexible restaurant? With DI:\n• Base class: PizzaMaker\n• Inject: ToppingStrategy (chicken, beef, veggie)\n• Inject: SizeStrategy (small, medium, large)\n• Inject: CrustStrategy (thin, thick, stuffed)\n\nResult: Infinite pizza combinations, ONE pizza maker class!\n\nReal Flexibility Examples:\n\nExample 1: Multi-Tenant Application\n• Tenant A: Inject TenantACustomization\n• Tenant B: Inject TenantBCustomization\n• Same codebase, different behaviors!\n\nExample 2: Payment Processing\n• US customers: Inject StripePaymentGateway\n• EU customers: Inject PayPalPaymentGateway\n• Region-specific compliance, zero code duplication!\n\nExample 3: Caching Strategy\n• High-traffic pages: Inject RedisCache\n• Low-traffic pages: Inject InMemoryCache\n• Performance optimization via configuration!",
           "table": {
-            "headers": ["Flexibility Need", "Without DI", "With DI"],
+            "headers": [
+              "Flexibility Need",
+              "Without DI",
+              "With DI"
+            ],
             "rows": [
-              ["Multiple environments", "3 different codebases", "1 codebase, 3 configs"],
-              ["Client customization", "Branched code per client", "Same code, different injections"],
-              ["Feature flags", "Comment code in/out", "Inject enabled/disabled impl"],
-              ["A/B testing", "Deploy 2 versions", "Inject A or B based on user"],
-              ["Third-party switching", "Rewrite integration", "Inject new provider"],
-              ["Scaling strategy", "Hardcoded approach", "Inject strategy per load"]
+              [
+                "Multiple environments",
+                "3 different codebases",
+                "1 codebase, 3 configs"
+              ],
+              [
+                "Client customization",
+                "Branched code per client",
+                "Same code, different injections"
+              ],
+              [
+                "Feature flags",
+                "Comment code in/out",
+                "Inject enabled/disabled impl"
+              ],
+              [
+                "A/B testing",
+                "Deploy 2 versions",
+                "Inject A or B based on user"
+              ],
+              [
+                "Third-party switching",
+                "Rewrite integration",
+                "Inject new provider"
+              ],
+              [
+                "Scaling strategy",
+                "Hardcoded approach",
+                "Inject strategy per load"
+              ]
             ]
           }
         },
@@ -169,14 +431,42 @@
           "title": "Solution 5: Scalability - Growing Without Pain",
           "content": "DI enables your application to scale from prototype to enterprise without architectural rewrites. It's like building with blocks instead of concrete!\n\nThe Scalability Journey:\n\nPhase 1 - Prototype:\n• Inject simple implementations\n• Fast development\n• Prove concept\n\nPhase 2 - MVP:\n• Inject production-ready implementations\n• Same code structure\n• Add reliability\n\nPhase 3 - Growth:\n• Inject caching layers\n• Add monitoring\n• Scale horizontally\n\nPhase 4 - Enterprise:\n• Inject distributed systems\n• Add resilience\n• Global scale\n\nAll with the SAME core business logic!\n\nHow DI Enables Scaling:\n\n1. Horizontal Scaling:\n• Inject distributed cache instead of in-memory\n• Inject message queue instead of direct calls\n• Zero business logic changes!\n\n2. Performance Optimization:\n• Inject caching decorator\n• Inject connection pooling\n• Inject async implementations\n\n3. Resilience:\n• Inject circuit breaker wrapper\n• Inject retry logic\n• Inject fallback implementations\n\n4. Observability:\n• Inject logging decorator\n• Inject metrics collector\n• Inject distributed tracing\n\nThe Building Analogy:\nWithout DI: Build small wooden house. Need bigger? Demolish and rebuild with brick.\nWith DI: Build with modular blocks. Need bigger? Add more blocks. Need stronger? Replace wooden blocks with brick blocks!\n\nReal Scaling Stories:\n\nStartup to Unicorn:\n• Day 1: Inject InMemoryCache\n• Month 6: Inject RedisCache\n• Year 1: Inject DistributedRedisCluster\n• Year 3: Inject GlobalCDN\n\nSame caching interface, evolved implementation!",
           "table": {
-            "headers": ["Scale Stage", "Challenge", "DI Solution"],
+            "headers": [
+              "Scale Stage",
+              "Challenge",
+              "DI Solution"
+            ],
             "rows": [
-              ["Prototype", "Speed of development", "Inject simple, in-memory implementations"],
-              ["MVP", "Reliability needed", "Inject production-ready implementations"],
-              ["Growth", "Performance bottlenecks", "Inject caching, pooling, async wrappers"],
-              ["Scale-up", "Vertical scaling limits", "Inject distributed implementations"],
-              ["Scale-out", "Horizontal scaling", "Inject message queues, load balancers"],
-              ["Enterprise", "Global distribution", "Inject CDN, regional services, failover"]
+              [
+                "Prototype",
+                "Speed of development",
+                "Inject simple, in-memory implementations"
+              ],
+              [
+                "MVP",
+                "Reliability needed",
+                "Inject production-ready implementations"
+              ],
+              [
+                "Growth",
+                "Performance bottlenecks",
+                "Inject caching, pooling, async wrappers"
+              ],
+              [
+                "Scale-up",
+                "Vertical scaling limits",
+                "Inject distributed implementations"
+              ],
+              [
+                "Scale-out",
+                "Horizontal scaling",
+                "Inject message queues, load balancers"
+              ],
+              [
+                "Enterprise",
+                "Global distribution",
+                "Inject CDN, regional services, failover"
+              ]
             ]
           }
         }
@@ -187,7 +477,7 @@
       "content": "Let's see the dramatic before-and-after transformation when DI enters your codebase. It's like those home makeover shows, but for code!",
       "images": [
         {
-          "url": "assets/images/spring/before-after-di.svg",
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/what_problem_does_di_solve/before-after-di.svg",
           "alt": "Before and After DI Transformation",
           "caption": "Side-by-side comparison of code architecture before DI (messy, interconnected) and after DI (clean, modular)"
         }
@@ -197,20 +487,72 @@
           "title": "The Complete Comparison",
           "content": "Here's everything we've learned, condensed into a powerful comparison table that shows just how transformative Dependency Injection truly is.",
           "table": {
-            "headers": ["Aspect", "Without DI (The Nightmare)", "With DI (The Dream)"],
+            "headers": [
+              "Aspect",
+              "Without DI (The Nightmare)",
+              "With DI (The Dream)"
+            ],
             "rows": [
-              ["Object Creation", "Hard-coded with 'new' everywhere", "Injected by framework/container"],
-              ["Dependencies", "Tightly coupled to implementations", "Loosely coupled to interfaces"],
-              ["Testing", "Integration tests disguised as unit tests", "True unit tests with mocks"],
-              ["Test Speed", "Minutes (need real infrastructure)", "Milliseconds (pure in-memory)"],
-              ["Flexibility", "Change requires code rewrite", "Change requires config update"],
-              ["Maintenance", "Fear-driven, risky changes", "Confident, safe refactoring"],
-              ["Code Reuse", "Copy-paste everywhere", "Inject same component everywhere"],
-              ["Scalability", "Architectural rewrites needed", "Swap implementations as you grow"],
-              ["Onboarding", "Steep learning curve", "Clear structure, easy to understand"],
-              ["Team Velocity", "Slows down over time", "Maintains or improves"],
-              ["Technical Debt", "Accumulates rapidly", "Easy to pay down"],
-              ["Developer Happiness", "Frustration and burnout", "Joy and productivity"]
+              [
+                "Object Creation",
+                "Hard-coded with 'new' everywhere",
+                "Injected by framework/container"
+              ],
+              [
+                "Dependencies",
+                "Tightly coupled to implementations",
+                "Loosely coupled to interfaces"
+              ],
+              [
+                "Testing",
+                "Integration tests disguised as unit tests",
+                "True unit tests with mocks"
+              ],
+              [
+                "Test Speed",
+                "Minutes (need real infrastructure)",
+                "Milliseconds (pure in-memory)"
+              ],
+              [
+                "Flexibility",
+                "Change requires code rewrite",
+                "Change requires config update"
+              ],
+              [
+                "Maintenance",
+                "Fear-driven, risky changes",
+                "Confident, safe refactoring"
+              ],
+              [
+                "Code Reuse",
+                "Copy-paste everywhere",
+                "Inject same component everywhere"
+              ],
+              [
+                "Scalability",
+                "Architectural rewrites needed",
+                "Swap implementations as you grow"
+              ],
+              [
+                "Onboarding",
+                "Steep learning curve",
+                "Clear structure, easy to understand"
+              ],
+              [
+                "Team Velocity",
+                "Slows down over time",
+                "Maintains or improves"
+              ],
+              [
+                "Technical Debt",
+                "Accumulates rapidly",
+                "Easy to pay down"
+              ],
+              [
+                "Developer Happiness",
+                "Frustration and burnout",
+                "Joy and productivity"
+              ]
             ]
           }
         },
@@ -218,16 +560,61 @@
           "title": "Real-World Impact Metrics",
           "content": "These aren't just theoretical benefits - they're real metrics from teams that adopted DI!",
           "table": {
-            "headers": ["Metric", "Before DI", "After DI", "Improvement"],
+            "headers": [
+              "Metric",
+              "Before DI",
+              "After DI",
+              "Improvement"
+            ],
             "rows": [
-              ["Test Suite Runtime", "2 hours", "5 minutes", "24x faster"],
-              ["Code Coverage", "45%", "85%", "2x better"],
-              ["Bug Fix Time", "2 days avg", "4 hours avg", "4x faster"],
-              ["Feature Development", "2 weeks", "3 days", "5x faster"],
-              ["Production Incidents", "12/month", "3/month", "4x fewer"],
-              ["Deployment Frequency", "Monthly", "Daily", "30x more frequent"],
-              ["Developer Turnover", "High (burnout)", "Low (happy devs)", "Better retention"],
-              ["Technical Interviews", "Candidates struggle", "Clean code impresses", "Better hiring"]
+              [
+                "Test Suite Runtime",
+                "2 hours",
+                "5 minutes",
+                "24x faster"
+              ],
+              [
+                "Code Coverage",
+                "45%",
+                "85%",
+                "2x better"
+              ],
+              [
+                "Bug Fix Time",
+                "2 days avg",
+                "4 hours avg",
+                "4x faster"
+              ],
+              [
+                "Feature Development",
+                "2 weeks",
+                "3 days",
+                "5x faster"
+              ],
+              [
+                "Production Incidents",
+                "12/month",
+                "3/month",
+                "4x fewer"
+              ],
+              [
+                "Deployment Frequency",
+                "Monthly",
+                "Daily",
+                "30x more frequent"
+              ],
+              [
+                "Developer Turnover",
+                "High (burnout)",
+                "Low (happy devs)",
+                "Better retention"
+              ],
+              [
+                "Technical Interviews",
+                "Candidates struggle",
+                "Clean code impresses",
+                "Better hiring"
+              ]
             ]
           }
         }
@@ -245,18 +632,62 @@
           "title": "Quick Revision Checklist",
           "content": "Use this checklist to quickly review before interviews or exams!",
           "table": {
-            "headers": ["Concept", "Key Point", "Analogy"],
+            "headers": [
+              "Concept",
+              "Key Point",
+              "Analogy"
+            ],
             "rows": [
-              ["Tight Coupling", "Classes married to specific implementations", "Welded metal parts"],
-              ["Loose Coupling", "Classes depend on interfaces", "Lego blocks"],
-              ["Hard-Coded Dependencies", "Using 'new' inside class", "Phone number tattooed on forehead"],
-              ["Dependency Injection", "Dependencies provided from outside", "USB ports on laptop"],
-              ["Poor Testability", "Need full infrastructure to test", "Test microwave by building power grid"],
-              ["Good Testability", "Test in isolation with mocks", "Test button with no power needed"],
-              ["Inflexibility", "Change requires code rewrite", "Concrete statue"],
-              ["Flexibility", "Change via configuration", "Swiss Army knife"],
-              ["Difficult Maintenance", "Change one thing, break many", "Jenga tower"],
-              ["Easy Maintenance", "Independent, modular changes", "Organized library"]
+              [
+                "Tight Coupling",
+                "Classes married to specific implementations",
+                "Welded metal parts"
+              ],
+              [
+                "Loose Coupling",
+                "Classes depend on interfaces",
+                "Lego blocks"
+              ],
+              [
+                "Hard-Coded Dependencies",
+                "Using 'new' inside class",
+                "Phone number tattooed on forehead"
+              ],
+              [
+                "Dependency Injection",
+                "Dependencies provided from outside",
+                "USB ports on laptop"
+              ],
+              [
+                "Poor Testability",
+                "Need full infrastructure to test",
+                "Test microwave by building power grid"
+              ],
+              [
+                "Good Testability",
+                "Test in isolation with mocks",
+                "Test button with no power needed"
+              ],
+              [
+                "Inflexibility",
+                "Change requires code rewrite",
+                "Concrete statue"
+              ],
+              [
+                "Flexibility",
+                "Change via configuration",
+                "Swiss Army knife"
+              ],
+              [
+                "Difficult Maintenance",
+                "Change one thing, break many",
+                "Jenga tower"
+              ],
+              [
+                "Easy Maintenance",
+                "Independent, modular changes",
+                "Organized library"
+              ]
             ]
           }
         }

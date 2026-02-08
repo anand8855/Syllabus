@@ -88,6 +88,7 @@
     <app-section
       *ngFor="let section of filteredSections; let i = index"
       [section]="section"
+      [technologyKey]="technologyKey"
       [style.animation-delay]="i * 0.05 + 's'"
       (toggleCollapse)="toggleSection(section)">
     </app-section>

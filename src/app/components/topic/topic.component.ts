@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Topic } from '../../models/syllabus.model';
+import { SubTopic, Topic } from '../../models/syllabus.model';
 
 @Component({
     selector: 'app-topic',
@@ -11,6 +11,7 @@ import { Topic } from '../../models/syllabus.model';
 export class TopicComponent {
   @Input() topic!: Topic;
   @Input() sectionTitle: string = '';
+  @Input() technologyKey: string = '';
   isCollapsed = true;
 
   constructor(private router: Router) {}
@@ -19,12 +20,14 @@ export class TopicComponent {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  navigateToSubtopic(subtopicName: string) {
+  navigateToSubtopic(subtopic: SubTopic) {
     this.router.navigate(['/subtopic-detail'], {
       queryParams: {
-        subtopic: subtopicName,
+        subtopicId: subtopic.id,
+        subtopicName: subtopic.name,
         topic: this.topic.name,
-        section: this.sectionTitle
+        section: this.sectionTitle,
+        tech: this.technologyKey
       }
     });
   }

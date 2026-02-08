@@ -7,7 +7,7 @@
       "content": "Before diving into details, let's see the complete journey at a glance!",
       "images": [
         {
-          "url": "assets/images/java-compilation-flow.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/compilation_and_execution_process/java-compilation-flow.svg",
           "alt": "Complete Java Compilation and Execution Process",
           "caption": "The 5-step journey: Write Code → Compile → Bytecode → JVM → Output. Every Java program follows this path!"
         }
@@ -84,7 +84,7 @@
       "content": "After successful compilation, you get a .class file containing bytecode. This is where Java's magic begins!",
       "images": [
         {
-          "url": "assets/images/bytecode-magic.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/compilation_and_execution_process/bytecode-magic.svg",
           "alt": "Bytecode vs Traditional Compilation",
           "caption": "The magic of bytecode: Compile once, run anywhere! Unlike C/C++ which needs separate compilation for each platform."
         }
@@ -117,7 +117,7 @@
       "content": "Let's understand WHY Java is platform-independent and HOW bytecode makes it possible.",
       "images": [
         {
-          "url": "assets/images/platform-independence.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/compilation_and_execution_process/platform-independence.svg",
           "alt": "Write Once Run Anywhere Visualization",
           "caption": "Same bytecode runs on Windows, Linux, Mac, and more! The JVM handles platform-specific translation."
         }
@@ -311,61 +311,107 @@
       "question": "Explain the Java compilation and execution process step by step.",
       "answer": "1. Source Code: Developer writes .java file with human-readable code\n2. Compilation: javac compiler translates source to bytecode, creates .class file\n3. Class Loading: JVM loads .class file into memory via Class Loader\n4. Verification: Bytecode verified for safety (checks magic number CAFEBABE, validates instructions)\n5. Execution: Interpreter executes bytecode line-by-line, JIT compiles hot spots to native code\n6. Output: Program executes and produces results\n\nKey: Source compiled to platform-independent bytecode, then executed by platform-specific JVM.",
       "difficulty": "medium",
-      "tags": ["compilation", "execution", "process"]
+      "tags": [
+        "compilation",
+        "execution",
+        "process"
+      ]
     },
     {
       "question": "What is bytecode and why does Java use it?",
       "answer": "Bytecode is platform-independent intermediate code between source code and machine code.\n\nCharacteristics:\n• Stored in .class files\n• Not human-readable\n• Not directly executable by CPU\n• Interpreted/compiled by JVM\n• Starts with magic number CAFEBABE\n\nWhy Java uses it:\n1. Platform Independence: Same bytecode runs on any platform with JVM\n2. Security: Can be verified before execution\n3. Portability: Distribute .class files without source code\n4. Optimization: JIT can optimize at runtime based on actual usage\n\nEnables 'Write Once, Run Anywhere' (WORA).",
       "difficulty": "medium",
-      "tags": ["bytecode", "platform-independence", "WORA"]
+      "tags": [
+        "bytecode",
+        "platform-independence",
+        "WORA"
+      ]
     },
     {
       "question": "What is the difference between javac and java commands?",
       "answer": "javac (Java Compiler):\n• Translates source code to bytecode\n• Input: .java files\n• Output: .class files\n• Checks syntax and semantic errors\n• Run once during development\n• Example: javac HelloWorld.java\n\njava (Java Application Launcher):\n• Executes compiled bytecode\n• Input: .class files\n• Output: Program execution/results\n• Launches JVM\n• Runs every time you execute program\n• Example: java HelloWorld\n\nAnalogy: javac = translator (source to bytecode), java = executor (runs bytecode)",
       "difficulty": "easy",
-      "tags": ["javac", "java", "commands"]
+      "tags": [
+        "javac",
+        "java",
+        "commands"
+      ]
     },
     {
       "question": "How does Java achieve platform independence?",
       "answer": "Java achieves platform independence through bytecode and JVM:\n\n1. Two-Layer Architecture:\n   • Layer 1: Source → Bytecode (platform-independent)\n   • Layer 2: Bytecode → Native code (platform-specific)\n\n2. Bytecode:\n   • Platform-independent intermediate code\n   • Same .class file works everywhere\n   • Not tied to any specific OS or hardware\n\n3. JVM:\n   • Platform-specific (different JVM for each OS)\n   • Translates bytecode to native machine code\n   • Handles platform differences\n\n4. Process:\n   • Compile once on any platform → .class\n   • Distribute same .class file\n   • Run on Windows JVM, Linux JVM, Mac JVM, etc.\n\nDeveloper writes once, JVM vendors ensure it runs everywhere!",
       "difficulty": "medium",
-      "tags": ["platform-independence", "bytecode", "JVM", "WORA"]
+      "tags": [
+        "platform-independence",
+        "bytecode",
+        "JVM",
+        "WORA"
+      ]
     },
     {
       "question": "What is the difference between Interpreter and JIT Compiler in JVM?",
       "answer": "Interpreter:\n• Executes bytecode line-by-line\n• Translates each instruction to native code on-the-fly\n• Simple and straightforward\n• Slow (repeated translation)\n• Fast startup (no compilation delay)\n• Good for code executed once\n\nJIT (Just-In-Time) Compiler:\n• Compiles frequently-executed code (hot spots) to native code\n• Stores compiled code for reuse\n• Complex with profiling overhead\n• Fast execution (near-native speed)\n• Slow startup (compilation takes time)\n• Great for code executed many times\n\nJVM Strategy:\n• Start with Interpreter (quick startup)\n• Monitor code execution\n• JIT compiles hot paths\n• Best of both worlds: fast startup + fast execution\n\nLong-running apps benefit most from JIT!",
       "difficulty": "hard",
-      "tags": ["interpreter", "JIT", "execution", "performance"]
+      "tags": [
+        "interpreter",
+        "JIT",
+        "execution",
+        "performance"
+      ]
     },
     {
       "question": "What happens during the Class Loading process?",
       "answer": "Class Loading has 3 phases:\n\n1. Loading:\n   • Finds .class file (from file system, network, etc.)\n   • Reads binary bytecode data\n   • Creates java.lang.Class object in memory\n   • Done by ClassLoader (Bootstrap, Extension, Application)\n\n2. Linking:\n   a) Verification:\n      • Checks CAFEBABE magic number\n      • Validates bytecode structure\n      • Ensures type safety\n      • Prevents illegal operations\n   b) Preparation:\n      • Allocates memory for static variables\n      • Assigns default values (0, null, false)\n   c) Resolution:\n      • Converts symbolic references to direct references\n      • Links method calls to actual methods\n\n3. Initialization:\n   • Executes static initializer blocks\n   • Initializes static variables with actual values\n   • Class ready for use\n\nIf any phase fails → Error thrown, class not loaded.",
       "difficulty": "hard",
-      "tags": ["class-loading", "verification", "initialization"]
+      "tags": [
+        "class-loading",
+        "verification",
+        "initialization"
+      ]
     },
     {
       "question": "What is the magic number CAFEBABE and why is it used?",
       "answer": "CAFEBABE (0xCAFEBABE) is the magic number that identifies Java bytecode files.\n\nLocation: First 4 bytes of every .class file\n\nPurpose:\n• File type identification\n• JVM checks this before processing\n• Ensures file is valid Java bytecode\n• Prevents loading of corrupt/invalid files\n\nWhy CAFEBABE?\n• Chosen by Java's original team\n• Inside joke/fun Easter egg\n• Literally spells 'CAFE BABE' in hexadecimal\n• Shows developers have a sense of humor!\n\nUsage:\n• JVM reads first 4 bytes\n• If not CAFEBABE → ClassFormatError\n• If matches → Continues loading\n\nYou can verify: Open .class in hex editor, first bytes = CA FE BA BE",
       "difficulty": "medium",
-      "tags": ["CAFEBABE", "magic-number", "bytecode", "class-file"]
+      "tags": [
+        "CAFEBABE",
+        "magic-number",
+        "bytecode",
+        "class-file"
+      ]
     },
     {
       "question": "Why do Java programs get faster over time during execution?",
       "answer": "Java programs get faster due to JIT (Just-In-Time) compilation:\n\n1. Initial Phase (Slow):\n   • Interpreter executes bytecode line-by-line\n   • Each instruction translated repeatedly\n   • Baseline performance\n\n2. Profiling Phase:\n   • JVM monitors code execution\n   • Identifies 'hot spots' (frequently-executed code)\n   • Tracks method call counts, loop iterations\n\n3. Compilation Phase:\n   • JIT compiles hot methods to native machine code\n   • Applies optimizations (inlining, dead code elimination, etc.)\n   • Caches compiled code\n\n4. Optimized Phase (Fast):\n   • Subsequent executions use cached native code\n   • Near-native performance (10-100x faster than interpretation)\n   • Fewer translations needed\n\n5. Continuous Improvement:\n   • JIT keeps profiling\n   • Applies more aggressive optimizations\n   • Adapts to actual runtime patterns\n\nResult: Long-running servers get progressively faster!\n\nThis is called 'adaptive optimization' or 'warm-up period'.",
       "difficulty": "hard",
-      "tags": ["JIT", "performance", "optimization", "warm-up"]
+      "tags": [
+        "JIT",
+        "performance",
+        "optimization",
+        "warm-up"
+      ]
     },
     {
       "question": "What errors can occur during compilation vs execution?",
       "answer": "Compile-Time Errors (caught by javac):\n• Syntax errors (missing semicolons, braces)\n• Type mismatches (assigning String to int)\n• Undefined variables/methods\n• Access modifier violations\n• Invalid method signatures\n• Class not found\n• Cannot be fixed at runtime\n• Must fix code and recompile\n\nExample:\nint x = \"hello\"; // Compile error: incompatible types\n\nRuntime Errors (occur during execution):\n• NullPointerException (accessing null object)\n• ArrayIndexOutOfBoundsException\n• ClassCastException\n• ArithmeticException (divide by zero)\n• OutOfMemoryError\n• StackOverflowError\n• Can be handled with try-catch\n• May crash program if unhandled\n\nExample:\nString s = null;\nSystem.out.println(s.length()); // Runtime: NullPointerException\n\nKey Difference:\n• Compile-time: Code won't compile\n• Runtime: Code compiles but fails during execution",
       "difficulty": "medium",
-      "tags": ["errors", "compilation", "runtime", "debugging"]
+      "tags": [
+        "errors",
+        "compilation",
+        "runtime",
+        "debugging"
+      ]
     },
     {
       "question": "Compare Java's compilation model with C/C++ and Python.",
       "answer": "C/C++ (Ahead-of-Time Compilation):\n• Source → Machine code directly\n• Platform-specific executables (.exe, .out)\n• Must recompile for each platform\n• Fastest execution (native code)\n• No portability\n• No runtime verification\n\nPython (Pure Interpretation):\n• Source code interpreted directly\n• No separate compilation step\n• .pyc bytecode cached internally\n• Slower execution (interpreted)\n• Highly portable (source level)\n• Simple deployment\n\nJava (Bytecode + JIT):\n• Source → Bytecode → Native (two-step)\n• Platform-independent bytecode\n• Same .class runs everywhere with JVM\n• Fast execution (JIT compilation)\n• Portable and secure\n• Verified before execution\n\nSummary:\n• C/C++: Fast but not portable\n• Python: Portable but slower\n• Java: Balanced - portable AND fast (via JIT)\n\nJava combines best of both: portability of interpreted languages + speed approaching compiled languages!",
       "difficulty": "hard",
-      "tags": ["compilation", "comparison", "languages", "performance"]
+      "tags": [
+        "compilation",
+        "comparison",
+        "languages",
+        "performance"
+      ]
     }
   ]
 }

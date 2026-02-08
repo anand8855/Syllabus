@@ -39,7 +39,7 @@
       ],
       "images": [
         {
-          "url": "assets/images/java-editions-overview.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/java_editions_se_ee_me/java-editions-overview.svg",
           "alt": "Java Editions Overview",
           "caption": "Comparison of Java SE, Java EE, and Java ME editions showing their features, use cases, and relationships"
         }
@@ -68,7 +68,7 @@
       ],
       "images": [
         {
-          "url": "assets/images/java-editions-use-cases.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/java_editions_se_ee_me/java-editions-use-cases.svg",
           "alt": "Java Editions Real World Use Cases",
           "caption": "Real-world applications and examples for Java SE, Java EE, and Java ME in various industries"
         }
@@ -97,7 +97,7 @@
       ],
       "images": [
         {
-          "url": "assets/images/java-editions-architecture.svg",
+          "url": "assets/images/subtopics/java/core_java_basics/java_editions_se_ee_me/java-editions-architecture.svg",
           "alt": "Java Editions Architecture Stack",
           "caption": "Architectural diagram showing how Java EE extends Java SE and Java ME is a subset of Java SE"
         }
@@ -110,18 +110,73 @@
         {
           "title": "Feature Comparison Table",
           "table": {
-            "headers": ["Feature", "Java SE", "Java EE", "Java ME"],
+            "headers": [
+              "Feature",
+              "Java SE",
+              "Java EE",
+              "Java ME"
+            ],
             "rows": [
-              ["Target Audience", "General developers, desktop apps", "Enterprise developers, web apps", "Embedded/mobile developers"],
-              ["Platform Size", "Medium (~200MB runtime)", "Large (500MB+ with app server)", "Small (2-20MB runtime)"],
-              ["Complexity", "Moderate", "High", "Low to Moderate"],
-              ["Use Cases", "Desktop, tools, games", "Web apps, enterprise systems, APIs", "Feature phones, IoT, embedded"],
-              ["Web Support", "Basic (HttpURLConnection)", "Full (Servlets, JSP, JSF, REST)", "Limited (basic HTTP)"],
-              ["Database", "JDBC (manual)", "JPA (ORM, automated)", "Limited or custom"],
-              ["Deployment", "Standalone JAR/EXE", "Application servers (Tomcat, WildFly)", "Device-specific"],
-              ["Learning Curve", "Beginner-friendly", "Advanced, steep", "Moderate"],
-              ["Scalability", "Single machine", "Distributed, highly scalable", "Limited"],
-              ["GUI Support", "Rich (Swing, JavaFX)", "Web-based (HTML/CSS/JS)", "Basic mobile UI"]
+              [
+                "Target Audience",
+                "General developers, desktop apps",
+                "Enterprise developers, web apps",
+                "Embedded/mobile developers"
+              ],
+              [
+                "Platform Size",
+                "Medium (~200MB runtime)",
+                "Large (500MB+ with app server)",
+                "Small (2-20MB runtime)"
+              ],
+              [
+                "Complexity",
+                "Moderate",
+                "High",
+                "Low to Moderate"
+              ],
+              [
+                "Use Cases",
+                "Desktop, tools, games",
+                "Web apps, enterprise systems, APIs",
+                "Feature phones, IoT, embedded"
+              ],
+              [
+                "Web Support",
+                "Basic (HttpURLConnection)",
+                "Full (Servlets, JSP, JSF, REST)",
+                "Limited (basic HTTP)"
+              ],
+              [
+                "Database",
+                "JDBC (manual)",
+                "JPA (ORM, automated)",
+                "Limited or custom"
+              ],
+              [
+                "Deployment",
+                "Standalone JAR/EXE",
+                "Application servers (Tomcat, WildFly)",
+                "Device-specific"
+              ],
+              [
+                "Learning Curve",
+                "Beginner-friendly",
+                "Advanced, steep",
+                "Moderate"
+              ],
+              [
+                "Scalability",
+                "Single machine",
+                "Distributed, highly scalable",
+                "Limited"
+              ],
+              [
+                "GUI Support",
+                "Rich (Swing, JavaFX)",
+                "Web-based (HTML/CSS/JS)",
+                "Basic mobile UI"
+              ]
             ]
           }
         },

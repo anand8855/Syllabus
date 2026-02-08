@@ -50,12 +50,32 @@
           "title": "Comparison Table",
           "content": "Detailed comparison between Error and Exception in Java:",
           "table": {
-            "headers": ["Aspect", "Error", "Exception"],
+            "headers": [
+              "Aspect",
+              "Error",
+              "Exception"
+            ],
             "rows": [
-              ["Recoverable", "❌ No", "✅ Yes"],
-              ["Caused by", "JVM/System", "Application logic"],
-              ["Should be handled", "❌ No", "✅ Yes"],
-              ["Package", "java.lang", "java.lang"]
+              [
+                "Recoverable",
+                "❌ No",
+                "✅ Yes"
+              ],
+              [
+                "Caused by",
+                "JVM/System",
+                "Application logic"
+              ],
+              [
+                "Should be handled",
+                "❌ No",
+                "✅ Yes"
+              ],
+              [
+                "Package",
+                "java.lang",
+                "java.lang"
+              ]
             ]
           }
         }
@@ -176,17 +196,17 @@
   ],
   "images": [
     {
-      "url": "assets/images/exception-hierarchy.svg",
+      "url": "assets/images/subtopics/java/exception_handling/fundamentals/exception-hierarchy.svg",
       "alt": "Java Exception Hierarchy Diagram",
       "caption": "Complete hierarchy of Java exception classes showing the relationship between Throwable, Error, and Exception"
     },
     {
-      "url": "assets/images/exception-flow.svg",
+      "url": "assets/images/subtopics/java/exception_handling/fundamentals/exception-flow.svg",
       "alt": "Exception Handling Flow",
       "caption": "How JVM handles exceptions - from occurrence to handling or termination"
     },
     {
-      "url": "assets/images/call-stack-propagation.svg",
+      "url": "assets/images/subtopics/java/exception_handling/fundamentals/call-stack-propagation.svg",
       "alt": "Call Stack and Exception Propagation",
       "caption": "Visual representation of how exceptions propagate up the call stack through method calls (Stack Unwinding)"
     }
@@ -214,61 +234,100 @@
       "question": "What is an exception in Java?",
       "answer": "An exception is an abnormal condition or event that occurs during program execution and disrupts the normal flow of instructions. It is a runtime problem that Java detects and represents as an object. All exceptions inherit from the Throwable class.",
       "difficulty": "easy",
-      "tags": ["basics", "definition"]
+      "tags": [
+        "basics",
+        "definition"
+      ]
     },
     {
       "question": "What is the difference between Error and Exception in Java?",
       "answer": "Error:\n1. Serious problems outside application control\n2. Usually caused by JVM or system failures\n3. Applications should NOT catch these\n4. Examples: OutOfMemoryError, StackOverflowError\n5. Not recoverable\n\nException:\n1. Problems within application control\n2. Can be handled and recovered\n3. Part of normal program design\n4. Examples: NullPointerException, IOException\n5. Recoverable through proper exception handling",
       "difficulty": "medium",
-      "tags": ["error", "exception", "comparison"]
+      "tags": [
+        "error",
+        "exception",
+        "comparison"
+      ]
     },
     {
       "question": "What happens when an exception occurs in Java?",
       "answer": "When an exception occurs, the JVM follows these steps:\n1. Exception object is created\n2. Normal execution stops immediately\n3. JVM searches for a matching catch block in the current method\n4. If not found, it propagates to the calling method (stack unwinding)\n5. This continues up the call stack\n6. If a matching handler is found, it executes the catch block\n7. If no handler is found anywhere, the program terminates and prints the stack trace",
       "difficulty": "medium",
-      "tags": ["jvm", "flow", "propagation"]
+      "tags": [
+        "jvm",
+        "flow",
+        "propagation"
+      ]
     },
     {
       "question": "What is the difference between compile-time and runtime errors?",
       "answer": "Compile-Time Error:\n1. Detected before program execution\n2. Caused by syntax mistakes\n3. Must be fixed before the program can run\n4. Examples: missing semicolon, type mismatch\n5. Caught by the compiler\n\nRuntime Error:\n1. Occurs during program execution\n2. Represented by exceptions\n3. Can be handled using try-catch blocks\n4. Examples: division by zero, array index out of bounds\n5. Detected by the JVM at runtime",
       "difficulty": "easy",
-      "tags": ["compile-time", "runtime", "errors"]
+      "tags": [
+        "compile-time",
+        "runtime",
+        "errors"
+      ]
     },
     {
       "question": "Why does Java force exception handling?",
       "answer": "Java enforces exception handling because it was designed for:\n1. Robust enterprise systems\n2. Long-running server applications\n3. Banking and telecom systems\n4. Distributed applications\n\nBenefits:\n1. Clear error contracts through method signatures\n2. Predictable failure behavior\n3. Forces developers to think about error scenarios\n4. Ensures resources are properly cleaned up\n5. Prevents silent failures\n6. Makes code more maintainable and reliable",
       "difficulty": "medium",
-      "tags": ["design", "robustness", "enterprise"]
+      "tags": [
+        "design",
+        "robustness",
+        "enterprise"
+      ]
     },
     {
       "question": "What is exception propagation and stack unwinding?",
       "answer": "Exception Propagation: When an exception occurs in a method and is not caught there, it propagates up the call stack to the calling method.\n\nStack Unwinding: The process of traversing back through the call stack looking for an exception handler.\n\nExample:\nmain() → methodA() → methodB() → exception occurs\n\nThe exception propagates: methodB → methodA → main\nIf not handled anywhere, the JVM terminates the program.\n\nThis automatic propagation allows centralized exception handling at appropriate levels.",
       "difficulty": "hard",
-      "tags": ["propagation", "stack", "call-stack"]
+      "tags": [
+        "propagation",
+        "stack",
+        "call-stack"
+      ]
     },
     {
       "question": "Is it a good practice to use exceptions for normal control flow?",
       "answer": "No, it is NOT a good practice.\n\nBad Practice:\ntry {\n    int value = Integer.parseInt(str);\n} catch (Exception e) {\n    // handle\n}\n\nGood Practice:\nif (str != null && str.matches(\"\\\\d+\")) {\n    int value = Integer.parseInt(str);\n}\n\nReasons:\n1. Exceptions are expensive (creating stack traces)\n2. Makes code harder to read and maintain\n3. Hides actual exceptional conditions\n4. Poor performance\n5. Violates principle of least surprise\n\nRule: Use exceptions for exceptional cases, use validation for expected conditions.",
       "difficulty": "medium",
-      "tags": ["best-practices", "control-flow", "performance"]
+      "tags": [
+        "best-practices",
+        "control-flow",
+        "performance"
+      ]
     },
     {
       "question": "Why is an exception an object in Java?",
       "answer": "Every exception in Java is an object because:\n\n1. Enables passing exceptions between methods\n2. Allows catching by specific type\n3. Provides access to error information (message, stack trace)\n4. Supports inheritance hierarchy for exception types\n5. Can store additional context about the error\n\nExample:\nArithmeticException e = new ArithmeticException(\"Divide by zero\");\n\nBenefits:\n1. getMessage() - get error message\n2. printStackTrace() - debug information\n3. getCause() - exception chaining\n4. Type-specific handling based on exception class",
       "difficulty": "medium",
-      "tags": ["object", "oop", "design"]
+      "tags": [
+        "object",
+        "oop",
+        "design"
+      ]
     },
     {
       "question": "What is the output when an exception is not caught?",
       "answer": "When an exception is not caught, the JVM:\n\n1. Prints the exception name\n2. Prints the error message\n3. Prints the complete stack trace\n4. Terminates the program\n\nExample Output:\nException in thread \"main\" java.lang.ArithmeticException: / by zero\n    at Test.methodB(Test.java:10)\n    at Test.methodA(Test.java:5)\n    at Test.main(Test.java:2)\n\nThe stack trace shows:\n1. Exception type and message\n2. Exact line where exception occurred\n3. Complete method call chain\n4. Line numbers for debugging",
       "difficulty": "easy",
-      "tags": ["stack-trace", "default-handling", "output"]
+      "tags": [
+        "stack-trace",
+        "default-handling",
+        "output"
+      ]
     },
     {
       "question": "Can you catch an Error in Java? Should you?",
       "answer": "Can you? Technically YES - Errors extend Throwable, so they can be caught.\n\nShould you? NO - You should NOT catch Errors.\n\nReasons:\n1. Errors indicate serious JVM or system problems\n2. Usually irrecoverable (OutOfMemoryError, StackOverflowError)\n3. Application cannot meaningfully handle them\n4. Catching may hide critical system issues\n5. JVM might be in an unstable state\n\nException: In very rare cases like custom class loaders or testing frameworks, you might catch specific Errors, but this is advanced and unusual.\n\nBest Practice: Let Errors propagate and terminate the application, then fix the root cause.",
       "difficulty": "hard",
-      "tags": ["error", "best-practices", "advanced"]
+      "tags": [
+        "error",
+        "best-practices",
+        "advanced"
+      ]
     }
   ]
 }
