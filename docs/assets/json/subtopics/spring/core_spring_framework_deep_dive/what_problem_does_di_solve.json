@@ -1,0 +1,182 @@
+{
+  "name": "Problems Dependency Injection Solves",
+  "overview": "Imagine building a house where every wire, pipe, and switch is permanently glued together. Need to change one bulb? Break a wall. 😅 That’s code without Dependency Injection. DI gives your code flexibility, testability, and freedom — without demolition work!",
+  "sections": [
+    {
+      "title": "The 5 Major Problems DI Solves (Keep It Short!)",
+      "content": "Here are the real pains DI removes — no theory, just developer survival skills:",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/what_problem_does_di_solve/tight-vs-loose-coupling.svg",
+          "alt": "Tight vs Loose Coupling",
+          "caption": "Tight coupling = superglue. Loose coupling = Lego magic."
+        }
+      ],
+      "subsections": [
+        {
+          "title": "1. Tight Coupling - The Toxic Relationship",
+          "content": "When one class is permanently attached to another.\n\nThe Problem:\nYour service directly creates a specific implementation. Want to change it? Prepare for emotional damage.\n\nFunny Fact:\nTight coupling is like writing your crush’s name in permanent marker. Regret comes later. 😅\n\nReal Impact:\n• Changing one class breaks others\n• Hard to extend\n• Refactoring becomes scary"
+        },
+        {
+          "title": "2. Hard-Coded Dependencies - The 'new' Trap",
+          "content": "Using 'new' everywhere means your class controls everything.\n\nThe Problem:\nIf your class creates its own dependencies, you cannot replace them easily.\n\nFunny Fact:\nEvery 'new' keyword is basically a marriage proposal. \"Till death do us part.\" 💍\n\nReal Impact:\n• Can't swap implementations\n• No flexibility\n• Testing becomes painful"
+        },
+        {
+          "title": "3. Poor Testability - The Infrastructure Nightmare",
+          "content": "Testing one small method shouldn’t require starting the universe.\n\nThe Problem:\nWithout DI, your unit tests need database, server, network — and maybe divine intervention.\n\nFunny Fact:\nIf your unit test needs WiFi, it’s not a unit test. It’s an adventure. 🌍\n\nReal Impact:\n• Slow tests\n• Flaky builds\n• Developers stop writing tests"
+        },
+        {
+          "title": "4. Difficult Maintenance - Domino Effect",
+          "content": "Everything depends on everything.\n\nThe Problem:\nChanging one small config breaks multiple modules.\n\nFunny Fact:\nIt’s like Jenga… but all blocks are glued together. Pull one? Boom. 💥\n\nReal Impact:\n• Fear of touching old code\n• Bug fixes take days\n• Onboarding new devs is slow"
+        },
+        {
+          "title": "5. No Flexibility - One Flavor Only",
+          "content": "Your code works only one way. Forever.\n\nThe Problem:\nNeed different behavior for Dev/Test/Prod? Duplicate code time!\n\nFunny Fact:\nIt’s like a restaurant that serves only plain rice. No options. No toppings. Just rice. 🍚\n\nReal Impact:\n• Code duplication\n• Environment-based hacks\n• Feature toggles become messy"
+        }
+      ]
+    },
+    {
+      "title": "How DI Fixes Everything (The Solutions)",
+      "content": "DI means: Don’t create dependencies. Receive them. Simple rule, massive impact.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/dependency-injection-flow.svg",
+          "alt": "DI How It Works",
+          "caption": "Container creates objects. You focus on business logic."
+        }
+      ],
+      "subsections": [
+        {
+          "title": "✅ Loose Coupling - Freedom Mode ON",
+          "content": "Your class depends on an interface, not a concrete implementation.\n\nWhat Happens:\n• Swap database without touching service\n• Add caching easily\n• Change providers via config\n\nFunny Analogy:\nLike USB ports. Same laptop, different devices. 🔌"
+        },
+        {
+          "title": "✅ Beautiful Testing - Blink and It’s Done",
+          "content": "Inject mocks. Skip infrastructure.\n\nWhat Happens:\n• No database required\n• No server startup\n• Millisecond tests\n\nFunny Fact:\nWith DI, testing feels illegal because it’s too fast. ⚡"
+        },
+        {
+          "title": "✅ Clean & Clear Code",
+          "content": "All dependencies are visible in the constructor.\n\nWhat Happens:\n• Easy code reviews\n• No hidden surprises\n• Faster development\n\nDeveloper Truth:\nIf you can read the constructor, you understand the class."
+        },
+        {
+          "title": "✅ Configuration-Based Flexibility",
+          "content": "Same code. Different behavior. No duplication.\n\nExamples:\n• Dev → Mock service\n• Test → In-memory service\n• Prod → Real service\n\nFunny Fact:\nIt’s like changing outfits without changing your body. 👕"
+        },
+        {
+          "title": "✅ Growth Without Rewrites",
+          "content": "Start small. Scale big.\n\n• Begin with simple implementations\n• Replace with distributed systems later\n• Core logic remains untouched\n\nThat’s architectural maturity. 📈"
+        }
+      ]
+    },
+    {
+      "title": "The Mind-Blowing Numbers",
+      "content": "Teams that adopt DI usually report huge productivity improvements:",
+      "subsections": [
+        {
+          "title": "Impact Comparison",
+          "content": "",
+          "table": {
+            "headers": [
+              "Metric",
+              "Before DI",
+              "After DI",
+              "Wow Factor"
+            ],
+            "rows": [
+              ["Test Speed", "Slow & heavy", "Lightning fast", "⚡ Massive boost"],
+              ["Bug Fix Time", "Days", "Hours", "4x faster"],
+              ["Feature Delivery", "Weeks", "Days", "5x faster"],
+              ["Code Coverage", "Low", "High", "2x better"],
+              ["Production Bugs", "Frequent", "Reduced", "4x fewer"],
+              ["Deployments", "Rare", "Frequent", "Confidence boost"],
+              ["Developer Happiness", "😫 Stressed", "😎 Chill", "Priceless"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Quick Cheat Sheet (For Interviews & Quick Learning)",
+      "content": "Remember this and you’re interview-ready:",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/what_problem_does_di_solve/before-after-di.svg",
+          "alt": "Before & After DI",
+          "caption": "Before DI: Chaos. After DI: Calm."
+        }
+      ],
+      "subsections": [
+        {
+          "title": "The Must-Know Facts",
+          "content": "What is DI?\nDependencies come from OUTSIDE the class.\n\nProblems Solved:\n1. Tight coupling\n2. Hard-coded dependencies\n3. Poor testability\n4. Difficult maintenance\n5. No flexibility\n\nBenefits:\n1. Loose coupling\n2. Fast testing\n3. Clean architecture\n4. Config-driven behavior\n5. Easy scalability\n\nCore Analogy:\nWithout DI = Keyboard glued to computer\nWith DI = USB port flexibility 🔌\n\nBottom Line:\nDI = Freedom + Clean Code + Confidence"
+        },
+        {
+          "title": "Common Interview Questions",
+          "content": "Q: What problem does DI solve?\nA: Tight coupling, hard-coded dependencies, poor testability, maintenance difficulty, and inflexibility.\n\nQ: Why avoid 'new' inside class?\nA: It locks implementation and blocks testing flexibility.\n\nQ: Real-world analogy?\nA: USB port — same interface, many implementations.\n\nQ: How does DI improve testing?\nA: Inject mocks instead of real systems.\n\nQ: DI and SOLID?\nA: Supports Dependency Inversion Principle."
+        }
+      ]
+    },
+    {
+      "title": "Funny Facts New Developers Should Know",
+      "content": "Because serious architecture can still be fun:",
+      "subsections": [
+        {
+          "title": "DI Humor Mode",
+          "content": "Every 'new' in your code is a commitment issue waiting to happen. 💍\n\nIf your unit test needs Docker, MySQL, Redis, and RabbitMQ… that’s not a unit test. That’s a startup pitch. 🚀\n\nWithout DI: \"Let me refactor this carefully…\" 😰\nWith DI: \"Sure, swap it.\" 😎\n\nTight coupling feels productive… until version 2.0.\n\nPro Tip:\nFuture You will thank Present You for using DI."
+        }
+      ]
+    }
+  ],
+  "keyPoints": [
+    "🔗 Tight Coupling = Classes stuck together",
+    "🔨 Hard-Coding = No swap flexibility",
+    "🧪 Poor Testing = Infrastructure dependency",
+    "🍝 Maintenance Chaos = Ripple effects",
+    "❄️ Inflexibility = Duplicate code for environments",
+    "✅ DI = Depend on abstractions",
+    "✅ Inject mocks for testing",
+    "✅ Clean modular architecture",
+    "✅ Configurable behavior",
+    "📈 Scale without rewriting",
+    "🎯 DI = Freedom for developers"
+  ],
+  "references": [
+    "Martin Fowler - Inversion of Control Containers",
+    "Robert C. Martin - Clean Code",
+    "Spring Framework Docs"
+  ],
+  "interviewQA": [
+    {
+      "question": "What problem does DI solve?",
+      "answer": "It solves tight coupling, hard-coded dependencies, poor testability, difficult maintenance, and lack of flexibility. In short: DI makes code modular, testable, and easier to evolve."
+    },
+    {
+      "question": "Why is 'new' keyword risky?",
+      "answer": "Because it hard-wires dependencies inside the class. That kills flexibility and makes testing difficult."
+    },
+    {
+      "question": "Give the USB analogy!",
+      "answer": "Without DI: keyboard permanently attached. With DI: USB ports — plug anything compatible. The class only cares about the interface."
+    },
+    {
+      "question": "Tight vs Loose Coupling?",
+      "answer": "Tight = welded metal. Loose = Lego blocks."
+    },
+    {
+      "question": "How does DI help testing?",
+      "answer": "You inject mocks instead of real systems. Tests run in milliseconds without infrastructure."
+    },
+    {
+      "question": "Dev/Test/Prod with DI?",
+      "answer": "Same codebase. Different injected implementations based on environment."
+    },
+    {
+      "question": "DI + SOLID?",
+      "answer": "Supports Dependency Inversion Principle — depend on abstractions, not concrete implementations."
+    },
+    {
+      "question": "Real metrics?",
+      "answer": "Teams often report faster testing, fewer bugs, quicker feature delivery, and happier developers."
+    }
+  ]
+}

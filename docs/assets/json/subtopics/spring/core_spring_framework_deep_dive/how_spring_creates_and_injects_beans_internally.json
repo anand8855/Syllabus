@@ -1,0 +1,221 @@
+{
+  "name": "How Spring Internally Creates, Manages, and Injects Beans",
+  "overview": "🏭 Ever wondered what really happens after you write @Component and @Autowired? Behind the scenes, Spring runs a full hiring-and-training factory. It scans resumes (classes), registers candidates (BeanDefinitions), hires them (instantiation), assigns laptops (dependencies), trains them (initialization), and even handles retirement (destruction). You write business logic. Spring runs the factory. 😎 This guide walks through the exact internal flow step-by-step—clearly, visually, and interview-ready.",
+  "sections": [
+    {
+      "title": "🧠 Big Picture: Who’s Running the Show?",
+      "content": "At the heart of everything is the Spring IoC Container.\n\nIt:\n• Reads configuration\n• Registers BeanDefinitions\n• Creates objects\n• Injects dependencies\n• Manages lifecycle\n\nThink of it as HR + IT + Admin combined for your codebase.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/spring-ioc-container-architecture.svg",
+          "alt": "IoC Container Architecture",
+          "caption": "Spring container orchestrating definitions, creation, and lifecycle"
+        },
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/ioc-control-flow.svg",
+          "alt": "IoC Control Flow",
+          "caption": "Framework-controlled flow instead of manual object creation"
+        },
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/ioc-container-internals.svg",
+          "alt": "IoC Container Internals",
+          "caption": "Internal collaborators inside the Spring container"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "BeanFactory vs ApplicationContext",
+          "content": "BeanFactory = Minimal manager 🏢\nApplicationContext = Enterprise-grade manager with events, AOP, i18n, and more.",
+          "table": {
+            "headers": ["Capability", "BeanFactory", "ApplicationContext"],
+            "rows": [
+              ["Bean creation", "Lazy by default", "Eager by default"],
+              ["Events", "No", "Yes"],
+              ["AOP support", "Basic", "Full"],
+              ["i18n", "No", "Yes"],
+              ["Real-world usage", "Rare", "Standard"]
+            ]
+          }
+        },
+        {
+          "title": "🔄 High-Level Bean Lifecycle",
+          "content": "Keep this mental checklist 👇",
+          "table": {
+            "headers": ["Phase", "What Happens"],
+            "rows": [
+              ["Scan", "Find annotated classes"],
+              ["Define", "Create BeanDefinition"],
+              ["Instantiate", "Create object"],
+              ["Resolve", "Find dependencies"],
+              ["Inject", "Wire dependencies"],
+              ["Initialize", "Run init callbacks"],
+              ["Ready", "Bean usable"],
+              ["Destroy", "Cleanup on shutdown"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Component Scanning & Config Processing",
+      "content": "Spring starts by scanning packages defined in @ComponentScan and @Configuration.\n\nIt detects:\n• @Component\n• @Service\n• @Repository\n• @Controller\n• @Bean methods\n\nAnalogy 😄 Spring walks into the office and says: “Anyone with a Spring badge, report to HR!”",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/component-scanning-pipeline.svg",
+          "alt": "Component Scanning Pipeline",
+          "caption": "Scanning phase registers metadata, not objects"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "Important Insight",
+          "content": "Spring does NOT create objects yet. It only registers BeanDefinitions (metadata).",
+          "table": {
+            "headers": ["Input", "Output"],
+            "rows": [
+              ["@Component class", "BeanDefinition registered"],
+              ["@Bean method", "BeanDefinition registered"],
+              ["@Conditional", "Definition included/excluded"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "BeanDefinition Creation",
+      "content": "BeanDefinition is metadata that describes how to build the bean.\n\nAnalogy 😄 It’s an employee resume 📄 — details, not the person.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/bean-definition-metadata.svg",
+          "alt": "BeanDefinition Metadata",
+          "caption": "Metadata guiding object creation"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "What It Contains",
+          "content": "This metadata drives the factory process.",
+          "table": {
+            "headers": ["Field", "Purpose"],
+            "rows": [
+              ["Bean class", "Which class to create"],
+              ["Scope", "Singleton / Prototype etc."],
+              ["Constructor args", "How to instantiate"],
+              ["Properties", "Setter values"],
+              ["Init/destroy", "Lifecycle hooks"],
+              ["Lazy flag", "Create now or later"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Bean Instantiation",
+      "content": "Now Spring creates the object using reflection.\n\nIt selects the constructor and builds the raw instance.\n\nAnalogy 😄 Employee hired — but no laptop yet.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/bean-instantiation-flow.svg",
+          "alt": "Bean Instantiation Flow",
+          "caption": "Constructor selection and reflection-based creation"
+        }
+      ]
+    },
+    {
+      "title": "Dependency Resolution",
+      "content": "Spring checks constructor parameters, @Autowired fields, and setters.\n\nThen it resolves dependencies by:\n• Type\n• @Qualifier\n• @Primary\n• Bean name\n\nAnalogy 😄 HR asks: “This employee needs a laptop. Do we have one?”",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/dependency-resolution-strategies.svg",
+          "alt": "Dependency Resolution",
+          "caption": "Resolution priority order inside the container"
+        }
+      ]
+    },
+    {
+      "title": "Dependency Injection (The Wiring 💉)",
+      "content": "AutowiredAnnotationBeanPostProcessor performs injection.\n\nDependencies are injected via:\n• Constructor\n• Setter\n• Field\n\nAnalogy 😄 Employee receives laptop 💻 and access card 🪪.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/dependency-injection-types.svg",
+          "alt": "Injection Types",
+          "caption": "Constructor (best), Setter, Field"
+        }
+      ]
+    },
+    {
+      "title": "Initialization Phase 🎓",
+      "content": "After injection, Spring runs initialization callbacks:\n• @PostConstruct\n• afterPropertiesSet()\n• custom init-method\n\nNow the bean is fully ready.\n\nAnalogy 😄 Orientation training completed.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/bean-lifecycle-flow.svg",
+          "alt": "Bean Lifecycle Flow",
+          "caption": "Full lifecycle from creation to destruction"
+        }
+      ]
+    },
+    {
+      "title": "BeanPostProcessors (Magic Layer ✨)",
+      "content": "BeanPostProcessor can modify or wrap beans before and after initialization.\n\nThis is how Spring creates proxies for:\n• @Transactional\n• @Async\n• AOP logging\n\nAnalogy 😄 Employee receives a superhero cape before going on stage.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/post-processor-pipeline.svg",
+          "alt": "Post Processor Pipeline",
+          "caption": "Pre and post initialization processing"
+        }
+      ]
+    },
+    {
+      "title": "Bean Ready (Caching & Reuse)",
+      "content": "Singleton beans are stored in a cache.\nPrototype beans are created fresh each time.\n\nAnalogy 😄 Permanent employee vs freelancer.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/bean-caching-singleton-prototype.svg",
+          "alt": "Bean Caching and Singleton vs Prototype",
+          "caption": "Singleton beans cached and reused, prototype beans created fresh"
+        }
+      ]
+    },
+    {
+      "title": "Bean Destruction 👋",
+      "content": "On shutdown, Spring calls:\n• @PreDestroy\n• destroy()\n• custom destroy-method\n\nAnalogy 😄 Exit interview + farewell cake 🎂.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/how_spring_creates_and_injects_beans_internally/bean-destruction-flow.svg",
+          "alt": "Bean Destruction",
+          "caption": "Shutdown lifecycle sequence"
+        }
+      ]
+    }
+  ],
+  "keyPoints": [
+    "Spring first registers BeanDefinitions before creating objects",
+    "BeanDefinition stores metadata about bean creation",
+    "Instantiation happens via reflection",
+    "Dependencies resolved by type, qualifier, primary, or name",
+    "AutowiredAnnotationBeanPostProcessor performs injection",
+    "BeanPostProcessor enables proxying and AOP",
+    "Initialization callbacks run after injection",
+    "Singleton beans are cached and reused",
+    "Destruction callbacks run on container shutdown"
+  ],
+  "references": [
+    "Spring Framework Reference - Core Container",
+    "Spring Framework Docs - Bean Lifecycle",
+    "Martin Fowler - IoC Containers",
+    "Effective Java - Prefer dependency injection"
+  ],
+  "interviewQA": [
+    {
+      "question": "How does Spring create beans internally?",
+      "answer": "Spring scans classes, registers BeanDefinitions, instantiates beans using reflection, resolves dependencies, injects them via post-processors, runs initialization callbacks, and manages destruction during shutdown."
+    },
+    {
+      "question": "What is a BeanDefinition?",
+      "answer": "Metadata describing how to create a bean — class, scope, constructor arguments, properties, and lifecycle methods."
+    },
+    {
+      "question": "How does @Autowired work internally?",
+      "answer": "AutowiredAnnotationBeanPostProcessor scans injection points, resolves matching beans using BeanFactory, and injects dependencies into constructors, fields, or setters."
+    }
+  ]
+}

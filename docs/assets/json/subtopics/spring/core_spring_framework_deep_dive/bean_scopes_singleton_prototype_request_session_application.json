@@ -1,0 +1,250 @@
+{
+  "name": "Bean Scopes (Singleton, Prototype, Request, Session, Application)",
+  "overview": "🫘 Bean scopes answer a simple but dangerous question: “Who shares this object?” Get it right → smooth, scalable apps. Get it wrong → mysterious bugs like ‘Why is my user data showing in someone else’s screen?!’ 😅 Scopes control how many objects exist, who sees them, and how long they survive.",
+  "sections": [
+    {
+      "title": "🧠 What Is a Bean Scope?",
+      "content": "A bean scope defines how many instances Spring creates, how long they live, and who can access them.\n\nThink of it like deciding whether something is:\n• Shared by everyone 🏢\n• Personal per user 👤\n• Temporary per request 📦\n• Disposable per use ☕\n\nScope = Resource-sharing strategy.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/bean_scopes_singleton_prototype_request_session_application/bean-scopes-overview.svg",
+          "alt": "Bean Scopes Overview",
+          "caption": "Scope defines instance count, visibility, and lifetime"
+        }
+      ]
+    },
+    {
+      "title": "1️⃣ Singleton Scope (Default & Most Used)",
+      "content": "One instance per Spring container. Shared across the entire application.\n\nIf you don’t specify scope → it’s Singleton.\n\nAnalogy 😄 Shared office printer 🖨️ — everyone uses the same one.",
+      "subsections": [
+        {
+          "title": "Behavior & Lifecycle",
+          "content": "Created when the container starts (usually eagerly). Destroyed when the container shuts down.",
+          "table": {
+            "headers": ["Aspect", "Singleton"],
+            "rows": [
+              ["Instances", "1 per container"],
+              ["Lifetime", "Application lifetime"],
+              ["Shared", "Yes"],
+              ["Default Scope", "Yes"]
+            ]
+          }
+        },
+        {
+          "title": "Best For",
+          "content": "Stateless services, repositories, business logic.\n\n⚠ Important: Singleton + mutable state = trouble.\n\nInterview Line 💡 “Singleton creates exactly one bean per IoC container.”"
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/bean_scopes_singleton_prototype_request_session_application/singleton-scope.svg",
+          "alt": "Singleton Scope",
+          "caption": "One shared instance for the entire application"
+        }
+      ]
+    },
+    {
+      "title": "2️⃣ Prototype Scope (Fresh Every Time)",
+      "content": "Spring creates a new bean every time you request it.\n\nSpring creates it… and then forgets it 😄.\n\nAnalogy 😄 Disposable coffee cup ☕ — new cup for every order.",
+      "subsections": [
+        {
+          "title": "Behavior & Lifecycle",
+          "content": "Created on demand. Spring does NOT manage destruction. Cleanup is your responsibility.",
+          "table": {
+            "headers": ["Aspect", "Prototype"],
+            "rows": [
+              ["Instances", "Multiple (new each time)"],
+              ["Lifetime", "Until garbage collected"],
+              ["Shared", "No"],
+              ["Lifecycle Managed", "Creation only"]
+            ]
+          }
+        },
+        {
+          "title": "Best For",
+          "content": "Stateful objects, temporary data holders, short-lived components.\n\nInterview Gold 💎 “Spring does not manage full lifecycle of prototype beans.”"
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/bean_scopes_singleton_prototype_request_session_application/prototype-scope.svg",
+          "alt": "Prototype Scope",
+          "caption": "New instance every time the container is asked"
+        }
+      ]
+    },
+    {
+      "title": "🌐 Web-Aware Scopes (Web Applications Only)",
+      "content": "These scopes work in Spring Web / Spring Boot Web environments.",
+      "subsections": [
+        {
+          "title": "3️⃣ Request Scope",
+          "content": "One bean per HTTP request. Destroyed when the request completes.\n\nAnalogy 😄 A food order 🍔 — prepared, delivered, finished.",
+          "table": {
+            "headers": ["Aspect", "Request"],
+            "rows": [
+              ["Instances", "1 per HTTP request"],
+              ["Lifetime", "Request duration"],
+              ["Shared", "No"],
+              ["Use Case", "Request-specific data"]
+            ]
+          }
+        },
+        {
+          "title": "4️⃣ Session Scope",
+          "content": "One bean per user session. Shared across multiple requests of the same user.\n\nAnalogy 😄 Movie ticket 🎟️ — valid until the show ends.",
+          "table": {
+            "headers": ["Aspect", "Session"],
+            "rows": [
+              ["Instances", "1 per session"],
+              ["Lifetime", "Session duration"],
+              ["Shared", "Per user"],
+              ["Use Case", "Shopping cart, user preferences"]
+            ]
+          }
+        },
+        {
+          "title": "5️⃣ Application Scope",
+          "content": "One bean per ServletContext. Shared across all users and sessions.\n\nAnalogy 😄 Building lift 🏢 — same lift for everyone in the building.",
+          "table": {
+            "headers": ["Aspect", "Application"],
+            "rows": [
+              ["Instances", "1 per application"],
+              ["Lifetime", "Application lifetime"],
+              ["Shared", "Yes"],
+              ["Use Case", "Global config, shared cache"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/bean_scopes_singleton_prototype_request_session_application/request-scope.svg",
+          "alt": "Request Scope",
+          "caption": "One instance per HTTP request"
+        },
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/bean_scopes_singleton_prototype_request_session_application/session-scope.svg",
+          "alt": "Session Scope",
+          "caption": "One instance per user session"
+        },
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/bean_scopes_singleton_prototype_request_session_application/application-scope.svg",
+          "alt": "Application Scope",
+          "caption": "One shared instance per web application"
+        }
+      ]
+    },
+    {
+      "title": "🔄 Stateful vs Stateless (Critical Concept!)",
+      "content": "Golden Rule 😄\nSingleton + mutable state = race conditions & shared data bugs.\n\nStateless beans are safe as Singleton.\nStateful beans should use Prototype, Request, or Session.",
+      "subsections": [
+        {
+          "title": "Safety Matrix",
+          "content": "Match behavior with scope wisely.",
+          "table": {
+            "headers": ["Bean Type", "Meaning", "Safe Scope"],
+            "rows": [
+              ["Stateless", "No internal data", "Singleton ✅"],
+              ["Stateful", "Holds user/request data", "Prototype / Request / Session"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/bean_scopes_singleton_prototype_request_session_application/thread-safety-scopes.svg",
+          "alt": "Thread Safety by Scope",
+          "caption": "Thread-safety implications across scopes"
+        }
+      ]
+    },
+    {
+      "title": "📊 Scope Comparison Table",
+      "content": "Quick interview revision snapshot.",
+      "subsections": [
+        {
+          "title": "Scope Comparison",
+          "content": "Compare all scopes at a glance.",
+          "table": {
+            "headers": ["Scope", "Instances", "Lifetime", "Shared?", "Typical Use"],
+            "rows": [
+              ["Singleton", "1 per container", "App lifetime", "Yes", "Services"],
+              ["Prototype", "New each call", "Until GC", "No", "Temp objects"],
+              ["Request", "1 per request", "Request duration", "No", "Request data"],
+              ["Session", "1 per session", "Session duration", "Per user", "Cart"],
+              ["Application", "1 per app", "App lifetime", "Yes", "Global cache"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/bean_scopes_singleton_prototype_request_session_application/scope-comparison-table.svg",
+          "alt": "Scope Comparison Table",
+          "caption": "All scopes compared clearly"
+        }
+      ]
+    },
+    {
+      "title": "🧠 When to Use Which (Decision Guide)",
+      "content": "Business logic → Singleton\nUser-specific data → Session\nPer-request data → Request\nTemporary stateful object → Prototype\nGlobal shared resource → Application",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/bean_scopes_singleton_prototype_request_session_application/decision-guide-scopes.svg",
+          "alt": "Scope Decision Guide",
+          "caption": "Choose scope based on sharing & lifetime"
+        }
+      ]
+    },
+    {
+      "title": "🧠 Interview-Ready One-Liners",
+      "content": "• Singleton is default scope.\n• Prototype creates a new bean each time.\n• Request & Session are web scopes.\n• Spring fully manages Singleton lifecycle.\n• Spring does NOT destroy Prototype beans.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/bean_scopes_singleton_prototype_request_session_application/bean-scopes-summary.svg",
+          "alt": "Bean Scopes Summary",
+          "caption": "Quick interview revision snapshot"
+        }
+      ]
+    },
+    {
+      "title": "🏁 Final Thoughts",
+      "content": "Bean scopes are about smart sharing. Share stateless logic. Isolate stateful data. Think printers, coffee cups, food orders, tickets, and buildings — and you’ll never confuse scopes again 😄",
+      "images": [
+        {
+          "url": "assets/images/subtopics/spring/core_spring_framework_deep_dive/bean_scopes_singleton_prototype_request_session_application/bean-scopes-final.svg",
+          "alt": "Bean Scopes Final",
+          "caption": "Scopes made intuitive and interview-ready"
+        }
+      ]
+    }
+  ],
+  "keyPoints": [
+    "Singleton is default and shared across container",
+    "Prototype creates new instance every time",
+    "Request and Session are web-specific",
+    "Application scope shared across all users",
+    "Spring does not destroy prototype beans",
+    "Singleton + state = concurrency risk",
+    "Choose scope based on sharing and lifetime"
+  ],
+  "references": [
+    "Spring Framework Reference - Bean Scopes",
+    "Spring Framework Documentation - Core Container"
+  ],
+  "interviewQA": [
+    {
+      "question": "What is the default bean scope in Spring?",
+      "answer": "Singleton. One instance per container, shared across the application."
+    },
+    {
+      "question": "Difference between Singleton and Prototype?",
+      "answer": "Singleton creates one shared instance managed fully by Spring. Prototype creates a new instance each time and Spring does not manage its destruction."
+    },
+    {
+      "question": "Which scopes are web-specific?",
+      "answer": "Request, Session, and Application (ServletContext-based) scopes."
+    }
+  ]
+}

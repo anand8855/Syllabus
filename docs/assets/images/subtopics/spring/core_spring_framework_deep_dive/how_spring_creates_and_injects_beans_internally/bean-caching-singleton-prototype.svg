@@ -1,0 +1,139 @@
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#0a0e27"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" font-size="28" font-weight="bold" fill="#00d4ff" text-anchor="middle">
+    Bean Caching: Singleton vs Prototype
+  </text>
+  
+  <!-- Left side: Singleton Container -->
+  <g>
+    <!-- Container box -->
+    <rect x="50" y="80" width="400" height="480" rx="10" fill="#1a1f3a" stroke="#00d4ff" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="250" y="120" font-size="20" font-weight="bold" fill="#00d4ff" text-anchor="middle">
+      SINGLETON SCOPE
+    </text>
+    
+    <!-- Cache section -->
+    <rect x="70" y="140" width="360" height="80" rx="8" fill="#2a3050" stroke="#4a9eff" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="250" y="165" font-size="14" font-weight="bold" fill="#4a9eff" text-anchor="middle">
+      Bean Cache (Singleton Registry)
+    </text>
+    <text x="250" y="190" font-size="12" fill="#a0c4ff" text-anchor="middle">
+      One instance per container
+    </text>
+    
+    <!-- Cached bean instances -->
+    <circle cx="130" cy="280" r="35" fill="#00d4ff" opacity="0.9"/>
+    <text x="130" y="285" font-size="12" font-weight="bold" fill="#0a0e27" text-anchor="middle">
+      Bean-001
+    </text>
+    
+    <circle cx="250" cy="280" r="35" fill="#00d4ff" opacity="0.9"/>
+    <text x="250" y="285" font-size="12" font-weight="bold" fill="#0a0e27" text-anchor="middle">
+      Bean-002
+    </text>
+    
+    <circle cx="370" cy="280" r="35" fill="#00d4ff" opacity="0.9"/>
+    <text x="370" y="285" font-size="12" font-weight="bold" fill="#0a0e27" text-anchor="middle">
+      Bean-003
+    </text>
+    
+    <!-- Request 1 -->
+    <text x="250" y="330" font-size="12" fill="#a0c4ff" text-anchor="middle">
+      Request 1: getUserService()
+    </text>
+    <path d="M 250 345 L 130 245" stroke="#ffa500" stroke-width="2" fill="none" marker-end="url(#arrowOrange)"/>
+    <text x="170" y="300" font-size="11" fill="#ffa500">Returns</text>
+    
+    <!-- Request 2 -->
+    <text x="250" y="370" font-size="12" fill="#a0c4ff" text-anchor="middle">
+      Request 2: getUserService()
+    </text>
+    <path d="M 250 385 L 130 245" stroke="#ffa500" stroke-width="2" fill="none" marker-end="url(#arrowOrange)"/>
+    <text x="170" y="375" font-size="11" fill="#ffa500">Same Instance!</text>
+    
+    <!-- Benefit -->
+    <rect x="70" y="420" width="360" height="50" rx="8" fill="#1a4d1a" stroke="#4aff4a" stroke-width="2"/>
+    <text x="250" y="440" font-size="12" font-weight="bold" fill="#4aff4a" text-anchor="middle">
+      Memory efficient • Shared state • Thread-safe
+    </text>
+    <text x="250" y="460" font-size="11" fill="#7fff7f" text-anchor="middle">
+      (Default scope in Spring)
+    </text>
+  </g>
+  
+  <!-- Right side: Prototype Container -->
+  <g>
+    <!-- Container box -->
+    <rect x="550" y="80" width="400" height="480" rx="10" fill="#1a1f3a" stroke="#ff6b6b" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="750" y="120" font-size="20" font-weight="bold" fill="#ff6b6b" text-anchor="middle">
+      PROTOTYPE SCOPE
+    </text>
+    
+    <!-- Factory section -->
+    <rect x="570" y="140" width="360" height="80" rx="8" fill="#3a2a2a" stroke="#ff9999" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="750" y="165" font-size="14" font-weight="bold" fill="#ff9999" text-anchor="middle">
+      Bean Factory (Creates New)
+    </text>
+    <text x="750" y="190" font-size="12" fill="#ffc0c0" text-anchor="middle">
+      New instance per request
+    </text>
+    
+    <!-- New bean instances being created -->
+    <circle cx="630" cy="280" r="35" fill="#ff6b6b" opacity="0.9"/>
+    <text x="630" y="285" font-size="12" font-weight="bold" fill="#0a0e27" text-anchor="middle">
+      Bean-A
+    </text>
+    
+    <circle cx="750" cy="280" r="35" fill="#ff6b6b" opacity="0.9"/>
+    <text x="750" y="285" font-size="12" font-weight="bold" fill="#0a0e27" text-anchor="middle">
+      Bean-B
+    </text>
+    
+    <circle cx="870" cy="280" r="35" fill="#ff6b6b" opacity="0.9"/>
+    <text x="870" y="285" font-size="12" font-weight="bold" fill="#0a0e27" text-anchor="middle">
+      Bean-C
+    </text>
+    
+    <!-- Request 1 -->
+    <text x="750" y="330" font-size="12" fill="#ffc0c0" text-anchor="middle">
+      Request 1: getUserService()
+    </text>
+    <path d="M 750 345 L 630 245" stroke="#ffa500" stroke-width="2" fill="none" marker-end="url(#arrowOrange)"/>
+    <text x="690" y="300" font-size="11" fill="#ffa500">Creates new</text>
+    
+    <!-- Request 2 -->
+    <text x="750" y="370" font-size="12" fill="#ffc0c0" text-anchor="middle">
+      Request 2: getUserService()
+    </text>
+    <path d="M 750 385 L 750 245" stroke="#ffa500" stroke-width="2" fill="none" marker-end="url(#arrowOrange)"/>
+    <text x="780" y="370" font-size="11" fill="#ffa500">Different Instance!</text>
+    
+    <!-- Cost -->
+    <rect x="570" y="420" width="360" height="50" rx="8" fill="#4d1a1a" stroke="#ff7f7f" stroke-width="2"/>
+    <text x="750" y="440" font-size="12" font-weight="bold" fill="#ff7f7f" text-anchor="middle">
+      More memory usage • Independent instances • Use carefully
+    </text>
+    <text x="750" y="460" font-size="11" fill="#ff9999" text-anchor="middle">
+      (Specify @Scope("prototype"))
+    </text>
+  </g>
+  
+  <!-- Arrow marker definitions -->
+  <defs>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ffa500"/>
+    </marker>
+  </defs>
+  
+  <!-- Footer -->
+  <text x="500" y="580" font-size="13" fill="#7f9fbf" text-anchor="middle">
+    Spring creates singletons once, caches them, and reuses. Prototypes are created fresh each time.
+  </text>
+</svg>
