@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <style>
+    .bg { fill: #0f1724; }
+    .checked-box { fill: #238636; stroke: #3fb950; stroke-width: 2; rx: 8; }
+    .unchecked-box { fill: #da3633; stroke: #f85149; stroke-width: 2; rx: 8; }
+    .title { fill: #e6edf3; font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; }
+    .subtitle { fill: #a8d0ff; font-family: Arial, sans-serif; font-size: 18px; font-weight: 600; }
+    .label { fill: #fff; font-family: Arial, sans-serif; font-size: 16px; }
+    .desc { fill: #cbd6e9; font-family: Arial, sans-serif; font-size: 14px; }
+    .icon { font-size: 32px; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="1200" height="750" />
+
+  <!-- Title -->
+  <text class="title" x="600" y="40" text-anchor="middle">Checked vs Unchecked Exceptions</text>
+
+  <!-- LEFT: Checked Exceptions -->
+  <g transform="translate(30, 80)">
+    <rect class="checked-box" x="0" y="0" width="540" height="630" opacity="0.2" />
+    <text class="subtitle" x="270" y="35" text-anchor="middle">✅ Checked Exceptions</text>
+
+    <g transform="translate(20, 60)">
+      <text class="label" x="0" y="0" font-weight="700">Compiler Says:</text>
+      <text class="desc" x="0" y="25">"You MUST handle this or declare it!"</text>
+
+      <text class="label" x="0" y="65" font-weight="700">Typical Cause:</text>
+      <text class="desc" x="0" y="90">External failures (I/O, DB, files)</text>
+
+      <text class="label" x="0" y="130" font-weight="700">Examples:</text>
+      <text class="desc" x="0" y="155">• IOException</text>
+      <text class="desc" x="0" y="175">• SQLException</text>
+      <text class="desc" x="0" y="195">• ClassNotFoundException</text>
+
+      <text class="label" x="0" y="235" font-weight="700">When to Use:</text>
+      <text class="desc" x="0" y="260">Caller CAN reasonably recover.</text>
+      <text class="desc" x="0" y="280">Example: Retry reading a file</text>
+      <text class="desc" x="0" y="300">or use a fallback.</text>
+
+      <text class="label" x="0" y="340" font-weight="700">Handling:</text>
+      <text class="desc" x="0" y="365">try/catch:</text>
+      <text class="desc" x="10" y="385" font-family="monospace" font-size="12">try { readFile(); }</text>
+      <text class="desc" x="10" y="402" font-family="monospace" font-size="12">catch (IOException) { retry }</text>
+
+      <text class="desc" x="0" y="425">OR throws:</text>
+      <text class="desc" x="10" y="445" font-family="monospace" font-size="12">void method() throws IOException</text>
+
+      <text class="label" x="0" y="485" font-weight="700">Interview Line:</text>
+      <text class="desc" x="0" y="510">"Checked exceptions are verified</text>
+      <text class="desc" x="0" y="530">at compile-time. The compiler</text>
+      <text class="desc" x="0" y="550">forces acknowledgment."</text>
+    </g>
+  </g>
+
+  <!-- RIGHT: Unchecked Exceptions -->
+  <g transform="translate(630, 80)">
+    <rect class="unchecked-box" x="0" y="0" width="540" height="630" opacity="0.2" />
+    <text class="subtitle" x="270" y="35" text-anchor="middle">🟢 Unchecked (RuntimeException)</text>
+
+    <g transform="translate(20, 60)">
+      <text class="label" x="0" y="0" font-weight="700">Compiler Says:</text>
+      <text class="desc" x="0" y="25">"Up to you. Handle if you want."</text>
+
+      <text class="label" x="0" y="65" font-weight="700">Typical Cause:</text>
+      <text class="desc" x="0" y="90">Programming bugs / bad args</text>
+
+      <text class="label" x="0" y="130" font-weight="700">Examples:</text>
+      <text class="desc" x="0" y="155">• NullPointerException</text>
+      <text class="desc" x="0" y="175">• IllegalArgumentException</text>
+      <text class="desc" x="0" y="195">• IndexOutOfBoundsException</text>
+
+      <text class="label" x="0" y="235" font-weight="700">When to Use:</text>
+      <text class="desc" x="0" y="260">Signal programmer error.</text>
+      <text class="desc" x="0" y="280">Fix the CODE, not the handler.</text>
+      <text class="desc" x="0" y="300">Example: null check, index validation</text>
+
+      <text class="label" x="0" y="340" font-weight="700">Handling:</text>
+      <text class="desc" x="0" y="365">Prevent, don't catch:</text>
+      <text class="desc" x="10" y="385" font-family="monospace" font-size="12">if (p == null)</text>
+      <text class="desc" x="10" y="402" font-family="monospace" font-size="12">  throw new IAE(...)</text>
+
+      <text class="desc" x="0" y="425">OR check first:</text>
+      <text class="desc" x="10" y="445" font-family="monospace" font-size="12">Objects.requireNonNull(p)</text>
+
+      <text class="label" x="0" y="485" font-weight="700">Interview Line:</text>
+      <text class="desc" x="0" y="510">"Unchecked exceptions indicate</text>
+      <text class="desc" x="0" y="530">programming errors. Don't catch</text>
+      <text class="desc" x="0" y="550">them repeatedly — prevent them."</text>
+    </g>
+  </g>
+
+  <!-- Bottom: Quick Decision Table -->
+  <g transform="translate(30, 720)">
+    <text class="desc" x="0" y="0">💡 Quick Rule: External failure (recoverable)? Use checked. Bug in code? Use unchecked.</text>
+  </g>
+</svg>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="800" viewBox="0 0 1000 800">
+  <style>
+    .bg { fill: #0f1724; }
+    .root-box { fill: #e6edf3; stroke: #58a6ff; stroke-width: 3; rx: 8; }
+    .branch-box { fill: #a8d0ff; stroke: #58a6ff; stroke-width: 2; rx: 6; }
+    .leaf-box { fill: #79c0ff; stroke: #58a6ff; stroke-width: 2; rx: 5; }
+    .label-root { fill: #0f1724; font-family: Arial, sans-serif; font-size: 18px; font-weight: 700; }
+    .label-branch { fill: #0f1724; font-family: Arial, sans-serif; font-size: 16px; font-weight: 600; }
+    .label-leaf { fill: #0f1724; font-family: Arial, sans-serif; font-size: 14px; }
+    .label-type { fill: #9fb3d6; font-family: Arial, sans-serif; font-size: 12px; font-style: italic; }
+    .line { stroke: #58a6ff; stroke-width: 2; fill: none; }
+    .title { fill: #e6edf3; font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="1000" height="800" />
+
+  <!-- Title -->
+  <text class="title" x="50" y="40">Java Exception Hierarchy Tree 🌳</text>
+
+  <!-- Root: Throwable -->
+  <rect class="root-box" x="350" y="80" width="300" height="60" />
+  <text class="label-root" x="500" y="115" text-anchor="middle">java.lang.Throwable</text>
+
+  <!-- Lines from Throwable -->
+  <line class="line" x1="450" y1="140" x2="250" y2="190" />
+  <line class="line" x1="550" y1="140" x2="750" y2="190" />
+
+  <!-- Error Branch -->
+  <rect class="branch-box" x="100" y="190" width="300" height="60" />
+  <text class="label-branch" x="250" y="225" text-anchor="middle">Error</text>
+  <text class="label-type" x="250" y="240" text-anchor="middle">(System-level failure)</text>
+
+  <!-- Exception Branch -->
+  <rect class="branch-box" x="600" y="190" width="300" height="60" />
+  <text class="label-branch" x="750" y="225" text-anchor="middle">Exception</text>
+  <text class="label-type" x="750" y="240" text-anchor="middle">(Fixable problems)</text>
+
+  <!-- Error Subclasses -->
+  <line class="line" x1="250" y1="250" x2="150" y2="300" />
+  <line class="line" x1="250" y1="250" x2="250" y2="300" />
+  <line class="line" x1="250" y1="250" x2="350" y2="300" />
+
+  <rect class="leaf-box" x="50" y="300" width="200" height="50" />
+  <text class="label-leaf" x="150" y="330" text-anchor="middle">OutOfMemoryError</text>
+
+  <rect class="leaf-box" x="150" y="300" width="200" height="50" />
+  <text class="label-leaf" x="250" y="330" text-anchor="middle">StackOverflowError</text>
+
+  <rect class="leaf-box" x="250" y="300" width="200" height="50" />
+  <text class="label-leaf" x="350" y="330" text-anchor="middle">NoClassDefFoundError</text>
+
+  <!-- Exception to Checked/Unchecked -->
+  <line class="line" x1="650" y1="250" x2="550" y2="300" />
+  <line class="line" x1="750" y1="250" x2="850" y2="300" />
+
+  <!-- Checked Exception -->
+  <rect class="branch-box" x="400" y="300" width="300" height="60" />
+  <text class="label-branch" x="550" y="335" text-anchor="middle">Checked Exception</text>
+
+  <!-- Unchecked Exception (RuntimeException) -->
+  <rect class="branch-box" x="700" y="300" width="300" height="60" />
+  <text class="label-branch" x="850" y="335" text-anchor="middle">RuntimeException</text>
+
+  <!-- Checked Subtypes -->
+  <line class="line" x1="550" y1="360" x2="400" y2="410" />
+  <line class="line" x1="550" y1="360" x2="550" y2="410" />
+  <line class="line" x1="550" y1="360" x2="700" y2="410" />
+
+  <rect class="leaf-box" x="300" y="410" width="200" height="50" />
+  <text class="label-leaf" x="400" y="440" text-anchor="middle">IOException</text>
+
+  <rect class="leaf-box" x="450" y="410" width="200" height="50" />
+  <text class="label-leaf" x="550" y="440" text-anchor="middle">SQLException</text>
+
+  <rect class="leaf-box" x="600" y="410" width="200" height="50" />
+  <text class="label-leaf" x="700" y="440" text-anchor="middle">ClassNotFoundException</text>
+
+  <!-- Unchecked Subtypes -->
+  <line class="line" x1="850" y1="360" x2="700" y2="410" />
+  <line class="line" x1="850" y1="360" x2="850" y2="410" />
+  <line class="line" x1="850" y1="360" x2="950" y2="410" />
+
+  <rect class="leaf-box" x="600" y="410" width="200" height="50" />
+  <text class="label-leaf" x="700" y="440" text-anchor="middle">NullPointerException</text>
+
+  <rect class="leaf-box" x="750" y="410" width="200" height="50" />
+  <text class="label-leaf" x="850" y="440" text-anchor="middle">IllegalArgumentException</text>
+
+  <rect class="leaf-box" x="900" y="410" width="200" height="50" />
+  <text class="label-leaf" x="1000" y="440" text-anchor="middle">IndexOutOfBoundsException</text>
+
+  <!-- Legend -->
+  <g transform="translate(50, 550)">
+    <text class="label-branch" x="0" y="0">Key Rules:</text>
+    <text class="label-leaf" x="0" y="30">🔴 Error: Don't catch. JVM-managed. Unrecoverable.</text>
+    <text class="label-leaf" x="0" y="60">🟡 Checked: Compiler enforces. Must handle or declare.</text>
+    <text class="label-leaf" x="0" y="90">🟢 Unchecked: Optional. Prevent with validation.</text>
+  </g>
+</svg>

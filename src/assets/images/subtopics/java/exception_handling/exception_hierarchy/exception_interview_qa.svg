@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+  <style>
+    .bg { fill: #0f1724; }
+    .card { fill: #0b1220; stroke:#1f2937; stroke-width:2; rx:12; }
+    .title { fill: #e6edf3; font-family: Inter, Arial, sans-serif; font-size:28px; font-weight:700; }
+    .q { fill: #a8d0ff; font-family: Inter, Arial, sans-serif; font-size:18px; font-weight:600; }
+    .a { fill: #cbd6e9; font-family: Inter, Arial, sans-serif; font-size:16px; }
+    .note { fill: #9fb3d6; font-family: Inter, Arial, sans-serif; font-size:14px; }
+  </style>
+  <rect class="bg" x="0" y="0" width="1000" height="600" />
+  <g transform="translate(40,30)">
+    <rect class="card" x="0" y="0" width="920" height="540" />
+    <text class="title" x="28" y="48">Java Exception Interview Q&amp;A — Quick Cheats</text>
+
+    <g transform="translate(28,84)">
+      <text class="q" x="0" y="0">Q1: What's the root of Java's exception system?</text>
+      <text class="a" x="0" y="26">A: `Throwable` — two branches: `Error` and `Exception`.</text>
+
+      <text class="q" x="0" y="72">Q2: Checked vs Unchecked — quick rule?</text>
+      <text class="a" x="0" y="98">A: Checked = caller must handle (I/O/DB). Unchecked = programming errors (fix code).</text>
+
+      <text class="q" x="0" y="144">Q3: Should you catch `Error`?</text>
+      <text class="a" x="0" y="170">A: Generally no — it's for JVM/system failures (e.g., OOME). Let the process fail or handle very selectively.</text>
+
+      <text class="q" x="0" y="216">Q4: How do exceptions propagate?</text>
+      <text class="a" x="0" y="242">A: They bubble up the call stack until a matching `catch`; uncaught exceptions terminate the thread.</text>
+
+      <text class="q" x="0" y="288">Q5: Quick fix for `NullPointerException`?</text>
+      <text class="a" x="0" y="314">A: Validate inputs, use `Objects.requireNonNull`, or `Optional` and avoid returning nulls from APIs.</text>
+
+      <text class="note" x="0" y="368">Tip: In interviews, state cause + fix + when it's recoverable.</text>
+
+    </g>
+  </g>
+</svg>

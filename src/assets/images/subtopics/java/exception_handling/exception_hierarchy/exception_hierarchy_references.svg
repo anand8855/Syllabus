@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <style>
+    .bg { fill: #0f1724; }
+    .card { fill: #0b1220; stroke: #1f2937; stroke-width: 2; rx: 12; }
+    .title { fill: #e6edf3; font-family: 'Segoe UI', Inter, Arial, sans-serif; font-size: 32px; font-weight: 700; }
+    .subtitle { fill: #a8d0ff; font-family: 'Segoe UI', Inter, Arial, sans-serif; font-size: 20px; font-weight: 600; }
+    .content { fill: #cbd6e9; font-family: 'Segoe UI', Inter, Arial, sans-serif; font-size: 16px; }
+    .label { fill: #9fb3d6; font-family: 'Segoe UI', Inter, Arial, sans-serif; font-size: 14px; }
+    .link { fill: #58a6ff; text-decoration: underline; font-family: monospace; font-size: 13px; }
+    .icon { font-family: Arial, sans-serif; font-size: 24px; }
+    .divider { stroke: #1f2937; stroke-width: 1; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="1200" height="700" />
+
+  <g transform="translate(40, 30)">
+    <rect class="card" x="0" y="0" width="1120" height="640" />
+
+    <text class="title" x="28" y="50">📚 Exception Hierarchy — References & Resources</text>
+    <text class="label" x="28" y="80">Authoritative guides for mastering Java exceptions</text>
+
+    <line class="divider" x1="28" y1="100" x2="1092" y2="100" />
+
+    <!-- Reference 1: Java SE Docs -->
+    <g transform="translate(28, 130)">
+      <text class="icon" x="0" y="24">📖</text>
+      <text class="subtitle" x="50" y="24">1. Java SE Documentation — Throwable</text>
+      <text class="content" x="50" y="50">Official reference for the Throwable class and exception hierarchy.</text>
+      <text class="label" x="50" y="72">Why: Authoritative source. Read method signatures, lifecycle, and best practices.</text>
+      <text class="link" x="50" y="94">https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html</text>
+    </g>
+
+    <!-- Reference 2: Effective Java -->
+    <line class="divider" x1="28" y1="250" x2="1092" y2="250" />
+    <g transform="translate(28, 280)">
+      <text class="icon" x="0" y="24">⭐</text>
+      <text class="subtitle" x="50" y="24">2. Effective Java by Joshua Bloch</text>
+      <text class="content" x="50" y="50">Industry-standard guide on exception handling best practices.</text>
+      <text class="label" x="50" y="72">Why: Expert insights on checked vs unchecked, when to catch, and patterns to avoid.</text>
+      <text class="label" x="50" y="94">Key chapters: Item 69–77 (Exception handling patterns)</text>
+    </g>
+
+    <!-- Reference 3: JLS -->
+    <line class="divider" x1="28" y1="410" x2="1092" y2="410" />
+    <g transform="translate(28, 440)">
+      <text class="icon" x="0" y="24">📋</text>
+      <text class="subtitle" x="50" y="24">3. Java Language Specification (JLS)</text>
+      <text class="content" x="50" y="50">Formal definition of exception semantics and control flow.</text>
+      <text class="label" x="50" y="72">Why: Deep dive into the spec. Understand throw, catch, finally, and propagation rules.</text>
+      <text class="label" x="50" y="94">Chapter 11: Exceptions (control flow, checked/unchecked division)</text>
+    </g>
+
+    <text class="label" x="28" y="600">💡 Tip: Start with Effective Java for practical wisdom, then reference JLS and Javadoc when you need precision.</text>
+  </g>
+</svg>

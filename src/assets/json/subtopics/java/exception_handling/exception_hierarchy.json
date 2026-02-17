@@ -1,13 +1,284 @@
 {
   "name": "Exception Hierarchy",
-  "overview": "In Java, all errors and exceptions inherit from java.lang.Throwable, which has two main branches: Error (serious problems the application usually should not handle) and Exception (conditions the application can catch and recover from). Checked exceptions are subclasses of Exception (excluding RuntimeException and its subclasses) and must be declared or handled, while unchecked exceptions are RuntimeException and its subclasses, indicating programming errors such as null dereferences or invalid arguments.",
+  "overview": "💥 Ever thrown an exception wrong and had no idea how to fix it? The Java exception hierarchy answers a critical question: \"What went wrong, and does my program need to react?\" Get it right → graceful error handling. Get it wrong → silent crashes and confused users 😅. Rooted at `Throwable`, splitting into `Error` (unrecoverable disasters) and `Exception` (fixable problems). Within `Exception` lie two paths: checked (compiler enforces handling) and unchecked (programming errors you should prevent). This guide makes you fluent.",
   "sections": [
     {
-      "title": "Introduction",
-      "content": "The Java exception hierarchy is rooted at java.lang.Throwable and splits into Error and Exception. Error represents JVM-level and system problems (for example, OutOfMemoryError) that applications typically do not catch, while Exception represents abnormal conditions in normal program flow. Within Exception, checked exceptions (like IOException) enforce explicit handling via try/catch or throws clauses, and unchecked exceptions (subclasses of RuntimeException) usually signal bugs such as illegal arguments or incorrect state."
+      "title": "🎯 What Is an Exception Hierarchy?",
+      "content": "The exception hierarchy is Java's family tree of errors. At the root sits `Throwable`. Everything throwable inherits from it.\n\nThink of it like a company org chart:\n• CEO = Throwable 🏢\n• VP-level = Error and Exception 👔\n• Directors = Checked and Unchecked 📊\n• Teams = Specific exceptions (NullPointerException, IOException) 👥\n\nHierarchy = Who inherits from whom, and what rules apply.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/java/exception_handling/exception_hierarchy/exception_hierarchy_tree.svg",
+          "alt": "Java Exception Hierarchy tree",
+          "caption": "Complete exception tree: Throwable → Error | Exception → (checked / unchecked)"
+        }
+      ]
+    },
+    {
+      "title": "🔝 Root: java.lang.Throwable",
+      "content": "`Throwable` is the common superclass for all things that can be thrown in Java. It has two direct subclasses: `Error` and `Exception`. You normally don't throw `Throwable` directly; instead use specific Exception subclasses.",
+      "subsections": [
+        {
+          "title": "Why It Matters",
+          "content": "Every catch clause, every throws declaration, begins here. `Throwable` is the contract that says 'I can be thrown and caught.'"
+        }
+      ]
+    },
+    {
+      "title": "💔 Error — System-Level Disasters",
+      "content": "`Error` represents serious problems from which applications usually can't recover (for example, `OutOfMemoryError`, `StackOverflowError`, `NoClassDefFoundError`). Think of `Error` as system-level disasters — don't catch them unless you have a very specific reason.\n\nLight metaphor 😄: It's like a sudden power outage at a party — guests can't continue the evening by complaining about the playlist.",
+      "subsections": [
+        {
+          "title": "Behavior & Lifetime",
+          "content": "Errors are thrown by the JVM when resources are exhausted or critical components fail. Your app can't recover.",
+          "table": {
+            "headers": ["Aspect", "Error"],
+            "rows": [
+              ["Severity", "Critical / Fatal"],
+              ["Recovery", "Usually impossible"],
+              ["Catch it?", "Generally no"],
+              ["Examples", "OutOfMemoryError, StackOverflowError"]
+            ]
+          }
+        },
+        {
+          "title": "Best Practice",
+          "content": "⚠️ Do not catch `Error`. Let it propagate or your app may hide fatal conditions."
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/subtopics/java/exception_handling/exception_hierarchy/error_hierarchy.svg",
+          "alt": "Error hierarchy",
+          "caption": "Error subclasses represent JVM-level failures"
+        }
+      ]
+    },
+    {
+      "title": "✅ Exception — Recoverable Issues",
+      "content": "`Exception` covers conditions an application might reasonably catch and handle. This is the branch most developers work with. It splits into two paths: checked exceptions (compiler enforces) and unchecked exceptions (`RuntimeException` subclasses).\n\nMetaphor 😄: `Exception` is like spilling coffee — inconvenient but fixable if you act.",
+      "subsections": [
+        {
+          "title": "Two Paths from Exception",
+          "content": "Exception branches into Checked and Unchecked — two fundamentally different philosophies.",
+          "table": {
+            "headers": ["Path", "Meaning", "Compiler Enforcement"],
+            "rows": [
+              ["Checked", "External failures (I/O, DB)", "Yes — must handle or declare"],
+              ["Unchecked (RuntimeException)", "Programming errors", "No — optional to catch"]
+            ]
+          }
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/subtopics/java/exception_handling/exception_hierarchy/checked_vs_unchecked.svg",
+          "alt": "Checked vs Unchecked comparison",
+          "caption": "Visual compare: compiler enforcement and typical causes"
+        }
+      ]
+    },
+    {
+      "title": "1️⃣ Checked Exceptions — Compiler Enforces Handling",
+      "content": "Checked exceptions (e.g., `IOException`, `SQLException`, `ClassNotFoundException`) must be either caught with `try/catch` or declared with `throws`. The compiler actively reminds you.\n\nMetaphor 😄: They're like school teachers who insist you turn in homework — the compiler constantly reminds you. Use checked exceptions when the caller can reasonably recover or needs to be informed of a specific failure mode.",
+      "subsections": [
+        {
+          "title": "Behavior & Lifecycle",
+          "content": "When you call a method that throws a checked exception, you MUST handle it (try/catch) or declare it (throws). No choice.",
+          "table": {
+            "headers": ["Aspect", "Checked Exception"],
+            "rows": [
+              ["Compiler enforcement", "Yes — must catch or declare"],
+              ["Typical cause", "External (I/O, DB, network)"],
+              ["Recovery possible?", "Usually yes"],
+              ["Examples", "IOException, SQLException, ClassNotFoundException"]
+            ]
+          }
+        },
+        {
+          "title": "When to Use",
+          "content": "When the caller can reasonably recover or must be informed of a specific failure mode. Example: file not found — caller can retry or use a default."
+        },
+        {
+          "title": "Interview Gold 💎",
+          "content": "\"Checked exceptions are verified at compile time. The compiler forces you to acknowledge and either handle or declare them.\""
+        }
+      ]
+    },
+    {
+      "title": "2️⃣ Unchecked Exceptions (RuntimeException) — Surprise Guests",
+      "content": "Unchecked exceptions are subclasses of `RuntimeException` (for example, `NullPointerException`, `IllegalArgumentException`, `IndexOutOfBoundsException`). They signal programming errors or illegal usage and are not required to be declared or caught.\n\nMetaphor 😄: Surprise guests who show up and you didn't invite — fix the invitation (your code) rather than constantly catching them.",
+      "subsections": [
+        {
+          "title": "Behavior & Lifecycle",
+          "content": "Unchecked exceptions are not verified at compile time. You can throw them or let them happen without the compiler complaining.",
+          "table": {
+            "headers": ["Aspect", "Unchecked (RuntimeException)"],
+            "rows": [
+              ["Compiler enforcement", "No — optional"],
+              ["Typical cause", "Programming bugs / bad arguments"],
+              ["Recovery possible?", "Fix the code"],
+              ["Examples", "NullPointerException, IllegalArgumentException, IndexOutOfBoundsException"]
+            ]
+          }
+        },
+        {
+          "title": "When to Use",
+          "content": "Signal programmer error. Example: illegal arguments to a method — throw IllegalArgumentException so the caller fixes their code."
+        },
+        {
+          "title": "Interview Gold 💎",
+          "content": "\"Unchecked exceptions indicate programming errors. Don't catch them repeatedly — prevent them by validating inputs and checking for null.\""
+        }
+      ]
+    },
+    {
+      "title": "📊 Common Exceptions & Quick Fixes",
+      "content": "Know these cold for interviews — they test both knowledge and judgment.",
+      "subsections": [
+        {
+          "title": "Exception Reference Table",
+          "content": "Common exceptions, their causes, and quick fixes.",
+          "table": {
+            "headers": ["Exception", "Type", "Typical Cause", "Quick Fix"],
+            "rows": [
+              ["NullPointerException", "Unchecked", "Dereference of null", "Check for null or avoid nulls (Optional)"],
+              ["IllegalArgumentException", "Unchecked", "Bad method arguments", "Validate inputs before calling"],
+              ["IndexOutOfBoundsException", "Unchecked", "Invalid index in list/array", "Validate index bounds"],
+              ["IOException", "Checked", "I/O errors (files, sockets)", "Handle or declare; retry or fallback"],
+              ["SQLException", "Checked", "Database access issues", "Handle, retry, or fail fast with clear message"],
+              ["ClassNotFoundException", "Checked", "Missing class at runtime", "Ensure classpath includes class or declare"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "🔄 Exception Propagation & Handling",
+      "content": "How exceptions move through your code and where to catch them.",
+      "subsections": [
+        {
+          "title": "The Flow",
+          "content": "When an exception is thrown, it propagates up the call stack until a matching `catch` is found. If no handler exists, the thread dies."
+        },
+        {
+          "title": "Three Strategies",
+          "content": "• `try/catch` — handle here\n• `throws` — pass responsibility up\n• `try/catch/finally` — handle and clean up",
+          "table": {
+            "headers": ["Strategy", "When to Use", "Example"],
+            "rows": [
+              ["try/catch", "You can and should handle", "Retry file read on IOException"],
+              ["throws", "Caller is better positioned", "Service method delegates to handler"],
+              ["finally", "Must clean up resources", "Close file/connection always"]
+            ]
+          }
+        },
+        {
+          "title": "Best Practice 🎯",
+          "content": "Prefer specific `catch` blocks. Avoid `catch(Exception e)` or `catch(Throwable t)` — these hide unexpected problems."
+        }
+      ],
+      "images": [
+        {
+          "url": "assets/images/subtopics/java/exception_handling/exception_hierarchy/exception_propagation.svg",
+          "alt": "Exception propagation flow",
+          "caption": "How exceptions flow up the call stack until caught"
+        }
+      ]
+    },
+    {
+      "title": "🧠 Stateful vs Stateless (Thread Safety!)",
+      "content": "A critical mistake: holding mutable state in shared exception contexts.",
+      "subsections": [
+        {
+          "title": "The Golden Rule 💡",
+          "content": "Exception handlers are often called in multi-threaded contexts. If your handler shares state, synchronize or isolate.",
+          "table": {
+            "headers": ["Pattern", "Risk", "Mitigation"],
+            "rows": [
+              ["Stateless handler", "None ✅", "Safe as-is"],
+              ["Shared state", "Race condition ⚠️", "Synchronize or use thread-local"],
+              ["Mutable shared data", "Data corruption 🔥", "Isolate per thread"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "📋 Interview-Ready One-Liners",
+      "content": "Memorize these; use in interviews.\n\n• `Throwable` is the root. Two branches: `Error` and `Exception`.\n• Checked exceptions must be caught or declared. Unchecked ones are optional.\n• `RuntimeException` and subclasses are unchecked — they signal bugs.\n• Spring fully manages exception lifecycle in servlet contexts.\n• Always catch specific exceptions. Avoid `catch(Exception e)`.\n• Validation > Catching. Check inputs before they throw.\n• Try-with-resources auto-closes. Use it.",
+      "images": [
+        {
+          "url": "assets/images/subtopics/java/exception_handling/exception_hierarchy/exception_interview_qa.svg",
+          "alt": "Interview Q&A cheatsheet",
+          "caption": "Quick interview questions and short answers for Exceptions"
+        }
+      ]
+    },
+    {
+      "title": "🏁 Final Thoughts",
+      "content": "Exceptions are your app's way of saying 'something unexpected happened.' Treat them seriously: catch what you can recover from, let others propagate, and never swallow an exception silently. Think of them like traffic lights: 🔴 Error = stop everything, 🟡 Checked = address now, 🟢 Unchecked = shouldn't reach here (fix your code). Master this, and you'll debug 10x faster. 🚀",
+      "images": [
+        {
+          "url": "assets/images/subtopics/java/exception_handling/exception_hierarchy/exception_hierarchy_references.svg",
+          "alt": "References and Resources",
+          "caption": "Authoritative guides for mastering Java exceptions"
+        }
+      ]
     }
   ],
-  "codeExamples": [],
-  "keyPoints": [],
-  "references": []
+  "codeExamples": [
+    {
+      "title": "Checked exception — IOException with proper handling",
+      "language": "java",
+      "code": "import java.io.*;\n\npublic class CheckedExample {\n  public static void main(String[] args) {\n    try (BufferedReader r = new BufferedReader(new FileReader(\"config.txt\"))) {\n      String line = r.readLine();\n      System.out.println(\"Config: \" + line);\n    } catch (IOException e) {\n      System.err.println(\"File IO failed: \" + e.getMessage());\n      // Caller MUST handle or declare — compiler enforces this\n    }\n  }\n}"
+    },
+    {
+      "title": "Unchecked exception — NullPointerException (prevent, don't catch)",
+      "language": "java",
+      "code": "public class UncheckedExample {\n  static String getName(Person p) {\n    // Bad: NullPointerException will occur if p is null\n    // return p.getName();\n    \n    // Good: Check first\n    if (p == null) throw new IllegalArgumentException(\"Person cannot be null\");\n    return p.getName();\n  }\n}\nclass Person { String name; String getName() { return name; } }"
+    },
+    {
+      "title": "Checked (throws) vs Unchecked (catch and fix)",
+      "language": "java",
+      "code": "// Method declares a checked exception — caller must decide\nvoid readFile(String path) throws IOException {\n  BufferedReader r = new BufferedReader(new FileReader(path));\n  System.out.println(r.readLine());\n}\n\n// Caller chooses: handle or pass up\nvoid doWork() {\n  try {\n    readFile(\"data.txt\");\n  } catch (IOException e) {\n    // Recover: use default or retry\n    System.out.println(\"Using fallback data\");\n  }\n}"
+    }
+  ],
+  "keyPoints": [
+    "`Throwable` is the root of all throwable things",
+    "`Error` = system-level failure; don't catch it",
+    "`Exception` = fixable problems; base for checked and unchecked",
+    "Checked exceptions: compiler enforces handling or declaration",
+    "Unchecked (RuntimeException): prevent via validation, don't catch repeatedly",
+    "Propagation: exception bubbles up until caught or thread dies",
+    "Best practice: catch specific exceptions, use try-with-resources, avoid empty catches",
+    "Interview key: know checked vs unchecked, name causes AND fixes"
+  ],
+  "interviewQA": [
+    {
+      "question": "What's the root of Java's exception system?",
+      "answer": "`Throwable` is the root. It has two branches: `Error` and `Exception`."
+    },
+    {
+      "question": "When should you use checked vs unchecked exceptions?",
+      "answer": "Use checked exceptions when the caller can reasonably recover or must be informed (I/O, DB). Use unchecked (`RuntimeException`) for programming errors that should be fixed, not repeatedly caught."
+    },
+    {
+      "question": "Should you catch `Error`?",
+      "answer": "Generally no. `Error` indicates serious system-level problems (e.g., `OutOfMemoryError`). Catching them usually doesn't help and may hide fatal problems."
+    },
+    {
+      "question": "How does exception propagation work?",
+      "answer": "An exception bubbles up the call stack until a matching `catch` handles it; if uncaught, the thread terminates. Use `throws` to delegate handling."
+    },
+    {
+      "question": "Interview quick answer: fix for NullPointerException?",
+      "answer": "Validate inputs, use `Objects.requireNonNull`, prefer `Optional` where meaningful, and avoid returning null from APIs."
+    }
+  ],
+  "references": [
+    "Throwable (Java SE Documentation) — https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html",
+    "Effective Java by Joshua Bloch — Exception handling best practices",
+    "Java Language Specification — Exception Handling (Chapter 11)",
+    "Spring Framework Exception Handling Guide"
+  ]
 }
